@@ -8,31 +8,23 @@ use Naugrim\OpenTrans\Builder\NodeBuilder;
 use Naugrim\OpenTrans\Exception\InvalidSetterException;
 use Naugrim\OpenTrans\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
-use Naugrim\OpenTrans\Nodes\Order\Header;
-use Naugrim\OpenTrans\Nodes\Order\Item;
+use Naugrim\OpenTrans\Nodes\OrderResponse\Header;
+use Naugrim\OpenTrans\Nodes\OrderResponse\Item;
 use Naugrim\OpenTrans\Nodes\Order\Summary;
 
 /**
  *
- * @Serializer\XmlRoot("ORDER")
+ * @Serializer\XmlRoot("ORDERRESPONSE")
  * @Serializer\ExclusionPolicy("all")
  */
-class Order implements NodeInterface
+class OrderResponse implements NodeInterface
 {
     use IsRootNode;
 
     /**
      * @Serializer\Expose
-     * @Serializer\XmlAttribute
-     *
-     * @var string
-     */
-    protected $type = 'standard';
-
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\Header")
-     * @Serializer\SerializedName("ORDER_HEADER")
+     * @Serializer\Type("Naugrim\OpenTrans\Nodes\OrderResponse\Header")
+     * @Serializer\SerializedName("ORDERRESPONSE_HEADER")
      *
      * @var Header
      */
@@ -41,9 +33,9 @@ class Order implements NodeInterface
     /**
      *
      * @Serializer\Expose
-     * @Serializer\SerializedName("ORDER_ITEM_LIST")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Order\Item>")
-     * @Serializer\XmlList(entry = "ORDER_ITEM")
+     * @Serializer\SerializedName("ORDERRESPONSE_ITEM_LIST")
+     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\OrderResponse\Item>")
+     * @Serializer\XmlList(entry = "ORDERRESPONSE_ITEM")
      *
      * @var Item[]
      */
@@ -52,29 +44,11 @@ class Order implements NodeInterface
     /**
      * @Serializer\Expose
      * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\Summary")
-     * @Serializer\SerializedName("ORDER_SUMMARY")
+     * @Serializer\SerializedName("ORDERRESPONSE_SUMMARY")
      *
      * @var Summary
      */
     protected $summary;
-
-    /**
-     * @return mixed
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param mixed $type
-     * @return Order
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this;
-    }
 
     /**
      * @return Header
@@ -86,9 +60,9 @@ class Order implements NodeInterface
 
     /**
      * @param Header $header
-     * @return Order
+     * @return OrderResponse
      */
-    public function setHeader(Header $header): Order
+    public function setHeader(Header $header): OrderResponse
     {
         $this->header = $header;
         return $this;
@@ -104,11 +78,11 @@ class Order implements NodeInterface
 
     /**
      * @param Item[] $items
-     * @return Order
+     * @return OrderResponse
      * @throws InvalidSetterException
      * @throws UnknownKeyException
      */
-    public function setItems(array $items): Order
+    public function setItems(array $items): OrderResponse
     {
         foreach ($items as $item) {
             if (!$item instanceof Item) {
@@ -123,7 +97,7 @@ class Order implements NodeInterface
      * @param Item $item
      * @return $this
      */
-    public function addItem(Item $item) : Order
+    public function addItem(Item $item) : OrderResponse
     {
         $this->items[] = $item;
         return $this;
@@ -139,9 +113,9 @@ class Order implements NodeInterface
 
     /**
      * @param Summary $summary
-     * @return Order
+     * @return OrderResponse
      */
-    public function setSummary(Summary $summary): Order
+    public function setSummary(Summary $summary): OrderResponse
     {
         $this->summary = $summary;
         return $this;
