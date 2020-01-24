@@ -10,6 +10,13 @@ use ReflectionMethod;
 
 class NodeBuilder
 {
+    /**
+     * @param array $data
+     * @param NodeInterface $instance
+     * @return NodeInterface
+     * @throws InvalidSetterException
+     * @throws UnknownKeyException
+     */
     public static function fromArray(array $data, NodeInterface $instance)
     {
         foreach ($data as $name => $value) {
@@ -31,7 +38,7 @@ class NodeBuilder
                 $setterParams = $reflectionMethod->getParameters();
                 // @codeCoverageIgnoreStart
             } catch (ReflectionException $e) {
-                throw new InvalidSetterException('Reflecting the setter method '.$instance.'::'.$setterName.' failed.');
+                throw new InvalidSetterException('Reflecting the setter method '.get_class($instance).'::'.$setterName.' failed.');
             }
             // @codeCoverageIgnoreEnd
             $firstSetterParam = array_shift($setterParams);

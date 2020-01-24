@@ -4,11 +4,7 @@ namespace Naugrim\OpenTrans\Nodes\Order;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
-use Naugrim\OpenTrans\Builder\NodeBuilder;
-use Naugrim\OpenTrans\Exception\InvalidSetterException;
-use Naugrim\OpenTrans\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\NodeInterface;
-use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 
 class Summary implements NodeInterface
 {
