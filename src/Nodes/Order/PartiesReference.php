@@ -119,5 +119,4 @@ class PartiesReference implements NodeInterface
         $this->shipmentPartiesReference = $shipmentPartiesReference;
         return $this;
     }
-
 }

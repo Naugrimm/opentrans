@@ -11,7 +11,6 @@ use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\Order\Header;
 use Naugrim\OpenTrans\Nodes\Order\Item;
 use Naugrim\OpenTrans\Nodes\Order\Summary;
-use Naugrim\OpenTrans\OpenTrans;
 
 /**
  *

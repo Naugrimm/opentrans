@@ -37,6 +37,7 @@ trait HasTypeAttributeAndValue
     public function setType(string $type): NodeInterface
     {
         $this->type = $type;
+        /** @var NodeInterface $this */
         return $this;
     }
 
@@ -55,6 +56,7 @@ trait HasTypeAttributeAndValue
     public function setValue(string $value): NodeInterface
     {
         $this->value = $value;
+        /** @var NodeInterface $this */
         return $this;
     }
 }
