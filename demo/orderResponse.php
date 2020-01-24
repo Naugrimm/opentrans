@@ -3,7 +3,7 @@
 
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Naugrim\OpenTrans\Builder\NodeBuilder;
-use Naugrim\OpenTrans\Nodes\OrderChange;
+use Naugrim\OpenTrans\Nodes\OrderResponse;
 use Naugrim\OpenTrans\SchemaValidator;
 
 call_user_func(function () {
@@ -50,14 +50,14 @@ $invoice = NodeBuilder::fromArray([
                     'value' => 'product-number-1'
                 ]
             ],
-            'quantity' => -5,
+            'quantity' => 5,
             'orderUnit' => 'C62',
         ]
     ],
     'summary' => [
         'totalItemNum' => 1,
     ]
-], new OrderChange());
+], new OrderResponse());
 
 
 $xml = $serializer->serialize($invoice, 'xml');
