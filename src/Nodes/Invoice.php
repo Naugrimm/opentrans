@@ -7,6 +7,7 @@ use /** @noinspection PhpUnusedAliasInspection */
 use Naugrim\OpenTrans\Builder\NodeBuilder;
 use Naugrim\OpenTrans\Exception\InvalidSetterException;
 use Naugrim\OpenTrans\Exception\UnknownKeyException;
+use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\Invoice\Header;
 use Naugrim\OpenTrans\Nodes\Invoice\Item;
 use Naugrim\OpenTrans\Nodes\Invoice\Summary;
@@ -15,16 +16,10 @@ use Naugrim\OpenTrans\Nodes\Invoice\Summary;
  *
  * @Serializer\XmlRoot("INVOICE")
  * @Serializer\ExclusionPolicy("all")
- * @Serializer\XmlNamespace(uri="http://www.opentrans.org/XMLSchema/2.1")
- * @Serializer\XmlNamespace(uri="http://www.bmecat.org/bmecat/2005", prefix="bme")
  */
 class Invoice implements NodeInterface
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\XmlAttribute
-     */
-    protected $version = '2.1';
+    use IsRootNode;
 
     /**
      * @Serializer\Expose
