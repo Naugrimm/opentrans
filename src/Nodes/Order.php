@@ -8,23 +8,32 @@ use Naugrim\OpenTrans\Builder\NodeBuilder;
 use Naugrim\OpenTrans\Exception\InvalidSetterException;
 use Naugrim\OpenTrans\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
-use Naugrim\OpenTrans\Nodes\Invoice\Header;
-use Naugrim\OpenTrans\Nodes\Invoice\Item;
-use Naugrim\OpenTrans\Nodes\Invoice\Summary;
+use Naugrim\OpenTrans\Nodes\Order\Header;
+use Naugrim\OpenTrans\Nodes\Order\Item;
+use Naugrim\OpenTrans\Nodes\Order\Summary;
+use Naugrim\OpenTrans\OpenTrans;
 
 /**
  *
- * @Serializer\XmlRoot("INVOICE")
+ * @Serializer\XmlRoot("ORDER")
  * @Serializer\ExclusionPolicy("all")
  */
-class Invoice implements NodeInterface
+class Order implements NodeInterface
 {
     use IsRootNode;
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Invoice\Header")
-     * @Serializer\SerializedName("INVOICE_HEADER")
+     * @Serializer\XmlAttribute
+     *
+     * @var string
+     */
+    protected $type = 'standard';
+
+    /**
+     * @Serializer\Expose
+     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\Header")
+     * @Serializer\SerializedName("ORDER_HEADER")
      *
      * @var Header
      */
@@ -33,9 +42,9 @@ class Invoice implements NodeInterface
     /**
      *
      * @Serializer\Expose
-     * @Serializer\SerializedName("INVOICE_ITEM_LIST")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Invoice\Item>")
-     * @Serializer\XmlList(entry = "INVOICE_ITEM")
+     * @Serializer\SerializedName("ORDER_ITEM_LIST")
+     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Order\Item>")
+     * @Serializer\XmlList(entry = "ORDER_ITEM")
      *
      * @var Item[]
      */
@@ -43,12 +52,30 @@ class Invoice implements NodeInterface
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Invoice\Summary")
-     * @Serializer\SerializedName("INVOICE_SUMMARY")
+     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\Summary")
+     * @Serializer\SerializedName("ORDER_SUMMARY")
      *
      * @var Summary
      */
     protected $summary;
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     * @return Order
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        return $this;
+    }
 
     /**
      * @return Header
@@ -62,7 +89,7 @@ class Invoice implements NodeInterface
      * @param Header $header
      * @return Invoice
      */
-    public function setHeader(Header $header): Invoice
+    public function setHeader(Header $header): Order
     {
         $this->header = $header;
         return $this;
@@ -78,11 +105,11 @@ class Invoice implements NodeInterface
 
     /**
      * @param Item[] $items
-     * @return Invoice
+     * @return Order
      * @throws InvalidSetterException
      * @throws UnknownKeyException
      */
-    public function setItems(array $items): Invoice
+    public function setItems(array $items): Order
     {
         foreach ($items as $item) {
             if (!$item instanceof Item) {
@@ -97,7 +124,7 @@ class Invoice implements NodeInterface
      * @param Item $item
      * @return $this
      */
-    public function addItem(Item $item) : Invoice
+    public function addItem(Item $item) : Order
     {
         $this->items[] = $item;
         return $this;
@@ -113,9 +140,9 @@ class Invoice implements NodeInterface
 
     /**
      * @param Summary $summary
-     * @return Invoice
+     * @return Order
      */
-    public function setSummary(Summary $summary): Invoice
+    public function setSummary(Summary $summary): Order
     {
         $this->summary = $summary;
         return $this;
