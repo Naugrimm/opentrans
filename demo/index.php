@@ -54,7 +54,7 @@ $invoice = NodeBuilder::fromArray([
         'totalAmount' => (10 * 123) * 1.19,
         'totalTax' => [
             [
-
+                'amount' => (10 * 123) * 0.19
             ]
         ]
     ]
