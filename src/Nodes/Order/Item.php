@@ -1,6 +1,6 @@
 <?php
 
-namespace Naugrim\OpenTrans\Nodes\Invoice;
+namespace Naugrim\OpenTrans\Nodes\Order;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
@@ -10,16 +10,6 @@ use Naugrim\OpenTrans\Nodes\ProductId;
 
 class Item implements NodeInterface
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("type")
-     * @Serializer\XmlAttribute
-     *
-     * @var string
-     */
-    protected $type;
-
     /**
      * @Serializer\Expose
      * @Serializer\Type("string")
@@ -56,7 +46,6 @@ class Item implements NodeInterface
      */
     protected $orderUnit;
 
-
     /**
      * @Serializer\Expose
      * @Serializer\Type("Naugrim\OpenTrans\Nodes\Product\PriceFix")
@@ -74,24 +63,6 @@ class Item implements NodeInterface
      * @var float
      */
     protected $priceLineAmount;
-
-    /**
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param string $type
-     * @return Item
-     */
-    public function setType(string $type): Item
-    {
-        $this->type = $type;
-        return $this;
-    }
 
     /**
      * @return string
