@@ -1,0 +1,21 @@
+{
+    "name": "naugrim/opentrans",
+    "description": "A library to create openTRANS compatible XML documents.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erik Anders",
+            "email": "erik.anders@securepoint.de"
+        }
+    ],
+    "require": {
+        "jms/serializer": "^3.4"
+    },
+    "autoload": {
+        "psr-0": {
+            "Naugrim\\OpenTrans\\Tests": "tests/",
+            "Naugrim\\OpenTrans": "src/"
+        }
+    }
+}
