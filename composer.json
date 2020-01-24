@@ -10,12 +10,16 @@
         }
     ],
     "require": {
+        "ext-dom": "*",
+        "ext-libxml": "*",
         "jms/serializer": "^3.4"
     },
     "autoload": {
-        "psr-0": {
-            "Naugrim\\OpenTrans\\Tests": "tests/",
-            "Naugrim\\OpenTrans": "src/"
+        "psr-4": {
+            "Naugrim\\OpenTrans\\Tests\\": "tests/",
+            "Naugrim\\OpenTrans\\": "src/"
         }
+    },
+    "require-dev": {
     }
 }
