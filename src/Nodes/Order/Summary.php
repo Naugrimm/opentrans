@@ -8,6 +8,9 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 use Naugrim\OpenTrans\Nodes\NodeInterface;
 
+/**
+ * @Serializer\AccessorOrder("custom", custom = {"totalItemNum", "totalAmount"})
+ */
 class Summary implements NodeInterface
 {
     use HasTotalItemNum, HasTotalAmount;

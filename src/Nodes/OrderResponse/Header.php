@@ -7,6 +7,9 @@ use /** @noinspection PhpUnusedAliasInspection */
 use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 use Naugrim\OpenTrans\Nodes\NodeInterface;
 
+/**
+ * @Serializer\AccessorOrder("custom", custom = {"controlInfo", "info"})
+ */
 class Header implements NodeInterface
 {
     use HasControlInfo;

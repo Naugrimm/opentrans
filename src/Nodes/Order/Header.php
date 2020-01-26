@@ -9,6 +9,9 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasSourcingInfo;
 use Naugrim\OpenTrans\Nodes\NodeInterface;
 use Naugrim\OpenTrans\Nodes\SourcingInfo;
 
+/**
+ * @Serializer\AccessorOrder("custom", custom = {"controlInfo", "sourcingInfo", "info"})
+ */
 class Header implements NodeInterface
 {
     use HasControlInfo, HasSourcingInfo;

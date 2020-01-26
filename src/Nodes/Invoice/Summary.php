@@ -12,6 +12,9 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 use Naugrim\OpenTrans\Nodes\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 
+/**
+ * @Serializer\AccessorOrder("custom", custom = {"totalItemNum", "netValueGoods", "netValueExtra", "totalAmount", "allowOrChargesFix", "totalTax"})
+ */
 class Summary implements NodeInterface
 {
     use HasTotalItemNum, HasTotalAmount;
@@ -25,7 +28,6 @@ class Summary implements NodeInterface
      * @var float
      */
     protected $netValueGoods;
-
     /**
      *
      * @Serializer\Expose

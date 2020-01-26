@@ -8,6 +8,9 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 use Naugrim\OpenTrans\Nodes\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Order\History;
 
+/**
+ * @Serializer\AccessorOrder("custom", custom = {"controlInfo", "info", "orderHistory"})
+ */
 class Header implements NodeInterface
 {
     use HasControlInfo;
