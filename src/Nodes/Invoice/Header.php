@@ -4,14 +4,13 @@ namespace Naugrim\OpenTrans\Nodes\Invoice;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
+use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 use Naugrim\OpenTrans\Nodes\NodeInterface;
 
-/**
- *
- * @Serializer\XmlRoot("INVOICE_HEADER")
- */
 class Header implements NodeInterface
 {
+    use HasControlInfo;
+    
     /**
      * @Serializer\Expose
      * @Serializer\Type("Naugrim\OpenTrans\Nodes\Invoice\Info")
