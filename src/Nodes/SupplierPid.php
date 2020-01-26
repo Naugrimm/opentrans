@@ -4,9 +4,10 @@ namespace Naugrim\OpenTrans\Nodes;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
-use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttributeAndValue;
+use Naugrim\OpenTrans\Nodes\Concerns\HasStringValue;
+use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 class SupplierPid implements NodeInterface
 {
-    use HasTypeAttributeAndValue;
+    use HasTypeAttribute, HasStringValue;
 }

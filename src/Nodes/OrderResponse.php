@@ -10,7 +10,7 @@ use Naugrim\OpenTrans\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Header;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Item;
-use Naugrim\OpenTrans\Nodes\Order\Summary;
+use Naugrim\OpenTrans\Nodes\OrderResponse\Summary;
 
 /**
  *
@@ -43,7 +43,7 @@ class OrderResponse implements NodeInterface
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\Summary")
+     * @Serializer\Type("Naugrim\OpenTrans\Nodes\OrderResponse\Summary")
      * @Serializer\SerializedName("ORDERRESPONSE_SUMMARY")
      *
      * @var Summary

@@ -7,20 +7,17 @@ use /** @noinspection PhpUnusedAliasInspection */
 use Naugrim\OpenTrans\Builder\NodeBuilder;
 use Naugrim\OpenTrans\Exception\InvalidSetterException;
 use Naugrim\OpenTrans\Exception\UnknownKeyException;
+use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
+use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 use Naugrim\OpenTrans\Nodes\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 
+/**
+ * @Serializer\AccessorOrder("custom", custom = {"totalItemNum", "netValueGoods", "netValueExtra", "totalAmount", "allowOrChargesFix", "totalTax"})
+ */
 class Summary implements NodeInterface
 {
-    /**
-     *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("TOTAL_ITEM_NUM")
-     * @Serializer\Type("int")
-     *
-     * @var int
-     */
-    protected $totalItemNum;
+    use HasTotalItemNum, HasTotalAmount;
 
     /**
      *
@@ -31,17 +28,6 @@ class Summary implements NodeInterface
      * @var float
      */
     protected $netValueGoods;
-
-    /**
-     *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("TOTAL_AMOUNT")
-     * @Serializer\Type("float")
-     *
-     * @var float
-     */
-    protected $totalAmount;
-
     /**
      *
      * @Serializer\Expose
@@ -52,24 +38,6 @@ class Summary implements NodeInterface
      * @var DetailsFix[]
      */
     protected $totalTax = [];
-
-    /**
-     * @return int
-     */
-    public function getTotalItemNum(): int
-    {
-        return $this->totalItemNum;
-    }
-
-    /**
-     * @param int $totalItemNum
-     * @return Summary
-     */
-    public function setTotalItemNum(int $totalItemNum): Summary
-    {
-        $this->totalItemNum = $totalItemNum;
-        return $this;
-    }
 
     /**
      * @return float
@@ -86,24 +54,6 @@ class Summary implements NodeInterface
     public function setNetValueGoods(float $netValueGoods): Summary
     {
         $this->netValueGoods = $netValueGoods;
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getTotalAmount(): float
-    {
-        return $this->totalAmount;
-    }
-
-    /**
-     * @param float $totalAmount
-     * @return Summary
-     */
-    public function setTotalAmount(float $totalAmount): Summary
-    {
-        $this->totalAmount = $totalAmount;
         return $this;
     }
 
