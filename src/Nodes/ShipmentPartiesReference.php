@@ -4,6 +4,7 @@ namespace Naugrim\OpenTrans\Nodes;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class ShipmentPartiesReference implements NodeInterface
 {
@@ -19,7 +20,7 @@ class ShipmentPartiesReference implements NodeInterface
     /**
      * @Serializer\Expose
      * @Serializer\Type("Naugrim\OpenTrans\Nodes\FinalDeliveryIdRef")
-     * @Serializer\SerializedName("INVOICE_RECIPIENT_IDREF")
+     * @Serializer\SerializedName("FINAL_DELIVERY_IDREF")
      *
      * @var FinalDeliveryIdRef
      */
@@ -28,7 +29,7 @@ class ShipmentPartiesReference implements NodeInterface
     /**
      * @Serializer\Expose
      * @Serializer\Type("Naugrim\OpenTrans\Nodes\DelivererIdRef")
-     * @Serializer\SerializedName("INVOICE_RECIPIENT_IDREF")
+     * @Serializer\SerializedName("DELIVERER_IDREF")
      *
      * @var DelivererIdRef
      */

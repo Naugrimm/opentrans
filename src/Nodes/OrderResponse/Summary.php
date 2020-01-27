@@ -7,7 +7,7 @@ use /** @noinspection PhpUnusedAliasInspection */
 use Naugrim\OpenTrans\Nodes\AllowOrChargesFix;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @Serializer\AccessorOrder("custom", custom = {"totalItemNum", "totalAmount", "allowOrChargesFix"})

@@ -5,7 +5,7 @@ namespace Naugrim\OpenTrans\Nodes\Mime;
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
 use Naugrim\OpenTrans\Nodes\Concerns\HasLangAttribute;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class Embedded implements NodeInterface
 {

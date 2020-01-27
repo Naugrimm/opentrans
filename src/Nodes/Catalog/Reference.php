@@ -4,7 +4,7 @@ namespace Naugrim\OpenTrans\Nodes\Catalog;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class Reference implements NodeInterface
 {

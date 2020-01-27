@@ -12,7 +12,8 @@
     "require": {
         "ext-dom": "*",
         "ext-libxml": "*",
-        "jms/serializer": "^3.4"
+        "jms/serializer": "^3.4",
+        "naugrim/bmecat": "^0.3"
     },
     "autoload": {
         "psr-4": {

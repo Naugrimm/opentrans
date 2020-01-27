@@ -4,12 +4,12 @@ namespace Naugrim\OpenTrans\Nodes\Invoice;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
-use Naugrim\OpenTrans\Builder\NodeBuilder;
-use Naugrim\OpenTrans\Exception\InvalidSetterException;
-use Naugrim\OpenTrans\Exception\UnknownKeyException;
+use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Exception\InvalidSetterException;
+use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 
 /**

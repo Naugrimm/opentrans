@@ -4,10 +4,10 @@ namespace Naugrim\OpenTrans\Nodes\Order;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
-use Naugrim\OpenTrans\Builder\NodeBuilder;
-use Naugrim\OpenTrans\Exception\InvalidSetterException;
-use Naugrim\OpenTrans\Exception\UnknownKeyException;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Exception\InvalidSetterException;
+use Naugrim\BMEcat\Exception\UnknownKeyException;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Party;
 
 class Info implements NodeInterface

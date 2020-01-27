@@ -7,7 +7,7 @@ use /** @noinspection PhpUnusedAliasInspection */
 use Naugrim\OpenTrans\Nodes\Concerns\HasLangAttribute;
 use Naugrim\OpenTrans\Nodes\Concerns\HasStringValue;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class HashValue implements NodeInterface
 {

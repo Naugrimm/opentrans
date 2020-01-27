@@ -3,7 +3,7 @@
 namespace Naugrim\OpenTrans\Nodes\Concerns;
 
 use Naugrim\OpenTrans\Nodes\ControlInfo;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 trait HasControlInfo
 {

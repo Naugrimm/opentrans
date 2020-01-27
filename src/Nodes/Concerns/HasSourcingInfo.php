@@ -2,7 +2,7 @@
 
 namespace Naugrim\OpenTrans\Nodes\Concerns;
 
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\SourcingInfo;
 
 trait HasSourcingInfo
