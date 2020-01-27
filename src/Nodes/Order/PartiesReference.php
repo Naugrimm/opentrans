@@ -8,7 +8,7 @@ use Naugrim\BMEcat\Nodes\BuyerIdRef;
 use Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\ShipmentPartiesReference;
-use Naugrim\OpenTrans\Nodes\SupplierIdRef;
+use Naugrim\BMEcat\Nodes\SupplierIdRef;
 
 class PartiesReference implements NodeInterface
 {
@@ -23,7 +23,7 @@ class PartiesReference implements NodeInterface
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\SupplierIdRef")
+     * @Serializer\Type("Naugrim\BMEcat\Nodes\SupplierIdRef")
      * @Serializer\SerializedName("bme:SUPPLIER_IDREF")
      *
      * @var SupplierIdRef
