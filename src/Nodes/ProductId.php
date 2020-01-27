@@ -4,12 +4,14 @@ namespace Naugrim\OpenTrans\Nodes;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\BMEcat\Nodes\SupplierPid;
 
 class ProductId implements NodeInterface
 {
     /**
      * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\SupplierPid")
+     * @Serializer\Type("Naugrim\BMEcat\Nodes\SupplierPid")
      * @Serializer\SerializedName("bme:SUPPLIER_PID")
      *
      * @var SupplierPid

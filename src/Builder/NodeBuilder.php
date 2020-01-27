@@ -4,7 +4,7 @@ namespace Naugrim\OpenTrans\Builder;
 
 use Naugrim\OpenTrans\Exception\InvalidSetterException;
 use Naugrim\OpenTrans\Exception\UnknownKeyException;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use ReflectionException;
 use ReflectionMethod;
 

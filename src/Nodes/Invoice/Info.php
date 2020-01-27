@@ -7,7 +7,7 @@ use /** @noinspection PhpUnusedAliasInspection */
 use Naugrim\OpenTrans\Builder\NodeBuilder;
 use Naugrim\OpenTrans\Exception\InvalidSetterException;
 use Naugrim\OpenTrans\Exception\UnknownKeyException;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Party;
 
 class Info implements NodeInterface

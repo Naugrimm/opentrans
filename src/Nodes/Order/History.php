@@ -6,7 +6,7 @@ use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
 use Naugrim\OpenTrans\Nodes\Agreement;
 use Naugrim\OpenTrans\Nodes\Catalog\Reference;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class History implements NodeInterface
 {

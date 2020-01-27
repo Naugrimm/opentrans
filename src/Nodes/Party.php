@@ -4,6 +4,7 @@ namespace Naugrim\OpenTrans\Nodes;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class Party implements NodeInterface
 {

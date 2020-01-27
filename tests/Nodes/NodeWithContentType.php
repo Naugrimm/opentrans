@@ -3,7 +3,7 @@
 namespace Naugrim\OpenTrans\Tests\Nodes;
 
 use Naugrim\OpenTrans\Nodes\Concerns\HasContentTypeAttribute;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class NodeWithContentType implements NodeInterface
 {

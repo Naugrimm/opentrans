@@ -4,7 +4,7 @@ namespace Naugrim\OpenTrans\Nodes\Order;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Product\PriceFix;
 use Naugrim\OpenTrans\Nodes\ProductId;
 

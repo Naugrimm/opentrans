@@ -5,7 +5,7 @@ namespace Naugrim\OpenTrans\Nodes\Invoice;
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
 use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Order\History;
 
 /**

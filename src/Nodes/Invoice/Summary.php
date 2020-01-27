@@ -9,7 +9,7 @@ use Naugrim\OpenTrans\Exception\InvalidSetterException;
 use Naugrim\OpenTrans\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 
 /**

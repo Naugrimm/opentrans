@@ -4,7 +4,7 @@ namespace Naugrim\OpenTrans\Nodes\Tax;
 
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
-use Naugrim\OpenTrans\Nodes\NodeInterface;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class DetailsFix implements NodeInterface
 {
