@@ -22,7 +22,7 @@ class OrderTest extends TestCase
         $this->serializer = SerializerBuilder::create()->build();
     }
 
-    public function testMinimalInvoice()
+    public function testMinimalOrder()
     {
         $node = NodeBuilder::fromArray([
             'header' => [
