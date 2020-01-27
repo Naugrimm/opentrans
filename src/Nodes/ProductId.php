@@ -6,6 +6,8 @@ use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\SupplierPid;
+use Naugrim\BMEcat\Nodes\BuyerPid;
+use Naugrim\BMEcat\Nodes\InternationalPid;
 
 class ProductId implements NodeInterface
 {
@@ -56,7 +58,7 @@ class ProductId implements NodeInterface
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\InternationalPid")
+     * @Serializer\Type("Naugrim\BMEcat\Nodes\InternationalPid")
      * @Serializer\SerializedName("bme:INTERNATIONAL_PID")
      *
      * @var InternationalPid
@@ -65,7 +67,7 @@ class ProductId implements NodeInterface
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\BuyerPid")
+     * @Serializer\Type("Naugrim\BMEcat\Nodes\BuyerPid")
      * @Serializer\SerializedName("bme:BUYER_PID")
      *
      * @var BuyerPid

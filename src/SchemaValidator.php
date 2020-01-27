@@ -3,8 +3,8 @@
 namespace Naugrim\OpenTrans;
 
 use DOMDocument;
-use Naugrim\OpenTrans\Exception\SchemaValidationException;
-use Naugrim\OpenTrans\Exception\UnsupportedVersionException;
+use Naugrim\BMEcat\Exception\SchemaValidationException;
+use Naugrim\BMEcat\Exception\UnsupportedVersionException;
 
 class SchemaValidator
 {

@@ -4,7 +4,7 @@ namespace Naugrim\OpenTrans\Tests\Nodes;
 
 use DateTimeImmutable;
 use JMS\Serializer\SerializerInterface;
-use Naugrim\OpenTrans\Builder\NodeBuilder;
+use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\OpenTrans\Nodes\OrderChange;
 use Naugrim\OpenTrans\SchemaValidator;
 use PHPUnit\Framework\TestCase;

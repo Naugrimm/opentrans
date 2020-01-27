@@ -5,9 +5,9 @@ namespace Naugrim\OpenTrans\Nodes;
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
-use Naugrim\OpenTrans\Builder\NodeBuilder;
-use Naugrim\OpenTrans\Exception\InvalidSetterException;
-use Naugrim\OpenTrans\Exception\UnknownKeyException;
+use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Exception\InvalidSetterException;
+use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\OrderChange\Header;
 use Naugrim\OpenTrans\Nodes\Order\Item;
