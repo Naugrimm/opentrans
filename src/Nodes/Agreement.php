@@ -5,6 +5,7 @@ namespace Naugrim\OpenTrans\Nodes;
 use /** @noinspection PhpUnusedAliasInspection */
     JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\BMEcat\Nodes\SupplierIdRef;
 use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\BMEcat\Exception\InvalidSetterException;
 use Naugrim\BMEcat\Exception\UnknownKeyException;
@@ -67,7 +68,7 @@ class Agreement implements NodeInterface
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\SupplierIdRef")
+     * @Serializer\Type("Naugrim\BMEcat\Nodes\SupplierIdRef")
      * @Serializer\SerializedName("bme:SUPPLIER_IDREF")
      *
      * @var SupplierIdRef

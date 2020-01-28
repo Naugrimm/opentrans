@@ -8,6 +8,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\SupplierPid;
 use Naugrim\BMEcat\Nodes\BuyerPid;
 use Naugrim\BMEcat\Nodes\InternationalPid;
+use Naugrim\BMEcat\Nodes\SupplierIdRef;
 
 class ProductId implements NodeInterface
 {
@@ -22,7 +23,7 @@ class ProductId implements NodeInterface
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\SupplierIdRef")
+     * @Serializer\Type("Naugrim\BMEcat\Nodes\SupplierIdRef")
      * @Serializer\SerializedName("bme:SUPPLIER_IDREF")
      *
      * @var SupplierIdRef
