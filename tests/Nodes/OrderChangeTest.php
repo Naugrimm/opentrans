@@ -28,7 +28,7 @@ class OrderChangeTest extends TestCase
             'header' => [
                 'info' => [
                     'id' => 'order-id-1',
-                    'date' => (new DateTimeImmutable())->format('Y-m-d'),
+                    'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
                     'sequenceId' => 1,
                     'parties' => [
                         [
