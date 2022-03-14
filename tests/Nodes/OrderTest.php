@@ -47,10 +47,10 @@ class OrderTest extends TestCase
                             'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
                             'parties' => [
                                 [
-                                    'id' => 'org.de.supplier'
+                                    'id' => ['value' => 'org.de.supplier', 'type' => 'supplier']
                                 ],
                                 [
-                                    'id' => 'org.de.buyer'
+                                    'id' => ['value' => 'org.de.buyer', 'type' => 'buyer']
                                 ],
                             ],
                             'partiesReference' => [
@@ -97,10 +97,10 @@ class OrderTest extends TestCase
                             'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
                             'parties' => [
                                 [
-                                    'id' => 'org.de.supplier'
+                                    'id' => ['value' => 'org.de.supplier']
                                 ],
                                 [
-                                    'id' => 'org.de.buyer'
+                                    'id' => ['value' => 'org.de.buyer', 'type' => 'buyer']
                                 ],
                             ],
                             'partiesReference' => [
