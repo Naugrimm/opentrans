@@ -6,10 +6,10 @@
       <INVOICE_DATE><![CDATA[2020-01-27]]></INVOICE_DATE>
       <PARTIES>
         <PARTY>
-          <bme:PARTY_ID><![CDATA[org.de.issuer]]></bme:PARTY_ID>
+          <bme:PARTY_ID type="issuer"><![CDATA[org.de.issuer]]></bme:PARTY_ID>
         </PARTY>
         <PARTY>
-          <bme:PARTY_ID><![CDATA[org.de.rcpt]]></bme:PARTY_ID>
+          <bme:PARTY_ID type="buyer"><![CDATA[org.de.rcpt]]></bme:PARTY_ID>
         </PARTY>
       </PARTIES>
       <INVOICE_ISSUER_IDREF><![CDATA[org.de.issuer]]></INVOICE_ISSUER_IDREF>

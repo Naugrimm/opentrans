@@ -32,10 +32,10 @@ class OrderChangeTest extends TestCase
                     'sequenceId' => 1,
                     'parties' => [
                         [
-                            'id' => 'org.de.supplier'
+                            'id' => ['value' => 'org.de.supplier', 'type' => 'supplier']
                         ],
                         [
-                            'id' => 'org.de.buyer'
+                            'id' => ['value' => 'org.de.buyer', 'type' => 'buyer']
                         ],
                     ],
                     'partiesReference' => [

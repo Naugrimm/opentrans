@@ -31,10 +31,10 @@ class OrderTest extends TestCase
                     'date' => (new DateTimeImmutable())->format('Y-m-d'),
                     'parties' => [
                         [
-                            'id' => 'org.de.supplier'
+                            'id' => ['value' => 'org.de.supplier', 'type' => 'supplier']
                         ],
                         [
-                            'id' => 'org.de.buyer'
+                            'id' => ['value' => 'org.de.buyer', 'type' => 'buyer']
                         ],
                     ],
                     'partiesReference' => [
