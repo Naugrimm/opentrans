@@ -1,5 +1,5 @@
 {
-    "name": "naugrim/opentrans",
+    "name": "bennsen/opentrans",
     "description": "A library to create openTRANS compatible XML documents.",
     "type": "library",
     "license": "MIT",
