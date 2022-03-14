@@ -22,53 +22,63 @@ class OrderTest extends TestCase
         $this->serializer = SerializerBuilder::create()->build();
     }
 
-    public function testMinimalOrder()
+    /**
+     * @dataProvider provideOrderData
+     */
+    public function testOrder(string $file, array $data): void
     {
-        $node = NodeBuilder::fromArray([
-            'header' => [
-                'info' => [
-                    'id' => 'order-id-1',
-                    'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
-                    'parties' => [
-                        [
-                            'id' => ['value' => 'org.de.supplier']
-                        ],
-                        [
-                            'id' => ['value' => 'org.de.buyer', 'type' => 'buyer']
-                        ],
-                    ],
-                    'partiesReference' => [
-                        'buyerIdRef' => [
-                            'value' => 'org.de.buyer',
-                        ],
-                        'supplierIdRef' => [
-                            'value' => 'org.de.buyer',
-                        ],
-                    ]
-                ]
-            ],
-            'items' => [
-                [
-                    'lineItemId' => 'line-item-id-1',
-                    'productId' => [
-                        'supplierPid' => [
-                            'value' => 'product-number-1'
-                        ]
-                    ],
-                    'quantity' => 10,
-                    'orderUnit' => 'C62',
-                ]
-            ],
-            'summary' => [
-                'totalItemNum' => 1,
-            ]
-        ], new Order());
-
-
+        $node = NodeBuilder::fromArray($data, new Order());
         $xml = $this->serializer->serialize($node, 'xml');
 
-        $this->assertEquals(file_get_contents(__DIR__.'/../assets/minimal_valid_order.xml'), $xml);
-
+        $this->assertEquals(file_get_contents(__DIR__ . $file), $xml);
         $this->assertTrue(SchemaValidator::isValid($xml, '2.1'));
+    }
+
+    public function provideOrderData(): array
+    {
+        return [
+            [
+                'file' => '/../assets/minimal_valid_order.xml',
+                'data' => [
+                    'header' => [
+                        'info' => [
+                            'id' => 'order-id-1',
+                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'parties' => [
+                                [
+                                    'id' => ['value' => 'org.de.supplier']
+                                ],
+                                [
+                                    'id' => ['value' => 'org.de.buyer', 'type' => 'buyer']
+                                ],
+                            ],
+                            'partiesReference' => [
+                                'buyerIdRef' => [
+                                    'value' => 'org.de.buyer',
+                                ],
+                                'supplierIdRef' => [
+                                    'value' => 'org.de.buyer',
+                                ],
+                            ]
+                        ]
+                    ],
+                    'items' => [
+                        [
+                            'lineItemId' => 'line-item-id-1',
+                            'productId' => [
+                                'supplierPid' => [
+                                    'value' => 'product-number-1'
+                                ]
+                            ],
+                            'quantity' => 10,
+                            'orderUnit' => 'C62',
+                        ]
+                    ],
+                    'summary' => [
+                        'totalItemNum' => 1,
+                    ]
+                ]
+            ]
+        ];
     }
 }
