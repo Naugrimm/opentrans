@@ -2,10 +2,9 @@
 
 namespace Naugrim\OpenTrans\Nodes\OrderResponse;
 
-use /** @noinspection PhpUnusedAliasInspection */
-    JMS\Serializer\Annotation as Serializer;
-use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
+use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 
 /**
  * @Serializer\AccessorOrder("custom", custom = {"controlInfo", "info"})

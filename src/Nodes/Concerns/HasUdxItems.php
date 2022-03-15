@@ -25,7 +25,7 @@ trait HasUdxItems
         $this->udxItem = new UdxAggregate();
 
         foreach ($udxItems as $udxItem) {
-            if (! $udxItem instanceof UdxInterface) {
+            if (!$udxItem instanceof UdxInterface) {
                 $udxItem = $this->convertToUdx($udxItem);
             }
 

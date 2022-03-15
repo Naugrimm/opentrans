@@ -2,10 +2,9 @@
 
 namespace Naugrim\OpenTrans\Nodes\Mime;
 
-use /** @noinspection PhpUnusedAliasInspection */
-    JMS\Serializer\Annotation as Serializer;
-use Naugrim\OpenTrans\Nodes\Concerns\HasLangAttribute;
+use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\Concerns\HasLangAttribute;
 
 class Embedded implements NodeInterface
 {
@@ -91,5 +90,4 @@ class Embedded implements NodeInterface
         $this->fileSize = $fileSize;
         return $this;
     }
-
 }
