@@ -7,10 +7,10 @@
       <ORDERCHANGE_SEQUENCE_ID><![CDATA[1]]></ORDERCHANGE_SEQUENCE_ID>
       <PARTIES>
         <PARTY>
-          <bme:PARTY_ID><![CDATA[org.de.supplier]]></bme:PARTY_ID>
+          <bme:PARTY_ID type="supplier"><![CDATA[org.de.supplier]]></bme:PARTY_ID>
         </PARTY>
         <PARTY>
-          <bme:PARTY_ID><![CDATA[org.de.buyer]]></bme:PARTY_ID>
+          <bme:PARTY_ID type="buyer"><![CDATA[org.de.buyer]]></bme:PARTY_ID>
         </PARTY>
       </PARTIES>
       <ORDER_PARTIES_REFERENCE>
