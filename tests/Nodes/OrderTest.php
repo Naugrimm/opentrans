@@ -6,6 +6,7 @@ use DateTimeImmutable;
 use JMS\Serializer\SerializerInterface;
 use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\OpenTrans\Nodes\Order;
+use Naugrim\OpenTrans\Nodes\Udx;
 use Naugrim\OpenTrans\SchemaValidator;
 use PHPUnit\Framework\TestCase;
 use \JMS\Serializer\SerializerBuilder;
@@ -38,6 +39,56 @@ class OrderTest extends TestCase
     {
         return [
             [
+                'file' => '/../assets/minimal_valid_order_with_udx.xml',
+                'data' => [
+                    'header' => [
+                        'info' => [
+                            'id' => 'order-id-1',
+                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'parties' => [
+                                [
+                                    'id' => ['value' => 'org.de.supplier'],
+                                ],
+                                [
+                                    'id' => ['value' => 'org.de.buyer'],
+                                ],
+                            ],
+                            'partiesReference' => [
+                                'buyerIdRef' => [
+                                    'value' => 'org.de.buyer',
+                                ],
+                                'supplierIdRef' => [
+                                    'value' => 'org.de.buyer',
+                                ],
+                            ]
+                        ]
+                    ],
+                    'items' => [
+                        [
+                            'lineItemId' => 'line-item-id-1',
+                            'productId' => [
+                                'supplierPid' => [
+                                    'value' => 'product-number-1'
+                                ]
+                            ],
+                            'quantity' => 10,
+                            'orderUnit' => 'C62',
+                            'udxItems' => [
+                                [
+                                    'vendor' => 'acme',
+                                    'name' => 'abc',
+                                    'value' => '123',
+                                ],
+                                (new Udx())->setValue('sfoo')->setName('bar')->setVendor('company')
+                            ]
+                        ]
+                    ],
+                    'summary' => [
+                        'totalItemNum' => 1,
+                    ]
+                ]
+            ],
+            [
                 'file' => '/../assets/minimal_valid_order.xml',
                 'data' => [
                     'header' => [
@@ -46,10 +97,10 @@ class OrderTest extends TestCase
                             'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
                             'parties' => [
                                 [
-                                    'id' => ['value' => 'org.de.supplier']
+                                    'id' => ['value' => 'org.de.supplier'],
                                 ],
                                 [
-                                    'id' => ['value' => 'org.de.buyer', 'type' => 'buyer']
+                                    'id' => ['value' => 'org.de.buyer', 'type' => 'buyer'],
                                 ],
                             ],
                             'partiesReference' => [
