@@ -2,8 +2,7 @@
 
 namespace Naugrim\OpenTrans\Nodes\OrderResponse;
 
-use /** @noinspection PhpUnusedAliasInspection */
-    JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Product\PriceFix;
 use Naugrim\OpenTrans\Nodes\ProductId;
@@ -139,7 +138,7 @@ class Item implements NodeInterface
     /**
      * @return PriceFix
      */
-    public function getPriceFix():PriceFix
+    public function getPriceFix(): PriceFix
     {
         return $this->priceFix;
     }

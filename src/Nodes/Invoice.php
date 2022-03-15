@@ -2,12 +2,11 @@
 
 namespace Naugrim\OpenTrans\Nodes;
 
-use /** @noinspection PhpUnusedAliasInspection */
-    JMS\Serializer\Annotation as Serializer;
-use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\BMEcat\Exception\InvalidSetterException;
 use Naugrim\BMEcat\Exception\UnknownKeyException;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\Invoice\Header;
 use Naugrim\OpenTrans\Nodes\Invoice\Item;
@@ -98,7 +97,7 @@ class Invoice implements NodeInterface
      * @param Item $item
      * @return $this
      */
-    public function addItem(Item $item) : Invoice
+    public function addItem(Item $item): Invoice
     {
         $this->items[] = $item;
         return $this;

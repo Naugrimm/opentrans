@@ -2,10 +2,13 @@
 
 namespace Naugrim\OpenTrans\Nodes\Concerns;
 
+use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 trait HasTypeAttribute
 {
+    use CanAssertConstantValue;
+
     /**
      * @Serializer\Expose
      * @Serializer\Type("string")
@@ -30,6 +33,8 @@ trait HasTypeAttribute
      */
     public function setType(string $type): NodeInterface
     {
+        $this->assertValidConstant($type);
+
         $this->type = $type;
         /** @var NodeInterface $this */
         return $this;

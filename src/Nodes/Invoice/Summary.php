@@ -2,14 +2,13 @@
 
 namespace Naugrim\OpenTrans\Nodes\Invoice;
 
-use /** @noinspection PhpUnusedAliasInspection */
-    JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\BMEcat\Exception\InvalidSetterException;
 use Naugrim\BMEcat\Exception\UnknownKeyException;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
-use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 
 /**
@@ -86,7 +85,7 @@ class Summary implements NodeInterface
      * @param DetailsFix $tax
      * @return $this
      */
-    public function addTotalTax(DetailsFix $tax) : Summary
+    public function addTotalTax(DetailsFix $tax): Summary
     {
         $this->totalTax[] = $tax;
         return $this;

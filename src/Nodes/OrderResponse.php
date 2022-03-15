@@ -2,12 +2,11 @@
 
 namespace Naugrim\OpenTrans\Nodes;
 
-use /** @noinspection PhpUnusedAliasInspection */
-    JMS\Serializer\Annotation as Serializer;
-use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\BMEcat\Exception\InvalidSetterException;
 use Naugrim\BMEcat\Exception\UnknownKeyException;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Header;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Item;
@@ -98,7 +97,7 @@ class OrderResponse implements NodeInterface
      * @param Item $item
      * @return $this
      */
-    public function addItem(Item $item) : OrderResponse
+    public function addItem(Item $item): OrderResponse
     {
         $this->items[] = $item;
         return $this;

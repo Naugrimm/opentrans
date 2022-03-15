@@ -28,14 +28,14 @@ class OrderChangeTest extends TestCase
             'header' => [
                 'info' => [
                     'id' => 'order-id-1',
-                    'date' => (new DateTimeImmutable())->format('Y-m-d'),
+                    'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
                     'sequenceId' => 1,
                     'parties' => [
                         [
-                            'id' => 'org.de.supplier'
+                            'id' => ['value' => 'org.de.supplier', 'type' => 'supplier']
                         ],
                         [
-                            'id' => 'org.de.buyer'
+                            'id' => ['value' => 'org.de.buyer', 'type' => 'buyer']
                         ],
                     ],
                     'partiesReference' => [

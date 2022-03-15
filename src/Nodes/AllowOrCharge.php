@@ -2,14 +2,13 @@
 
 namespace Naugrim\OpenTrans\Nodes;
 
-use /** @noinspection PhpUnusedAliasInspection */
-    JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 class AllowOrCharge implements NodeInterface
 {
-   use HasTypeAttribute;
+    use HasTypeAttribute;
 
     /**
      * @Serializer\Expose

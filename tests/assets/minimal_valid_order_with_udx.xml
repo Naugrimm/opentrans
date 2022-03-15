@@ -9,7 +9,7 @@
           <bme:PARTY_ID><![CDATA[org.de.supplier]]></bme:PARTY_ID>
         </PARTY>
         <PARTY>
-          <bme:PARTY_ID type="buyer"><![CDATA[org.de.buyer]]></bme:PARTY_ID>
+          <bme:PARTY_ID><![CDATA[org.de.buyer]]></bme:PARTY_ID>
         </PARTY>
       </PARTIES>
       <ORDER_PARTIES_REFERENCE>
@@ -26,6 +26,10 @@
       </PRODUCT_ID>
       <QUANTITY>10.0</QUANTITY>
       <bme:ORDER_UNIT><![CDATA[C62]]></bme:ORDER_UNIT>
+      <ITEM_UDX>
+        <UDX.acme.abc><![CDATA[123]]></UDX.acme.abc>
+        <UDX.company.bar><![CDATA[sfoo]]></UDX.company.bar>
+      </ITEM_UDX>
     </ORDER_ITEM>
   </ORDER_ITEM_LIST>
   <ORDER_SUMMARY>
