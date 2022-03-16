@@ -6,10 +6,11 @@
       <ORDER_DATE><![CDATA[2020-01-27]]></ORDER_DATE>
       <PARTIES>
         <PARTY>
-          <bme:PARTY_ID><![CDATA[org.de.supplier]]></bme:PARTY_ID>
+          <bme:PARTY_ID type="supplier_specific"><![CDATA[supplier ID]]></bme:PARTY_ID>
+          <PARTY_ROLE><![CDATA[supplier]]></PARTY_ROLE>
         </PARTY>
         <PARTY>
-          <bme:PARTY_ID><![CDATA[org.de.buyer]]></bme:PARTY_ID>
+          <bme:PARTY_ID type="buyer"><![CDATA[org.de.buyer]]></bme:PARTY_ID>
         </PARTY>
       </PARTIES>
       <ORDER_PARTIES_REFERENCE>
