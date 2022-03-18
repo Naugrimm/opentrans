@@ -3,12 +3,13 @@
 namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\CanAssertConstantValue;
 
 /**
  * @Serializer\XmlRoot("PARTY_ROLE")
  */
-class PartyRole
+class PartyRole implements NodeInterface
 {
     use CanAssertConstantValue;
 
@@ -33,8 +34,7 @@ class PartyRole
 
     /**
      * @Serializer\Type("string")
-     * @Serializer\Inline
-     * @Serializer\SerializedName("PARTY_ROLE")
+     * @Serializer\XmlValue
      * @var string
      */
     protected $role = '';
