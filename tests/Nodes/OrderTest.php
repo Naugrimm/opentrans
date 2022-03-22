@@ -90,6 +90,71 @@ class OrderTest extends TestCase
                 ]
             ],
             [
+                'file' => '/../assets/minimal_valid_order_with_address.xml',
+                'data' => [
+                    'header' => [
+                        'info' => [
+                            'id' => 'order-id-1',
+                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'parties' => [
+                                [
+                                    'id' => ['value' => 'org.de.supplier']
+                                ],
+                                [
+                                    'id' => ['value' => 'org.de.buyer', 'type' => 'buyer'],
+                                    'address' => [
+                                        'name' => 'Someone',
+                                        'name2' => 'Else',
+                                        'zip' => '98765',
+                                        'street' => 'Some street',
+                                        'city' => 'Somewhere',
+                                        'country' => 'Germany',
+                                        'countryCoded' => 'DE',
+                                        'contactDetails' => [
+                                            'id' => '1234-098765',
+                                            'firstName' => 'John',
+                                            'name' => 'Doe',
+                                            'title' => 'Miss',
+                                            'academicTitle' => 'Dr',
+                                            'phone' => [
+                                                'value' => '+49 321 654987',
+                                                'type' => 'mobile'
+                                            ]
+                                        ],
+                                        'phone' => [
+                                            'value' => '+49 123 456789 - 0'
+                                        ]
+                                    ]
+                                ],
+                            ],
+                            'partiesReference' => [
+                                'buyerIdRef' => [
+                                    'value' => 'org.de.buyer',
+                                ],
+                                'supplierIdRef' => [
+                                    'value' => 'org.de.buyer',
+                                ],
+                            ]
+                        ]
+                    ],
+                    'items' => [
+                        [
+                            'lineItemId' => 'line-item-id-1',
+                            'productId' => [
+                                'supplierPid' => [
+                                    'value' => 'product-number-1'
+                                ]
+                            ],
+                            'quantity' => 10,
+                            'orderUnit' => 'C62',
+                        ]
+                    ],
+                    'summary' => [
+                        'totalItemNum' => 1,
+                    ]
+                ]
+            ],
+            [
                 'file' => '/../assets/minimal_valid_order.xml',
                 'data' => [
                     'header' => [
