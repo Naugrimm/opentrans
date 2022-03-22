@@ -3,7 +3,6 @@
 namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
-use Naugrim\BMEcat\Nodes\Address;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
@@ -30,7 +29,7 @@ class Party implements NodeInterface
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\Address")
+     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Address")
      * @Serializer\SerializedName ("ADDRESS")
      * @var Address
      */
