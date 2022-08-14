@@ -7,6 +7,7 @@ use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\BMEcat\Exception\InvalidSetterException;
 use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\Party;
 
 class Info implements NodeInterface
@@ -29,6 +30,14 @@ class Info implements NodeInterface
      */
     protected $date;
 
+    /**
+     * @Serializer\Expose
+     * @Serializer\Type("Naugrim\OpenTrans\Nodes\DeliveryDate")
+     * @Serializer\SerializedName("DELIVERY_DATE")
+     *
+     * @var DeliveryDate
+     */
+    protected $deliveryDate;
 
     /**
      *
@@ -49,6 +58,15 @@ class Info implements NodeInterface
      * @var PartiesReference
      */
     protected $partiesReference;
+
+    /**
+     * @Serializer\Expose
+     * @Serializer\Type("bool")
+     * @Serializer\SerializedName("PARTIAL_SHIPMENT_ALLOWED")
+     *
+     * @var boolean
+     */
+    protected $partialShipmentAllowed;
 
     /**
      * @return string
@@ -83,6 +101,17 @@ class Info implements NodeInterface
     public function setDate(string $date): Info
     {
         $this->date = $date;
+        return $this;
+    }
+
+    public function getDeliveryDate(): DeliveryDate
+    {
+        return $this->deliveryDate;
+    }
+
+    public function setDeliveryDate(DeliveryDate $deliveryDate): self
+    {
+        $this->deliveryDate = $deliveryDate;
         return $this;
     }
 
@@ -137,5 +166,19 @@ class Info implements NodeInterface
     {
         $this->partiesReference = $partiesReference;
         return $this;
+    }
+
+    public function setPartialShipmentAllowed(bool $partialShipmentAllowed): self
+    {
+        $this->partialShipmentAllowed = $partialShipmentAllowed;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPartialShipmentAllowed(): bool
+    {
+        return $this->partialShipmentAllowed;
     }
 }
