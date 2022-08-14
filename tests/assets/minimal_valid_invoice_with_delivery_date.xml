@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<INVOICE xmlns="http://www.opentrans.org/XMLSchema/2.1" xmlns:bme="http://www.bmecat.org/bmecat/2005" version="2.1">
+  <INVOICE_HEADER>
+    <INVOICE_INFO>
+      <INVOICE_ID><![CDATA[invoice-id-1]]></INVOICE_ID>
+      <INVOICE_DATE><![CDATA[2020-01-27]]></INVOICE_DATE>
+      <DELIVERY_DATE>
+        <DELIVERY_START_DATE><![CDATA[2020-02-27]]></DELIVERY_START_DATE>
+        <DELIVERY_END_DATE><![CDATA[2020-02-27]]></DELIVERY_END_DATE>
+      </DELIVERY_DATE>
+      <PARTIES>
+        <PARTY>
+          <bme:PARTY_ID type="issuer"><![CDATA[org.de.issuer]]></bme:PARTY_ID>
+        </PARTY>
+        <PARTY>
+          <bme:PARTY_ID type="buyer"><![CDATA[org.de.rcpt]]></bme:PARTY_ID>
+        </PARTY>
+      </PARTIES>
+      <INVOICE_ISSUER_IDREF><![CDATA[org.de.issuer]]></INVOICE_ISSUER_IDREF>
+      <INVOICE_RECIPIENT_IDREF><![CDATA[org.de.rcpt]]></INVOICE_RECIPIENT_IDREF>
+      <bme:CURRENCY><![CDATA[EUR]]></bme:CURRENCY>
+    </INVOICE_INFO>
+  </INVOICE_HEADER>
+  <INVOICE_ITEM_LIST>
+    <INVOICE_ITEM>
+      <LINE_ITEM_ID><![CDATA[line-item-id-1]]></LINE_ITEM_ID>
+      <PRODUCT_ID/>
+      <QUANTITY>10.0</QUANTITY>
+      <bme:ORDER_UNIT><![CDATA[C62]]></bme:ORDER_UNIT>
+      <PRODUCT_PRICE_FIX>
+        <bme:PRICE_AMOUNT>123.0</bme:PRICE_AMOUNT>
+      </PRODUCT_PRICE_FIX>
+      <PRICE_LINE_AMOUNT>1230.0</PRICE_LINE_AMOUNT>
+    </INVOICE_ITEM>
+  </INVOICE_ITEM_LIST>
+  <INVOICE_SUMMARY>
+    <TOTAL_ITEM_NUM>1</TOTAL_ITEM_NUM>
+    <NET_VALUE_GOODS>1230.0</NET_VALUE_GOODS>
+    <TOTAL_AMOUNT>1463.7</TOTAL_AMOUNT>
+    <TOTAL_TAX>
+      <TAX_DETAILS_FIX>
+        <TAX_AMOUNT>233.7</TAX_AMOUNT>
+      </TAX_DETAILS_FIX>
+    </TOTAL_TAX>
+  </INVOICE_SUMMARY>
+</INVOICE>

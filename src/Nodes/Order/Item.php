@@ -5,6 +5,7 @@ namespace Naugrim\OpenTrans\Nodes\Order;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasUdxItems;
+use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\Product\PriceFix;
 use Naugrim\OpenTrans\Nodes\ProductId;
 
@@ -47,6 +48,24 @@ class Item implements NodeInterface
      * @var string
      */
     protected $orderUnit;
+
+    /**
+     * @Serializer\Expose
+     * @Serializer\Type("bool")
+     * @Serializer\SerializedName("PARTIAL_SHIPMENT_ALLOWED")
+     *
+     * @var boolean
+     */
+    protected $partialShipmentAllowed;
+
+    /**
+     * @Serializer\Expose
+     * @Serializer\Type("Naugrim\OpenTrans\Nodes\DeliveryDate")
+     * @Serializer\SerializedName("DELIVERY_DATE")
+     *
+     * @var DeliveryDate
+     */
+    protected $deliveryDate;
 
     /**
      * @Serializer\Expose
@@ -172,5 +191,30 @@ class Item implements NodeInterface
     {
         $this->priceLineAmount = $priceLineAmount;
         return $this;
+    }
+
+    public function getDeliveryDate(): DeliveryDate
+    {
+        return $this->deliveryDate;
+    }
+
+    public function setDeliveryDate(DeliveryDate $deliveryDate): self
+    {
+        $this->deliveryDate = $deliveryDate;
+        return $this;
+    }
+
+    public function setPartialShipmentAllowed(bool $partialShipmentAllowed): self
+    {
+        $this->partialShipmentAllowed = $partialShipmentAllowed;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPartialShipmentAllowed(): bool
+    {
+        return $this->partialShipmentAllowed;
     }
 }
