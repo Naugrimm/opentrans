@@ -52,7 +52,7 @@ class PartyRole implements NodeInterface
      */
     public function setRole(string $role): void
     {
-        $this->assertValidConstant($role);
+        self::assertValidConstant($role);
         $this->role = $role;
     }
 }
