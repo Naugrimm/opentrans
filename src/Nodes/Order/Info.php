@@ -9,6 +9,7 @@ use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\Party;
+use Naugrim\OpenTrans\Nodes\Payment\Payment;
 
 class Info implements NodeInterface
 {
@@ -67,6 +68,14 @@ class Info implements NodeInterface
      * @var boolean
      */
     protected $partialShipmentAllowed;
+
+    /**
+     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Payment\Payment")
+     * @Serializer\SerializedName("PAYMENT")
+     *
+     * @var Payment
+     */
+    protected $payment;
 
     /**
      * @return string
@@ -180,5 +189,16 @@ class Info implements NodeInterface
     public function isPartialShipmentAllowed(): bool
     {
         return $this->partialShipmentAllowed;
+    }
+
+    public function getPayment(): Payment
+    {
+        return $this->payment;
+    }
+
+    public function setPayment(Payment $payment): Info
+    {
+        $this->payment = $payment;
+        return $this;
     }
 }

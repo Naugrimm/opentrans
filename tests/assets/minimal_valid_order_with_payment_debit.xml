@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ORDER xmlns="http://www.opentrans.org/XMLSchema/2.1" type="standard" xmlns:bme="http://www.bmecat.org/bmecat/2005" version="2.1">
+  <ORDER_HEADER>
+    <ORDER_INFO>
+      <ORDER_ID><![CDATA[order-id-1]]></ORDER_ID>
+      <ORDER_DATE><![CDATA[2020-01-27]]></ORDER_DATE>
+      <PARTIES>
+        <PARTY>
+          <bme:PARTY_ID><![CDATA[org.de.supplier]]></bme:PARTY_ID>
+        </PARTY>
+        <PARTY>
+          <bme:PARTY_ID type="buyer"><![CDATA[org.de.buyer]]></bme:PARTY_ID>
+        </PARTY>
+      </PARTIES>
+      <ORDER_PARTIES_REFERENCE>
+        <bme:BUYER_IDREF><![CDATA[org.de.buyer]]></bme:BUYER_IDREF>
+        <bme:SUPPLIER_IDREF><![CDATA[org.de.buyer]]></bme:SUPPLIER_IDREF>
+      </ORDER_PARTIES_REFERENCE>
+      <PAYMENT>
+        <DEBIT>true</DEBIT>
+      </PAYMENT>
+    </ORDER_INFO>
+  </ORDER_HEADER>
+  <ORDER_ITEM_LIST>
+    <ORDER_ITEM>
+      <LINE_ITEM_ID><![CDATA[line-item-id-1]]></LINE_ITEM_ID>
+      <PRODUCT_ID>
+        <bme:SUPPLIER_PID><![CDATA[product-number-1]]></bme:SUPPLIER_PID>
+      </PRODUCT_ID>
+      <QUANTITY>10.0</QUANTITY>
+      <bme:ORDER_UNIT><![CDATA[C62]]></bme:ORDER_UNIT>
+    </ORDER_ITEM>
+  </ORDER_ITEM_LIST>
+  <ORDER_SUMMARY>
+    <TOTAL_ITEM_NUM>1</TOTAL_ITEM_NUM>
+  </ORDER_SUMMARY>
+</ORDER>
