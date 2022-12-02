@@ -33,14 +33,12 @@ class Account implements NodeInterface
 
     /**
      * @Serializer\SerializedName("BANK_NAME")
-     * @Serializer\XmlValue
      * @var string
      */
     protected $bankName;
 
     /**
      * @Serializer\SerializedName("BANK_COUNTRY")
-     * @Serializer\XmlValue
      * @var string
      */
     protected $bankCountry;
