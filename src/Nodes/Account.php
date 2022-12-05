@@ -32,15 +32,15 @@ class Account implements NodeInterface
     protected $bankCode;
 
     /**
+     * @Serializer\Expose
      * @Serializer\SerializedName("BANK_NAME")
-     * @Serializer\XmlValue
      * @var string
      */
     protected $bankName;
 
     /**
+     * @Serializer\Expose
      * @Serializer\SerializedName("BANK_COUNTRY")
-     * @Serializer\XmlValue
      * @var string
      */
     protected $bankCountry;

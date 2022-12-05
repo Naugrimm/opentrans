@@ -10,6 +10,5 @@ class BankCode implements NodeInterface
 {
     use HasTypeAttribute, HasStringValue;
 
-    public const TYPE_IBAN = 'iban';
-    public const STANDARD = 'standard';
+    public const TYPE_BIC = 'bic';
 }

@@ -33,7 +33,7 @@ trait HasTypeAttribute
      */
     public function setType(string $type): NodeInterface
     {
-        $this->assertValidConstant($type);
+        self::assertValidConstant($type);
 
         $this->type = $type;
         /** @var NodeInterface $this */
