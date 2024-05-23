@@ -1,8 +1,25 @@
 <?php
 
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
+declare(strict_types=1);
 
-return function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(SetList::PSR_12);
-};
+use PHP_CodeSniffer\Standards\Generic\Sniffs\CodeAnalysis\AssignmentInConditionSniff;
+use PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff;
+use PhpCsFixer\Fixer\ClassNotation\ClassAttributesSeparationFixer;
+use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
+use Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer;
+use Symplify\CodingStandard\Fixer\Spacing\MethodChainingNewlineFixer;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+
+return ECSConfig::configure()
+    ->withPaths([__DIR__ . '/src'])
+    ->withRules([
+        SpaceAfterNotSniff::class,
+    ])
+    ->withPreparedSets(psr12: true, symplify: true, arrays: true, cleanCode: true)
+    ->withSkip([
+        AssignmentInConditionSniff::class,
+        ClassAttributesSeparationFixer::class,
+        OrderedClassElementsFixer::class,
+        MethodChainingNewlineFixer::class,
+        LineLengthFixer::class,
+    ]);
