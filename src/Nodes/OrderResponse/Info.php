@@ -142,7 +142,7 @@ class Info implements NodeInterface
      * @param Party $party
      * @return $this
      */
-    public function addParty(Party $party)
+    public function addParty(Party $party): static
     {
         $this->parties[] = $party;
         return $this;

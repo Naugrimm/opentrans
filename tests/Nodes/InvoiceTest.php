@@ -15,7 +15,7 @@ class InvoiceTest extends TestCase
     /**
      * @var SerializerInterface
      */
-    private $serializer;
+    private \JMS\Serializer\Serializer $serializer;
 
     protected function setUp(): void
     {
@@ -25,7 +25,7 @@ class InvoiceTest extends TestCase
     /**
      * @dataProvider provideInvoiceData
      */
-    public function testInvoice(string $file, array $data)
+    public function testInvoice(string $file, array $data): void
     {
         $node = NodeBuilder::fromArray($data, new Invoice());
         try {

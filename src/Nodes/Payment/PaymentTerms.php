@@ -13,16 +13,13 @@ class PaymentTerms implements NodeInterface
     #[Serializer\SerializedName('PAYMENT_TERMS')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Payment\PaymentTerm>')]
     #[Serializer\XmlList(entry: 'PAYMENT_TERM')]
-    private $terms;
+    private ?array $terms = null;
 
-    /**
-     *
-     * @var string
-     */
+    
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('VALUE_DATE')]
-    private $valueDate;
+    private ?string $valueDate = null;
 
     public function getTerms(): array
     {

@@ -12,61 +12,43 @@ use Naugrim\OpenTrans\Nodes\BankCode;
 
 class Payment implements NodeInterface
 {
-    /**
-     *
-     * @var Card|null
-     */
+    
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Payment\Card::class)]
     #[Serializer\SerializedName('CARD')]
-    private $card;
+    private ?\Naugrim\OpenTrans\Nodes\Payment\Card $card = null;
 
     /**
      * @var Account[]|null
      */
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Account>')]
     #[Serializer\XmlList(entry: 'ACCOUNT', inline: true)]
-    private $accounts;
+    private ?array $accounts = null;
 
-    /**
-     *
-     * @var bool|null
-     */
+    
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CASH')]
-    private $cash;
+    private ?bool $cash = null;
 
-    /**
-     *
-     * @var bool|null
-     */
+    
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('DEBIT')]
-    private $debit;
+    private ?bool $debit = null;
 
-    /**
-     *
-     * @var bool|null
-     */
+    
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CHECK')]
-    private $check;
+    private ?bool $check = null;
 
-    /**
-     *
-     * @var bool|null
-     */
+    
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CENTRAL_REGULATION')]
-    private $centralRegulation;
+    private ?bool $centralRegulation = null;
 
-    /**
-     *
-     * @var PaymentTerms
-     */
+    
     #[Serializer\Expose]
     #[Serializer\Type('Naugrim\BMEcat\Nodes\Payment\PaymentTerms')]
     #[Serializer\SerializedName('PAYMENT_TERMS')]
-    private $paymentTerms;
+    private ?\Naugrim\OpenTrans\Nodes\Payment\PaymentTerms $paymentTerms = null;
 
     public static function createCardPayment(
         string $cartType,
