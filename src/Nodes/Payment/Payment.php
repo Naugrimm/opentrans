@@ -108,7 +108,10 @@ class Payment implements NodeInterface
     public function setCard(Card $card): Payment
     {
         $this->card = $card;
-        $this->check = $this->debit = $this->cash = $this->accounts = null;
+        $this->check = null;
+        $this->debit = null;
+        $this->cash = null;
+        $this->accounts = null;
 
         return $this;
     }
@@ -127,7 +130,7 @@ class Payment implements NodeInterface
      */
     public function setAccounts(array $accounts): Payment
     {
-        if (empty($accounts)) {
+        if ($accounts === []) {
             return $this;
         }
 
@@ -135,6 +138,7 @@ class Payment implements NodeInterface
             if (!$account instanceof Account) {
                 $account = NodeBuilder::fromArray($account, new Account());
             }
+
             $this->addAccount($account);
         }
 
@@ -148,7 +152,10 @@ class Payment implements NodeInterface
         }
 
         $this->accounts[] = $account;
-        $this->cash = $this->debit = $this->check = $this->card = null;
+        $this->cash = null;
+        $this->debit = null;
+        $this->check = null;
+        $this->card = null;
 
         return $this;
     }
@@ -161,7 +168,10 @@ class Payment implements NodeInterface
     public function setCash(bool $cash): Payment
     {
         $this->cash = $cash;
-        $this->debit = $this->check = $this->card = $this->accounts = null;
+        $this->debit = null;
+        $this->check = null;
+        $this->card = null;
+        $this->accounts = null;
 
         return $this;
     }
@@ -174,7 +184,10 @@ class Payment implements NodeInterface
     public function setDebit(bool $debit): Payment
     {
         $this->debit = $debit;
-        $this->cash = $this->check = $this->accounts = $this->card = null;
+        $this->cash = null;
+        $this->check = null;
+        $this->accounts = null;
+        $this->card = null;
 
         return $this;
     }
@@ -187,7 +200,10 @@ class Payment implements NodeInterface
     public function setCheck(bool $check): Payment
     {
         $this->check = $check;
-        $this->cash = $this->debit = $this->accounts = $this->card = null;
+        $this->cash = null;
+        $this->debit = null;
+        $this->accounts = null;
+        $this->card = null;
 
         return $this;
     }

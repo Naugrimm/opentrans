@@ -29,6 +29,7 @@ class SchemaValidator
 
         $xmlValidate = new DOMDocument();
         $xmlValidate->loadXML($xml);
+
         $schemaFile = self::getSchemaForVersion($version, $type);
         $validated = $xmlValidate->schemaValidate($schemaFile);
         if (!$validated) {

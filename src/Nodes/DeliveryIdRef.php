@@ -9,5 +9,6 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 class DeliveryIdRef implements NodeInterface
 {
-    use HasTypeAttribute, HasStringValue;
+    use HasTypeAttribute;
+    use HasStringValue;
 }

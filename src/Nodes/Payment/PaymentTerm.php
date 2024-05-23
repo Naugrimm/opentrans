@@ -15,8 +15,8 @@ use ReflectionClass;
  */
 class PaymentTerm implements NodeInterface
 {
-    use HasTypeAttribute, HasStringValue;
-
+    use HasTypeAttribute;
+    use HasStringValue;
     /** Payment conditions normally applied. */
     public const BASIC = '1';
 

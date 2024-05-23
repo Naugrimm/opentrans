@@ -10,12 +10,12 @@ trait CanAssertConstantValue
     protected static function assertValidConstant(string $value, string $constantPrefix = ''): void
     {
         $constants = static::getClassConstants();
-        if (empty($constants)) {
+        if ($constants === []) {
             return;
         }
 
         foreach ($constants as $constant => $constantValue) {
-            if ($constantValue === $value && (empty($constantPrefix) || str_starts_with($constant, $constantPrefix))) {
+            if ($constantValue === $value && ($constantPrefix === '' || $constantPrefix === '0' || str_starts_with($constant, $constantPrefix))) {
                 return;
             }
         }

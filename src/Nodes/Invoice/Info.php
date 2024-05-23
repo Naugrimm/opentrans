@@ -144,8 +144,10 @@ class Info implements NodeInterface
             if (!$party instanceof Party) {
                 $party = NodeBuilder::fromArray($party, new Party());
             }
+
             $this->addParty($party);
         }
+
         return $this;
     }
 

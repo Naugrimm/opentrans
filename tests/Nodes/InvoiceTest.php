@@ -30,8 +30,8 @@ class InvoiceTest extends TestCase
         $node = NodeBuilder::fromArray($data, new Invoice());
         try {
             $xml = $this->serializer->serialize($node, 'xml');
-        } catch (\Throwable $exception) {
-            $this->fail($exception->getMessage());
+        } catch (\Throwable $throwable) {
+            $this->fail($throwable->getMessage());
         }
 
         $this->assertEquals(file_get_contents($file), $xml);

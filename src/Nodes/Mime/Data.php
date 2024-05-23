@@ -9,5 +9,6 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasStringValue;
 
 class Data implements NodeInterface
 {
-    use HasContentTypeAttribute, HasStringValue;
+    use HasContentTypeAttribute;
+    use HasStringValue;
 }

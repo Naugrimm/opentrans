@@ -32,6 +32,7 @@ class Party implements NodeInterface
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Address::class)]
     #[Serializer\SerializedName('ADDRESS')]
     protected $address;
+
     /**
      * @var Account
      */
