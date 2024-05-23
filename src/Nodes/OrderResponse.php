@@ -86,8 +86,10 @@ class OrderResponse implements NodeInterface
             if (!$item instanceof Item) {
                 $item = NodeBuilder::fromArray($item, new Item());
             }
+
             $this->addItem($item);
         }
+
         return $this;
     }
 

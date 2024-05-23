@@ -69,8 +69,10 @@ class Emails implements NodeInterface
             if (!$publicKey instanceof PublicKey) {
                 $publicKey = NodeBuilder::fromArray($publicKey, new PublicKey());
             }
+
             $this->addPublicKey($publicKey);
         }
+
         return $this;
     }
 

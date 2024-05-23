@@ -11,8 +11,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'totalAmount', 'allowOrChargesFix'])]
 class Summary implements NodeInterface
 {
-    use HasTotalItemNum, HasTotalAmount;
-
+    use HasTotalItemNum;
+    use HasTotalAmount;
     /**
      *
      * @var AllowOrChargesFix

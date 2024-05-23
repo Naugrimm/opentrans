@@ -14,8 +14,8 @@ use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'netValueGoods', 'netValueExtra', 'totalAmount', 'allowOrChargesFix', 'totalTax'])]
 class Summary implements NodeInterface
 {
-    use HasTotalItemNum, HasTotalAmount;
-
+    use HasTotalItemNum;
+    use HasTotalAmount;
     /**
      *
      *
@@ -25,6 +25,7 @@ class Summary implements NodeInterface
     #[Serializer\SerializedName('NET_VALUE_GOODS')]
     #[Serializer\Type('float')]
     protected $netValueGoods;
+
     /**
      *
      *
@@ -74,8 +75,10 @@ class Summary implements NodeInterface
             if (!$tax instanceof DetailsFix) {
                 $tax = NodeBuilder::fromArray($tax, new DetailsFix());
             }
+
             $this->addTotalTax($tax);
         }
+
         return $this;
     }
 

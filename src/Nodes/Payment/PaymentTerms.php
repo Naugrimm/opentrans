@@ -15,7 +15,7 @@ class PaymentTerms implements NodeInterface
     #[Serializer\XmlList(entry: 'PAYMENT_TERM')]
     private ?array $terms = null;
 
-    
+
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('VALUE_DATE')]
@@ -34,6 +34,7 @@ class PaymentTerms implements NodeInterface
 
         return $this;
     }
+
     public function addTerm(PaymentTerm $term): PaymentTerms
     {
         $this->terms[] = $term;

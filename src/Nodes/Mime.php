@@ -145,8 +145,10 @@ class Mime implements NodeInterface
             if (!$fileHashValue instanceof HashValue) {
                 $fileHashValue = NodeBuilder::fromArray($fileHashValue, new HashValue());
             }
+
             $this->addFileHashValue($fileHashValue);
         }
+
         return $this;
     }
 
@@ -181,8 +183,10 @@ class Mime implements NodeInterface
             if (!$embedded instanceof Embedded) {
                 $embedded = NodeBuilder::fromArray($embedded, new Embedded());
             }
+
             $this->addEmbedded($embedded);
         }
+
         return $this;
     }
 

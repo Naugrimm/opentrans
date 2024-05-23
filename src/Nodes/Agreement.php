@@ -260,8 +260,10 @@ class Agreement implements NodeInterface
             if (!$mimeInfo instanceof Mime) {
                 $mimeInfo = NodeBuilder::fromArray($mimeInfo, new Mime());
             }
+
             $this->addMimeInfo($mimeInfo);
         }
+
         return $this;
     }
 

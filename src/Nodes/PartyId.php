@@ -10,16 +10,25 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 #[Serializer\XmlRoot('PARTY_ID')]
 class PartyId implements NodeInterface
 {
-    use HasTypeAttribute, HasStringValue;
-
+    use HasTypeAttribute;
+    use HasStringValue;
     public const TYPE_SUPPLIER_SPECIFIC = 'supplier_specific';
+
     public const TYPE_BUYER_SPECIFIC = 'buyer_specific';
+
     public const TYPE_CUSTOMER_SPECIFIC = 'customer_specific';
+
     public const TYPE_PARTY_SPECIFIC = 'party_specific';
+
     public const TYPE_DUNS = 'duns';
+
     public const TYPE_ILN = 'iln';
+
     public const TYPE_GLN = 'gln';
+
     public const TYPE_BUYER = 'buyer';
+
     public const TYPE_ISSUER = 'issuer';
+
     public const TYPE_SUPPLIER = 'supplier';
 }

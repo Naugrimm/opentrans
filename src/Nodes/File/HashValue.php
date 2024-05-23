@@ -10,5 +10,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 class HashValue implements NodeInterface
 {
-    use HasTypeAttribute, HasStringValue, HasLangAttribute;
+    use HasTypeAttribute;
+    use HasStringValue;
+    use HasLangAttribute;
 }

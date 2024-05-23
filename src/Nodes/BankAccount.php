@@ -8,8 +8,9 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 class BankAccount implements NodeInterface
 {
-    use HasTypeAttribute, HasStringValue;
-
+    use HasTypeAttribute;
+    use HasStringValue;
     public const TYPE_IBAN = 'iban';
+
     public const STANDARD = 'standard';
 }

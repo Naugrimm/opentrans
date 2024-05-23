@@ -15,6 +15,8 @@ return RectorConfig::configure()
     ->withSets([
         JMSSetList::ANNOTATIONS_TO_ATTRIBUTES,
         SetList::TYPE_DECLARATION,
+        SetList::CODE_QUALITY,
+        SetList::CODING_STYLE,
     ])
     ->withPhpSets()
     ;
