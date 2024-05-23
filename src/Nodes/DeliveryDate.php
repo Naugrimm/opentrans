@@ -3,11 +3,7 @@
 namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
-use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
-use Naugrim\OpenTrans\Nodes\Party;
 
 class DeliveryDate implements NodeInterface
 {
@@ -71,5 +67,4 @@ class DeliveryDate implements NodeInterface
         $this->deliveryEndDate = $deliveryEndDate;
         return $this;
     }
-
 }

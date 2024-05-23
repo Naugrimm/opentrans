@@ -5,7 +5,6 @@ namespace Naugrim\OpenTrans\Nodes\OrderChange;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
-use Naugrim\OpenTrans\Nodes\ControlInfo;
 
 #[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'info'])]
 class Header implements NodeInterface

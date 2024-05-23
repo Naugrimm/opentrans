@@ -4,8 +4,6 @@ namespace Naugrim\OpenTrans\Nodes\Invoice;
 
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
@@ -66,8 +64,6 @@ class Summary implements NodeInterface
     /**
      * @param DetailsFix[] $taxes
      * @return Summary
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
      */
     public function setTotalTax(array $taxes): Summary
     {

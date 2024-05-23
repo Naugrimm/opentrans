@@ -4,8 +4,6 @@ namespace Naugrim\OpenTrans\Nodes\Invoice;
 
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\Party;
@@ -135,8 +133,6 @@ class Info implements NodeInterface
     /**
      * @param Party[] $parties
      * @return Info
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
      */
     public function setParties(array $parties): Info
     {
