@@ -16,18 +16,18 @@ class ProductId implements NodeInterface
      * @var SupplierPid
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\BMEcat\Nodes\SupplierPid::class)]
+    #[Serializer\Type(SupplierPid::class)]
     #[Serializer\SerializedName('bme:SUPPLIER_PID')]
-    protected \Naugrim\BMEcat\Nodes\SupplierPid $supplierPid;
+    protected SupplierPid $supplierPid;
 
     /**
      *
      * @var SupplierIdRef
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\BMEcat\Nodes\SupplierIdRef::class)]
+    #[Serializer\Type(SupplierIdRef::class)]
     #[Serializer\SerializedName('bme:SUPPLIER_IDREF')]
-    protected \Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef;
+    protected SupplierIdRef $supplierIdRef;
 
     /**
      *
@@ -61,18 +61,18 @@ class ProductId implements NodeInterface
      * @var InternationalPid
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\BMEcat\Nodes\InternationalPid::class)]
+    #[Serializer\Type(InternationalPid::class)]
     #[Serializer\SerializedName('bme:INTERNATIONAL_PID')]
-    protected \Naugrim\BMEcat\Nodes\InternationalPid $internationalPid;
+    protected InternationalPid $internationalPid;
 
     /**
      *
      * @var BuyerPid
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\BMEcat\Nodes\BuyerPid::class)]
+    #[Serializer\Type(BuyerPid::class)]
     #[Serializer\SerializedName('bme:BUYER_PID')]
-    protected \Naugrim\BMEcat\Nodes\BuyerPid $buyerPid;
+    protected BuyerPid $buyerPid;
 
     /**
      *

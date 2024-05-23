@@ -33,9 +33,9 @@ class Info implements NodeInterface
      * @var DeliveryDate
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\DeliveryDate::class)]
+    #[Serializer\Type(DeliveryDate::class)]
     #[Serializer\SerializedName('DELIVERY_DATE')]
-    protected \Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate;
+    protected DeliveryDate $deliveryDate;
 
     /**
      *

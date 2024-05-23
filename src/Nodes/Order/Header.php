@@ -13,14 +13,15 @@ class Header implements NodeInterface
 {
     use HasControlInfo;
     use HasSourcingInfo;
+
     /**
      *
      * @var Info
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\Info::class)]
+    #[Serializer\Type(Info::class)]
     #[Serializer\SerializedName('ORDER_INFO')]
-    protected \Naugrim\OpenTrans\Nodes\Order\Info $info;
+    protected Info $info;
 
     /**
      * @return Info

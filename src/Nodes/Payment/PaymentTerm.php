@@ -14,6 +14,7 @@ class PaymentTerm implements NodeInterface
 {
     use HasTypeAttribute;
     use HasStringValue;
+
     /** Payment conditions normally applied. */
     public const BASIC = '1';
 

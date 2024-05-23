@@ -15,9 +15,9 @@ class Embedded implements NodeInterface
      * @var Data
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Mime\Data::class)]
+    #[Serializer\Type(Data::class)]
     #[Serializer\SerializedName('MIME_DATA')]
-    protected \Naugrim\OpenTrans\Nodes\Mime\Data $data;
+    protected Data $data;
 
     /**
      *

@@ -14,6 +14,7 @@ class Summary implements NodeInterface
 {
     use HasTotalItemNum;
     use HasTotalAmount;
+
     /**
      *
      *

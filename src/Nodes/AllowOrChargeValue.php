@@ -30,9 +30,9 @@ class AllowOrChargeValue implements NodeInterface
      * @var AocOrderUnitsCount
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\AocOrderUnitsCount::class)]
+    #[Serializer\Type(AocOrderUnitsCount::class)]
     #[Serializer\SerializedName('AOC_ORDER_UNITS_COUNT')]
-    protected \Naugrim\OpenTrans\Nodes\AocOrderUnitsCount $orderUnitsCount;
+    protected AocOrderUnitsCount $orderUnitsCount;
 
     /**
      *

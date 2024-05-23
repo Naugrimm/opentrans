@@ -41,7 +41,7 @@ class Card implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type("DateTimeInterface<'Y-m'>")]
     #[Serializer\SerializedName('CARD_EXPIRATION_DATE')]
-    private ?\DateTimeInterface $expDate = null;
+    private ?DateTimeInterface $expDate = null;
 
 
     #[Serializer\Expose]

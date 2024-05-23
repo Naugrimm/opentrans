@@ -17,7 +17,7 @@ trait HasUdxItems
      * @var UdxAggregate
      */
     #[Serializer\SerializedName('ITEM_UDX')]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\UdxAggregate::class)]
+    #[Serializer\Type(UdxAggregate::class)]
     protected UdxAggregate $udxItem;
 
     public function setUdxItems(array $udxItems): self

@@ -21,9 +21,9 @@ class OrderResponse implements NodeInterface
      * @var Header
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\OrderResponse\Header::class)]
+    #[Serializer\Type(Header::class)]
     #[Serializer\SerializedName('ORDERRESPONSE_HEADER')]
-    protected \Naugrim\OpenTrans\Nodes\OrderResponse\Header $header;
+    protected Header $header;
 
     /**
      *
@@ -41,9 +41,9 @@ class OrderResponse implements NodeInterface
      * @var Summary
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\OrderResponse\Summary::class)]
+    #[Serializer\Type(Summary::class)]
     #[Serializer\SerializedName('ORDERRESPONSE_SUMMARY')]
-    protected \Naugrim\OpenTrans\Nodes\OrderResponse\Summary $summary;
+    protected Summary $summary;
 
     /**
      * @return Header
