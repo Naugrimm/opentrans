@@ -16,7 +16,7 @@ class Payment implements NodeInterface
      *
      * @var Card|null
      */
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Payment\Card')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Payment\Card::class)]
     #[Serializer\SerializedName('CARD')]
     private $card;
 

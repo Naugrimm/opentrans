@@ -51,7 +51,7 @@ class AllowOrCharge implements NodeInterface
      * @var AllowOrChargeValue
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\AllowOrChargeValue')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\AllowOrChargeValue::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_VALUE')]
     protected $value;
 

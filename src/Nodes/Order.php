@@ -32,7 +32,7 @@ class Order implements NodeInterface
      * @var Header
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Order\Header')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\Header::class)]
     #[Serializer\SerializedName('ORDER_HEADER')]
     protected $header;
 
@@ -52,7 +52,7 @@ class Order implements NodeInterface
      * @var Summary
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Order\Summary')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\Summary::class)]
     #[Serializer\SerializedName('ORDER_SUMMARY')]
     protected $summary;
 
@@ -65,10 +65,9 @@ class Order implements NodeInterface
     }
 
     /**
-     * @param mixed $type
      * @return Order
      */
-    public function setType($type)
+    public function setType(mixed $type)
     {
         $this->type = $type;
         return $this;

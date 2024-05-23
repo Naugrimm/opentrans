@@ -12,7 +12,7 @@ class AllowOrChargesFix implements NodeInterface
      * @var AllowOrCharge
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\AllowOrCharge')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\AllowOrCharge::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE')]
     protected $allowOrCharge;
 

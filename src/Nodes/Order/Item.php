@@ -27,7 +27,7 @@ class Item implements NodeInterface
      * @var ProductId
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\ProductId')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\ProductId::class)]
     #[Serializer\SerializedName('PRODUCT_ID')]
     protected $productId;
 
@@ -63,7 +63,7 @@ class Item implements NodeInterface
      * @var DeliveryDate
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\DeliveryDate')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\DeliveryDate::class)]
     #[Serializer\SerializedName('DELIVERY_DATE')]
     protected $deliveryDate;
 
@@ -72,7 +72,7 @@ class Item implements NodeInterface
      * @var PriceFix
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Product\PriceFix')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Product\PriceFix::class)]
     #[Serializer\SerializedName('PRODUCT_PRICE_FIX')]
     protected $priceFix;
 

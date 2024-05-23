@@ -18,7 +18,7 @@ class Summary implements NodeInterface
      * @var AllowOrChargesFix
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\AllowOrChargesFix')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\AllowOrChargesFix::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGES_FIX')]
     protected $allowOrChargesFix;
 

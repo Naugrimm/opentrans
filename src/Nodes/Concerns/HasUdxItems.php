@@ -17,7 +17,7 @@ trait HasUdxItems
      * @var UdxAggregate
      */
     #[Serializer\SerializedName('ITEM_UDX')]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\UdxAggregate')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\UdxAggregate::class)]
     protected $udxItem;
 
     public function setUdxItems(array $udxItems): self
@@ -88,7 +88,7 @@ trait HasUdxItems
                     sprintf(
                         'UDX value of "%s" must be scalar, "%s" given',
                         $key,
-                        is_object($udxData[$key]) ? get_class($udxData[$key]) : gettype($udxData[$key])
+                        get_debug_type($udxData[$key])
                     )
                 );
             }

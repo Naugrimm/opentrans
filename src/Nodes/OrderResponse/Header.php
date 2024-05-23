@@ -16,7 +16,7 @@ class Header implements NodeInterface
      * @var Info
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\OrderResponse\Info')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\OrderResponse\Info::class)]
     #[Serializer\SerializedName('ORDERRESPONSE_INFO')]
     protected $info;
 

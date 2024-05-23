@@ -4,7 +4,7 @@ namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
 
-class Udx implements UdxInterface
+class Udx implements UdxInterface, \Stringable
 {
     /**
      * @var string
