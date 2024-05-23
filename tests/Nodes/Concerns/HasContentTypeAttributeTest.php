@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class HasContentTypeAttributeTest extends TestCase
 {
-    public function testSetGetContentType()
+    public function testSetGetContentType(): void
     {
         $contentType = 'image/jpg';
         $node = new NodeWithContentType();

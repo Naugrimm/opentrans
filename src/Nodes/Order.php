@@ -67,7 +67,7 @@ class Order implements NodeInterface
     /**
      * @return Order
      */
-    public function setType(mixed $type)
+    public function setType(mixed $type): static
     {
         $this->type = $type;
         return $this;

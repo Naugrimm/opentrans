@@ -17,7 +17,7 @@ class OrderTest extends TestCase
     /**
      * @var SerializerInterface
      */
-    private $serializer;
+    private \JMS\Serializer\Serializer $serializer;
 
     protected function setUp(): void
     {

@@ -15,14 +15,14 @@ class OrderChangeTest extends TestCase
     /**
      * @var SerializerInterface
      */
-    private $serializer;
+    private \JMS\Serializer\Serializer $serializer;
 
     protected function setUp(): void
     {
         $this->serializer = SerializerBuilder::create()->build();
     }
 
-    public function testMinimalInvoice()
+    public function testMinimalInvoice(): void
     {
         $node = NodeBuilder::fromArray([
             'header' => [
