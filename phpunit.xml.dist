@@ -12,6 +12,9 @@
     <testsuite name="openTRANS Test Suite">
       <directory>tests/</directory>
     </testsuite>
+    <testsuite name="rector">
+      <directory>utils/rector/tests</directory>
+    </testsuite>
   </testsuites>
   <logging/>
 </phpunit>
