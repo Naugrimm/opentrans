@@ -15,7 +15,7 @@ trait CanAssertConstantValue
         }
 
         foreach ($constants as $constant => $constantValue) {
-            if ($constantValue === $value && (empty($constantPrefix) || strpos($constant, $constantPrefix) === 0)) {
+            if ($constantValue === $value && (empty($constantPrefix) || str_starts_with($constant, $constantPrefix))) {
                 return;
             }
         }

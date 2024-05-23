@@ -13,4 +13,5 @@ return RectorConfig::configure()
     // uncomment to reach your current PHP version
     ->withSets([
         JMSSetList::ANNOTATIONS_TO_ATTRIBUTES,
-    ]);
+    ])
+    ->withPhpSets();

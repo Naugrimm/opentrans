@@ -12,7 +12,7 @@ class ShipmentPartiesReference implements NodeInterface
      * @var DeliveryIdRef
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\DeliveryIdRef')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\DeliveryIdRef::class)]
     #[Serializer\SerializedName('INVOICE_RECIPIENT_IDREF')]
     protected $deliveryIdRef;
 
@@ -21,7 +21,7 @@ class ShipmentPartiesReference implements NodeInterface
      * @var FinalDeliveryIdRef
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\FinalDeliveryIdRef')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\FinalDeliveryIdRef::class)]
     #[Serializer\SerializedName('FINAL_DELIVERY_IDREF')]
     protected $finalDeliveryIdRef;
 
@@ -30,7 +30,7 @@ class ShipmentPartiesReference implements NodeInterface
      * @var DelivererIdRef
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\DelivererIdRef')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\DelivererIdRef::class)]
     #[Serializer\SerializedName('DELIVERER_IDREF')]
     protected $delivererIdRef;
 }

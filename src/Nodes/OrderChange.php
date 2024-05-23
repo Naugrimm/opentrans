@@ -24,7 +24,7 @@ class OrderChange implements NodeInterface
      * @var Header
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\OrderChange\Header')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\OrderChange\Header::class)]
     #[Serializer\SerializedName('ORDERCHANGE_HEADER')]
     protected $header;
 
@@ -44,7 +44,7 @@ class OrderChange implements NodeInterface
      * @var Summary
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Order\Summary')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\Summary::class)]
     #[Serializer\SerializedName('ORDERCHANGE_SUMMARY')]
     protected $summary;
 

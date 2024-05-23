@@ -15,9 +15,7 @@ class PaymentTermTest extends TestCase
     {
         $reflection = new ReflectionClass(PaymentTerm::class);
         return array_map(
-            static function(string $type) {
-                return ['type' => $type];
-            },
+            static fn(string $type) => ['type' => $type],
             array_values($reflection->getConstants())
         );
     }

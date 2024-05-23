@@ -20,7 +20,7 @@ class Account implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('BANK_ACCOUNT')]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\BankAccount')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\BankAccount::class)]
     protected $bankAccount;
 
     /**
@@ -28,7 +28,7 @@ class Account implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('BANK_CODE')]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\BankCode')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\BankCode::class)]
     protected $bankCode;
 
     /**

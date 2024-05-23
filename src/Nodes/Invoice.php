@@ -24,7 +24,7 @@ class Invoice implements NodeInterface
      * @var Header
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Invoice\Header')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Invoice\Header::class)]
     #[Serializer\SerializedName('INVOICE_HEADER')]
     protected $header;
 
@@ -44,7 +44,7 @@ class Invoice implements NodeInterface
      * @var Summary
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Invoice\Summary')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Invoice\Summary::class)]
     #[Serializer\SerializedName('INVOICE_SUMMARY')]
     protected $summary;
 

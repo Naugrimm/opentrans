@@ -41,7 +41,7 @@ class Info implements NodeInterface
      * @var DeliveryDate
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\DeliveryDate')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\DeliveryDate::class)]
     #[Serializer\SerializedName('DELIVERY_DATE')]
     protected $deliveryDate;
 
@@ -61,7 +61,7 @@ class Info implements NodeInterface
      * @var PartiesReference
      */
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Order\PartiesReference')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\PartiesReference::class)]
     #[Serializer\SerializedName('ORDER_PARTIES_REFERENCE')]
     protected $partiesReference;
 
@@ -78,7 +78,7 @@ class Info implements NodeInterface
      *
      * @var Payment
      */
-    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Payment\Payment')]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Payment\Payment::class)]
     #[Serializer\SerializedName('PAYMENT')]
     protected $payment;
 
