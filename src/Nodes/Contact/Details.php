@@ -12,102 +12,102 @@ use Naugrim\OpenTrans\Nodes\Emails;
 class Details implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:CONTACT_ID")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:CONTACT_ID')]
     public $id;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:CONTACT_NAME")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:CONTACT_NAME')]
     protected $name;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:FIRST_NAME")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:FIRST_NAME')]
     protected $firstName;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:TITLE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:TITLE')]
     protected $title;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:ACADEMIC_TITLE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:ACADEMIC_TITLE')]
     protected $academicTitle;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\Contact\Role")
-     * @Serializer\SerializedName("bme:CONTACT_ROLE")
      *
      * @var Role
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\Contact\Role')]
+    #[Serializer\SerializedName('bme:CONTACT_ROLE')]
     protected $role;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:CONTACT_DESCRIPTION")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:CONTACT_DESCRIPTION')]
     protected $description;
     
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\Phone")
-     * @Serializer\SerializedName("bme:PHONE")
      *
      * @var Phone
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\Phone')]
+    #[Serializer\SerializedName('bme:PHONE')]
     protected $phone;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\Fax")
-     * @Serializer\SerializedName("bme:FAX")
      *
      * @var Fax
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\Fax')]
+    #[Serializer\SerializedName('bme:FAX')]
     protected $fax;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:URL")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:URL')]
     protected $url;
     
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Emails")
-     * @Serializer\SerializedName("bme:EMAILS")
      *
      * @var Emails
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Emails')]
+    #[Serializer\SerializedName('bme:EMAILS')]
     protected $emails;
 
 

@@ -12,86 +12,86 @@ use Naugrim\BMEcat\Nodes\SupplierIdRef;
 class Agreement implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("type")
-     * @Serializer\XmlAttribute
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('type')]
+    #[Serializer\XmlAttribute]
     protected $type;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("default")
-     * @Serializer\XmlAttribute
      *
      * @var bool
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('default')]
+    #[Serializer\XmlAttribute]
     protected $default;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:AGREEMENT_ID")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:AGREEMENT_ID')]
     protected $id;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:AGREEMENT_LINE_ID")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:AGREEMENT_LINE_ID')]
     protected $lineId;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:AGREEMENT_START_DATE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:AGREEMENT_START_DATE')]
     protected $startDate;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:AGREEMENT_END_DATE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:AGREEMENT_END_DATE')]
     protected $endDate;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\SupplierIdRef")
-     * @Serializer\SerializedName("bme:SUPPLIER_IDREF")
      *
      * @var SupplierIdRef
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\SupplierIdRef')]
+    #[Serializer\SerializedName('bme:SUPPLIER_IDREF')]
     protected $supplierIdRef;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("AGREEMENT_DESCR")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('AGREEMENT_DESCR')]
     protected $description;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("MIME_INFO")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Mime>")
-     * @Serializer\XmlList(entry = "MIME")
      *
      * @var Mime[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('MIME_INFO')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Mime>')]
+    #[Serializer\XmlList(entry: 'MIME')]
     protected $mimeInfo = [];
 
     /**

@@ -13,50 +13,50 @@ use Naugrim\OpenTrans\Nodes\Party;
 class Info implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ORDER_ID")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ORDER_ID')]
     protected $id;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ORDERRESPONSE_DATE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ORDERRESPONSE_DATE')]
     protected $date;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ORDERCHANGE_SEQUENCE_ID")
      *
      * @var int
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ORDERCHANGE_SEQUENCE_ID')]
     protected $sequenceId;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("PARTIES")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Party>")
-     * @Serializer\XmlList(entry = "PARTY")
      *
      * @var Party[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('PARTIES')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Party>')]
+    #[Serializer\XmlList(entry: 'PARTY')]
     protected $parties = [];
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\PartiesReference")
-     * @Serializer\SerializedName("ORDER_PARTIES_REFERENCE")
      *
      * @var PartiesReference
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Order\PartiesReference')]
+    #[Serializer\SerializedName('ORDER_PARTIES_REFERENCE')]
     protected $partiesReference;
 
     /**

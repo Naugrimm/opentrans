@@ -12,50 +12,48 @@ use Naugrim\OpenTrans\Nodes\Order\Header;
 use Naugrim\OpenTrans\Nodes\Order\Item;
 use Naugrim\OpenTrans\Nodes\Order\Summary;
 
-/**
- *
- * @Serializer\XmlRoot("ORDER")
- * @Serializer\ExclusionPolicy("all")
- */
+
+#[Serializer\XmlRoot('ORDER')]
+#[Serializer\ExclusionPolicy('all')]
 class Order implements NodeInterface
 {
     use IsRootNode;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\XmlAttribute
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\XmlAttribute]
     protected $type = 'standard';
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\Header")
-     * @Serializer\SerializedName("ORDER_HEADER")
      *
      * @var Header
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Order\Header')]
+    #[Serializer\SerializedName('ORDER_HEADER')]
     protected $header;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("ORDER_ITEM_LIST")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Order\Item>")
-     * @Serializer\XmlList(entry = "ORDER_ITEM")
      *
      * @var Item[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('ORDER_ITEM_LIST')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Order\Item>')]
+    #[Serializer\XmlList(entry: 'ORDER_ITEM')]
     protected $items = [];
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\Summary")
-     * @Serializer\SerializedName("ORDER_SUMMARY")
      *
      * @var Summary
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Order\Summary')]
+    #[Serializer\SerializedName('ORDER_SUMMARY')]
     protected $summary;
 
     /**

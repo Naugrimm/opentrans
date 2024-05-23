@@ -8,9 +8,9 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 trait HasStringValue
 {
     /**
-     * @Serializer\XmlValue()
      * @var string
      */
+    #[Serializer\XmlValue]
     protected $value;
 
     /**

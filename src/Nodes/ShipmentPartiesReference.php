@@ -8,29 +8,29 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class ShipmentPartiesReference implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\DeliveryIdRef")
-     * @Serializer\SerializedName("INVOICE_RECIPIENT_IDREF")
      *
      * @var DeliveryIdRef
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\DeliveryIdRef')]
+    #[Serializer\SerializedName('INVOICE_RECIPIENT_IDREF')]
     protected $deliveryIdRef;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\FinalDeliveryIdRef")
-     * @Serializer\SerializedName("FINAL_DELIVERY_IDREF")
      *
      * @var FinalDeliveryIdRef
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\FinalDeliveryIdRef')]
+    #[Serializer\SerializedName('FINAL_DELIVERY_IDREF')]
     protected $finalDeliveryIdRef;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\DelivererIdRef")
-     * @Serializer\SerializedName("DELIVERER_IDREF")
      *
      * @var DelivererIdRef
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\DelivererIdRef')]
+    #[Serializer\SerializedName('DELIVERER_IDREF')]
     protected $delivererIdRef;
 }

@@ -11,30 +11,30 @@ class Embedded implements NodeInterface
     use HasLangAttribute;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Mime\Data")
-     * @Serializer\SerializedName("MIME_DATA")
      *
      * @var Data
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Mime\Data')]
+    #[Serializer\SerializedName('MIME_DATA')]
     protected $data;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FILE_NAME")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FILE_NAME')]
     protected $fileName;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("int")
-     * @Serializer\SerializedName("FILE_SIZE")
      *
      * @var int
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('int')]
+    #[Serializer\SerializedName('FILE_SIZE')]
     protected $fileSize;
 
     /**

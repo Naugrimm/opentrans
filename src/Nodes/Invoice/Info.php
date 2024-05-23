@@ -13,68 +13,68 @@ use Naugrim\OpenTrans\Nodes\Party;
 class Info implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("INVOICE_ID")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('INVOICE_ID')]
     protected $id;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("INVOICE_DATE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('INVOICE_DATE')]
     protected $date;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\DeliveryDate")
-     * @Serializer\SerializedName("DELIVERY_DATE")
      *
      * @var DeliveryDate
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\DeliveryDate')]
+    #[Serializer\SerializedName('DELIVERY_DATE')]
     protected $deliveryDate;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("PARTIES")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Party>")
-     * @Serializer\XmlList(entry = "PARTY")
      *
      * @var Party[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('PARTIES')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Party>')]
+    #[Serializer\XmlList(entry: 'PARTY')]
     protected $parties = [];
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("INVOICE_ISSUER_IDREF")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('INVOICE_ISSUER_IDREF')]
     protected $issuerIdRef;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("INVOICE_RECIPIENT_IDREF")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('INVOICE_RECIPIENT_IDREF')]
     protected $rcptIdRef;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:CURRENCY")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:CURRENCY')]
     protected $currency;
 
     /**

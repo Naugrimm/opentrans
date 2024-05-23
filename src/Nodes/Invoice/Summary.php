@@ -11,31 +11,29 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 
-/**
- * @Serializer\AccessorOrder(order = "custom", custom = {"totalItemNum", "netValueGoods", "netValueExtra", "totalAmount", "allowOrChargesFix", "totalTax"})
- */
+#[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'netValueGoods', 'netValueExtra', 'totalAmount', 'allowOrChargesFix', 'totalTax'])]
 class Summary implements NodeInterface
 {
     use HasTotalItemNum, HasTotalAmount;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("NET_VALUE_GOODS")
-     * @Serializer\Type("float")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('NET_VALUE_GOODS')]
+    #[Serializer\Type('float')]
     protected $netValueGoods;
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("TOTAL_TAX")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Tax\DetailsFix>")
-     * @Serializer\XmlList(entry = "TAX_DETAILS_FIX")
      *
      * @var DetailsFix[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('TOTAL_TAX')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Tax\DetailsFix>')]
+    #[Serializer\XmlList(entry: 'TAX_DETAILS_FIX')]
     protected $totalTax = [];
 
     /**

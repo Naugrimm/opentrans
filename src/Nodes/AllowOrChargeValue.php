@@ -8,39 +8,39 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class AllowOrChargeValue implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("AOC_PERCENTAGE_FACTOR")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('AOC_PERCENTAGE_FACTOR')]
     protected $percentageFactor;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("AOC_MONETARY_AMOUNT")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('AOC_MONETARY_AMOUNT')]
     protected $monetaryAmount;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\AocOrderUnitsCount")
-     * @Serializer\SerializedName("AOC_ORDER_UNITS_COUNT")
      *
      * @var AocOrderUnitsCount
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\AocOrderUnitsCount')]
+    #[Serializer\SerializedName('AOC_ORDER_UNITS_COUNT')]
     protected $orderUnitsCount;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("AOC_ADDITIONAL_ITEMS")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('AOC_ADDITIONAL_ITEMS')]
     protected $additionalItems;
 
     /**

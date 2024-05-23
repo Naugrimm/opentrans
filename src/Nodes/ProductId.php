@@ -12,93 +12,93 @@ use Naugrim\BMEcat\Nodes\SupplierPid;
 class ProductId implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\SupplierPid")
-     * @Serializer\SerializedName("bme:SUPPLIER_PID")
      *
      * @var SupplierPid
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\SupplierPid')]
+    #[Serializer\SerializedName('bme:SUPPLIER_PID')]
     protected $supplierPid;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\SupplierIdRef")
-     * @Serializer\SerializedName("bme:SUPPLIER_IDREF")
      *
      * @var SupplierIdRef
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\SupplierIdRef')]
+    #[Serializer\SerializedName('bme:SUPPLIER_IDREF')]
     protected $supplierIdRef;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CONFIG_CODE_FIX")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CONFIG_CODE_FIX')]
     protected $configCodeFix;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("LOT_NUMBER")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('LOT_NUMBER')]
     protected $lotNumber;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("SERIAL_NUMBER")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('SERIAL_NUMBER')]
     protected $serialNumber;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\InternationalPid")
-     * @Serializer\SerializedName("bme:INTERNATIONAL_PID")
      *
      * @var InternationalPid
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\InternationalPid')]
+    #[Serializer\SerializedName('bme:INTERNATIONAL_PID')]
     protected $internationalPid;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\BuyerPid")
-     * @Serializer\SerializedName("bme:BUYER_PID")
      *
      * @var BuyerPid
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\BuyerPid')]
+    #[Serializer\SerializedName('bme:BUYER_PID')]
     protected $buyerPid;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:DESCRIPTION_SHORT")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:DESCRIPTION_SHORT')]
     protected $descriptionShort;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:DESCRIPTION_LONG")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:DESCRIPTION_LONG')]
     protected $descriptionLong;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:PRODUCT_TYPE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:PRODUCT_TYPE')]
     protected $productType;
 
     /**

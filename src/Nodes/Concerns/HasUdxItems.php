@@ -14,10 +14,10 @@ use ReflectionClass;
 trait HasUdxItems
 {
     /**
-     * @Serializer\SerializedName("ITEM_UDX")
-     * @Serializer\Type ("Naugrim\OpenTrans\Nodes\UdxAggregate")
      * @var UdxAggregate
      */
+    #[Serializer\SerializedName('ITEM_UDX')]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\UdxAggregate')]
     protected $udxItem;
 
     public function setUdxItems(array $udxItems): self

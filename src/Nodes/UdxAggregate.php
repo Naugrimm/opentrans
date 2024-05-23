@@ -6,10 +6,8 @@ use JMS\Serializer\Annotation as Serializer;
 
 class UdxAggregate
 {
-    /**
-     * @Serializer\XmlKeyValuePairs
-     * @Serializer\Inline
-     */
+    #[Serializer\XmlKeyValuePairs]
+    #[Serializer\Inline]
     protected $values = [];
 
     public function addUdx(UdxInterface $udx): self

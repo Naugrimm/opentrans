@@ -8,20 +8,18 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 use Naugrim\OpenTrans\Nodes\Concerns\HasSourcingInfo;
 use Naugrim\OpenTrans\Nodes\SourcingInfo;
 
-/**
- * @Serializer\AccessorOrder(order = "custom", custom = {"controlInfo", "sourcingInfo", "info"})
- */
+#[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'sourcingInfo', 'info'])]
 class Header implements NodeInterface
 {
     use HasControlInfo, HasSourcingInfo;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\Info")
-     * @Serializer\SerializedName("ORDER_INFO")
      *
      * @var Info
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Order\Info')]
+    #[Serializer\SerializedName('ORDER_INFO')]
     protected $info;
 
     /**
