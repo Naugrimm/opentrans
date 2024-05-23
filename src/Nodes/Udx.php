@@ -10,20 +10,20 @@ class Udx implements UdxInterface, \Stringable
      * @var string
      */
     #[Serializer\Exclude]
-    protected $vendor;
+    protected string $vendor;
 
     /**
      * @var string
      */
     #[Serializer\Exclude]
-    protected $name;
+    protected string $name;
 
     /**
      * @var string
      */
     #[Serializer\Type('string')]
     #[Serializer\Inline]
-    protected $value;
+    protected string $value;
 
     /**
      * @return string

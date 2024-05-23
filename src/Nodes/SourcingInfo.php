@@ -15,7 +15,7 @@ class SourcingInfo implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('QUOTATION_ID')]
-    protected $quotationId;
+    protected string $quotationId;
 
     /**
      *
@@ -24,7 +24,7 @@ class SourcingInfo implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Agreement::class)]
     #[Serializer\SerializedName('AGREEMENT')]
-    protected $agreement;
+    protected \Naugrim\OpenTrans\Nodes\Agreement $agreement;
 
     /**
      *
@@ -33,7 +33,7 @@ class SourcingInfo implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Catalog\Reference::class)]
     #[Serializer\SerializedName('CATALOG_REFERENCE')]
-    protected $catalogReference;
+    protected \Naugrim\OpenTrans\Nodes\Catalog\Reference $catalogReference;
 
     /**
      * @return string

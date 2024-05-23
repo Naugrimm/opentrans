@@ -20,7 +20,7 @@ class Summary implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\AllowOrChargesFix::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGES_FIX')]
-    protected $allowOrChargesFix;
+    protected \Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix;
 
     /**
      * @return AllowOrChargesFix

@@ -17,7 +17,7 @@ class Embedded implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Mime\Data::class)]
     #[Serializer\SerializedName('MIME_DATA')]
-    protected $data;
+    protected \Naugrim\OpenTrans\Nodes\Mime\Data $data;
 
     /**
      *
@@ -26,7 +26,7 @@ class Embedded implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('FILE_NAME')]
-    protected $fileName;
+    protected string $fileName;
 
     /**
      *
@@ -35,7 +35,7 @@ class Embedded implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('int')]
     #[Serializer\SerializedName('FILE_SIZE')]
-    protected $fileSize;
+    protected int $fileSize;
 
     /**
      * @return Data

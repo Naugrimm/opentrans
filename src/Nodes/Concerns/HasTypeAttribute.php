@@ -17,7 +17,7 @@ trait HasTypeAttribute
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('type')]
     #[Serializer\XmlAttribute]
-    protected $type;
+    protected string $type;
 
     /**
      * @return string

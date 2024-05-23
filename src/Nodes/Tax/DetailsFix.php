@@ -14,7 +14,7 @@ class DetailsFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('int')]
     #[Serializer\SerializedName('CALCULATION_SEQUENCE')]
-    protected $calculationSequence;
+    protected int $calculationSequence;
 
     /**
      *
@@ -23,7 +23,7 @@ class DetailsFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('TAX_CATEGORY')]
-    protected $category;
+    protected string $category;
 
     /**
      *
@@ -32,7 +32,7 @@ class DetailsFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('TAX_TYPE')]
-    protected $type;
+    protected string $type;
 
     /**
      *
@@ -41,7 +41,7 @@ class DetailsFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('TAX')]
-    protected $tax;
+    protected float $tax;
 
     /**
      *
@@ -50,7 +50,7 @@ class DetailsFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('TAX_AMOUNT')]
-    protected $amount;
+    protected float $amount;
 
     /**
      *
@@ -59,7 +59,7 @@ class DetailsFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('TAX_BASE')]
-    protected $base;
+    protected float $base;
 
     /**
      *
@@ -68,7 +68,7 @@ class DetailsFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('EXEMPTION_REASON')]
-    protected $exemptionReason;
+    protected string $exemptionReason;
 
     /**
      *
@@ -77,7 +77,7 @@ class DetailsFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('JURISDICTION')]
-    protected $jurisdiction;
+    protected string $jurisdiction;
 
     /**
      * @return int

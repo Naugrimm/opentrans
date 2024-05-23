@@ -26,7 +26,7 @@ class Invoice implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Invoice\Header::class)]
     #[Serializer\SerializedName('INVOICE_HEADER')]
-    protected $header;
+    protected \Naugrim\OpenTrans\Nodes\Invoice\Header $header;
 
     /**
      *
@@ -37,7 +37,7 @@ class Invoice implements NodeInterface
     #[Serializer\SerializedName('INVOICE_ITEM_LIST')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Invoice\Item>')]
     #[Serializer\XmlList(entry: 'INVOICE_ITEM')]
-    protected $items = [];
+    protected array $items = [];
 
     /**
      *
@@ -46,7 +46,7 @@ class Invoice implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Invoice\Summary::class)]
     #[Serializer\SerializedName('INVOICE_SUMMARY')]
-    protected $summary;
+    protected \Naugrim\OpenTrans\Nodes\Invoice\Summary $summary;
 
     /**
      * @return Header

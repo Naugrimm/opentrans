@@ -19,7 +19,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_ID')]
-    protected $id;
+    protected string $id;
 
     /**
      *
@@ -28,7 +28,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDERRESPONSE_DATE')]
-    protected $date;
+    protected string $date;
 
     /**
      *
@@ -37,7 +37,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDERCHANGE_SEQUENCE_ID')]
-    protected $sequenceId;
+    protected string $sequenceId;
 
     /**
      *
@@ -48,7 +48,7 @@ class Info implements NodeInterface
     #[Serializer\SerializedName('PARTIES')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Party>')]
     #[Serializer\XmlList(entry: 'PARTY')]
-    protected $parties = [];
+    protected array $parties = [];
 
     /**
      *
@@ -57,7 +57,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\PartiesReference::class)]
     #[Serializer\SerializedName('ORDER_PARTIES_REFERENCE')]
-    protected $partiesReference;
+    protected \Naugrim\OpenTrans\Nodes\Order\PartiesReference $partiesReference;
 
     /**
      * @return string

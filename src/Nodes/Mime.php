@@ -19,7 +19,7 @@ class Mime implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:MIME_TYPE')]
-    protected $type;
+    protected string $type;
 
     /**
      *
@@ -28,7 +28,7 @@ class Mime implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:MIME_SOURCE')]
-    protected $source;
+    protected string $source;
 
     /**
      *
@@ -39,7 +39,7 @@ class Mime implements NodeInterface
     #[Serializer\SerializedName('FILE_HASH_VALUE')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\File\HashValue>')]
     #[Serializer\XmlList(inline: true)]
-    protected $fileHashValue = [];
+    protected array $fileHashValue = [];
 
     /**
      *
@@ -50,7 +50,7 @@ class Mime implements NodeInterface
     #[Serializer\SerializedName('MIME_EMBEDDED')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Mime\Embedded>')]
     #[Serializer\XmlList(entry: 'MIME_EMBEDDED')]
-    protected $embedded = [];
+    protected array $embedded = [];
 
     /**
      *
@@ -59,7 +59,7 @@ class Mime implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:MIME_DESCR')]
-    protected $description;
+    protected string $description;
 
     /**
      *
@@ -68,7 +68,7 @@ class Mime implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('MIME_ALT')]
-    protected $alt;
+    protected string $alt;
 
     /**
      *
@@ -77,7 +77,7 @@ class Mime implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('MIME_PURPOSE')]
-    protected $purpose;
+    protected string $purpose;
 
     /**
      *
@@ -86,7 +86,7 @@ class Mime implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('int')]
     #[Serializer\SerializedName('MIME_ORDER')]
-    protected $order;
+    protected int $order;
 
     /**
      * @return string

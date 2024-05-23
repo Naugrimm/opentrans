@@ -19,7 +19,7 @@ class Header implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Invoice\Info::class)]
     #[Serializer\SerializedName('INVOICE_INFO')]
-    protected $info;
+    protected \Naugrim\OpenTrans\Nodes\Invoice\Info $info;
 
     /**
      *
@@ -28,7 +28,7 @@ class Header implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\History::class)]
     #[Serializer\SerializedName('ORDER_HISTORY')]
-    protected $orderHistory;
+    protected \Naugrim\OpenTrans\Nodes\Order\History $orderHistory;
 
     /**
      * @return Info

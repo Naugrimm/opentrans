@@ -14,7 +14,7 @@ class Reference implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CATALOG_ID')]
-    protected $id;
+    protected string $id;
 
     /**
      *
@@ -23,7 +23,7 @@ class Reference implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CATALOG_VERSION')]
-    protected $version;
+    protected string $version;
 
     /**
      *
@@ -32,7 +32,7 @@ class Reference implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CATALOG_NAME')]
-    protected $name;
+    protected string $name;
 
     /**
      * @return string

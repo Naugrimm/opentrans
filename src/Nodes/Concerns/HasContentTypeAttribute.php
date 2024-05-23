@@ -2,6 +2,7 @@
 
 namespace Naugrim\OpenTrans\Nodes\Concerns;
 
+use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 trait HasContentTypeAttribute
@@ -14,7 +15,7 @@ trait HasContentTypeAttribute
      *
      * @var string
      */
-    protected $contentType;
+    protected string $contentType;
 
     /**
      * @return string

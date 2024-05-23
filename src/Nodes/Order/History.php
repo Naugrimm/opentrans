@@ -16,7 +16,7 @@ class History implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_ID')]
-    protected $orderId;
+    protected string $orderId;
 
     /**
      *
@@ -25,7 +25,7 @@ class History implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ALT_CUSTOMER_ORDER_ID')]
-    protected $altCustomerOrderId;
+    protected string $altCustomerOrderId;
 
     /**
      *
@@ -34,7 +34,7 @@ class History implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('SUPPLIER_ORDER_ID')]
-    protected $supplierOrderId;
+    protected string $supplierOrderId;
 
     /**
      *
@@ -43,7 +43,7 @@ class History implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_DATE')]
-    protected $orderDate;
+    protected string $orderDate;
 
     /**
      *
@@ -52,7 +52,7 @@ class History implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_DESCR')]
-    protected $orderDescription;
+    protected string $orderDescription;
 
     /**
      *
@@ -61,7 +61,7 @@ class History implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('DELIVERYNOTE_ID')]
-    protected $deliverynoteId;
+    protected string $deliverynoteId;
 
     /**
      *
@@ -70,7 +70,7 @@ class History implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('DELIVERYNOTE_DATE')]
-    protected $deliverynoteDate;
+    protected string $deliverynoteDate;
 
     /**
      *
@@ -79,7 +79,7 @@ class History implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Agreement::class)]
     #[Serializer\SerializedName('AGREEMENT')]
-    protected $agreement;
+    protected \Naugrim\OpenTrans\Nodes\Agreement $agreement;
 
     /**
      *
@@ -88,7 +88,7 @@ class History implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Catalog\Reference::class)]
     #[Serializer\SerializedName('CATALOG_REFERENCE')]
-    protected $catalogReference;
+    protected \Naugrim\OpenTrans\Nodes\Catalog\Reference $catalogReference;
 
     /**
      * @return string

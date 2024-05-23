@@ -14,7 +14,7 @@ class ControlInfo implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('STOP_AUTOMATIC_PROCESSING')]
-    protected $stopAutomaticProcessing;
+    protected string $stopAutomaticProcessing;
 
     /**
      *
@@ -23,7 +23,7 @@ class ControlInfo implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('GENERATOR_INFO')]
-    protected $generatorInfo;
+    protected string $generatorInfo;
 
     /**
      *
@@ -32,7 +32,7 @@ class ControlInfo implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('GENERATOR_DATE')]
-    protected $generatorDate;
+    protected string $generatorDate;
 
     /**
      * @return string

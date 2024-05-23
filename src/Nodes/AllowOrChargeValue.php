@@ -14,7 +14,7 @@ class AllowOrChargeValue implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('AOC_PERCENTAGE_FACTOR')]
-    protected $percentageFactor;
+    protected float $percentageFactor;
 
     /**
      *
@@ -23,7 +23,7 @@ class AllowOrChargeValue implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('AOC_MONETARY_AMOUNT')]
-    protected $monetaryAmount;
+    protected float $monetaryAmount;
 
     /**
      *
@@ -32,7 +32,7 @@ class AllowOrChargeValue implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\AocOrderUnitsCount::class)]
     #[Serializer\SerializedName('AOC_ORDER_UNITS_COUNT')]
-    protected $orderUnitsCount;
+    protected \Naugrim\OpenTrans\Nodes\AocOrderUnitsCount $orderUnitsCount;
 
     /**
      *
@@ -41,7 +41,7 @@ class AllowOrChargeValue implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('AOC_ADDITIONAL_ITEMS')]
-    protected $additionalItems;
+    protected string $additionalItems;
 
     /**
      * @return float

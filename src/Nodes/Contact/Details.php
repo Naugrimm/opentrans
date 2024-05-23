@@ -27,7 +27,7 @@ class Details implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:CONTACT_NAME')]
-    protected $name;
+    protected string $name;
 
     /**
      *
@@ -36,7 +36,7 @@ class Details implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:FIRST_NAME')]
-    protected $firstName;
+    protected string $firstName;
 
     /**
      *
@@ -45,7 +45,7 @@ class Details implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:TITLE')]
-    protected $title;
+    protected string $title;
 
     /**
      *
@@ -54,7 +54,7 @@ class Details implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:ACADEMIC_TITLE')]
-    protected $academicTitle;
+    protected string $academicTitle;
 
     /**
      *
@@ -63,7 +63,7 @@ class Details implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\BMEcat\Nodes\Contact\Role::class)]
     #[Serializer\SerializedName('bme:CONTACT_ROLE')]
-    protected $role;
+    protected \Naugrim\BMEcat\Nodes\Contact\Role $role;
 
     /**
      *
@@ -72,7 +72,7 @@ class Details implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:CONTACT_DESCRIPTION')]
-    protected $description;
+    protected string $description;
     
     /**
      *
@@ -81,7 +81,7 @@ class Details implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\BMEcat\Nodes\Phone::class)]
     #[Serializer\SerializedName('bme:PHONE')]
-    protected $phone;
+    protected \Naugrim\BMEcat\Nodes\Phone $phone;
 
     /**
      *
@@ -90,7 +90,7 @@ class Details implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\BMEcat\Nodes\Fax::class)]
     #[Serializer\SerializedName('bme:FAX')]
-    protected $fax;
+    protected \Naugrim\BMEcat\Nodes\Fax $fax;
 
     /**
      *
@@ -99,7 +99,7 @@ class Details implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:URL')]
-    protected $url;
+    protected string $url;
     
     /**
      *
@@ -108,7 +108,7 @@ class Details implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Emails::class)]
     #[Serializer\SerializedName('bme:EMAILS')]
-    protected $emails;
+    protected \Naugrim\OpenTrans\Nodes\Emails $emails;
 
 
     /**

@@ -2,6 +2,7 @@
 
 namespace Naugrim\OpenTrans\Nodes\Concerns;
 
+use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\SourcingInfo;
 
@@ -14,7 +15,7 @@ trait HasSourcingInfo
      *
      * @var SourcingInfo
      */
-    protected $sourcingInfo;
+    protected SourcingInfo $sourcingInfo;
 
     /**
      * @return SourcingInfo

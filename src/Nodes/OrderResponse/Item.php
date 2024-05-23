@@ -16,7 +16,7 @@ class Item implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('LINE_ITEM_ID')]
-    protected $lineItemId;
+    protected string $lineItemId;
 
     /**
      *
@@ -25,7 +25,7 @@ class Item implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\ProductId::class)]
     #[Serializer\SerializedName('PRODUCT_ID')]
-    protected $productId;
+    protected \Naugrim\OpenTrans\Nodes\ProductId $productId;
 
     /**
      *
@@ -34,7 +34,7 @@ class Item implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('QUANTITY')]
-    protected $quantity;
+    protected float $quantity;
 
     /**
      *
@@ -43,7 +43,7 @@ class Item implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:ORDER_UNIT')]
-    protected $orderUnit;
+    protected string $orderUnit;
 
     /**
      *
@@ -52,7 +52,7 @@ class Item implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Product\PriceFix::class)]
     #[Serializer\SerializedName('PRODUCT_PRICE_FIX')]
-    protected $priceFix;
+    protected \Naugrim\OpenTrans\Nodes\Product\PriceFix $priceFix;
 
     /**
      *
@@ -61,7 +61,7 @@ class Item implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('PRICE_LINE_AMOUNT')]
-    protected $priceLineAmount;
+    protected float $priceLineAmount;
 
     /**
      * @return string
