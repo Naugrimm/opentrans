@@ -68,9 +68,9 @@ class Agreement implements NodeInterface
      * @var SupplierIdRef
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\BMEcat\Nodes\SupplierIdRef::class)]
+    #[Serializer\Type(SupplierIdRef::class)]
     #[Serializer\SerializedName('bme:SUPPLIER_IDREF')]
-    protected \Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef;
+    protected SupplierIdRef $supplierIdRef;
 
     /**
      *

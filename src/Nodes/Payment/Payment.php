@@ -12,9 +12,9 @@ use Naugrim\OpenTrans\Nodes\BankCode;
 
 class Payment implements NodeInterface
 {
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Payment\Card::class)]
+    #[Serializer\Type(Card::class)]
     #[Serializer\SerializedName('CARD')]
-    private ?\Naugrim\OpenTrans\Nodes\Payment\Card $card = null;
+    private ?Card $card = null;
 
     /**
      * @var Account[]|null
@@ -23,38 +23,39 @@ class Payment implements NodeInterface
     #[Serializer\XmlList(entry: 'ACCOUNT', inline: true)]
     private ?array $accounts = null;
 
-    
+
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CASH')]
     private ?bool $cash = null;
 
-    
+
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('DEBIT')]
     private ?bool $debit = null;
 
-    
+
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CHECK')]
     private ?bool $check = null;
 
-    
+
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CENTRAL_REGULATION')]
     private ?bool $centralRegulation = null;
 
-    
+
     #[Serializer\Expose]
     #[Serializer\Type('Naugrim\BMEcat\Nodes\Payment\PaymentTerms')]
     #[Serializer\SerializedName('PAYMENT_TERMS')]
-    private ?\Naugrim\OpenTrans\Nodes\Payment\PaymentTerms $paymentTerms = null;
+    private ?PaymentTerms $paymentTerms = null;
 
     public static function createCardPayment(
-        string $cartType,
-        string $cardNumber,
-        string $cardHolder,
+        string            $cartType,
+        string            $cardNumber,
+        string            $cardHolder,
         DateTimeInterface $expDate
-    ): Payment {
+    ): Payment
+    {
         return (new Payment())->setCard(Card::create($cartType, $cardNumber, $cardHolder, $expDate));
     }
 
@@ -79,7 +80,8 @@ class Payment implements NodeInterface
         string $bankName,
         string $bic,
         string $country
-    ): Payment {
+    ): Payment
+    {
         $bankAccount = new BankAccount();
         $bankAccount->setType(BankAccount::TYPE_IBAN);
         $bankAccount->setValue($iban);

@@ -52,9 +52,9 @@ class Address implements NodeInterface
      * @var Details
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Contact\Details::class)]
+    #[Serializer\Type(Details::class)]
     #[Serializer\SerializedName('CONTACT_DETAILS')]
-    protected \Naugrim\OpenTrans\Nodes\Contact\Details $contactDetails;
+    protected Details $contactDetails;
 
     /**
      *
@@ -64,7 +64,7 @@ class Address implements NodeInterface
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:STREET')]
     protected string $street;
-    
+
     /**
      *
      * @var string
@@ -73,7 +73,7 @@ class Address implements NodeInterface
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:ZIP')]
     protected string $zip;
-    
+
     /**
      *
      * @var string
@@ -82,7 +82,7 @@ class Address implements NodeInterface
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:BOXNO')]
     protected string $boxno;
-    
+
     /**
      *
      * @var string
@@ -100,7 +100,7 @@ class Address implements NodeInterface
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:CITY')]
     protected string $city;
-    
+
     /**
      *
      * @var string
@@ -127,24 +127,24 @@ class Address implements NodeInterface
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:VAT_ID')]
     protected string $vatId;
-    
+
     /**
      *
      * @var Phone
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\BMEcat\Nodes\Phone::class)]
+    #[Serializer\Type(Phone::class)]
     #[Serializer\SerializedName('bme:PHONE')]
-    protected \Naugrim\BMEcat\Nodes\Phone $phone;
-    
+    protected Phone $phone;
+
     /**
      *
      * @var Fax
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\BMEcat\Nodes\Fax::class)]
+    #[Serializer\Type(Fax::class)]
     #[Serializer\SerializedName('bme:FAX')]
-    protected \Naugrim\BMEcat\Nodes\Fax $fax;
+    protected Fax $fax;
 
     /**
      *
@@ -154,15 +154,15 @@ class Address implements NodeInterface
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:EMAIL')]
     protected string $email;
-    
+
     /**
      *
      * @var PublicKey
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\BMEcat\Nodes\Crypto\PublicKey::class)]
+    #[Serializer\Type(PublicKey::class)]
     #[Serializer\SerializedName('bme:PUBLIC_KEY')]
-    protected \Naugrim\BMEcat\Nodes\Crypto\PublicKey $publicKey;
+    protected PublicKey $publicKey;
 
     /**
      *
@@ -172,7 +172,7 @@ class Address implements NodeInterface
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:URL')]
     protected string $url;
-    
+
     /**
      *
      * @var string

@@ -29,9 +29,9 @@ class Order implements NodeInterface
      * @var Header
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\Header::class)]
+    #[Serializer\Type(Header::class)]
     #[Serializer\SerializedName('ORDER_HEADER')]
-    protected \Naugrim\OpenTrans\Nodes\Order\Header $header;
+    protected Header $header;
 
     /**
      *
@@ -49,9 +49,9 @@ class Order implements NodeInterface
      * @var Summary
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\Summary::class)]
+    #[Serializer\Type(Summary::class)]
     #[Serializer\SerializedName('ORDER_SUMMARY')]
-    protected \Naugrim\OpenTrans\Nodes\Order\Summary $summary;
+    protected Summary $summary;
 
     /**
      * @return mixed

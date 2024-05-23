@@ -22,18 +22,18 @@ class SourcingInfo implements NodeInterface
      * @var Agreement
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Agreement::class)]
+    #[Serializer\Type(Agreement::class)]
     #[Serializer\SerializedName('AGREEMENT')]
-    protected \Naugrim\OpenTrans\Nodes\Agreement $agreement;
+    protected Agreement $agreement;
 
     /**
      *
      * @var Reference
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Catalog\Reference::class)]
+    #[Serializer\Type(Reference::class)]
     #[Serializer\SerializedName('CATALOG_REFERENCE')]
-    protected \Naugrim\OpenTrans\Nodes\Catalog\Reference $catalogReference;
+    protected Reference $catalogReference;
 
     /**
      * @return string

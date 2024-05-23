@@ -12,6 +12,7 @@ class PartyId implements NodeInterface
 {
     use HasTypeAttribute;
     use HasStringValue;
+
     public const TYPE_SUPPLIER_SPECIFIC = 'supplier_specific';
 
     public const TYPE_BUYER_SPECIFIC = 'buyer_specific';

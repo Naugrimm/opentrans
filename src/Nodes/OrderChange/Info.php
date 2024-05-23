@@ -53,9 +53,9 @@ class Info implements NodeInterface
      * @var PartiesReference
      */
     #[Serializer\Expose]
-    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\PartiesReference::class)]
+    #[Serializer\Type(PartiesReference::class)]
     #[Serializer\SerializedName('ORDER_PARTIES_REFERENCE')]
-    protected \Naugrim\OpenTrans\Nodes\Order\PartiesReference $partiesReference;
+    protected PartiesReference $partiesReference;
 
     /**
      * @return string
