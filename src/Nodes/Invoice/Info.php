@@ -19,7 +19,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('INVOICE_ID')]
-    protected $id;
+    protected string $id;
 
     /**
      *
@@ -28,7 +28,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('INVOICE_DATE')]
-    protected $date;
+    protected string $date;
 
     /**
      *
@@ -37,7 +37,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\DeliveryDate::class)]
     #[Serializer\SerializedName('DELIVERY_DATE')]
-    protected $deliveryDate;
+    protected \Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate;
 
     /**
      *
@@ -48,7 +48,7 @@ class Info implements NodeInterface
     #[Serializer\SerializedName('PARTIES')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Party>')]
     #[Serializer\XmlList(entry: 'PARTY')]
-    protected $parties = [];
+    protected array $parties = [];
 
     /**
      *
@@ -57,7 +57,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('INVOICE_ISSUER_IDREF')]
-    protected $issuerIdRef;
+    protected string $issuerIdRef;
 
     /**
      *
@@ -66,7 +66,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('INVOICE_RECIPIENT_IDREF')]
-    protected $rcptIdRef;
+    protected string $rcptIdRef;
 
     /**
      *
@@ -75,7 +75,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:CURRENCY')]
-    protected $currency;
+    protected string $currency;
 
     /**
      * @return string

@@ -26,7 +26,7 @@ class OrderChange implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\OrderChange\Header::class)]
     #[Serializer\SerializedName('ORDERCHANGE_HEADER')]
-    protected $header;
+    protected \Naugrim\OpenTrans\Nodes\OrderChange\Header $header;
 
     /**
      *
@@ -37,7 +37,7 @@ class OrderChange implements NodeInterface
     #[Serializer\SerializedName('ORDERCHANGE_ITEM_LIST')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Order\Item>')]
     #[Serializer\XmlList(entry: 'ORDER_ITEM')]
-    protected $items = [];
+    protected array $items = [];
 
     /**
      *
@@ -46,7 +46,7 @@ class OrderChange implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\Summary::class)]
     #[Serializer\SerializedName('ORDERCHANGE_SUMMARY')]
-    protected $summary;
+    protected \Naugrim\OpenTrans\Nodes\Order\Summary $summary;
 
     /**
      * @return Header

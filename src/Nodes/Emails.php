@@ -18,7 +18,7 @@ class Emails implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:EMAIL')]
-    protected $email = '';
+    protected string $email = '';
 
     /**
      *
@@ -28,7 +28,7 @@ class Emails implements NodeInterface
     #[Serializer\SerializedName('bme:PUBLIC_KEY')]
     #[Serializer\Type('array<Naugrim\BMEcat\Nodes\Crypto\PublicKey>')]
     #[Serializer\XmlList(inline: 'true')]
-    protected $publicKeys = [];
+    protected array $publicKeys = [];
 
     /**
      * @return string

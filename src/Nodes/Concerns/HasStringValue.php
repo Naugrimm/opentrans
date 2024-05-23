@@ -11,7 +11,7 @@ trait HasStringValue
      * @var string
      */
     #[Serializer\XmlValue]
-    protected $value;
+    protected string $value;
 
     /**
      * @return string

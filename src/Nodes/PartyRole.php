@@ -52,7 +52,7 @@ class PartyRole implements NodeInterface
      */
     #[Serializer\Type('string')]
     #[Serializer\XmlValue]
-    protected $role = '';
+    protected string $role = '';
 
     /**
      * @return string

@@ -15,7 +15,7 @@ class Party implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\PartyId::class)]
     #[Serializer\SerializedName('bme:PARTY_ID')]
-    protected $id;
+    protected \Naugrim\OpenTrans\Nodes\PartyId $id;
 
     /**
      * @var PartyRole
@@ -23,7 +23,7 @@ class Party implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\PartyRole::class)]
     #[Serializer\SerializedName('PARTY_ROLE')]
-    protected $role;
+    protected \Naugrim\OpenTrans\Nodes\PartyRole $role;
 
     /**
      * @var Address
@@ -31,7 +31,7 @@ class Party implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Address::class)]
     #[Serializer\SerializedName('ADDRESS')]
-    protected $address;
+    protected \Naugrim\OpenTrans\Nodes\Address $address;
 
     /**
      * @var Account
@@ -39,7 +39,7 @@ class Party implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Account::class)]
     #[Serializer\SerializedName('ACCOUNT')]
-    protected $account;
+    protected \Naugrim\OpenTrans\Nodes\Account $account;
 
     /**
      * @return PartyId

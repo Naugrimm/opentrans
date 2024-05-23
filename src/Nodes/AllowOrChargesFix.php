@@ -14,7 +14,7 @@ class AllowOrChargesFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\AllowOrCharge::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE')]
-    protected $allowOrCharge;
+    protected \Naugrim\OpenTrans\Nodes\AllowOrCharge $allowOrCharge;
 
     /**
      *
@@ -23,7 +23,7 @@ class AllowOrChargesFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGES_TOTAL_AMOUNT')]
-    protected $allowOrChargesTotalAmount;
+    protected float $allowOrChargesTotalAmount;
 
     /**
      * @return AllowOrCharge

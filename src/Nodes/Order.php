@@ -34,7 +34,7 @@ class Order implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\Header::class)]
     #[Serializer\SerializedName('ORDER_HEADER')]
-    protected $header;
+    protected \Naugrim\OpenTrans\Nodes\Order\Header $header;
 
     /**
      *
@@ -45,7 +45,7 @@ class Order implements NodeInterface
     #[Serializer\SerializedName('ORDER_ITEM_LIST')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Order\Item>')]
     #[Serializer\XmlList(entry: 'ORDER_ITEM')]
-    protected $items = [];
+    protected array $items = [];
 
     /**
      *
@@ -54,7 +54,7 @@ class Order implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Order\Summary::class)]
     #[Serializer\SerializedName('ORDER_SUMMARY')]
-    protected $summary;
+    protected \Naugrim\OpenTrans\Nodes\Order\Summary $summary;
 
     /**
      * @return mixed

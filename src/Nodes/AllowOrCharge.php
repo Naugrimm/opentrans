@@ -17,7 +17,7 @@ class AllowOrCharge implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('int')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_SEQUENCE')]
-    protected $sequence;
+    protected int $sequence;
 
     /**
      *
@@ -26,7 +26,7 @@ class AllowOrCharge implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_NAME')]
-    protected $name;
+    protected string $name;
 
     /**
      *
@@ -35,7 +35,7 @@ class AllowOrCharge implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_TYPE')]
-    protected $type;
+    protected string $type;
 
     /**
      *
@@ -44,7 +44,7 @@ class AllowOrCharge implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_DESCR')]
-    protected $description;
+    protected string $description;
 
     /**
      *
@@ -53,7 +53,7 @@ class AllowOrCharge implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\AllowOrChargeValue::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_VALUE')]
-    protected $value;
+    protected \Naugrim\OpenTrans\Nodes\AllowOrChargeValue $value;
 
     /**
      *
@@ -62,7 +62,7 @@ class AllowOrCharge implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_BASE')]
-    protected $base;
+    protected float $base;
 
     /**
      * @return int

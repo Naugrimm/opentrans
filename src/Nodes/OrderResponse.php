@@ -26,7 +26,7 @@ class OrderResponse implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\OrderResponse\Header::class)]
     #[Serializer\SerializedName('ORDERRESPONSE_HEADER')]
-    protected $header;
+    protected \Naugrim\OpenTrans\Nodes\OrderResponse\Header $header;
 
     /**
      *
@@ -37,7 +37,7 @@ class OrderResponse implements NodeInterface
     #[Serializer\SerializedName('ORDERRESPONSE_ITEM_LIST')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\OrderResponse\Item>')]
     #[Serializer\XmlList(entry: 'ORDERRESPONSE_ITEM')]
-    protected $items = [];
+    protected array $items = [];
 
     /**
      *
@@ -46,7 +46,7 @@ class OrderResponse implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\OrderResponse\Summary::class)]
     #[Serializer\SerializedName('ORDERRESPONSE_SUMMARY')]
-    protected $summary;
+    protected \Naugrim\OpenTrans\Nodes\OrderResponse\Summary $summary;
 
     /**
      * @return Header

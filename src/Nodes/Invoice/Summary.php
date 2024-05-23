@@ -24,7 +24,7 @@ class Summary implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\SerializedName('NET_VALUE_GOODS')]
     #[Serializer\Type('float')]
-    protected $netValueGoods;
+    protected float $netValueGoods;
 
     /**
      *
@@ -35,7 +35,7 @@ class Summary implements NodeInterface
     #[Serializer\SerializedName('TOTAL_TAX')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Tax\DetailsFix>')]
     #[Serializer\XmlList(entry: 'TAX_DETAILS_FIX')]
-    protected $totalTax = [];
+    protected array $totalTax = [];
 
     /**
      * @return float

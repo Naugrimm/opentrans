@@ -14,7 +14,7 @@ class PriceFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('bme:PRICE_AMOUNT')]
-    protected $amount;
+    protected float $amount;
 
     /**
      * @return float

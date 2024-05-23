@@ -27,7 +27,7 @@ class DeliveryDate implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('DELIVERY_START_DATE')]
-    protected $deliveryStartDate;
+    protected string $deliveryStartDate;
 
 
     /**
@@ -37,7 +37,7 @@ class DeliveryDate implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('DELIVERY_END_DATE')]
-    protected $deliveryEndDate;
+    protected string $deliveryEndDate;
 
     public function getType(): string
     {

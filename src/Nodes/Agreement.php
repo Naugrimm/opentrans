@@ -18,7 +18,7 @@ class Agreement implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\SerializedName('type')]
     #[Serializer\XmlAttribute]
-    protected $type;
+    protected string $type;
 
     /**
      *
@@ -27,7 +27,7 @@ class Agreement implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\SerializedName('default')]
     #[Serializer\XmlAttribute]
-    protected $default;
+    protected bool $default;
 
     /**
      *
@@ -36,7 +36,7 @@ class Agreement implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:AGREEMENT_ID')]
-    protected $id;
+    protected string $id;
 
     /**
      *
@@ -45,7 +45,7 @@ class Agreement implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:AGREEMENT_LINE_ID')]
-    protected $lineId;
+    protected string $lineId;
 
     /**
      *
@@ -54,7 +54,7 @@ class Agreement implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:AGREEMENT_START_DATE')]
-    protected $startDate;
+    protected string $startDate;
 
     /**
      *
@@ -63,7 +63,7 @@ class Agreement implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:AGREEMENT_END_DATE')]
-    protected $endDate;
+    protected string $endDate;
 
     /**
      *
@@ -72,7 +72,7 @@ class Agreement implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(\Naugrim\BMEcat\Nodes\SupplierIdRef::class)]
     #[Serializer\SerializedName('bme:SUPPLIER_IDREF')]
-    protected $supplierIdRef;
+    protected \Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef;
 
     /**
      *
@@ -81,7 +81,7 @@ class Agreement implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('AGREEMENT_DESCR')]
-    protected $description;
+    protected string $description;
 
     /**
      *
@@ -92,7 +92,7 @@ class Agreement implements NodeInterface
     #[Serializer\SerializedName('MIME_INFO')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Mime>')]
     #[Serializer\XmlList(entry: 'MIME')]
-    protected $mimeInfo = [];
+    protected array $mimeInfo = [];
 
     /**
      * @return string
