@@ -4,8 +4,6 @@ namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
 
@@ -249,8 +247,6 @@ class Agreement implements NodeInterface
     /**
      * @param Mime[] $mimeInfos
      * @return Agreement
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
      */
     public function setMimeInfo(array $mimeInfos): Agreement
     {

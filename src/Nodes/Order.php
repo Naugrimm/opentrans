@@ -4,14 +4,11 @@ namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\Order\Header;
 use Naugrim\OpenTrans\Nodes\Order\Item;
 use Naugrim\OpenTrans\Nodes\Order\Summary;
-
 
 #[Serializer\XmlRoot('ORDER')]
 #[Serializer\ExclusionPolicy('all')]
@@ -102,8 +99,6 @@ class Order implements NodeInterface
     /**
      * @param Item[] $items
      * @return Order
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
      */
     public function setItems(array $items): Order
     {

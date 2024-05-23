@@ -12,7 +12,6 @@ use Naugrim\OpenTrans\Nodes\BankCode;
 
 class Payment implements NodeInterface
 {
-    
     #[Serializer\Type(\Naugrim\OpenTrans\Nodes\Payment\Card::class)]
     #[Serializer\SerializedName('CARD')]
     private ?\Naugrim\OpenTrans\Nodes\Payment\Card $card = null;
@@ -80,8 +79,7 @@ class Payment implements NodeInterface
         string $bankName,
         string $bic,
         string $country
-    ): Payment
-    {
+    ): Payment {
         $bankAccount = new BankAccount();
         $bankAccount->setType(BankAccount::TYPE_IBAN);
         $bankAccount->setValue($iban);

@@ -20,8 +20,6 @@ class SchemaValidator
      * @param string $version
      * @param string|null $type
      * @return bool
-     * @throws SchemaValidationException
-     * @throws UnsupportedVersionException
      */
     public static function isValid(string $xml, string $version = '2005.1', string $type = null)
     {
@@ -45,7 +43,6 @@ class SchemaValidator
      * @param string $version
      * @param string|null $type
      * @return string
-     * @throws UnsupportedVersionException
      */
     protected static function getSchemaForVersion(string $version, string $type = null): string
     {

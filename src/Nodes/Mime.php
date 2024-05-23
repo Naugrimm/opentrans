@@ -4,8 +4,6 @@ namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\File\HashValue;
 use Naugrim\OpenTrans\Nodes\Mime\Embedded;
@@ -135,8 +133,6 @@ class Mime implements NodeInterface
     /**
      * @param array $fileHashValues
      * @return Mime
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
      */
     public function setFileHashValue(array $fileHashValues): Mime
     {
@@ -173,8 +169,6 @@ class Mime implements NodeInterface
     /**
      * @param Embedded[] $embeddeds
      * @return Mime
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
      */
     public function setEmbedded(array $embeddeds): Mime
     {

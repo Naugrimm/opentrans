@@ -4,8 +4,6 @@ namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\nodes\Crypto\PublicKey;
 
@@ -59,8 +57,6 @@ class Emails implements NodeInterface
     /**
      * @param PublicKey[] $publicKeys
      * @return Emails
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
      */
     public function setPublicKeys(array $publicKeys): Emails
     {

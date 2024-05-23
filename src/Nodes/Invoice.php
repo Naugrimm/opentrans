@@ -4,14 +4,11 @@ namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\Invoice\Header;
 use Naugrim\OpenTrans\Nodes\Invoice\Item;
 use Naugrim\OpenTrans\Nodes\Invoice\Summary;
-
 
 #[Serializer\XmlRoot('INVOICE')]
 #[Serializer\ExclusionPolicy('all')]
@@ -77,8 +74,6 @@ class Invoice implements NodeInterface
     /**
      * @param Item[] $items
      * @return Invoice
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
      */
     public function setItems(array $items): Invoice
     {

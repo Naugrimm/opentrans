@@ -60,14 +60,13 @@ trait HasUdxItems
     /**
      * @param array<string, mixed> $udxData
      * @return array<string, string>
-     * @throws UnknownKeyException
      */
     private function parseUdxData(array $udxData): array
     {
         $mandatoryKeys = [
             'vendor',
             'name',
-            'value'
+            'value',
         ];
 
         $data = [];
