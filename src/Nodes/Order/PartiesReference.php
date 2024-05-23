@@ -12,39 +12,39 @@ use Naugrim\OpenTrans\Nodes\ShipmentPartiesReference;
 class PartiesReference implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\BuyerIdRef")
-     * @Serializer\SerializedName("bme:BUYER_IDREF")
      *
      * @var BuyerIdRef
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\BuyerIdRef')]
+    #[Serializer\SerializedName('bme:BUYER_IDREF')]
     protected $buyerIdRef;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\SupplierIdRef")
-     * @Serializer\SerializedName("bme:SUPPLIER_IDREF")
      *
      * @var SupplierIdRef
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\SupplierIdRef')]
+    #[Serializer\SerializedName('bme:SUPPLIER_IDREF')]
     protected $supplierIdRef;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef")
-     * @Serializer\SerializedName("INVOICE_RECIPIENT_IDREF")
      *
      * @var InvoiceRcptIdRef
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef')]
+    #[Serializer\SerializedName('INVOICE_RECIPIENT_IDREF')]
     protected $invoiceRcptIdRef;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\ShipmentPartiesReference")
-     * @Serializer\SerializedName("SHIPMENT_PARTIES_REFERENCE")
      *
      * @var ShipmentPartiesReference
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\ShipmentPartiesReference')]
+    #[Serializer\SerializedName('SHIPMENT_PARTIES_REFERENCE')]
     protected $shipmentPartiesReference;
 
     /**

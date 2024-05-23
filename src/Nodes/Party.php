@@ -5,41 +5,39 @@ namespace Naugrim\OpenTrans\Nodes;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
-/**
- * @Serializer\XmlRoot("PARTY")
- */
+#[Serializer\XmlRoot('PARTY')]
 class Party implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\PartyId")
-     * @Serializer\SerializedName("bme:PARTY_ID")
      *
      * @var PartyId
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\PartyId')]
+    #[Serializer\SerializedName('bme:PARTY_ID')]
     protected $id;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\PartyRole")
-     * @Serializer\SerializedName ("PARTY_ROLE")
      * @var PartyRole
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\PartyRole')]
+    #[Serializer\SerializedName('PARTY_ROLE')]
     protected $role;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Address")
-     * @Serializer\SerializedName ("ADDRESS")
      * @var Address
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Address')]
+    #[Serializer\SerializedName('ADDRESS')]
     protected $address;
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Account")
-     * @Serializer\SerializedName("ACCOUNT")
      * @var Account
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Account')]
+    #[Serializer\SerializedName('ACCOUNT')]
     protected $account;
 
     /**

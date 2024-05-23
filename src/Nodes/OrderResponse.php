@@ -12,42 +12,40 @@ use Naugrim\OpenTrans\Nodes\OrderResponse\Header;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Item;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Summary;
 
-/**
- *
- * @Serializer\XmlRoot("ORDERRESPONSE")
- * @Serializer\ExclusionPolicy("all")
- */
+
+#[Serializer\XmlRoot('ORDERRESPONSE')]
+#[Serializer\ExclusionPolicy('all')]
 class OrderResponse implements NodeInterface
 {
     use IsRootNode;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\OrderResponse\Header")
-     * @Serializer\SerializedName("ORDERRESPONSE_HEADER")
      *
      * @var Header
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\OrderResponse\Header')]
+    #[Serializer\SerializedName('ORDERRESPONSE_HEADER')]
     protected $header;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("ORDERRESPONSE_ITEM_LIST")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\OrderResponse\Item>")
-     * @Serializer\XmlList(entry = "ORDERRESPONSE_ITEM")
      *
      * @var Item[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('ORDERRESPONSE_ITEM_LIST')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\OrderResponse\Item>')]
+    #[Serializer\XmlList(entry: 'ORDERRESPONSE_ITEM')]
     protected $items = [];
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\OrderResponse\Summary")
-     * @Serializer\SerializedName("ORDERRESPONSE_SUMMARY")
      *
      * @var Summary
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\OrderResponse\Summary')]
+    #[Serializer\SerializedName('ORDERRESPONSE_SUMMARY')]
     protected $summary;
 
     /**

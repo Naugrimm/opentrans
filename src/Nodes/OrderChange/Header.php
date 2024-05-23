@@ -7,20 +7,18 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 use Naugrim\OpenTrans\Nodes\ControlInfo;
 
-/**
- * @Serializer\AccessorOrder(order = "custom", custom = {"controlInfo", "info"})
- */
+#[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'info'])]
 class Header implements NodeInterface
 {
     use HasControlInfo;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\OrderChange\Info")
-     * @Serializer\SerializedName("ORDERCHANGE_INFO")
      *
      * @var Info
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\OrderChange\Info')]
+    #[Serializer\SerializedName('ORDERCHANGE_INFO')]
     protected $info;
 
     /**

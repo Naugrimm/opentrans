@@ -12,31 +12,31 @@ use Naugrim\OpenTrans\Nodes\Party;
 class DeliveryDate implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("type")
-     * @Serializer\XmlAttribute
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('type')]
+    #[Serializer\XmlAttribute]
     protected $type;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("DELIVERY_START_DATE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('DELIVERY_START_DATE')]
     protected $deliveryStartDate;
 
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("DELIVERY_END_DATE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('DELIVERY_END_DATE')]
     protected $deliveryEndDate;
 
     public function getType(): string

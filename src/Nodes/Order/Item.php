@@ -14,75 +14,75 @@ class Item implements NodeInterface
     use HasUdxItems;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("LINE_ITEM_ID")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('LINE_ITEM_ID')]
     protected $lineItemId;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\ProductId")
-     * @Serializer\SerializedName("PRODUCT_ID")
      *
      * @var ProductId
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\ProductId')]
+    #[Serializer\SerializedName('PRODUCT_ID')]
     protected $productId;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("QUANTITY")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('QUANTITY')]
     protected $quantity;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:ORDER_UNIT")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:ORDER_UNIT')]
     protected $orderUnit;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("bool")
-     * @Serializer\SerializedName("PARTIAL_SHIPMENT_ALLOWED")
      *
      * @var boolean
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('bool')]
+    #[Serializer\SerializedName('PARTIAL_SHIPMENT_ALLOWED')]
     protected $partialShipmentAllowed;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\DeliveryDate")
-     * @Serializer\SerializedName("DELIVERY_DATE")
      *
      * @var DeliveryDate
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\DeliveryDate')]
+    #[Serializer\SerializedName('DELIVERY_DATE')]
     protected $deliveryDate;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Product\PriceFix")
-     * @Serializer\SerializedName("PRODUCT_PRICE_FIX")
      *
      * @var PriceFix
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Product\PriceFix')]
+    #[Serializer\SerializedName('PRODUCT_PRICE_FIX')]
     protected $priceFix;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("PRICE_LINE_AMOUNT")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('PRICE_LINE_AMOUNT')]
     protected $priceLineAmount;
 
     /**

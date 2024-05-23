@@ -12,42 +12,40 @@ use Naugrim\OpenTrans\Nodes\Invoice\Header;
 use Naugrim\OpenTrans\Nodes\Invoice\Item;
 use Naugrim\OpenTrans\Nodes\Invoice\Summary;
 
-/**
- *
- * @Serializer\XmlRoot("INVOICE")
- * @Serializer\ExclusionPolicy("all")
- */
+
+#[Serializer\XmlRoot('INVOICE')]
+#[Serializer\ExclusionPolicy('all')]
 class Invoice implements NodeInterface
 {
     use IsRootNode;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Invoice\Header")
-     * @Serializer\SerializedName("INVOICE_HEADER")
      *
      * @var Header
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Invoice\Header')]
+    #[Serializer\SerializedName('INVOICE_HEADER')]
     protected $header;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("INVOICE_ITEM_LIST")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Invoice\Item>")
-     * @Serializer\XmlList(entry = "INVOICE_ITEM")
      *
      * @var Item[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('INVOICE_ITEM_LIST')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Invoice\Item>')]
+    #[Serializer\XmlList(entry: 'INVOICE_ITEM')]
     protected $items = [];
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Invoice\Summary")
-     * @Serializer\SerializedName("INVOICE_SUMMARY")
      *
      * @var Summary
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Invoice\Summary')]
+    #[Serializer\SerializedName('INVOICE_SUMMARY')]
     protected $summary;
 
     /**

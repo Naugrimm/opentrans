@@ -11,57 +11,57 @@ class AllowOrCharge implements NodeInterface
     use HasTypeAttribute;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("int")
-     * @Serializer\SerializedName("ALLOW_OR_CHARGE_SEQUENCE")
      *
      * @var int
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('int')]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGE_SEQUENCE')]
     protected $sequence;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ALLOW_OR_CHARGE_NAME")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGE_NAME')]
     protected $name;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ALLOW_OR_CHARGE_TYPE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGE_TYPE')]
     protected $type;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ALLOW_OR_CHARGE_DESCR")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGE_DESCR')]
     protected $description;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\AllowOrChargeValue")
-     * @Serializer\SerializedName("ALLOW_OR_CHARGE_VALUE")
      *
      * @var AllowOrChargeValue
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\AllowOrChargeValue')]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGE_VALUE')]
     protected $value;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("ALLOW_OR_CHARGE_BASE")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGE_BASE')]
     protected $base;
 
     /**

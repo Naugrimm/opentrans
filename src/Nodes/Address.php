@@ -12,174 +12,174 @@ use Naugrim\OpenTrans\Nodes\Contact\Details;
 class Address implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:NAME")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:NAME')]
     protected $name;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:NAME2")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:NAME2')]
     protected $name2;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:NAME3")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:NAME3')]
     protected $name3;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:DEPARTMENT")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:DEPARTMENT')]
     protected $department;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Contact\Details")
-     * @Serializer\SerializedName("CONTACT_DETAILS")
      *
      * @var Details
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Contact\Details')]
+    #[Serializer\SerializedName('CONTACT_DETAILS')]
     protected $contactDetails;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:STREET")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:STREET')]
     protected $street;
     
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:ZIP")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:ZIP')]
     protected $zip;
     
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:BOXNO")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:BOXNO')]
     protected $boxno;
     
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:ZIPBOX")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:ZIPBOX')]
     protected $zipbox;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:CITY")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:CITY')]
     protected $city;
     
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:COUNTRY")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:COUNTRY')]
     protected $country;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:COUNTRY_CODED")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:COUNTRY_CODED')]
     protected $countryCoded;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:VAT_ID")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:VAT_ID')]
     protected $vatId;
     
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\Phone")
-     * @Serializer\SerializedName("bme:PHONE")
      *
      * @var Phone
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\Phone')]
+    #[Serializer\SerializedName('bme:PHONE')]
     protected $phone;
     
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\Fax")
-     * @Serializer\SerializedName("bme:FAX")
      *
      * @var Fax
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\Fax')]
+    #[Serializer\SerializedName('bme:FAX')]
     protected $fax;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:EMAIL")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:EMAIL')]
     protected $email;
     
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\Crypto\PublicKey")
-     * @Serializer\SerializedName("bme:PUBLIC_KEY")
      *
      * @var PublicKey
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\Crypto\PublicKey')]
+    #[Serializer\SerializedName('bme:PUBLIC_KEY')]
     protected $publicKey;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:URL")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:URL')]
     protected $url;
     
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:ADDRESS_REMARKS")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:ADDRESS_REMARKS')]
     protected $addressRemarks;
 
     public function getName(): string

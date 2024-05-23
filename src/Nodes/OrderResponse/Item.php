@@ -10,57 +10,57 @@ use Naugrim\OpenTrans\Nodes\ProductId;
 class Item implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("LINE_ITEM_ID")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('LINE_ITEM_ID')]
     protected $lineItemId;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\ProductId")
-     * @Serializer\SerializedName("PRODUCT_ID")
      *
      * @var ProductId
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\ProductId')]
+    #[Serializer\SerializedName('PRODUCT_ID')]
     protected $productId;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("QUANTITY")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('QUANTITY')]
     protected $quantity;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:ORDER_UNIT")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:ORDER_UNIT')]
     protected $orderUnit;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Product\PriceFix")
-     * @Serializer\SerializedName("PRODUCT_PRICE_FIX")
      *
      * @var PriceFix
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Product\PriceFix')]
+    #[Serializer\SerializedName('PRODUCT_PRICE_FIX')]
     protected $priceFix;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("PRICE_LINE_AMOUNT")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('PRICE_LINE_AMOUNT')]
     protected $priceLineAmount;
 
     /**

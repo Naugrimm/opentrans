@@ -6,20 +6,18 @@ use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 
-/**
- * @Serializer\AccessorOrder(order = "custom", custom = {"controlInfo", "info"})
- */
+#[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'info'])]
 class Header implements NodeInterface
 {
     use HasControlInfo;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\OrderResponse\Info")
-     * @Serializer\SerializedName("ORDERRESPONSE_INFO")
      *
      * @var Info
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\OrderResponse\Info')]
+    #[Serializer\SerializedName('ORDERRESPONSE_INFO')]
     protected $info;
 
     /**

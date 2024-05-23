@@ -7,22 +7,22 @@ use JMS\Serializer\Annotation as Serializer;
 class Udx implements UdxInterface
 {
     /**
-     * @Serializer\Exclude
      * @var string
      */
+    #[Serializer\Exclude]
     protected $vendor;
 
     /**
-     * @Serializer\Exclude
      * @var string
      */
+    #[Serializer\Exclude]
     protected $name;
 
     /**
      * @var string
-     * @Serializer\Type("string")
-     * @Serializer\Inline
      */
+    #[Serializer\Type('string')]
+    #[Serializer\Inline]
     protected $value;
 
     /**

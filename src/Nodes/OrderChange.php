@@ -12,42 +12,40 @@ use Naugrim\OpenTrans\Nodes\Order\Item;
 use Naugrim\OpenTrans\Nodes\Order\Summary;
 use Naugrim\OpenTrans\Nodes\OrderChange\Header;
 
-/**
- *
- * @Serializer\XmlRoot("ORDERCHANGE")
- * @Serializer\ExclusionPolicy("all")
- */
+
+#[Serializer\XmlRoot('ORDERCHANGE')]
+#[Serializer\ExclusionPolicy('all')]
 class OrderChange implements NodeInterface
 {
     use IsRootNode;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\OrderChange\Header")
-     * @Serializer\SerializedName("ORDERCHANGE_HEADER")
      *
      * @var Header
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\OrderChange\Header')]
+    #[Serializer\SerializedName('ORDERCHANGE_HEADER')]
     protected $header;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("ORDERCHANGE_ITEM_LIST")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Order\Item>")
-     * @Serializer\XmlList(entry = "ORDER_ITEM")
      *
      * @var Item[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('ORDERCHANGE_ITEM_LIST')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Order\Item>')]
+    #[Serializer\XmlList(entry: 'ORDER_ITEM')]
     protected $items = [];
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\Summary")
-     * @Serializer\SerializedName("ORDERCHANGE_SUMMARY")
      *
      * @var Summary
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Order\Summary')]
+    #[Serializer\SerializedName('ORDERCHANGE_SUMMARY')]
     protected $summary;
 
     /**

@@ -19,74 +19,74 @@ class Info implements NodeInterface
     use HasUdxItems;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ORDER_ID")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ORDER_ID')]
     protected $id;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ORDER_DATE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ORDER_DATE')]
     protected $date;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\DeliveryDate")
-     * @Serializer\SerializedName("DELIVERY_DATE")
      *
      * @var DeliveryDate
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\DeliveryDate')]
+    #[Serializer\SerializedName('DELIVERY_DATE')]
     protected $deliveryDate;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("PARTIES")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Party>")
-     * @Serializer\XmlList(entry = "PARTY")
      *
      * @var Party[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('PARTIES')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Party>')]
+    #[Serializer\XmlList(entry: 'PARTY')]
     protected $parties = [];
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\PartiesReference")
-     * @Serializer\SerializedName("ORDER_PARTIES_REFERENCE")
      *
      * @var PartiesReference
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Order\PartiesReference')]
+    #[Serializer\SerializedName('ORDER_PARTIES_REFERENCE')]
     protected $partiesReference;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("bool")
-     * @Serializer\SerializedName("PARTIAL_SHIPMENT_ALLOWED")
      *
      * @var boolean
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('bool')]
+    #[Serializer\SerializedName('PARTIAL_SHIPMENT_ALLOWED')]
     protected $partialShipmentAllowed;
 
     /**
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Payment\Payment")
-     * @Serializer\SerializedName("PAYMENT")
      *
      * @var Payment
      */
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Payment\Payment')]
+    #[Serializer\SerializedName('PAYMENT')]
     protected $payment;
 
     /**
      * @see HasUdxItems::$udxItem
-     * @Serializer\SerializedName("HEADER_UDX")
      * @var UdxAggregate
      */
+    #[Serializer\SerializedName('HEADER_UDX')]
     protected $udxItem;
 
     /**

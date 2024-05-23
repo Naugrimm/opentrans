@@ -8,21 +8,21 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class AllowOrChargesFix implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\AllowOrCharge")
-     * @Serializer\SerializedName("ALLOW_OR_CHARGE")
      *
      * @var AllowOrCharge
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\AllowOrCharge')]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGE')]
     protected $allowOrCharge;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("ALLOW_OR_CHARGES_TOTAL_AMOUNT")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGES_TOTAL_AMOUNT')]
     protected $allowOrChargesTotalAmount;
 
     /**

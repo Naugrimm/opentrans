@@ -24,30 +24,30 @@ class Card implements NodeInterface
     public const CHINA_UNION_PAY = 'ChinaUnionPay';
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CARD_NUM")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CARD_NUM')]
     private $number;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("DateTimeInterface<'Y-m'>")
-     * @Serializer\SerializedName("CARD_EXPIRATION_DATE")
      *
      * @var DateTimeInterface
      */
+    #[Serializer\Expose]
+    #[Serializer\Type("DateTimeInterface<'Y-m'>")]
+    #[Serializer\SerializedName('CARD_EXPIRATION_DATE')]
     private $expDate;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CARD_HOLDER_NAME")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CARD_HOLDER_NAME')]
     private $holder;
 
     public static function create(string $type, string $number, string $holder, DateTimeInterface $expDate): Card

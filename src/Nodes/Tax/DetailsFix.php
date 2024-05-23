@@ -8,75 +8,75 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class DetailsFix implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("int")
-     * @Serializer\SerializedName("CALCULATION_SEQUENCE")
      *
      * @var int
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('int')]
+    #[Serializer\SerializedName('CALCULATION_SEQUENCE')]
     protected $calculationSequence;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("TAX_CATEGORY")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('TAX_CATEGORY')]
     protected $category;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("TAX_TYPE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('TAX_TYPE')]
     protected $type;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("TAX")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('TAX')]
     protected $tax;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("TAX_AMOUNT")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('TAX_AMOUNT')]
     protected $amount;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("TAX_BASE")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('TAX_BASE')]
     protected $base;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("EXEMPTION_REASON")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('EXEMPTION_REASON')]
     protected $exemptionReason;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("JURISDICTION")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('JURISDICTION')]
     protected $jurisdiction;
 
     /**

@@ -8,30 +8,30 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class ControlInfo implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("STOP_AUTOMATIC_PROCESSING")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('STOP_AUTOMATIC_PROCESSING')]
     protected $stopAutomaticProcessing;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("GENERATOR_INFO")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('GENERATOR_INFO')]
     protected $generatorInfo;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("GENERATOR_DATE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('GENERATOR_DATE')]
     protected $generatorDate;
 
     /**

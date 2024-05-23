@@ -8,12 +8,12 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class PriceFix implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("bme:PRICE_AMOUNT")
      *
      * @var float
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('bme:PRICE_AMOUNT')]
     protected $amount;
 
     /**

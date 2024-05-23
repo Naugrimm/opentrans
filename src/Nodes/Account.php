@@ -8,41 +8,41 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class Account implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("HOLDER")
-     * @Serializer\Type("string")
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('HOLDER')]
+    #[Serializer\Type('string')]
     protected $holder;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("BANK_ACCOUNT")
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\BankAccount")
      * @var BankAccount
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('BANK_ACCOUNT')]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\BankAccount')]
     protected $bankAccount;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("BANK_CODE")
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\BankCode")
      * @var BankCode
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('BANK_CODE')]
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\BankCode')]
     protected $bankCode;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("BANK_NAME")
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('BANK_NAME')]
     protected $bankName;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("BANK_COUNTRY")
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('BANK_COUNTRY')]
     protected $bankCountry;
 
     /**

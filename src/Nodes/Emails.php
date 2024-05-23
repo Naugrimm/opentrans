@@ -12,22 +12,22 @@ use Naugrim\BMEcat\nodes\Crypto\PublicKey;
 class Emails implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:EMAIL")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:EMAIL')]
     protected $email = '';
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("bme:PUBLIC_KEY")
-     * @Serializer\Type("array<Naugrim\BMEcat\Nodes\Crypto\PublicKey>")
-     * @Serializer\XmlList(inline = "true")
      *
      * @var PublicKey[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('bme:PUBLIC_KEY')]
+    #[Serializer\Type('array<Naugrim\BMEcat\Nodes\Crypto\PublicKey>')]
+    #[Serializer\XmlList(inline: 'true')]
     protected $publicKeys = [];
 
     /**

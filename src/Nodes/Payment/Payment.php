@@ -13,59 +13,59 @@ use Naugrim\OpenTrans\Nodes\BankCode;
 class Payment implements NodeInterface
 {
     /**
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Payment\Card")
-     * @Serializer\SerializedName("CARD")
      *
      * @var Card|null
      */
+    #[Serializer\Type('Naugrim\OpenTrans\Nodes\Payment\Card')]
+    #[Serializer\SerializedName('CARD')]
     private $card;
 
     /**
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Account>")
-     * @Serializer\XmlList(entry = "ACCOUNT", inline = true)
      * @var Account[]|null
      */
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Account>')]
+    #[Serializer\XmlList(entry: 'ACCOUNT', inline: true)]
     private $accounts;
 
     /**
-     * @Serializer\Type("boolean")
-     * @Serializer\SerializedName("CASH")
      *
      * @var bool|null
      */
+    #[Serializer\Type('boolean')]
+    #[Serializer\SerializedName('CASH')]
     private $cash;
 
     /**
-     * @Serializer\Type("boolean")
-     * @Serializer\SerializedName("DEBIT")
      *
      * @var bool|null
      */
+    #[Serializer\Type('boolean')]
+    #[Serializer\SerializedName('DEBIT')]
     private $debit;
 
     /**
-     * @Serializer\Type("boolean")
-     * @Serializer\SerializedName("CHECK")
      *
      * @var bool|null
      */
+    #[Serializer\Type('boolean')]
+    #[Serializer\SerializedName('CHECK')]
     private $check;
 
     /**
-     * @Serializer\Type("boolean")
-     * @Serializer\SerializedName("CENTRAL_REGULATION")
      *
      * @var bool|null
      */
+    #[Serializer\Type('boolean')]
+    #[Serializer\SerializedName('CENTRAL_REGULATION')]
     private $centralRegulation;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\Payment\PaymentTerms")
-     * @Serializer\SerializedName("PAYMENT_TERMS")
      *
      * @var PaymentTerms
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('Naugrim\BMEcat\Nodes\Payment\PaymentTerms')]
+    #[Serializer\SerializedName('PAYMENT_TERMS')]
     private $paymentTerms;
 
     public static function createCardPayment(

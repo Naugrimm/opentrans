@@ -8,20 +8,20 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class PaymentTerms implements NodeInterface
 {
     /**
-     * @Serializer\SerializedName("PAYMENT_TERMS")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Payment\PaymentTerm>")
-     * @Serializer\XmlList(entry = "PAYMENT_TERM")
      * @var PaymentTerm[]
      */
+    #[Serializer\SerializedName('PAYMENT_TERMS')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Payment\PaymentTerm>')]
+    #[Serializer\XmlList(entry: 'PAYMENT_TERM')]
     private $terms;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("VALUE_DATE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('VALUE_DATE')]
     private $valueDate;
 
     public function getTerms(): array

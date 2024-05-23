@@ -13,79 +13,79 @@ use Naugrim\OpenTrans\Nodes\Mime\Embedded;
 class Mime implements NodeInterface
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:MIME_TYPE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:MIME_TYPE')]
     protected $type;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:MIME_SOURCE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:MIME_SOURCE')]
     protected $source;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("FILE_HASH_VALUE")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\File\HashValue>")
-     * @Serializer\XmlList(inline = true)
      *
      * @var HashValue[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('FILE_HASH_VALUE')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\File\HashValue>')]
+    #[Serializer\XmlList(inline: true)]
     protected $fileHashValue = [];
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("MIME_EMBEDDED")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Mime\Embedded>")
-     * @Serializer\XmlList(entry = "MIME_EMBEDDED")
      *
      * @var Embedded[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('MIME_EMBEDDED')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Mime\Embedded>')]
+    #[Serializer\XmlList(entry: 'MIME_EMBEDDED')]
     protected $embedded = [];
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("bme:MIME_DESCR")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('bme:MIME_DESCR')]
     protected $description;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MIME_ALT")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MIME_ALT')]
     protected $alt;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MIME_PURPOSE")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MIME_PURPOSE')]
     protected $purpose;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("int")
-     * @Serializer\SerializedName("MIME_ORDER")
      *
      * @var int
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('int')]
+    #[Serializer\SerializedName('MIME_ORDER')]
     protected $order;
 
     /**
