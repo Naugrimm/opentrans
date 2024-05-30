@@ -5,6 +5,8 @@ namespace Naugrim\OpenTrans\Nodes\Payment;
 use DateTimeInterface;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Exception\InvalidSetterException;
+use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Account;
@@ -21,45 +23,45 @@ class Payment implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(Card::class)]
     #[Serializer\SerializedName('CARD')]
-    private ?Card $card = null;
+    protected ?Card $card = null;
 
     /**
-     * @var Account[]|null
+     * @var Account[]
      */
     #[Serializer\Expose]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Account>')]
     #[Serializer\XmlList(entry: 'ACCOUNT', inline: true)]
-    private ?array $accounts = null;
+    protected array $accounts = [];
 
 
     #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CASH')]
-    private ?bool $cash = null;
+    protected ?bool $cash = null;
 
 
     #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('DEBIT')]
-    private ?bool $debit = null;
+    protected ?bool $debit = null;
 
 
     #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CHECK')]
-    private ?bool $check = null;
+    protected ?bool $check = null;
 
 
     #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CENTRAL_REGULATION')]
-    private ?bool $centralRegulation = null;
+    protected ?bool $centralRegulation = null;
 
 
     #[Serializer\Expose]
     #[Serializer\Type('Naugrim\BMEcat\Nodes\Payment\PaymentTerms')]
     #[Serializer\SerializedName('PAYMENT_TERMS')]
-    private ?PaymentTerms $paymentTerms = null;
+    protected ?PaymentTerms $paymentTerms = null;
 
     public static function createCardPayment(
         string            $cartType,
@@ -113,6 +115,8 @@ class Payment implements NodeInterface
     /**
      * @param Card|array<string, mixed> $card
      * @return $this
+     * @throws InvalidSetterException
+     * @throws UnknownKeyException
      */
     public function setCard(Card|array $card): Payment
     {
@@ -120,17 +124,13 @@ class Payment implements NodeInterface
         $this->check = null;
         $this->debit = null;
         $this->cash = null;
-        $this->accounts = null;
+        $this->accounts = [];
 
         return $this;
     }
 
     public function addAccount(Account $account): Payment
     {
-        if (null === $this->accounts) {
-            $this->accounts = [];
-        }
-
         $this->accounts[] = $account;
         $this->cash = null;
         $this->debit = null;
@@ -151,7 +151,7 @@ class Payment implements NodeInterface
         $this->debit = null;
         $this->check = null;
         $this->card = null;
-        $this->accounts = null;
+        $this->accounts = [];
 
         return $this;
     }
@@ -166,7 +166,7 @@ class Payment implements NodeInterface
         $this->debit = $debit;
         $this->cash = null;
         $this->check = null;
-        $this->accounts = null;
+        $this->accounts = [];
         $this->card = null;
 
         return $this;
@@ -182,7 +182,7 @@ class Payment implements NodeInterface
         $this->check = $check;
         $this->cash = null;
         $this->debit = null;
-        $this->accounts = null;
+        $this->accounts = [];
         $this->card = null;
 
         return $this;
@@ -190,6 +190,6 @@ class Payment implements NodeInterface
 
     public function isCentralRegulation(): bool
     {
-        return $this->centralRegulation;
+        return $this->centralRegulation === true;
     }
 }

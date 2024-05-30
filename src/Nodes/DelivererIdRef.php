@@ -13,6 +13,9 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 class DelivererIdRef implements NodeInterface
 {
     use HasSerializableAttributes;
+    /**
+     * @use HasTypeAttribute<self>
+     */
     use HasTypeAttribute;
     use HasStringValue;
 }

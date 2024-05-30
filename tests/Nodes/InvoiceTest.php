@@ -7,6 +7,9 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Exception\InvalidSetterException;
+use Naugrim\BMEcat\Exception\SchemaValidationException;
+use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Invoice;
 use Naugrim\OpenTrans\SchemaValidator;
 use PHPUnit\Framework\TestCase;
@@ -14,9 +17,6 @@ use Throwable;
 
 class InvoiceTest extends TestCase
 {
-    /**
-     * @var SerializerInterface
-     */
     private Serializer $serializer;
 
     protected function setUp(): void
@@ -26,6 +26,11 @@ class InvoiceTest extends TestCase
 
     /**
      * @dataProvider provideInvoiceData
+     * @param string $file
+     * @param array<string, mixed> $data
+     * @throws InvalidSetterException
+     * @throws SchemaValidationException
+     * @throws UnknownKeyException
      */
     public function testInvoice(string $file, array $data): void
     {
@@ -40,6 +45,9 @@ class InvoiceTest extends TestCase
         $this->assertTrue(SchemaValidator::isValid($xml, '2.1'));
     }
 
+    /**
+     * @return array<string, mixed>[]
+     */
     public static function provideInvoiceData(): array
     {
         return [

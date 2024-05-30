@@ -8,6 +8,9 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Exception\InvalidSetterException;
+use Naugrim\BMEcat\Exception\SchemaValidationException;
+use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Order;
 use Naugrim\OpenTrans\Nodes\Udx;
 use Naugrim\OpenTrans\SchemaValidator;
@@ -16,9 +19,6 @@ use Throwable;
 
 class OrderTest extends TestCase
 {
-    /**
-     * @var SerializerInterface
-     */
     private Serializer $serializer;
 
     protected function setUp(): void
@@ -28,6 +28,11 @@ class OrderTest extends TestCase
 
     /**
      * @dataProvider provideOrderData
+     * @param string $file
+     * @param array<string, mixed> $data
+     * @throws InvalidSetterException
+     * @throws SchemaValidationException
+     * @throws UnknownKeyException
      */
     public function testOrder(string $file, array $data): void
     {
@@ -42,6 +47,11 @@ class OrderTest extends TestCase
         $this->assertTrue(SchemaValidator::isValid($xml, '2.1'));
     }
 
+    /**
+     * @return array<string, mixed>[]
+     * @throws InvalidSetterException
+     * @throws UnknownKeyException
+     */
     public static function provideOrderData(): array
     {
         return [

@@ -8,20 +8,20 @@ use Naugrim\BMEcat\Exception\UnsupportedVersionException;
 
 class SchemaValidator
 {
-    protected static $SCHEMA_MAP = [
+    /**
+     * @var array<string, string>|array<string, array<string, string>>
+     */
+    protected static array $SCHEMA_MAP = [
         '2.1' => __DIR__ . '/schemas/opentrans_2_1.xsd',
     ];
 
     /**
      * Validates the given XML-string against the BMEcat XSD-files.
      *
-     * @param string $xml
-     *
-     * @param string $version
-     * @param string|null $type
-     * @return bool
+     * @throws SchemaValidationException
+     * @throws UnsupportedVersionException
      */
-    public static function isValid(string $xml, string $version = '2005.1', string $type = null)
+    public static function isValid(string $xml, string $version = '2005.1', ?string $type = null): bool
     {
         libxml_use_internal_errors(true);
 
@@ -52,7 +52,7 @@ class SchemaValidator
             $schema = $schema[$type] ?? null;
         }
 
-        if ($schema) {
+        if ($schema !== null) {
             return $schema;
         }
 

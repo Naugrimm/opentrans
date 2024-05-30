@@ -5,6 +5,9 @@ namespace Naugrim\OpenTrans\Nodes\Concerns;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
+/**
+ * @template TNode
+ */
 trait HasTypeAttribute
 {
     use CanAssertConstantValue;
@@ -17,7 +20,7 @@ trait HasTypeAttribute
 
     /**
      * @param string $type
-     * @return NodeInterface
+     * @return NodeInterface<TNode>
      */
     public function setType(string $type): NodeInterface
     {

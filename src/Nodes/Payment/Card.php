@@ -6,6 +6,7 @@ namespace Naugrim\OpenTrans\Nodes\Payment;
 
 use DateTimeInterface;
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
@@ -16,6 +17,9 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 class Card implements NodeInterface
 {
     use HasSerializableAttributes;
+    /**
+     * @use HasTypeAttribute<self>
+     */
     use HasTypeAttribute;
 
     public const MASTER_CARD = 'MasterCard';
@@ -40,22 +44,27 @@ class Card implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CARD_NUM')]
-    private ?string $number = null;
+    protected ?string $number = null;
 
 
     #[Serializer\Expose]
     #[Serializer\Type("DateTimeInterface<'Y-m'>")]
     #[Serializer\SerializedName('CARD_EXPIRATION_DATE')]
-    private ?DateTimeInterface $expDate = null;
+    protected ?DateTimeInterface $expDate = null;
 
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CARD_HOLDER_NAME')]
-    private ?string $holder = null;
+    protected ?string $holder = null;
 
     public static function create(string $type, string $number, string $holder, DateTimeInterface $expDate): Card
     {
-        return (new static())->setHolder($holder)->setNumber($number)->setExpDate($expDate)->setType($type);
+        return NodeBuilder::fromArray([
+            'holder' => $holder,
+            'number' => $number,
+            'expDate' => $expDate,
+            'type' => $type
+        ], Card::class);
     }
 }

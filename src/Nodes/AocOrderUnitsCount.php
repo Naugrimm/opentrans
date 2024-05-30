@@ -12,5 +12,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 class AocOrderUnitsCount implements NodeInterface
 {
     use HasSerializableAttributes;
+    /**
+     * @use HasTypeAttribute<self>
+     */
     use HasTypeAttribute;
 }
