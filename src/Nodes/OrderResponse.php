@@ -20,10 +20,6 @@ class OrderResponse implements NodeInterface
     use HasSerializableAttributes;
     use IsRootNode;
 
-    /**
-     *
-     * @var Header
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Header::class)]
     #[Serializer\SerializedName('ORDERRESPONSE_HEADER')]
@@ -40,17 +36,12 @@ class OrderResponse implements NodeInterface
     #[Serializer\XmlList(entry: 'ORDERRESPONSE_ITEM')]
     protected array $items = [];
 
-    /**
-     *
-     * @var Summary
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Summary::class)]
     #[Serializer\SerializedName('ORDERRESPONSE_SUMMARY')]
     protected Summary $summary;
 
     /**
-     * @param Item $item
      * @return $this
      */
     public function addItem(Item $item): OrderResponse

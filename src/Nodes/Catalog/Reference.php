@@ -12,28 +12,17 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class Reference implements NodeInterface
 {
     use HasSerializableAttributes;
-    /**
-     *
-     * @var string
-     */
+    
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CATALOG_ID')]
     protected string $id;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CATALOG_VERSION')]
     protected string $version;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CATALOG_NAME')]

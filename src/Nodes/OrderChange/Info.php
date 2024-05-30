@@ -14,19 +14,12 @@ use Naugrim\OpenTrans\Nodes\Party;
 class Info implements NodeInterface
 {
     use HasSerializableAttributes;
-    /**
-     *
-     * @var string
-     */
+    
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_ID')]
     protected string $id;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDERCHANGE_DATE')]
@@ -48,17 +41,12 @@ class Info implements NodeInterface
     #[Serializer\XmlList(entry: 'PARTY')]
     protected array $parties = [];
 
-    /**
-     *
-     * @var PartiesReference
-     */
     #[Serializer\Expose]
     #[Serializer\Type(PartiesReference::class)]
     #[Serializer\SerializedName('ORDER_PARTIES_REFERENCE')]
     protected PartiesReference $partiesReference;
 
     /**
-     * @param Party $party
      * @return $this
      */
     public function addParty(Party $party): static

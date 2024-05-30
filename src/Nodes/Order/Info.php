@@ -19,28 +19,16 @@ class Info implements NodeInterface
     use HasSerializableAttributes;
     use HasUdxItems;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_ID')]
     protected string $id;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_DATE')]
     protected string $date;
 
-    /**
-     *
-     * @var DeliveryDate
-     */
     #[Serializer\Expose]
     #[Serializer\Type(DeliveryDate::class)]
     #[Serializer\SerializedName('DELIVERY_DATE')]
@@ -57,10 +45,6 @@ class Info implements NodeInterface
     #[Serializer\XmlList(entry: 'PARTY')]
     protected array $parties = [];
 
-    /**
-     *
-     * @var PartiesReference
-     */
     #[Serializer\Expose]
     #[Serializer\Type(PartiesReference::class)]
     #[Serializer\SerializedName('ORDER_PARTIES_REFERENCE')]
@@ -82,13 +66,11 @@ class Info implements NodeInterface
 
     /**
      * @see HasUdxItems::$udxItem
-     * @var UdxAggregate
      */
     #[Serializer\SerializedName('HEADER_UDX')]
     protected UdxAggregate $udxItem;
 
     /**
-     * @param Party $party
      * @return $this
      */
     public function addParty(Party $party): static
@@ -97,9 +79,6 @@ class Info implements NodeInterface
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isPartialShipmentAllowed(): bool
     {
         return $this->partialShipmentAllowed;

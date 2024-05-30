@@ -25,10 +25,6 @@ class Order implements NodeInterface
     #[Serializer\Type('string')]
     protected string $type = 'standard';
 
-    /**
-     *
-     * @var Header
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Header::class)]
     #[Serializer\SerializedName('ORDER_HEADER')]
@@ -45,17 +41,12 @@ class Order implements NodeInterface
     #[Serializer\XmlList(entry: 'ORDER_ITEM')]
     protected array $items = [];
 
-    /**
-     *
-     * @var Summary
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Summary::class)]
     #[Serializer\SerializedName('ORDER_SUMMARY')]
     protected Summary $summary;
 
     /**
-     * @param Item $item
      * @return $this
      */
     public function addItem(Item $item): Order

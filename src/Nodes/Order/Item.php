@@ -18,37 +18,21 @@ class Item implements NodeInterface
     use HasSerializableAttributes;
     use HasUdxItems;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('LINE_ITEM_ID')]
     protected string $lineItemId;
 
-    /**
-     *
-     * @var ProductId
-     */
     #[Serializer\Expose]
     #[Serializer\Type(ProductId::class)]
     #[Serializer\SerializedName('PRODUCT_ID')]
     protected ProductId $productId;
 
-    /**
-     *
-     * @var float
-     */
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('QUANTITY')]
     protected float $quantity;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:ORDER_UNIT')]
@@ -63,36 +47,21 @@ class Item implements NodeInterface
     #[Serializer\SerializedName('PARTIAL_SHIPMENT_ALLOWED')]
     protected bool $partialShipmentAllowed;
 
-    /**
-     *
-     * @var DeliveryDate
-     */
     #[Serializer\Expose]
     #[Serializer\Type(DeliveryDate::class)]
     #[Serializer\SerializedName('DELIVERY_DATE')]
     protected DeliveryDate $deliveryDate;
 
-    /**
-     *
-     * @var PriceFix
-     */
     #[Serializer\Expose]
     #[Serializer\Type(PriceFix::class)]
     #[Serializer\SerializedName('PRODUCT_PRICE_FIX')]
     protected PriceFix $priceFix;
 
-    /**
-     *
-     * @var float
-     */
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('PRICE_LINE_AMOUNT')]
     protected float $priceLineAmount;
 
-    /**
-     * @return bool
-     */
     public function isPartialShipmentAllowed(): bool
     {
         return $this->partialShipmentAllowed;

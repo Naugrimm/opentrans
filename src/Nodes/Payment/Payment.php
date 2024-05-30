@@ -31,30 +31,25 @@ class Payment implements NodeInterface
     #[Serializer\XmlList(entry: 'ACCOUNT', inline: true)]
     protected array $accounts = [];
 
-
     #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CASH')]
     protected ?bool $cash = null;
-
 
     #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('DEBIT')]
     protected ?bool $debit = null;
 
-
     #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CHECK')]
     protected ?bool $check = null;
 
-
     #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CENTRAL_REGULATION')]
     protected ?bool $centralRegulation = null;
-
 
     #[Serializer\Expose]
     #[Serializer\Type('Naugrim\BMEcat\Nodes\Payment\PaymentTerms')]

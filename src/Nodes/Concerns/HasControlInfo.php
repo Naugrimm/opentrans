@@ -7,10 +7,6 @@ use Naugrim\OpenTrans\Nodes\ControlInfo;
 
 trait HasControlInfo
 {
-    /**
-     *
-     * @var ControlInfo
-     */
     #[Serializer\Expose]
     #[Serializer\Type(ControlInfo::class)]
     #[Serializer\SerializedName('CONTROL_INFO')]

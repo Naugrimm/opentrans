@@ -13,9 +13,6 @@ use ReflectionClass;
 
 trait HasUdxItems
 {
-    /**
-     * @var UdxAggregate
-     */
     #[Serializer\SerializedName('ITEM_UDX')]
     #[Serializer\Type(UdxAggregate::class)]
     protected UdxAggregate $udxItem;
