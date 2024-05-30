@@ -63,7 +63,7 @@ class OrderResponseTest extends TestCase
             'summary' => [
                 'totalItemNum' => 1,
             ]
-        ], new OrderResponse());
+        ], \Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], OrderResponse::class));
 
 
         $xml = $this->serializer->serialize($node, 'xml');

@@ -10,7 +10,7 @@ class HasContentTypeAttributeTest extends TestCase
     public function testSetGetContentType(): void
     {
         $contentType = 'image/jpg';
-        $node = new NodeWithContentType();
+        $node = \Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], NodeWithContentType::class);
         $node->setContentType($contentType);
         $this->assertEquals($contentType, $node->getContentType());
     }

@@ -8,6 +8,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 class DeliveryIdRef implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasTypeAttribute;
     use HasStringValue;
 }

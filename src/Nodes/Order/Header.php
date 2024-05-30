@@ -11,6 +11,7 @@ use Naugrim\OpenTrans\Nodes\SourcingInfo;
 #[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'sourcingInfo', 'info'])]
 class Header implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasControlInfo;
     use HasSourcingInfo;
 
@@ -22,40 +23,4 @@ class Header implements NodeInterface
     #[Serializer\Type(Info::class)]
     #[Serializer\SerializedName('ORDER_INFO')]
     protected Info $info;
-
-    /**
-     * @return Info
-     */
-    public function getInfo(): Info
-    {
-        return $this->info;
-    }
-
-    /**
-     * @param Info $info
-     * @return Header
-     */
-    public function setInfo(Info $info): Header
-    {
-        $this->info = $info;
-        return $this;
-    }
-
-    /**
-     * @return SourcingInfo
-     */
-    public function getSourcingInfo(): SourcingInfo
-    {
-        return $this->sourcingInfo;
-    }
-
-    /**
-     * @param SourcingInfo $sourcingInfo
-     * @return Header
-     */
-    public function setSourcingInfo(SourcingInfo $sourcingInfo): Header
-    {
-        $this->sourcingInfo = $sourcingInfo;
-        return $this;
-    }
 }

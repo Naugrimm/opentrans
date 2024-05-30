@@ -7,6 +7,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class PriceFix implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     /**
      *
      * @var float
@@ -15,22 +16,4 @@ class PriceFix implements NodeInterface
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('bme:PRICE_AMOUNT')]
     protected float $amount;
-
-    /**
-     * @return float
-     */
-    public function getAmount(): float
-    {
-        return $this->amount;
-    }
-
-    /**
-     * @param float $amount
-     * @return PriceFix
-     */
-    public function setAmount(float $amount): PriceFix
-    {
-        $this->amount = $amount;
-        return $this;
-    }
 }

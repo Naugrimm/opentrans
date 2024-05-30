@@ -9,6 +9,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 class HashValue implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasTypeAttribute;
     use HasStringValue;
     use HasLangAttribute;

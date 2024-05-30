@@ -10,6 +10,7 @@ use Naugrim\OpenTrans\Nodes\Order\History;
 #[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'info', 'orderHistory'])]
 class Header implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasControlInfo;
 
     /**
@@ -29,40 +30,4 @@ class Header implements NodeInterface
     #[Serializer\Type(History::class)]
     #[Serializer\SerializedName('ORDER_HISTORY')]
     protected History $orderHistory;
-
-    /**
-     * @return Info
-     */
-    public function getInfo(): Info
-    {
-        return $this->info;
-    }
-
-    /**
-     * @param Info $info
-     * @return Header
-     */
-    public function setInfo(Info $info): Header
-    {
-        $this->info = $info;
-        return $this;
-    }
-
-    /**
-     * @return History
-     */
-    public function getOrderHistory(): History
-    {
-        return $this->orderHistory;
-    }
-
-    /**
-     * @param History $orderHistory
-     * @return Header
-     */
-    public function setOrderHistory(History $orderHistory): Header
-    {
-        $this->orderHistory = $orderHistory;
-        return $this;
-    }
 }

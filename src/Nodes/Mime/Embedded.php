@@ -8,6 +8,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasLangAttribute;
 
 class Embedded implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasLangAttribute;
 
     /**
@@ -36,58 +37,4 @@ class Embedded implements NodeInterface
     #[Serializer\Type('int')]
     #[Serializer\SerializedName('FILE_SIZE')]
     protected int $fileSize;
-
-    /**
-     * @return Data
-     */
-    public function getData(): Data
-    {
-        return $this->data;
-    }
-
-    /**
-     * @param Data $data
-     * @return Embedded
-     */
-    public function setData(Data $data): Embedded
-    {
-        $this->data = $data;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFileName(): string
-    {
-        return $this->fileName;
-    }
-
-    /**
-     * @param string $fileName
-     * @return Embedded
-     */
-    public function setFileName(string $fileName): Embedded
-    {
-        $this->fileName = $fileName;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getFileSize(): int
-    {
-        return $this->fileSize;
-    }
-
-    /**
-     * @param int $fileSize
-     * @return Embedded
-     */
-    public function setFileSize(int $fileSize): Embedded
-    {
-        $this->fileSize = $fileSize;
-        return $this;
-    }
 }

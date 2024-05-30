@@ -12,6 +12,9 @@ use Naugrim\OpenTrans\Nodes\BankCode;
 
 class Payment implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+
+    #[Serializer\Expose]
     #[Serializer\Type(Card::class)]
     #[Serializer\SerializedName('CARD')]
     private ?Card $card = null;
@@ -19,26 +22,31 @@ class Payment implements NodeInterface
     /**
      * @var Account[]|null
      */
+    #[Serializer\Expose]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Account>')]
     #[Serializer\XmlList(entry: 'ACCOUNT', inline: true)]
     private ?array $accounts = null;
 
 
+    #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CASH')]
     private ?bool $cash = null;
 
 
+    #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('DEBIT')]
     private ?bool $debit = null;
 
 
+    #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CHECK')]
     private ?bool $check = null;
 
 
+    #[Serializer\Expose]
     #[Serializer\Type('boolean')]
     #[Serializer\SerializedName('CENTRAL_REGULATION')]
     private ?bool $centralRegulation = null;
@@ -56,22 +64,22 @@ class Payment implements NodeInterface
         DateTimeInterface $expDate
     ): Payment
     {
-        return (new Payment())->setCard(Card::create($cartType, $cardNumber, $cardHolder, $expDate));
+        return (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Payment::class))->setCard(Card::create($cartType, $cardNumber, $cardHolder, $expDate));
     }
 
     public static function createCashPayment(): Payment
     {
-        return (new Payment())->setCash(true);
+        return (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Payment::class))->setCash(true);
     }
 
     public static function createDebitPayment(): Payment
     {
-        return (new Payment())->setDebit(true);
+        return (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Payment::class))->setDebit(true);
     }
 
     public static function createCheckPayment(): Payment
     {
-        return (new Payment())->setCheck(true);
+        return (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Payment::class))->setCheck(true);
     }
 
     public static function createIbanPayment(
@@ -82,16 +90,16 @@ class Payment implements NodeInterface
         string $country
     ): Payment
     {
-        $bankAccount = new BankAccount();
+        $bankAccount = \Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], BankAccount::class);
         $bankAccount->setType(BankAccount::TYPE_IBAN);
         $bankAccount->setValue($iban);
 
-        $bankCode = new BankCode();
+        $bankCode = \Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], BankCode::class);
         $bankCode->setType(BankCode::TYPE_BIC);
         $bankCode->setValue($bic);
 
-        return (new Payment())->addAccount(
-            (new Account())
+        return (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Payment::class))->addAccount(
+            (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Account::class))
                 ->setBankAccount($bankAccount)
                 ->setHolder($accountHolder)
                 ->setBankName($bankName)
@@ -100,47 +108,17 @@ class Payment implements NodeInterface
         );
     }
 
-    public function getCard(): ?Card
+    /**
+     * @param Card|array<string, mixed> $card
+     * @return $this
+     */
+    public function setCard(Card|array $card): Payment
     {
-        return $this->card;
-    }
-
-    public function setCard(Card $card): Payment
-    {
-        $this->card = $card;
+        $this->card = is_array($card) ? NodeBuilder::fromArray($card, Card::class) : $card;
         $this->check = null;
         $this->debit = null;
         $this->cash = null;
         $this->accounts = null;
-
-        return $this;
-    }
-
-    /**
-     * @return Account[]
-     */
-    public function getAccounts(): ?array
-    {
-        return $this->accounts;
-    }
-
-    /**
-     * @param Account[] $accounts
-     * @return Payment
-     */
-    public function setAccounts(array $accounts): Payment
-    {
-        if ($accounts === []) {
-            return $this;
-        }
-
-        foreach ($accounts as $account) {
-            if (!$account instanceof Account) {
-                $account = NodeBuilder::fromArray($account, new Account());
-            }
-
-            $this->addAccount($account);
-        }
 
         return $this;
     }
@@ -211,22 +189,5 @@ class Payment implements NodeInterface
     public function isCentralRegulation(): bool
     {
         return $this->centralRegulation;
-    }
-
-    public function setCentralRegulation(bool $hasCentralRegulation): Payment
-    {
-        $this->centralRegulation = $hasCentralRegulation;
-        return $this;
-    }
-
-    public function getPaymentTerms(): PaymentTerms
-    {
-        return $this->paymentTerms;
-    }
-
-    public function setPaymentTerms(PaymentTerms $paymentTerms): Payment
-    {
-        $this->paymentTerms = $paymentTerms;
-        return $this;
     }
 }

@@ -8,6 +8,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 #[Serializer\XmlRoot('PARTY')]
 class Party implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     /**
      *
      * @var PartyId
@@ -40,76 +41,4 @@ class Party implements NodeInterface
     #[Serializer\Type(Account::class)]
     #[Serializer\SerializedName('ACCOUNT')]
     protected Account $account;
-
-    /**
-     * @return PartyId
-     */
-    public function getId(): PartyId
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param PartyId $id
-     * @return Party
-     */
-    public function setId(PartyId $id): Party
-    {
-        $this->id = $id;
-        return $this;
-    }
-
-    /**
-     * @return PartyRole
-     */
-    public function getRole(): PartyRole
-    {
-        return $this->role;
-    }
-
-    /**
-     * @param PartyRole $role
-     * @return Party
-     */
-    public function setRole(PartyRole $role): Party
-    {
-        $this->role = $role;
-        return $this;
-    }
-
-    /**
-     * @return Address
-     */
-    public function getAddress(): Address
-    {
-        return $this->address;
-    }
-
-    /**
-     * @param Address $address
-     * @return Party
-     */
-    public function setAddress(Address $address): Party
-    {
-        $this->address = $address;
-        return $this;
-    }
-
-    /**
-     * @return Account
-     */
-    public function getAccount(): Account
-    {
-        return $this->account;
-    }
-
-    /**
-     * @param Account $account
-     * @return Party
-     */
-    public function setAccount(Account $account): Party
-    {
-        $this->account = $account;
-        return $this;
-    }
 }

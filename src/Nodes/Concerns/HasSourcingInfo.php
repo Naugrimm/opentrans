@@ -9,30 +9,11 @@ use Naugrim\OpenTrans\Nodes\SourcingInfo;
 trait HasSourcingInfo
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\SourcingInfo")
-     * @Serializer\SerializedName("SOURCING_INFO")
      *
      * @var SourcingInfo
      */
+    #[Serializer\Expose]
+    #[Serializer\Type(\Naugrim\OpenTrans\Nodes\SourcingInfo::class)]
+    #[Serializer\SerializedName('SOURCING_INFO')]
     protected SourcingInfo $sourcingInfo;
-
-    /**
-     * @return SourcingInfo
-     */
-    public function getSourcingInfo(): SourcingInfo
-    {
-        return $this->sourcingInfo;
-    }
-
-    /**
-     * @param SourcingInfo $sourcingInfo
-     * @return NodeInterface
-     */
-    public function setSourcingInfo(SourcingInfo $sourcingInfo): NodeInterface
-    {
-        $this->sourcingInfo = $sourcingInfo;
-        /** @var NodeInterface $this */
-        return $this;
-    }
 }

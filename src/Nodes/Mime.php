@@ -10,6 +10,7 @@ use Naugrim\OpenTrans\Nodes\Mime\Embedded;
 
 class Mime implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     /**
      *
      * @var string
@@ -46,7 +47,7 @@ class Mime implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('MIME_EMBEDDED')]
-    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Mime\Embedded>')]
+    #[Serializer\Type('array<\Naugrim\OpenTrans\Nodes\Mime\Embedded>')]
     #[Serializer\XmlList(entry: 'MIME_EMBEDDED')]
     protected array $embedded = [];
 
@@ -87,68 +88,6 @@ class Mime implements NodeInterface
     protected int $order;
 
     /**
-     * @return string
-     */
-    public function getType(): string
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param string $type
-     * @return Mime
-     */
-    public function setType(string $type): Mime
-    {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSource(): string
-    {
-        return $this->source;
-    }
-
-    /**
-     * @param string $source
-     * @return Mime
-     */
-    public function setSource(string $source): Mime
-    {
-        $this->source = $source;
-        return $this;
-    }
-
-    /**
-     * @return HashValue[]
-     */
-    public function getFileHashValue(): array
-    {
-        return $this->fileHashValue;
-    }
-
-    /**
-     * @param array $fileHashValues
-     * @return Mime
-     */
-    public function setFileHashValue(array $fileHashValues): Mime
-    {
-        $this->fileHashValue = [];
-        foreach ($fileHashValues as $fileHashValue) {
-            if (!$fileHashValue instanceof HashValue) {
-                $fileHashValue = NodeBuilder::fromArray($fileHashValue, new HashValue());
-            }
-
-            $this->addFileHashValue($fileHashValue);
-        }
-
-        return $this;
-    }
-
-    /**
      * @param HashValue $fileHashValue
      * @return Mime
      */
@@ -159,110 +98,12 @@ class Mime implements NodeInterface
     }
 
     /**
-     * @return Embedded[]
-     */
-    public function getEmbedded(): array
-    {
-        return $this->embedded;
-    }
-
-    /**
-     * @param Embedded[] $embeddeds
-     * @return Mime
-     */
-    public function setEmbedded(array $embeddeds): Mime
-    {
-        $this->embedded = [];
-        foreach ($embeddeds as $embedded) {
-            if (!$embedded instanceof Embedded) {
-                $embedded = NodeBuilder::fromArray($embedded, new Embedded());
-            }
-
-            $this->addEmbedded($embedded);
-        }
-
-        return $this;
-    }
-
-    /**
      * @param Embedded $embedded
      * @return Mime
      */
     public function addEmbedded(Embedded $embedded): Mime
     {
         $this->embedded[] = $embedded;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param string $description
-     * @return Mime
-     */
-    public function setDescription(string $description): Mime
-    {
-        $this->description = $description;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAlt(): string
-    {
-        return $this->alt;
-    }
-
-    /**
-     * @param string $alt
-     * @return Mime
-     */
-    public function setAlt(string $alt): Mime
-    {
-        $this->alt = $alt;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPurpose(): string
-    {
-        return $this->purpose;
-    }
-
-    /**
-     * @param string $purpose
-     * @return Mime
-     */
-    public function setPurpose(string $purpose): Mime
-    {
-        $this->purpose = $purpose;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getOrder(): int
-    {
-        return $this->order;
-    }
-
-    /**
-     * @param int $order
-     * @return Mime
-     */
-    public function setOrder(int $order): Mime
-    {
-        $this->order = $order;
         return $this;
     }
 }

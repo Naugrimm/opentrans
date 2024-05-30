@@ -12,6 +12,7 @@ use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'netValueGoods', 'netValueExtra', 'totalAmount', 'allowOrChargesFix', 'totalTax'])]
 class Summary implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasTotalItemNum;
     use HasTotalAmount;
 
@@ -35,49 +36,6 @@ class Summary implements NodeInterface
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Tax\DetailsFix>')]
     #[Serializer\XmlList(entry: 'TAX_DETAILS_FIX')]
     protected array $totalTax = [];
-
-    /**
-     * @return float
-     */
-    public function getNetValueGoods(): float
-    {
-        return $this->netValueGoods;
-    }
-
-    /**
-     * @param float $netValueGoods
-     * @return Summary
-     */
-    public function setNetValueGoods(float $netValueGoods): Summary
-    {
-        $this->netValueGoods = $netValueGoods;
-        return $this;
-    }
-
-    /**
-     * @return DetailsFix[]
-     */
-    public function getTotalTax(): array
-    {
-        return $this->totalTax;
-    }
-
-    /**
-     * @param DetailsFix[] $taxes
-     * @return Summary
-     */
-    public function setTotalTax(array $taxes): Summary
-    {
-        foreach ($taxes as $tax) {
-            if (!$tax instanceof DetailsFix) {
-                $tax = NodeBuilder::fromArray($tax, new DetailsFix());
-            }
-
-            $this->addTotalTax($tax);
-        }
-
-        return $this;
-    }
 
     /**
      * @param DetailsFix $tax
