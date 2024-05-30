@@ -15,6 +15,9 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 class PartyId implements NodeInterface
 {
     use HasSerializableAttributes;
+    /**
+     * @use HasTypeAttribute<self>
+     */
     use HasTypeAttribute;
     use HasStringValue;
 

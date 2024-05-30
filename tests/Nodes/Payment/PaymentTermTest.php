@@ -11,10 +11,14 @@ use ReflectionClass;
 
 class PaymentTermTest extends TestCase
 {
+    /**
+     * @return array{type: string}[]
+     */
     public static function provideValidTypes(): array
     {
         $reflection = new ReflectionClass(PaymentTerm::class);
         return array_map(
+            // @phpstan-ignore argument.type
             static fn (string $type): array => [
                 'type' => $type,
             ],

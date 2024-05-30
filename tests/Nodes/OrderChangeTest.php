@@ -13,9 +13,6 @@ use PHPUnit\Framework\TestCase;
 
 class OrderChangeTest extends TestCase
 {
-    /**
-     * @var SerializerInterface
-     */
     private Serializer $serializer;
 
     protected function setUp(): void

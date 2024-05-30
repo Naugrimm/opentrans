@@ -20,6 +20,10 @@ trait HasUdxItems
     #[Serializer\Type(UdxAggregate::class)]
     protected UdxAggregate $udxItem;
 
+    /**
+     * @param UdxInterface[]|array{vendor: string, name: string, value: string}[] $udxItems
+     * @throws UnknownKeyException
+     */
     public function setUdxItems(array $udxItems): self
     {
         $this->udxItem = new UdxAggregate();
@@ -35,14 +39,20 @@ trait HasUdxItems
         return $this;
     }
 
-    private function convertToUdx($udxItem): UdxInterface
+    /**
+     * @param array{vendor: string, name: string, value: string} $udxItem
+     * @throws UnknownKeyException
+     * @throws \Naugrim\BMEcat\Exception\InvalidSetterException
+     * @throws \ReflectionException
+     */
+    private function convertToUdx(array $udxItem): UdxInterface
     {
-        if (!is_array($udxItem)) {
-            throw new UnknownKeyException('Invalid UDX structure given, Expected array<string,string>.');
-        }
-
         $udxData = $this->parseUdxData($udxItem);
         $udxClass = $udxData['class'];
+        if (! class_exists($udxClass)) {
+            throw new UnknownKeyException(sprintf('"%s" needs to implement UdxInterface', $udxClass));
+        }
+
         $reflection = new ReflectionClass($udxClass);
         if (!$reflection->implementsInterface(UdxInterface::class)) {
             throw new UnknownKeyException(sprintf('"%s" needs to implement UdxInterface', $udxClass));
@@ -58,8 +68,9 @@ trait HasUdxItems
     }
 
     /**
-     * @param array<string, mixed> $udxData
-     * @return array<string, string>
+     * @template TData of array<string, mixed>
+     * @param TData $udxData
+     * @return non-empty-array<'class'|'name'|'value'|'vendor', non-falsy-string>
      */
     private function parseUdxData(array $udxData): array
     {
@@ -95,7 +106,11 @@ trait HasUdxItems
             $data[$key] = sprintf('%s', $udxData[$key]);
         }
 
-        $data['class'] = $udxData['class'] ?? Udx::class;
+        if (isset($udxData['class']) && is_string($udxData['class']) && class_exists($udxData['class'])) {
+            $data['class'] = $udxData['class'];
+        } else {
+            $data['class'] = Udx::class;
+        }
 
         return $data;
     }
