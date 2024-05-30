@@ -11,7 +11,7 @@ use ReflectionClass;
 
 class PaymentTermTest extends TestCase
 {
-    public function provideValidTypes(): array
+    public static function provideValidTypes(): array
     {
         $reflection = new ReflectionClass(PaymentTerm::class);
         return array_map(

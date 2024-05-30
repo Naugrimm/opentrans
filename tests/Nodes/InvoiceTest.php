@@ -38,7 +38,7 @@ class InvoiceTest extends TestCase
         $this->assertTrue(SchemaValidator::isValid($xml, '2.1'));
     }
 
-    public function provideInvoiceData(): array
+    public static function provideInvoiceData(): array
     {
         return [
             [
