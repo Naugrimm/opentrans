@@ -10,6 +10,9 @@ use Naugrim\BMEcat\Nodes\InternationalPid;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
 use Naugrim\BMEcat\Nodes\SupplierPid;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<ProductId>
+ */
 class ProductId implements NodeInterface
 {
     use HasSerializableAttributes;

@@ -10,6 +10,9 @@ use Naugrim\OpenTrans\Nodes\Order\Header;
 use Naugrim\OpenTrans\Nodes\Order\Item;
 use Naugrim\OpenTrans\Nodes\Order\Summary;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Order>
+ */
 #[Serializer\XmlRoot('ORDER')]
 #[Serializer\ExclusionPolicy('all')]
 class Order implements NodeInterface

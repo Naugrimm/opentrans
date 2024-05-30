@@ -10,6 +10,9 @@ use Naugrim\BMEcat\Nodes\SupplierIdRef;
 use Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef;
 use Naugrim\OpenTrans\Nodes\ShipmentPartiesReference;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<PartiesReference>
+ */
 class PartiesReference implements NodeInterface
 {
     use HasSerializableAttributes;

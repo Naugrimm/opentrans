@@ -9,6 +9,9 @@ use Naugrim\OpenTrans\Nodes\AllowOrChargesFix;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Summary>
+ */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'totalAmount', 'allowOrChargesFix'])]
 class Summary implements NodeInterface
 {

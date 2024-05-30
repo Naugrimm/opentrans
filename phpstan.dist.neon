@@ -1,0 +1,42 @@
+# this file gets checked into version control
+# it is used to define the default configuration for PHPStan
+# you can override this file by creating a phpstan.neon file in the root of your project with the following content
+#
+# includes:
+#  - phpstan.dist.neon
+# # your custom directives...
+parameters:
+  type_coverage:
+    return_type: 100
+    param_type: 98
+    property_type: 100
+    print_suggestions: true
+  parallel:
+    # this should be LESS than you total number of cores to prevent clogging your system
+    maximumNumberOfProcesses: 2
+  tmpDir: .phpstan
+  # put all "your" paths here
+  # this generally is "src" and "tests"
+  paths:
+    - src/
+    - tests/
+
+  editorUrl: 'phpstorm://open?file=%%file%%&line=%%line%%'
+
+  # Start with level 5 and gradually up this. target should be level 8 at least
+  level: max
+
+  ignoreErrors:
+    # this error always occurrs when using PestPHP - ignore it
+    -
+      message: '#Undefined variable: \$this#'
+      path: tests/*
+      reportUnmatched: false
+    - identifier: staticMethod.dynamicCall
+      path: tests/*
+
+services:
+  -
+    class: Naugrim\BMEcat\PHPStan\NodeInterfaceMethodsClassReflectionExtension
+    tags:
+      - phpstan.broker.methodsClassReflectionExtension

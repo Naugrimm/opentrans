@@ -6,6 +6,9 @@ use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<PriceFix>
+ */
 class PriceFix implements NodeInterface
 {
     use HasSerializableAttributes;

@@ -7,6 +7,9 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Agreement>
+ */
 class Agreement implements NodeInterface
 {
     use HasSerializableAttributes;

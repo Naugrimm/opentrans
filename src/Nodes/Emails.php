@@ -7,6 +7,9 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\nodes\Crypto\PublicKey;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Emails>
+ */
 class Emails implements NodeInterface
 {
     use HasSerializableAttributes;

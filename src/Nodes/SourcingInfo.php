@@ -7,6 +7,9 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Catalog\Reference;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<SourcingInfo>
+ */
 class SourcingInfo implements NodeInterface
 {
     use HasSerializableAttributes;

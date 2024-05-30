@@ -11,6 +11,9 @@ use Naugrim\OpenTrans\Nodes\Account;
 use Naugrim\OpenTrans\Nodes\BankAccount;
 use Naugrim\OpenTrans\Nodes\BankCode;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Payment>
+ */
 class Payment implements NodeInterface
 {
     use HasSerializableAttributes;

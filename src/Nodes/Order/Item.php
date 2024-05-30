@@ -10,6 +10,9 @@ use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\Product\PriceFix;
 use Naugrim\OpenTrans\Nodes\ProductId;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Item>
+ */
 class Item implements NodeInterface
 {
     use HasSerializableAttributes;

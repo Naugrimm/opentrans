@@ -10,6 +10,9 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Card>
+ */
 class Card implements NodeInterface
 {
     use HasSerializableAttributes;

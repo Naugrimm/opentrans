@@ -6,6 +6,9 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasContentTypeAttribute;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<NodeWithContentType>
+ */
 class NodeWithContentType implements NodeInterface
 {
     use HasSerializableAttributes;

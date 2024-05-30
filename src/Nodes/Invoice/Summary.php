@@ -9,6 +9,9 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Summary>
+ */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'netValueGoods', 'netValueExtra', 'totalAmount', 'allowOrChargesFix', 'totalTax'])]
 class Summary implements NodeInterface
 {
