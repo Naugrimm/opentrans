@@ -4,6 +4,7 @@ namespace Naugrim\OpenTrans\Nodes\Order;
 
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\BuyerIdRef;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
 use Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef;
@@ -11,7 +12,7 @@ use Naugrim\OpenTrans\Nodes\ShipmentPartiesReference;
 
 class PartiesReference implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     /**
      *
      * @var BuyerIdRef

@@ -31,4 +31,4 @@ return RectorConfig::configure()
         NodeInterfaceRemoveSimpleGettersRector::class,
         NodeInterfaceRemoveSimpleSettersRector::class,
     ])
-    ;
+;

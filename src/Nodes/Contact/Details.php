@@ -3,6 +3,7 @@
 namespace Naugrim\OpenTrans\Nodes\Contact;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contact\Role;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\Fax;
@@ -11,7 +12,7 @@ use Naugrim\OpenTrans\Nodes\Emails;
 
 class Details implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]

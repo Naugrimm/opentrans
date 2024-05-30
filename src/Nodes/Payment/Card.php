@@ -6,12 +6,13 @@ namespace Naugrim\OpenTrans\Nodes\Payment;
 
 use DateTimeInterface;
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 class Card implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     use HasTypeAttribute;
 
     public const MASTER_CARD = 'MasterCard';

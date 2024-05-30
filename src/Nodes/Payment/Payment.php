@@ -5,6 +5,7 @@ namespace Naugrim\OpenTrans\Nodes\Payment;
 use DateTimeInterface;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Account;
 use Naugrim\OpenTrans\Nodes\BankAccount;
@@ -12,7 +13,7 @@ use Naugrim\OpenTrans\Nodes\BankCode;
 
 class Payment implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
 
     #[Serializer\Expose]
     #[Serializer\Type(Card::class)]
@@ -62,24 +63,23 @@ class Payment implements NodeInterface
         string            $cardNumber,
         string            $cardHolder,
         DateTimeInterface $expDate
-    ): Payment
-    {
-        return (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Payment::class))->setCard(Card::create($cartType, $cardNumber, $cardHolder, $expDate));
+    ): Payment {
+        return NodeBuilder::fromArray([], Payment::class)->setCard(Card::create($cartType, $cardNumber, $cardHolder, $expDate));
     }
 
     public static function createCashPayment(): Payment
     {
-        return (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Payment::class))->setCash(true);
+        return NodeBuilder::fromArray([], Payment::class)->setCash(true);
     }
 
     public static function createDebitPayment(): Payment
     {
-        return (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Payment::class))->setDebit(true);
+        return NodeBuilder::fromArray([], Payment::class)->setDebit(true);
     }
 
     public static function createCheckPayment(): Payment
     {
-        return (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Payment::class))->setCheck(true);
+        return NodeBuilder::fromArray([], Payment::class)->setCheck(true);
     }
 
     public static function createIbanPayment(
@@ -88,18 +88,17 @@ class Payment implements NodeInterface
         string $bankName,
         string $bic,
         string $country
-    ): Payment
-    {
-        $bankAccount = \Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], BankAccount::class);
+    ): Payment {
+        $bankAccount = NodeBuilder::fromArray([], BankAccount::class);
         $bankAccount->setType(BankAccount::TYPE_IBAN);
         $bankAccount->setValue($iban);
 
-        $bankCode = \Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], BankCode::class);
+        $bankCode = NodeBuilder::fromArray([], BankCode::class);
         $bankCode->setType(BankCode::TYPE_BIC);
         $bankCode->setValue($bic);
 
-        return (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Payment::class))->addAccount(
-            (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Account::class))
+        return NodeBuilder::fromArray([], Payment::class)->addAccount(
+            (NodeBuilder::fromArray([], Account::class))
                 ->setBankAccount($bankAccount)
                 ->setHolder($accountHolder)
                 ->setBankName($bankName)

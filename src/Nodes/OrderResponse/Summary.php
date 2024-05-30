@@ -3,6 +3,7 @@
 namespace Naugrim\OpenTrans\Nodes\OrderResponse;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\AllowOrChargesFix;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
@@ -11,7 +12,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'totalAmount', 'allowOrChargesFix'])]
 class Summary implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     use HasTotalItemNum;
     use HasTotalAmount;
 
