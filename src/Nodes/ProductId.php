@@ -19,12 +19,14 @@ class ProductId implements NodeInterface
     
     #[Serializer\Expose]
     #[Serializer\Type(SupplierPid::class)]
-    #[Serializer\SerializedName('bme:SUPPLIER_PID')]
+    #[Serializer\SerializedName('SUPPLIER_PID')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected SupplierPid $supplierPid;
 
     #[Serializer\Expose]
     #[Serializer\Type(SupplierIdRef::class)]
-    #[Serializer\SerializedName('bme:SUPPLIER_IDREF')]
+    #[Serializer\SerializedName('SUPPLIER_IDREF')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected SupplierIdRef $supplierIdRef;
 
     #[Serializer\Expose]
@@ -44,26 +46,31 @@ class ProductId implements NodeInterface
 
     #[Serializer\Expose]
     #[Serializer\Type(InternationalPid::class)]
-    #[Serializer\SerializedName('bme:INTERNATIONAL_PID')]
+    #[Serializer\SerializedName('INTERNATIONAL_PID')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected InternationalPid $internationalPid;
 
     #[Serializer\Expose]
     #[Serializer\Type(BuyerPid::class)]
-    #[Serializer\SerializedName('bme:BUYER_PID')]
+    #[Serializer\SerializedName('BUYER_PID')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected BuyerPid $buyerPid;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:DESCRIPTION_SHORT')]
+    #[Serializer\SerializedName('DESCRIPTION_SHORT')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $descriptionShort;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:DESCRIPTION_LONG')]
+    #[Serializer\SerializedName('DESCRIPTION_LONG')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $descriptionLong;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:PRODUCT_TYPE')]
+    #[Serializer\SerializedName('PRODUCT_TYPE')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $productType;
 }

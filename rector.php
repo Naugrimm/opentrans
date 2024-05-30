@@ -11,6 +11,7 @@ use Utils\Rector\Rector\NodeInterfaceConstructorCallToNodeBuilderFromArrayRector
 use Utils\Rector\Rector\NodeInterfaceDocBlocKTypeHintsToTypedPropertyRector;
 use Utils\Rector\Rector\NodeInterfaceRemoveSimpleGettersRector;
 use Utils\Rector\Rector\NodeInterfaceRemoveSimpleSettersRector;
+use Utils\Rector\Rector\SerializedNameWithBmePrefixToBmecatNamespaceRector;
 
 return RectorConfig::configure()
     ->withPaths([
@@ -32,5 +33,6 @@ return RectorConfig::configure()
         NodeInterfaceRemoveSimpleGettersRector::class,
         NodeInterfaceRemoveSimpleSettersRector::class,
         NodeInterfaceAddGenericImplementsAttributeRector::class,
+        SerializedNameWithBmePrefixToBmecatNamespaceRector::class,
     ])
 ;

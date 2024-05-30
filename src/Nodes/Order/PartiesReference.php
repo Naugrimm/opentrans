@@ -19,12 +19,14 @@ class PartiesReference implements NodeInterface
     
     #[Serializer\Expose]
     #[Serializer\Type(BuyerIdRef::class)]
-    #[Serializer\SerializedName('bme:BUYER_IDREF')]
+    #[Serializer\SerializedName('BUYER_IDREF')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected BuyerIdRef $buyerIdRef;
 
     #[Serializer\Expose]
     #[Serializer\Type(SupplierIdRef::class)]
-    #[Serializer\SerializedName('bme:SUPPLIER_IDREF')]
+    #[Serializer\SerializedName('SUPPLIER_IDREF')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected SupplierIdRef $supplierIdRef;
 
     #[Serializer\Expose]

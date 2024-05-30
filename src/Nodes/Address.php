@@ -19,22 +19,26 @@ class Address implements NodeInterface
     
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:NAME')]
+    #[Serializer\SerializedName('NAME')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $name;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:NAME2')]
+    #[Serializer\SerializedName('NAME2')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $name2;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:NAME3')]
+    #[Serializer\SerializedName('NAME3')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $name3;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:DEPARTMENT')]
+    #[Serializer\SerializedName('DEPARTMENT')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $department;
 
     #[Serializer\Expose]
@@ -44,71 +48,85 @@ class Address implements NodeInterface
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:STREET')]
+    #[Serializer\SerializedName('STREET')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $street;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:ZIP')]
+    #[Serializer\SerializedName('ZIP')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $zip;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:BOXNO')]
+    #[Serializer\SerializedName('BOXNO')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $boxno;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:ZIPBOX')]
+    #[Serializer\SerializedName('ZIPBOX')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $zipbox;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:CITY')]
+    #[Serializer\SerializedName('CITY')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $city;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:COUNTRY')]
+    #[Serializer\SerializedName('COUNTRY')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $country;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:COUNTRY_CODED')]
+    #[Serializer\SerializedName('COUNTRY_CODED')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $countryCoded;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:VAT_ID')]
+    #[Serializer\SerializedName('VAT_ID')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $vatId;
 
     #[Serializer\Expose]
     #[Serializer\Type(Phone::class)]
-    #[Serializer\SerializedName('bme:PHONE')]
+    #[Serializer\SerializedName('PHONE')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected Phone $phone;
 
     #[Serializer\Expose]
     #[Serializer\Type(Fax::class)]
-    #[Serializer\SerializedName('bme:FAX')]
+    #[Serializer\SerializedName('FAX')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected Fax $fax;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:EMAIL')]
+    #[Serializer\SerializedName('EMAIL')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $email;
 
     #[Serializer\Expose]
     #[Serializer\Type(PublicKey::class)]
-    #[Serializer\SerializedName('bme:PUBLIC_KEY')]
+    #[Serializer\SerializedName('PUBLIC_KEY')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected PublicKey $publicKey;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:URL')]
+    #[Serializer\SerializedName('URL')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $url;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:ADDRESS_REMARKS')]
+    #[Serializer\SerializedName('ADDRESS_REMARKS')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $addressRemarks;
 }

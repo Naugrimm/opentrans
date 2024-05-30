@@ -17,12 +17,14 @@ class Mime implements NodeInterface
     
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:MIME_TYPE')]
+    #[Serializer\SerializedName('MIME_TYPE')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $type;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:MIME_SOURCE')]
+    #[Serializer\SerializedName('MIME_SOURCE')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $source;
 
     /**
@@ -49,7 +51,8 @@ class Mime implements NodeInterface
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:MIME_DESCR')]
+    #[Serializer\SerializedName('MIME_DESCR')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $description;
 
     #[Serializer\Expose]
