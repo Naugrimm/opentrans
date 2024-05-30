@@ -16,7 +16,8 @@ class Party implements NodeInterface
     
     #[Serializer\Expose]
     #[Serializer\Type(PartyId::class)]
-    #[Serializer\SerializedName('bme:PARTY_ID')]
+    #[Serializer\SerializedName('PARTY_ID')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected PartyId $id;
 
     #[Serializer\Expose]

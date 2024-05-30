@@ -28,27 +28,32 @@ class Agreement implements NodeInterface
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:AGREEMENT_ID')]
+    #[Serializer\SerializedName('AGREEMENT_ID')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $id;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:AGREEMENT_LINE_ID')]
+    #[Serializer\SerializedName('AGREEMENT_LINE_ID')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $lineId;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:AGREEMENT_START_DATE')]
+    #[Serializer\SerializedName('AGREEMENT_START_DATE')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $startDate;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:AGREEMENT_END_DATE')]
+    #[Serializer\SerializedName('AGREEMENT_END_DATE')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $endDate;
 
     #[Serializer\Expose]
     #[Serializer\Type(SupplierIdRef::class)]
-    #[Serializer\SerializedName('bme:SUPPLIER_IDREF')]
+    #[Serializer\SerializedName('SUPPLIER_IDREF')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected SupplierIdRef $supplierIdRef;
 
     #[Serializer\Expose]

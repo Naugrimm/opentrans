@@ -53,7 +53,8 @@ class Info implements NodeInterface
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:CURRENCY')]
+    #[Serializer\SerializedName('CURRENCY')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $currency;
 
     /**

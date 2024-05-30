@@ -15,6 +15,7 @@ class PriceFix implements NodeInterface
     
     #[Serializer\Expose]
     #[Serializer\Type('float')]
-    #[Serializer\SerializedName('bme:PRICE_AMOUNT')]
+    #[Serializer\SerializedName('PRICE_AMOUNT')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected float $amount;
 }

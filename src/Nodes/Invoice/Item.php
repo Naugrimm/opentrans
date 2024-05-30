@@ -38,7 +38,8 @@ class Item implements NodeInterface
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('bme:ORDER_UNIT')]
+    #[Serializer\SerializedName('ORDER_UNIT')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $orderUnit;
 
     #[Serializer\Expose]
