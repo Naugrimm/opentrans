@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ORDER xmlns="http://www.opentrans.org/XMLSchema/2.1" type="standard" xmlns:bme="http://www.bmecat.org/bmecat/2005" version="2.1">
+<ORDER xmlns="http://www.opentrans.org/XMLSchema/2.1" xmlns:bme="http://www.bmecat.org/bmecat/2005" type="standard" version="2.1">
   <ORDER_HEADER>
     <ORDER_INFO>
       <ORDER_ID><![CDATA[order-id-1]]></ORDER_ID>

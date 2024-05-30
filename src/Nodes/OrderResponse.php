@@ -9,12 +9,15 @@ use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Header;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Item;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Summary;
+use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<OrderResponse>
  */
 #[Serializer\XmlRoot('ORDERRESPONSE')]
 #[Serializer\ExclusionPolicy('all')]
+#[Serializer\XmlNamespace(uri: OpenTrans::BMECAT_NAMESPACE, prefix: 'bme')]
+#[Serializer\XmlNamespace(uri: OpenTrans::OPENTRANS_NAMESPACE)]
 class OrderResponse implements NodeInterface
 {
     use HasSerializableAttributes;

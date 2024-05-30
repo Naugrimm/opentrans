@@ -9,12 +9,15 @@ use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\Order\Item;
 use Naugrim\OpenTrans\Nodes\Order\Summary;
 use Naugrim\OpenTrans\Nodes\OrderChange\Header;
+use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<OrderChange>
  */
 #[Serializer\XmlRoot('ORDERCHANGE')]
 #[Serializer\ExclusionPolicy('all')]
+#[Serializer\XmlNamespace(uri: OpenTrans::BMECAT_NAMESPACE, prefix: 'bme')]
+#[Serializer\XmlNamespace(uri: OpenTrans::OPENTRANS_NAMESPACE)]
 class OrderChange implements NodeInterface
 {
     use HasSerializableAttributes;

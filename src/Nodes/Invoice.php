@@ -9,12 +9,15 @@ use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\Invoice\Header;
 use Naugrim\OpenTrans\Nodes\Invoice\Item;
 use Naugrim\OpenTrans\Nodes\Invoice\Summary;
+use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<Invoice>
  */
 #[Serializer\XmlRoot('INVOICE')]
 #[Serializer\ExclusionPolicy('all')]
+#[Serializer\XmlNamespace(uri: OpenTrans::BMECAT_NAMESPACE, prefix: 'bme')]
+#[Serializer\XmlNamespace(uri: OpenTrans::OPENTRANS_NAMESPACE)]
 class Invoice implements NodeInterface
 {
     use HasSerializableAttributes;
