@@ -7,7 +7,7 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<AllowOrChargesFix>
+ * @implements NodeInterface<AllowOrChargesFix>
  */
 class AllowOrChargesFix implements NodeInterface
 {

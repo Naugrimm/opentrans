@@ -8,7 +8,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Header>
+ * @implements NodeInterface<Header>
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'info'])]
 class Header implements NodeInterface

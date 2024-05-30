@@ -7,7 +7,7 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<PaymentTerms>
+ * @implements NodeInterface<PaymentTerms>
  */
 class PaymentTerms implements NodeInterface
 {

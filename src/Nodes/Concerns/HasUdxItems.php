@@ -22,7 +22,6 @@ trait HasUdxItems
 
     /**
      * @param UdxInterface[]|array{vendor: string, name: string, value: string}[] $udxItems
-     * @throws UnknownKeyException
      */
     public function setUdxItems(array $udxItems): self
     {
@@ -41,15 +40,12 @@ trait HasUdxItems
 
     /**
      * @param array{vendor: string, name: string, value: string} $udxItem
-     * @throws UnknownKeyException
-     * @throws \Naugrim\BMEcat\Exception\InvalidSetterException
-     * @throws \ReflectionException
      */
     private function convertToUdx(array $udxItem): UdxInterface
     {
         $udxData = $this->parseUdxData($udxItem);
         $udxClass = $udxData['class'];
-        if (! class_exists($udxClass)) {
+        if (!class_exists($udxClass)) {
             throw new UnknownKeyException(sprintf('"%s" needs to implement UdxInterface', $udxClass));
         }
 

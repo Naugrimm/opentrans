@@ -12,7 +12,7 @@ use Naugrim\OpenTrans\Nodes\Payment\Payment;
 use Naugrim\OpenTrans\Nodes\UdxAggregate;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Info>
+ * @implements NodeInterface<Info>
  */
 class Info implements NodeInterface
 {

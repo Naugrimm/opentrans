@@ -11,7 +11,7 @@ use Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef;
 use Naugrim\OpenTrans\Nodes\ShipmentPartiesReference;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<PartiesReference>
+ * @implements NodeInterface<PartiesReference>
  */
 class PartiesReference implements NodeInterface
 {

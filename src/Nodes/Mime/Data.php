@@ -8,7 +8,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasContentTypeAttribute;
 use Naugrim\OpenTrans\Nodes\Concerns\HasStringValue;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Data>
+ * @implements NodeInterface<Data>
  */
 class Data implements NodeInterface
 {

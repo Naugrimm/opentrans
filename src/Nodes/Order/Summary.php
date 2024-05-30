@@ -9,7 +9,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Summary>
+ * @implements NodeInterface<Summary>
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'totalAmount'])]
 class Summary implements NodeInterface

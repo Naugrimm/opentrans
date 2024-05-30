@@ -11,7 +11,7 @@ use Naugrim\BMEcat\Nodes\SupplierIdRef;
 use Naugrim\BMEcat\Nodes\SupplierPid;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<ProductId>
+ * @implements NodeInterface<ProductId>
  */
 class ProductId implements NodeInterface
 {

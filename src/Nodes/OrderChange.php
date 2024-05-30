@@ -11,7 +11,7 @@ use Naugrim\OpenTrans\Nodes\Order\Summary;
 use Naugrim\OpenTrans\Nodes\OrderChange\Header;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<OrderChange>
+ * @implements NodeInterface<OrderChange>
  */
 #[Serializer\XmlRoot('ORDERCHANGE')]
 #[Serializer\ExclusionPolicy('all')]

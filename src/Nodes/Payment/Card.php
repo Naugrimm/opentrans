@@ -12,7 +12,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Card>
+ * @implements NodeInterface<Card>
  */
 class Card implements NodeInterface
 {
@@ -64,7 +64,7 @@ class Card implements NodeInterface
             'holder' => $holder,
             'number' => $number,
             'expDate' => $expDate,
-            'type' => $type
+            'type' => $type,
         ], Card::class);
     }
 }

@@ -9,7 +9,7 @@ use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\Party;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Info>
+ * @implements NodeInterface<Info>
  */
 class Info implements NodeInterface
 {

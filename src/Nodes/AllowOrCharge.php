@@ -8,7 +8,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<AllowOrCharge>
+ * @implements NodeInterface<AllowOrCharge>
  */
 class AllowOrCharge implements NodeInterface
 {

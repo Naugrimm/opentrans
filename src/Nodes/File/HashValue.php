@@ -9,7 +9,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasStringValue;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<HashValue>
+ * @implements NodeInterface<HashValue>
  */
 class HashValue implements NodeInterface
 {
