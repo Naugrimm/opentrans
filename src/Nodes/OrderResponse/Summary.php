@@ -11,6 +11,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'totalAmount', 'allowOrChargesFix'])]
 class Summary implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasTotalItemNum;
     use HasTotalAmount;
 
@@ -22,22 +23,4 @@ class Summary implements NodeInterface
     #[Serializer\Type(AllowOrChargesFix::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGES_FIX')]
     protected AllowOrChargesFix $allowOrChargesFix;
-
-    /**
-     * @return AllowOrChargesFix
-     */
-    public function getAllowOrChargesFix(): AllowOrChargesFix
-    {
-        return $this->allowOrChargesFix;
-    }
-
-    /**
-     * @param AllowOrChargesFix $allowOrChargesFix
-     * @return Summary
-     */
-    public function setAllowOrChargesFix(AllowOrChargesFix $allowOrChargesFix): Summary
-    {
-        $this->allowOrChargesFix = $allowOrChargesFix;
-        return $this;
-    }
 }

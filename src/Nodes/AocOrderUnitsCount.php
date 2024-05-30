@@ -7,5 +7,6 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 class AocOrderUnitsCount implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasTypeAttribute;
 }

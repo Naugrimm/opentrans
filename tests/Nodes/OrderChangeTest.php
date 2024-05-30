@@ -63,7 +63,7 @@ class OrderChangeTest extends TestCase
             'summary' => [
                 'totalItemNum' => 1,
             ]
-        ], new OrderChange());
+        ], \Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], OrderChange::class));
 
 
         $xml = $this->serializer->serialize($node, 'xml');

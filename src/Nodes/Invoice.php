@@ -14,6 +14,7 @@ use Naugrim\OpenTrans\Nodes\Invoice\Summary;
 #[Serializer\ExclusionPolicy('all')]
 class Invoice implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use IsRootNode;
 
     /**
@@ -46,73 +47,12 @@ class Invoice implements NodeInterface
     protected Summary $summary;
 
     /**
-     * @return Header
-     */
-    public function getHeader(): Header
-    {
-        return $this->header;
-    }
-
-    /**
-     * @param Header $header
-     * @return Invoice
-     */
-    public function setHeader(Header $header): Invoice
-    {
-        $this->header = $header;
-        return $this;
-    }
-
-    /**
-     * @return Item[]
-     */
-    public function getItems(): array
-    {
-        return $this->items;
-    }
-
-    /**
-     * @param Item[] $items
-     * @return Invoice
-     */
-    public function setItems(array $items): Invoice
-    {
-        foreach ($items as $item) {
-            if (!$item instanceof Item) {
-                $item = NodeBuilder::fromArray($item, new Item());
-            }
-
-            $this->addItem($item);
-        }
-
-        return $this;
-    }
-
-    /**
      * @param Item $item
      * @return $this
      */
     public function addItem(Item $item): Invoice
     {
         $this->items[] = $item;
-        return $this;
-    }
-
-    /**
-     * @return Summary
-     */
-    public function getSummary(): Summary
-    {
-        return $this->summary;
-    }
-
-    /**
-     * @param Summary $summary
-     * @return Invoice
-     */
-    public function setSummary(Summary $summary): Invoice
-    {
-        $this->summary = $summary;
         return $this;
     }
 }

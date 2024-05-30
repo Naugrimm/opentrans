@@ -7,6 +7,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class PaymentTerms implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     /**
      * @var PaymentTerm[]
      */
@@ -21,34 +22,9 @@ class PaymentTerms implements NodeInterface
     #[Serializer\SerializedName('VALUE_DATE')]
     private ?string $valueDate = null;
 
-    public function getTerms(): array
-    {
-        return $this->terms;
-    }
-
-    public function setTerms(array $terms): PaymentTerms
-    {
-        foreach ($terms as $term) {
-            $this->addTerm($term);
-        }
-
-        return $this;
-    }
-
     public function addTerm(PaymentTerm $term): PaymentTerms
     {
         $this->terms[] = $term;
-        return $this;
-    }
-
-    public function getValueDate(): string
-    {
-        return $this->valueDate;
-    }
-
-    public function setValueDate(string $valueDate): PaymentTerms
-    {
-        $this->valueDate = $valueDate;
         return $this;
     }
 }

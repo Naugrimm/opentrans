@@ -8,6 +8,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasStringValue;
 
 class Data implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasContentTypeAttribute;
     use HasStringValue;
 }

@@ -27,7 +27,7 @@ class InvoiceTest extends TestCase
      */
     public function testInvoice(string $file, array $data): void
     {
-        $node = NodeBuilder::fromArray($data, new Invoice());
+        $node = NodeBuilder::fromArray($data, \Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Invoice::class));
         try {
             $xml = $this->serializer->serialize($node, 'xml');
         } catch (\Throwable $throwable) {

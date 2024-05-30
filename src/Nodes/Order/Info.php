@@ -13,6 +13,7 @@ use Naugrim\OpenTrans\Nodes\UdxAggregate;
 
 class Info implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasUdxItems;
 
     /**
@@ -71,10 +72,7 @@ class Info implements NodeInterface
     #[Serializer\SerializedName('PARTIAL_SHIPMENT_ALLOWED')]
     protected bool $partialShipmentAllowed;
 
-    /**
-     *
-     * @var Payment
-     */
+    #[Serializer\Expose]
     #[Serializer\Type(Payment::class)]
     #[Serializer\SerializedName('PAYMENT')]
     protected Payment $payment;
@@ -87,78 +85,6 @@ class Info implements NodeInterface
     protected UdxAggregate $udxItem;
 
     /**
-     * @return string
-     */
-    public function getId(): string
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param string $id
-     * @return Info
-     */
-    public function setId(string $id): Info
-    {
-        $this->id = $id;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDate(): string
-    {
-        return $this->date;
-    }
-
-    /**
-     * @param string $date
-     * @return Info
-     */
-    public function setDate(string $date): Info
-    {
-        $this->date = $date;
-        return $this;
-    }
-
-    public function getDeliveryDate(): DeliveryDate
-    {
-        return $this->deliveryDate;
-    }
-
-    public function setDeliveryDate(DeliveryDate $deliveryDate): self
-    {
-        $this->deliveryDate = $deliveryDate;
-        return $this;
-    }
-
-    /**
-     * @return Party[]
-     */
-    public function getParties(): array
-    {
-        return $this->parties;
-    }
-
-    /**
-     * @param Party[] $parties
-     * @return Info
-     */
-    public function setParties(array $parties): Info
-    {
-        foreach ($parties as $party) {
-            if (!$party instanceof Party) {
-                $party = NodeBuilder::fromArray($party, new Party());
-            }
-
-            $this->addParty($party);
-        }
-
-        return $this;
-    }
-
-    /**
      * @param Party $party
      * @return $this
      */
@@ -169,45 +95,10 @@ class Info implements NodeInterface
     }
 
     /**
-     * @return PartiesReference
-     */
-    public function getPartiesReference(): PartiesReference
-    {
-        return $this->partiesReference;
-    }
-
-    /**
-     * @param PartiesReference $partiesReference
-     * @return Info
-     */
-    public function setPartiesReference(PartiesReference $partiesReference): Info
-    {
-        $this->partiesReference = $partiesReference;
-        return $this;
-    }
-
-    public function setPartialShipmentAllowed(bool $partialShipmentAllowed): self
-    {
-        $this->partialShipmentAllowed = $partialShipmentAllowed;
-        return $this;
-    }
-
-    /**
      * @return bool
      */
     public function isPartialShipmentAllowed(): bool
     {
         return $this->partialShipmentAllowed;
-    }
-
-    public function getPayment(): Payment
-    {
-        return $this->payment;
-    }
-
-    public function setPayment(Payment $payment): Info
-    {
-        $this->payment = $payment;
-        return $this;
     }
 }

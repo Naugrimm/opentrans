@@ -14,8 +14,7 @@
         "ext-dom": "*",
         "ext-libxml": "*",
         "jms/serializer": "^3.30.0",
-        "naugrim/bmecat": "^1.0",
-        "doctrine/annotations": "^2.0"
+        "naugrim/bmecat": "^3.1"
     },
     "autoload": {
         "psr-4": {
@@ -36,7 +35,10 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Utils\\Rector\\": "utils/rector/src",
+            "Utils\\Rector\\": [
+                "utils/rector/src",
+                "vendor/naugrim/bmecat/utils/rector/src"
+            ],
             "Utils\\Rector\\Tests\\": "utils/rector/tests"
         }
     }

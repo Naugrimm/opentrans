@@ -14,6 +14,7 @@ use Naugrim\OpenTrans\Nodes\OrderResponse\Summary;
 #[Serializer\ExclusionPolicy('all')]
 class OrderResponse implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use IsRootNode;
 
     /**
@@ -46,73 +47,12 @@ class OrderResponse implements NodeInterface
     protected Summary $summary;
 
     /**
-     * @return Header
-     */
-    public function getHeader(): Header
-    {
-        return $this->header;
-    }
-
-    /**
-     * @param Header $header
-     * @return OrderResponse
-     */
-    public function setHeader(Header $header): OrderResponse
-    {
-        $this->header = $header;
-        return $this;
-    }
-
-    /**
-     * @return Item[]
-     */
-    public function getItems(): array
-    {
-        return $this->items;
-    }
-
-    /**
-     * @param Item[] $items
-     * @return OrderResponse
-     */
-    public function setItems(array $items): OrderResponse
-    {
-        foreach ($items as $item) {
-            if (!$item instanceof Item) {
-                $item = NodeBuilder::fromArray($item, new Item());
-            }
-
-            $this->addItem($item);
-        }
-
-        return $this;
-    }
-
-    /**
      * @param Item $item
      * @return $this
      */
     public function addItem(Item $item): OrderResponse
     {
         $this->items[] = $item;
-        return $this;
-    }
-
-    /**
-     * @return Summary
-     */
-    public function getSummary(): Summary
-    {
-        return $this->summary;
-    }
-
-    /**
-     * @param Summary $summary
-     * @return OrderResponse
-     */
-    public function setSummary(Summary $summary): OrderResponse
-    {
-        $this->summary = $summary;
         return $this;
     }
 }

@@ -7,15 +7,9 @@ use Stringable;
 
 class Udx implements UdxInterface, Stringable
 {
-    /**
-     * @var string
-     */
     #[Serializer\Exclude]
     protected string $vendor;
 
-    /**
-     * @var string
-     */
     #[Serializer\Exclude]
     protected string $name;
 

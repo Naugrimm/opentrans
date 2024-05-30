@@ -29,7 +29,7 @@ class OrderTest extends TestCase
      */
     public function testOrder(string $file, array $data): void
     {
-        $node = NodeBuilder::fromArray($data, new Order());
+        $node = NodeBuilder::fromArray($data, \Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Order::class));
         try {
             $xml = $this->serializer->serialize($node, 'xml');
         } catch (\Throwable $throwable) {
@@ -235,7 +235,7 @@ class OrderTest extends TestCase
                                     'name' => 'abc',
                                     'value' => '123',
                                 ],
-                                (new Udx())->setValue('sfoo')->setName('bar')->setVendor('company')
+                                (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Udx::class))->setValue('sfoo')->setName('bar')->setVendor('company')
                             ]
                         ]
                     ],
@@ -274,7 +274,7 @@ class OrderTest extends TestCase
                                     'name' => 'abc',
                                     'value' => '123',
                                 ],
-                                (new Udx())->setValue('sfoo')->setName('bar')->setVendor('company')
+                                (\Naugrim\BMEcat\Builder\NodeBuilder::fromArray([], Udx::class))->setValue('sfoo')->setName('bar')->setVendor('company')
                             ]
 
                         ]

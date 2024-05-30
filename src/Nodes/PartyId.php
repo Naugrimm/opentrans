@@ -10,6 +10,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 #[Serializer\XmlRoot('PARTY_ID')]
 class PartyId implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasTypeAttribute;
     use HasStringValue;
 

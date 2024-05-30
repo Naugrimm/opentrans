@@ -7,6 +7,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class ShipmentPartiesReference implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     /**
      *
      * @var DeliveryIdRef

@@ -9,6 +9,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\CanAssertConstantValue;
 #[Serializer\XmlRoot('PARTY_ROLE')]
 class PartyRole implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use CanAssertConstantValue;
 
     public const BUYER = 'buyer';
@@ -53,14 +54,6 @@ class PartyRole implements NodeInterface
     #[Serializer\Type('string')]
     #[Serializer\XmlValue]
     protected string $role = '';
-
-    /**
-     * @return string
-     */
-    public function getRole(): string
-    {
-        return $this->role;
-    }
 
     /**
      * @param string $role

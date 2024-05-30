@@ -7,5 +7,6 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class NodeWithContentType implements NodeInterface
 {
+    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
     use HasContentTypeAttribute;
 }
