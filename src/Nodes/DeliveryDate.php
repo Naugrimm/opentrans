@@ -6,6 +6,9 @@ use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<DeliveryDate>
+ */
 class DeliveryDate implements NodeInterface
 {
     use HasSerializableAttributes;

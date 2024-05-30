@@ -11,6 +11,9 @@ use Naugrim\OpenTrans\Nodes\Party;
 use Naugrim\OpenTrans\Nodes\Payment\Payment;
 use Naugrim\OpenTrans\Nodes\UdxAggregate;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Info>
+ */
 class Info implements NodeInterface
 {
     use HasSerializableAttributes;

@@ -8,6 +8,9 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Agreement;
 use Naugrim\OpenTrans\Nodes\Catalog\Reference;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<History>
+ */
 class History implements NodeInterface
 {
     use HasSerializableAttributes;

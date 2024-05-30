@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
 use Rector\Symfony\Set\JMSSetList;
+use Utils\Rector\Rector\NodeInterfaceAddGenericImplementsAttributeRector;
 use Utils\Rector\Rector\NodeInterfaceAddHasSerializableAttributesTraitRector;
 use Utils\Rector\Rector\NodeInterfaceConstructorCallToNodeBuilderFromArrayRector;
 use Utils\Rector\Rector\NodeInterfaceDocBlocKTypeHintsToTypedPropertyRector;
@@ -30,5 +31,6 @@ return RectorConfig::configure()
         NodeInterfaceAddHasSerializableAttributesTraitRector::class,
         NodeInterfaceRemoveSimpleGettersRector::class,
         NodeInterfaceRemoveSimpleSettersRector::class,
+        NodeInterfaceAddGenericImplementsAttributeRector::class,
     ])
 ;

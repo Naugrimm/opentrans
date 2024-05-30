@@ -10,6 +10,9 @@ use Naugrim\BMEcat\Nodes\Fax;
 use Naugrim\BMEcat\Nodes\Phone;
 use Naugrim\OpenTrans\Nodes\Contact\Details;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Address>
+ */
 class Address implements NodeInterface
 {
     use HasSerializableAttributes;

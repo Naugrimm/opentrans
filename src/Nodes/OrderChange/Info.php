@@ -8,6 +8,9 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Order\PartiesReference;
 use Naugrim\OpenTrans\Nodes\Party;
 
+/**
+ * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Info>
+ */
 class Info implements NodeInterface
 {
     use HasSerializableAttributes;
