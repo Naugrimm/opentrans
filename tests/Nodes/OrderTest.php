@@ -40,7 +40,7 @@ class OrderTest extends TestCase
         $this->assertTrue(SchemaValidator::isValid($xml, '2.1'));
     }
 
-    public function provideOrderData(): array
+    public static function provideOrderData(): array
     {
         return [
             [
