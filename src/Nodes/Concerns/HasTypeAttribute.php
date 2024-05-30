@@ -19,7 +19,6 @@ trait HasTypeAttribute
     protected string $type;
 
     /**
-     * @param string $type
      * @return NodeInterface<TNode>
      */
     public function setType(string $type): NodeInterface

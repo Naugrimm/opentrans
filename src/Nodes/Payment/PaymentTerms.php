@@ -22,7 +22,6 @@ class PaymentTerms implements NodeInterface
     #[Serializer\XmlList(entry: 'PAYMENT_TERM')]
     protected array $terms = [];
 
-
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('VALUE_DATE')]

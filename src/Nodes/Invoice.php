@@ -20,10 +20,6 @@ class Invoice implements NodeInterface
     use HasSerializableAttributes;
     use IsRootNode;
 
-    /**
-     *
-     * @var Header
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Header::class)]
     #[Serializer\SerializedName('INVOICE_HEADER')]
@@ -40,17 +36,12 @@ class Invoice implements NodeInterface
     #[Serializer\XmlList(entry: 'INVOICE_ITEM')]
     protected array $items = [];
 
-    /**
-     *
-     * @var Summary
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Summary::class)]
     #[Serializer\SerializedName('INVOICE_SUMMARY')]
     protected Summary $summary;
 
     /**
-     * @param Item $item
      * @return $this
      */
     public function addItem(Item $item): Invoice

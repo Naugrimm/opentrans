@@ -19,10 +19,6 @@ class Summary implements NodeInterface
     use HasTotalItemNum;
     use HasTotalAmount;
 
-    /**
-     *
-     * @var AllowOrChargesFix
-     */
     #[Serializer\Expose]
     #[Serializer\Type(AllowOrChargesFix::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGES_FIX')]

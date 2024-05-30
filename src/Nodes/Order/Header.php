@@ -18,10 +18,6 @@ class Header implements NodeInterface
     use HasControlInfo;
     use HasSourcingInfo;
 
-    /**
-     *
-     * @var Info
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Info::class)]
     #[Serializer\SerializedName('ORDER_INFO')]

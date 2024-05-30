@@ -14,28 +14,17 @@ use Naugrim\OpenTrans\Nodes\Party;
 class Info implements NodeInterface
 {
     use HasSerializableAttributes;
-    /**
-     *
-     * @var string
-     */
+    
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('INVOICE_ID')]
     protected string $id;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('INVOICE_DATE')]
     protected string $date;
 
-    /**
-     *
-     * @var DeliveryDate
-     */
     #[Serializer\Expose]
     #[Serializer\Type(DeliveryDate::class)]
     #[Serializer\SerializedName('DELIVERY_DATE')]
@@ -52,35 +41,22 @@ class Info implements NodeInterface
     #[Serializer\XmlList(entry: 'PARTY')]
     protected array $parties = [];
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('INVOICE_ISSUER_IDREF')]
     protected string $issuerIdRef;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('INVOICE_RECIPIENT_IDREF')]
     protected string $rcptIdRef;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('bme:CURRENCY')]
     protected string $currency;
 
     /**
-     * @param Party $party
      * @return $this
      */
     public function addParty(Party $party): static

@@ -6,10 +6,6 @@ use JMS\Serializer\Annotation as Serializer;
 
 trait HasLangAttribute
 {
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('lang')]

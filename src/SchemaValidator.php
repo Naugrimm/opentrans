@@ -37,11 +37,6 @@ class SchemaValidator
         return $validated;
     }
 
-    /**
-     * @param string $version
-     * @param string|null $type
-     * @return string
-     */
     protected static function getSchemaForVersion(string $version, string $type = null): string
     {
         $schema = self::$SCHEMA_MAP[$version] ?? null;

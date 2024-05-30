@@ -16,10 +16,6 @@ class Header implements NodeInterface
     use HasSerializableAttributes;
     use HasControlInfo;
 
-    /**
-     *
-     * @var Info
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Info::class)]
     #[Serializer\SerializedName('ORDERRESPONSE_INFO')]

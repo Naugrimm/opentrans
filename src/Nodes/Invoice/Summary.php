@@ -19,11 +19,6 @@ class Summary implements NodeInterface
     use HasTotalItemNum;
     use HasTotalAmount;
 
-    /**
-     *
-     *
-     * @var float
-     */
     #[Serializer\Expose]
     #[Serializer\SerializedName('NET_VALUE_GOODS')]
     #[Serializer\Type('float')]
@@ -41,7 +36,6 @@ class Summary implements NodeInterface
     protected array $totalTax = [];
 
     /**
-     * @param DetailsFix $tax
      * @return $this
      */
     public function addTotalTax(DetailsFix $tax): Summary

@@ -52,16 +52,10 @@ class PartyRole implements NodeInterface
 
     public const OTHER = 'other';
 
-    /**
-     * @var string
-     */
     #[Serializer\Type('string')]
     #[Serializer\XmlValue]
     protected string $role = '';
 
-    /**
-     * @param string $role
-     */
     public function setRole(string $role): void
     {
         self::assertValidConstant($role);

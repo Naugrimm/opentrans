@@ -20,10 +20,6 @@ class OrderChange implements NodeInterface
     use HasSerializableAttributes;
     use IsRootNode;
 
-    /**
-     *
-     * @var Header
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Header::class)]
     #[Serializer\SerializedName('ORDERCHANGE_HEADER')]
@@ -40,17 +36,12 @@ class OrderChange implements NodeInterface
     #[Serializer\XmlList(entry: 'ORDER_ITEM')]
     protected array $items = [];
 
-    /**
-     *
-     * @var Summary
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Summary::class)]
     #[Serializer\SerializedName('ORDERCHANGE_SUMMARY')]
     protected Summary $summary;
 
     /**
-     * @param Item $item
      * @return $this
      */
     public function addItem(Item $item): OrderChange

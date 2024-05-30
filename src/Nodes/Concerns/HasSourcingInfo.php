@@ -7,10 +7,6 @@ use Naugrim\OpenTrans\Nodes\SourcingInfo;
 
 trait HasSourcingInfo
 {
-    /**
-     *
-     * @var SourcingInfo
-     */
     #[Serializer\Expose]
     #[Serializer\Type(SourcingInfo::class)]
     #[Serializer\SerializedName('SOURCING_INFO')]

@@ -40,18 +40,15 @@ class Card implements NodeInterface
 
     public const CHINA_UNION_PAY = 'ChinaUnionPay';
 
-
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CARD_NUM')]
     protected ?string $number = null;
 
-
     #[Serializer\Expose]
     #[Serializer\Type("DateTimeInterface<'Y-m'>")]
     #[Serializer\SerializedName('CARD_EXPIRATION_DATE')]
     protected ?DateTimeInterface $expDate = null;
-
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]

@@ -17,19 +17,11 @@ class Header implements NodeInterface
     use HasSerializableAttributes;
     use HasControlInfo;
 
-    /**
-     *
-     * @var Info
-     */
     #[Serializer\Expose]
     #[Serializer\Type(Info::class)]
     #[Serializer\SerializedName('INVOICE_INFO')]
     protected Info $info;
 
-    /**
-     *
-     * @var History
-     */
     #[Serializer\Expose]
     #[Serializer\Type(History::class)]
     #[Serializer\SerializedName('ORDER_HISTORY')]
