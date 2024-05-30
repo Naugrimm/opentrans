@@ -69,7 +69,7 @@ CODE_SAMPLE
     public function refactor(Node $node): ?Node
     {
         if (!in_array(NodeInterface::class, $node->implements)) {
-            return null;
+            return $node;
         }
 
         foreach ($node->getProperties() as $property) {
