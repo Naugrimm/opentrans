@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+import fs from "fs";
+import ch from "./js/commit-helper.js";
+
+if (! ch.hookMustRun("commit-msg")) {
+  console.log("hook commit-msg must not run");
+  process.exit(0);
+}
+
+const commitMsgFile = process.argv[2];
+let message = fs.readFileSync(commitMsgFile, 'utf8');
+
+if (!ch.validateCommitMessage(message)) {
+    process.exit(1);
+}
+
+process.exit(0);
+

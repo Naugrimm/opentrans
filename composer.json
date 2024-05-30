@@ -29,7 +29,10 @@
         "rector/rector": "^1.1"
     },
     "scripts": {
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit",
+        "post-autoload-dump": [
+            "git config gitflow.path.hooks .githooks && git config core.hooksPath .githooks"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
