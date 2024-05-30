@@ -8,7 +8,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\Crypto\PublicKey;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Emails>
+ * @implements NodeInterface<Emails>
  */
 class Emails implements NodeInterface
 {

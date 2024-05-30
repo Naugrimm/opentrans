@@ -5,8 +5,6 @@ namespace Naugrim\OpenTrans\Nodes\Payment;
 use DateTimeInterface;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Account;
@@ -14,7 +12,7 @@ use Naugrim\OpenTrans\Nodes\BankAccount;
 use Naugrim\OpenTrans\Nodes\BankCode;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Payment>
+ * @implements NodeInterface<Payment>
  */
 class Payment implements NodeInterface
 {
@@ -115,8 +113,6 @@ class Payment implements NodeInterface
     /**
      * @param Card|array<string, mixed> $card
      * @return $this
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
      */
     public function setCard(Card|array $card): Payment
     {

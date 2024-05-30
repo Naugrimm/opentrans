@@ -8,7 +8,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\CanAssertConstantValue;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<PartyRole>
+ * @implements NodeInterface<PartyRole>
  */
 #[Serializer\XmlRoot('PARTY_ROLE')]
 class PartyRole implements NodeInterface

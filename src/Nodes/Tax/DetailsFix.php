@@ -7,7 +7,7 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<DetailsFix>
+ * @implements NodeInterface<DetailsFix>
  */
 class DetailsFix implements NodeInterface
 {

@@ -8,7 +8,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Agreement>
+ * @implements NodeInterface<Agreement>
  */
 class Agreement implements NodeInterface
 {

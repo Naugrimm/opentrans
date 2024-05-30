@@ -11,7 +11,7 @@ use Naugrim\OpenTrans\Nodes\Invoice\Item;
 use Naugrim\OpenTrans\Nodes\Invoice\Summary;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Invoice>
+ * @implements NodeInterface<Invoice>
  */
 #[Serializer\XmlRoot('INVOICE')]
 #[Serializer\ExclusionPolicy('all')]

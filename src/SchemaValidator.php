@@ -18,8 +18,6 @@ class SchemaValidator
     /**
      * Validates the given XML-string against the BMEcat XSD-files.
      *
-     * @throws SchemaValidationException
-     * @throws UnsupportedVersionException
      */
     public static function isValid(string $xml, string $version = '2005.1', ?string $type = null): bool
     {

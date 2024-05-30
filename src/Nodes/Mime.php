@@ -9,7 +9,7 @@ use Naugrim\OpenTrans\Nodes\File\HashValue;
 use Naugrim\OpenTrans\Nodes\Mime\Embedded;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Mime>
+ * @implements NodeInterface<Mime>
  */
 class Mime implements NodeInterface
 {

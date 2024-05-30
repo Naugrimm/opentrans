@@ -8,7 +8,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasStringValue;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<DeliveryIdRef>
+ * @implements NodeInterface<DeliveryIdRef>
  */
 class DeliveryIdRef implements NodeInterface
 {

@@ -11,7 +11,7 @@ use Naugrim\BMEcat\Nodes\Phone;
 use Naugrim\OpenTrans\Nodes\Emails;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<Details>
+ * @implements NodeInterface<Details>
  */
 class Details implements NodeInterface
 {

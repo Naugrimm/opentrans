@@ -11,7 +11,7 @@ use Naugrim\OpenTrans\Nodes\OrderResponse\Item;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Summary;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<OrderResponse>
+ * @implements NodeInterface<OrderResponse>
  */
 #[Serializer\XmlRoot('ORDERRESPONSE')]
 #[Serializer\ExclusionPolicy('all')]

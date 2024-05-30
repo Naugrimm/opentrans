@@ -9,7 +9,7 @@ use Naugrim\OpenTrans\Nodes\Agreement;
 use Naugrim\OpenTrans\Nodes\Catalog\Reference;
 
 /**
- * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<History>
+ * @implements NodeInterface<History>
  */
 class History implements NodeInterface
 {
