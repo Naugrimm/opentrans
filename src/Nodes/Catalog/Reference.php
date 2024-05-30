@@ -3,11 +3,12 @@
 namespace Naugrim\OpenTrans\Nodes\Catalog;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 class Reference implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     /**
      *
      * @var string

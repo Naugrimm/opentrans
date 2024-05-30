@@ -3,14 +3,14 @@
 namespace Naugrim\OpenTrans\Nodes\Invoice;
 
 use JMS\Serializer\Annotation as Serializer;
-use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\Party;
 
 class Info implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     /**
      *
      * @var string

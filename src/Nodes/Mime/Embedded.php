@@ -3,12 +3,13 @@
 namespace Naugrim\OpenTrans\Nodes\Mime;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasLangAttribute;
 
 class Embedded implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     use HasLangAttribute;
 
     /**

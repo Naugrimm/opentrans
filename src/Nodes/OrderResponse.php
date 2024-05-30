@@ -3,7 +3,7 @@
 namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
-use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\OrderResponse\Header;
@@ -14,7 +14,7 @@ use Naugrim\OpenTrans\Nodes\OrderResponse\Summary;
 #[Serializer\ExclusionPolicy('all')]
 class OrderResponse implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     use IsRootNode;
 
     /**

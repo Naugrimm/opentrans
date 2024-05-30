@@ -3,6 +3,7 @@
 namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\Crypto\PublicKey;
 use Naugrim\BMEcat\Nodes\Fax;
@@ -11,7 +12,7 @@ use Naugrim\OpenTrans\Nodes\Contact\Details;
 
 class Address implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     /**
      *
      * @var string

@@ -7,19 +7,8 @@ namespace Utils\Rector\Rector;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Class_;
-use PHPStan\PhpDocParser\Ast\Node as DocNode;
-use PHPStan\PhpDocParser\Ast\PhpDoc\GenericTagValueNode;
-use PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocTagNode;
-use PHPStan\PhpDocParser\Ast\PhpDoc\VarTagValueNode;
-use PHPStan\PhpDocParser\Ast\Type\IntersectionTypeNode;
-use Rector\BetterPhpDocParser\PhpDocInfo\PhpDocInfo;
 use Rector\BetterPhpDocParser\PhpDocInfo\PhpDocInfoFactory;
-use Rector\BetterPhpDocParser\ValueObject\Type\FullyQualifiedIdentifierTypeNode;
-use Rector\PhpDocParser\PhpDocParser\PhpDocNodeTraverser;
 use Rector\Rector\AbstractRector;
-use PHPStan\Type\ObjectType;
-use PHPStan\Type\ArrayType;
-use PHPStan\Type\Type;
 use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
 use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 
@@ -28,8 +17,9 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
  */
 final class NodeInterfaceDocBlocKTypeHintsToTypedPropertyRector extends AbstractRector
 {
-    public function __construct(private PhpDocInfoFactory $phpDocInfoFactory)
-    {
+    public function __construct(
+        private PhpDocInfoFactory $phpDocInfoFactory
+    ) {
     }
 
     public function getRuleDefinition(): RuleDefinition
@@ -93,7 +83,7 @@ CODE_SAMPLE
 
             foreach ($property->attrGroups as $attrGroup) {
                 foreach ($attrGroup->attrs as $attr) {
-                    if ($attr->name->toCodeString() === "\\".\JMS\Serializer\Annotation\Type::class) {
+                    if ($attr->name->toCodeString() === "\\" . \JMS\Serializer\Annotation\Type::class) {
                         $value = $attr->args[0]->value;
                         if ($value instanceof Node\Expr\ClassConstFetch && $value->name->name === 'class') {
                             $property->type = new Node\Name\FullyQualified($value->class);

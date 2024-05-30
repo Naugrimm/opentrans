@@ -3,6 +3,7 @@
 namespace Naugrim\OpenTrans\Nodes\Order;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasUdxItems;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
@@ -11,7 +12,7 @@ use Naugrim\OpenTrans\Nodes\ProductId;
 
 class Item implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     use HasUdxItems;
 
     /**

@@ -3,15 +3,15 @@
 namespace Naugrim\OpenTrans\Nodes\Order;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 use Naugrim\OpenTrans\Nodes\Concerns\HasSourcingInfo;
-use Naugrim\OpenTrans\Nodes\SourcingInfo;
 
 #[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'sourcingInfo', 'info'])]
 class Header implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     use HasControlInfo;
     use HasSourcingInfo;
 

@@ -3,14 +3,14 @@
 namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
-use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\File\HashValue;
 use Naugrim\OpenTrans\Nodes\Mime\Embedded;
 
 class Mime implements NodeInterface
 {
-    use \Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
+    use HasSerializableAttributes;
     /**
      *
      * @var string
