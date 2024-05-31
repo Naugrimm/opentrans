@@ -5,6 +5,7 @@ namespace Naugrim\OpenTrans\Nodes\OrderResponse;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\Order\PartiesReference;
 use Naugrim\OpenTrans\Nodes\Party;
 
@@ -14,7 +15,7 @@ use Naugrim\OpenTrans\Nodes\Party;
 class Info implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_ID')]
@@ -23,7 +24,17 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDERRESPONSE_DATE')]
-    protected string $date;
+    protected string $orderResponseDate;
+
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ORDER_DATE')]
+    protected string $orderDate;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(DeliveryDate::class)]
+    #[Serializer\SerializedName('DELIVERY_DATE')]
+    protected DeliveryDate $deliveryDate;
 
     #[Serializer\Expose]
     #[Serializer\Type('int')]
