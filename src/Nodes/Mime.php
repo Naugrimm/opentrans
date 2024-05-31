@@ -14,7 +14,7 @@ use Naugrim\OpenTrans\Nodes\Mime\Embedded;
 class Mime implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('MIME_TYPE')]
@@ -33,9 +33,8 @@ class Mime implements NodeInterface
      * @var HashValue[]
      */
     #[Serializer\Expose]
-    #[Serializer\SerializedName('FILE_HASH_VALUE')]
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\File\HashValue>')]
-    #[Serializer\XmlList(inline: true)]
+    #[Serializer\XmlList(entry: 'FILE_HASH_VALUE', inline: true)]
     protected array $fileHashValue = [];
 
     /**

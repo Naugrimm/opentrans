@@ -5,6 +5,7 @@ namespace Naugrim\OpenTrans\Nodes\Invoice;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\AllowOrChargesFix;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalAmount;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
@@ -34,6 +35,11 @@ class Summary implements NodeInterface
     #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Tax\DetailsFix>')]
     #[Serializer\XmlList(entry: 'TAX_DETAILS_FIX')]
     protected array $totalTax = [];
+
+    #[Serializer\Expose]
+    #[Serializer\Type(AllowOrChargesFix::class)]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGES_FIX')]
+    protected AllowOrChargesFix $allowOrChargesFix;
 
     /**
      * @return $this

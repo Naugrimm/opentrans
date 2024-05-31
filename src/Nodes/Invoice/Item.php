@@ -14,7 +14,7 @@ use Naugrim\OpenTrans\Nodes\ProductId;
 class Item implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('type')]
@@ -51,4 +51,14 @@ class Item implements NodeInterface
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('PRICE_LINE_AMOUNT')]
     protected float $priceLineAmount;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(OrderReference::class)]
+    #[Serializer\SerializedName('ORDER_REFERENCE')]
+    protected ?OrderReference $orderReference;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(SupplierOrderReference::class)]
+    #[Serializer\SerializedName('SUPPLIER_ORDER_REFERENCE')]
+    protected ?SupplierOrderReference $supplierOrderReference;
 }

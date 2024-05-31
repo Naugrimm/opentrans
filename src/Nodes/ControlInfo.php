@@ -2,6 +2,7 @@
 
 namespace Naugrim\OpenTrans\Nodes;
 
+use DateTimeInterface;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
@@ -12,7 +13,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class ControlInfo implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('STOP_AUTOMATIC_PROCESSING')]
@@ -25,6 +26,6 @@ class ControlInfo implements NodeInterface
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('GENERATOR_DATE')]
+    #[Serializer\SerializedName('GENERATION_DATE')]
     protected string $generatorDate;
 }

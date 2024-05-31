@@ -16,8 +16,8 @@
           <bme:PARTY_ID type="buyer"><![CDATA[org.de.rcpt]]></bme:PARTY_ID>
         </PARTY>
       </PARTIES>
-      <INVOICE_ISSUER_IDREF><![CDATA[org.de.issuer]]></INVOICE_ISSUER_IDREF>
-      <INVOICE_RECIPIENT_IDREF><![CDATA[org.de.rcpt]]></INVOICE_RECIPIENT_IDREF>
+      <INVOICE_ISSUER_IDREF type="supplier_specific"><![CDATA[org.de.issuer]]></INVOICE_ISSUER_IDREF>
+      <INVOICE_RECIPIENT_IDREF type="buyer"><![CDATA[org.de.rcpt]]></INVOICE_RECIPIENT_IDREF>
       <bme:CURRENCY><![CDATA[EUR]]></bme:CURRENCY>
     </INVOICE_INFO>
   </INVOICE_HEADER>

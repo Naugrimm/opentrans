@@ -13,6 +13,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 class AllowOrCharge implements NodeInterface
 {
     use HasSerializableAttributes;
+
     /**
      * @use HasTypeAttribute<self>
      */
@@ -31,7 +32,7 @@ class AllowOrCharge implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_TYPE')]
-    protected string $type;
+    protected string $allowOrChargeType;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
