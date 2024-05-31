@@ -20,13 +20,13 @@ class OrderResponseTest extends TestCase
         $this->serializer = SerializerBuilder::create()->build();
     }
 
-    public function testMinimalInvoice(): void
+    public function testMinimalOrderResponse(): void
     {
         $node = NodeBuilder::fromArray([
             'header' => [
                 'info' => [
                     'id' => 'order-id-1',
-                    'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                    'orderResponseDate' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
                     'sequenceId' => 1,
                     'parties' => [
                         [
