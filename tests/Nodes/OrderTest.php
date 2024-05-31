@@ -267,7 +267,7 @@ class OrderTest extends TestCase
                             ],
                             'quantity' => 10,
                             'orderUnit' => 'C62',
-                            'udxItems' => [
+                            'itemUdx' => [
                                 [
                                     'vendor' => 'acme',
                                     'name' => 'abc',
@@ -314,7 +314,7 @@ class OrderTest extends TestCase
                                     'value' => 'org.de.buyer',
                                 ],
                             ],
-                            'udxItems' => [
+                            'headerUdx' => [
                                 [
                                     'vendor' => 'acme',
                                     'name' => 'abc',

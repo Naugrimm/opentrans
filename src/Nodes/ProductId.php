@@ -9,6 +9,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\InternationalPid;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
 use Naugrim\BMEcat\Nodes\SupplierPid;
+use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<ProductId>
@@ -16,7 +17,7 @@ use Naugrim\BMEcat\Nodes\SupplierPid;
 class ProductId implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
     #[Serializer\Type(SupplierPid::class)]
     #[Serializer\SerializedName('SUPPLIER_PID')]
@@ -39,22 +40,29 @@ class ProductId implements NodeInterface
     #[Serializer\SerializedName('LOT_NUMBER')]
     protected string $lotNumber;
 
+    /**
+     * @var string[]
+     */
     #[Serializer\Expose]
-    #[Serializer\Type('string')]
-    #[Serializer\SerializedName('SERIAL_NUMBER')]
-    protected string $serialNumber;
+    #[Serializer\Type('array<string>')]
+    #[Serializer\XmlList(entry: 'SERIAL_NUMBER',inline: true)]
+    protected array $serialNumber = [];
 
+    /**
+     * @var InternationalPid[]
+     */
     #[Serializer\Expose]
-    #[Serializer\Type(InternationalPid::class)]
-    #[Serializer\SerializedName('INTERNATIONAL_PID')]
-    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected InternationalPid $internationalPid;
+    #[Serializer\Type('array<'.InternationalPid::class.'>')]
+    #[Serializer\XmlList(entry: 'INTERNATIONAL_PID',inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
+    protected array $internationalPid = [];
 
+    /**
+     * @var BuyerPid[]
+     */
     #[Serializer\Expose]
-    #[Serializer\Type(BuyerPid::class)]
-    #[Serializer\SerializedName('BUYER_PID')]
-    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected BuyerPid $buyerPid;
+    #[Serializer\Type('array<'.BuyerPid::class.'>')]
+    #[\JMS\Serializer\Annotation\XmlList(entry: 'BUYER_PID', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
+    protected array $buyerPid = [];
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]

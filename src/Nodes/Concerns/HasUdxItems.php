@@ -3,42 +3,23 @@
 namespace Naugrim\OpenTrans\Nodes\Concerns;
 
 use InvalidArgumentException;
-use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Exception\InvalidSetterException;
 use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Udx;
-use Naugrim\OpenTrans\Nodes\UdxAggregate;
 use Naugrim\OpenTrans\Nodes\UdxInterface;
 use ReflectionClass;
+use ReflectionException;
 
 trait HasUdxItems
 {
-    #[Serializer\SerializedName('ITEM_UDX')]
-    #[Serializer\Type(UdxAggregate::class)]
-    protected UdxAggregate $udxItem;
-
-    /**
-     * @param UdxInterface[]|array{vendor: string, name: string, value: string}[] $udxItems
-     */
-    public function setUdxItems(array $udxItems): self
-    {
-        $this->udxItem = new UdxAggregate();
-
-        foreach ($udxItems as $udxItem) {
-            if (!$udxItem instanceof UdxInterface) {
-                $udxItem = $this->convertToUdx($udxItem);
-            }
-
-            $this->udxItem->addUdx($udxItem);
-        }
-
-        return $this;
-    }
-
     /**
      * @param array{vendor: string, name: string, value: string} $udxItem
+     * @throws UnknownKeyException
+     * @throws InvalidSetterException
+     * @throws ReflectionException
      */
-    private function convertToUdx(array $udxItem): UdxInterface
+    protected function convertToUdx(array $udxItem): UdxInterface
     {
         $udxData = $this->parseUdxData($udxItem);
         $udxClass = $udxData['class'];
@@ -60,10 +41,16 @@ trait HasUdxItems
         return $udxInstance;
     }
 
+    private function createUdxElementName(UdxInterface $udx): string
+    {
+        return sprintf('UDX.%s.%s', $udx->getVendor(), $udx->getName());
+    }
+
     /**
      * @template TData of array<string, mixed>
      * @param TData $udxData
      * @return non-empty-array<'class'|'name'|'value'|'vendor', non-falsy-string>
+     * @throws UnknownKeyException
      */
     private function parseUdxData(array $udxData): array
     {

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ORDER xmlns:bme="http://www.bmecat.org/bmecat/2005" version="2.1" type="standard" xmlns="http://www.opentrans.org/XMLSchema/2.1">
+	<!--XML-Beispieldatei für eine Order; Stand 2018-08-01 -->
+	<!-- Begriffserklärung: "Besteller" meint Sie als Kunden beim Lieferanten Distributor, "Lieferant" meint TAROX als Distributor -->
+	<ORDER_HEADER>
+		<CONTROL_INFO>
+			<!-- Ersteller des Dokuments -->
+			<GENERATOR_INFO>itscope</GENERATOR_INFO>
+			<!-- Zeitstempel der Generierung des XML-Dokuments -->
+			<GENERATION_DATE>2018-08-01T18:29:37</GENERATION_DATE>
+		</CONTROL_INFO>
+		<ORDER_INFO>
+			<!-- Eindeutige Bestellnummer des Kunden -->
+			<ORDER_ID>ORDER_180801-005</ORDER_ID>
+			<!-- Zeitstempel der Bestellung -->
+			<ORDER_DATE>2018-08-01T18:54:55</ORDER_DATE>
+			<bme:LANGUAGE default="true">deu</bme:LANGUAGE>
+			<PARTIES>
+				<!-- PFLICHT: Lieferant für diese Bestellung -->
+				<PARTY>
+					<bme:PARTY_ID type="buyer_specific">10000735</bme:PARTY_ID>
+					<PARTY_ROLE>supplier</PARTY_ROLE>
+					<ADDRESS>
+						<bme:NAME>ITscope Partner-Test</bme:NAME>
+						<bme:STREET>Ludwig-Erhard-Allee 20</bme:STREET>
+						<bme:ZIP>76131</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Deutschland</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+					</ADDRESS>
+				</PARTY>
+				<!-- PFLICHT: Der Besteller mit der Kundennummer 123456 beim Lieferanten -->
+				<PARTY>
+					<bme:PARTY_ID type="supplier_specific">123456</bme:PARTY_ID>
+					<PARTY_ROLE>buyer</PARTY_ROLE>
+					<ADDRESS>
+                        <!-- PFLICHT: Firmenname -->
+						<bme:NAME>ITscope GmbH</bme:NAME>
+						<CONTACT_DETAILS>
+							<bme:CONTACT_NAME>Support</bme:CONTACT_NAME>
+							<bme:FIRST_NAME>ITscope</bme:FIRST_NAME>
+							<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+							<bme:EMAILS>
+								<bme:EMAIL>support@itscope.com</bme:EMAIL>
+							</bme:EMAILS>
+						</CONTACT_DETAILS>
+						<bme:STREET>Ludwig-Erhard-Allee 20</bme:STREET>
+						<bme:ZIP>76131</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Deutschland</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+						<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+						<bme:FAX type="office">+49 721/66499175</bme:FAX>
+						<bme:URL>www.itscope.com</bme:URL>
+					</ADDRESS>
+				</PARTY>
+				<!-- PFLICHT: Die Lieferadresse für die Bestellung -->
+				<PARTY>
+					<bme:PARTY_ID type="supplier_specific">D187654</bme:PARTY_ID>
+					<PARTY_ROLE>delivery</PARTY_ROLE>
+					<ADDRESS>
+                        <!-- PFLICHT: Firmenname -->
+						<bme:NAME>Peter Müller GmbH</bme:NAME>
+						<!-- Adresszusatz 1 -->
+						<bme:NAME2>5 Stock</bme:NAME2>
+						<!-- Adresszusatz 2 -->
+						<bme:NAME3>z.H. Peter Müller</bme:NAME3>
+						<CONTACT_DETAILS>
+							<bme:CONTACT_NAME>Peter</bme:CONTACT_NAME>
+							<bme:FIRST_NAME>Müller</bme:FIRST_NAME>
+							<bme:PHONE type="office">+49 721/1978864</bme:PHONE>
+							<bme:EMAILS>
+								<bme:EMAIL>peter.mueller@pettermueller.com</bme:EMAIL>
+							</bme:EMAILS>
+						</CONTACT_DETAILS>
+						<bme:STREET>Otto Wels Str. 21</bme:STREET>
+						<bme:ZIP>76185</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Deutschland</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+						<bme:PHONE type="office">+49 721/1978864</bme:PHONE>
+						<bme:URL>www.petermueller.com</bme:URL>
+					</ADDRESS>
+				</PARTY>
+			</PARTIES>
+			<CUSTOMER_ORDER_REFERENCE>
+				<!-- Endkundenbestellreferenz (Die Nummer, die der Endkunde als Bestellnummer bekommt) -->
+				<ORDER_ID>BESTELLUNG_019204</ORDER_ID>
+			</CUSTOMER_ORDER_REFERENCE>
+			<ORDER_PARTIES_REFERENCE>
+				<!-- Kundennummer des Bestellers beim Lieferanten -->
+				<bme:BUYER_IDREF type="supplier_specific">123456</bme:BUYER_IDREF>
+				<!-- ID des Distributors -->
+				<bme:SUPPLIER_IDREF type="buyer_specific">10000735</bme:SUPPLIER_IDREF>
+				<!-- Kundennummer des Rechnungsempfängers beim Lieferanten -->
+				<INVOICE_RECIPIENT_IDREF type="supplier_specific">123456</INVOICE_RECIPIENT_IDREF>
+				<!-- Kundennummer des Warenempfängers beim Lieferanten -->
+				<SHIPMENT_PARTIES_REFERENCE>
+					<DELIVERY_IDREF type="supplier_specific">D187654</DELIVERY_IDREF>
+				</SHIPMENT_PARTIES_REFERENCE>
+			</ORDER_PARTIES_REFERENCE>
+			<!-- Für diesen Vorgang gültige Währung -->
+			<bme:CURRENCY>EUR</bme:CURRENCY>
+			<!-- Kennzeichnung ob Teillieferung erlaubt ist -->
+			<PARTIAL_SHIPMENT_ALLOWED>true</PARTIAL_SHIPMENT_ALLOWED>
+			<!-- Kommentare auf Bestellebene -->
+			<REMARKS type="general">hier ist ein Kommentar</REMARKS>
+			<!-- Spezialfelder, wie z.B. eigener Lieferschein) -->
+			<HEADER_UDX>
+				<!-- Eigener Lieferschein soll verwendet werden -->
+				<UDX.DROPSHIPMENT>true</UDX.DROPSHIPMENT>
+			</HEADER_UDX>
+		</ORDER_INFO>
+	</ORDER_HEADER>
+	<ORDER_ITEM_LIST>
+		<ORDER_ITEM>
+			<LINE_ITEM_ID>00001</LINE_ITEM_ID>
+			<PRODUCT_ID>
+				<!-- Artikelnummer des Lieferanten - Pflichtfeld -->
+                <bme:SUPPLIER_PID type="supplier_specific">123002</bme:SUPPLIER_PID>
+				<!-- EAN des Produktes - kein Pflichtfeld-->
+                <bme:INTERNATIONAL_PID type="ean">0190198870803</bme:INTERNATIONAL_PID>
+				<!-- ITscope Produkt-ID - kein Pflichtfeld -->
+                <bme:INTERNATIONAL_PID type="itscope">6676919000</bme:INTERNATIONAL_PID>
+				<!-- kurze Artikelbezeichnung des Lieferanten  - kein Pflichtfeld-->
+                <bme:DESCRIPTION_SHORT>APPLE iPad Pro Wi-Fi 256 GB Grau - 11" Tablet - 27,9cm-Display</bme:DESCRIPTION_SHORT>
+			</PRODUCT_ID>
+			<!-- Bestellmenge -->
+			<QUANTITY>1.0</QUANTITY>
+			<!-- Mengeneinheit (ISO-Produkteinheit für "Stück") -->
+			<bme:ORDER_UNIT>C62</bme:ORDER_UNIT>
+			<PRODUCT_PRICE_FIX>
+				<!-- Artikeleinzelpreis -->
+				<bme:PRICE_AMOUNT>868.0</bme:PRICE_AMOUNT>
+			</PRODUCT_PRICE_FIX>
+			<!-- Gesamtpreis für diese Position -->
+			<PRICE_LINE_AMOUNT>868.0</PRICE_LINE_AMOUNT>
+			<!-- Positionsfreitext, optional, z.B. zur Ausgabe auf dem Lieferschein; nach 40 Zeichen wird abgeschnitten, Formatierungen bleiben nicht erhalten -->
+			<REMARKS type="general">Projekt ABC-123</REMARKS>
+		</ORDER_ITEM>
+		<ORDER_ITEM>
+			<LINE_ITEM_ID>00002</LINE_ITEM_ID>
+			<PRODUCT_ID>
+				<!-- Artikelnummer des Lieferanten -->
+                <bme:SUPPLIER_PID type="supplier_specific">123003</bme:SUPPLIER_PID>
+				<!-- EAN des Produktes -->
+                <bme:INTERNATIONAL_PID type="ean">8806084080233</bme:INTERNATIONAL_PID>
+				<!-- ITscope Produkt-ID - kein Pflichtfeld -->
+                <bme:INTERNATIONAL_PID type="itscope">5289817000</bme:INTERNATIONAL_PID>
+				<!-- kurze Artikelbezeichnung des Lieferanten -->
+                <bme:DESCRIPTION_SHORT>LG 24BK550Y-B - LED-Monitor - 61 cm (24") (23.8" sichtbar)</bme:DESCRIPTION_SHORT>
+				<!-- lange Artikelbezeichnung des Lieferanten -->
+                <bme:DESCRIPTION_LONG>LG 24BK550Y-B - LED-Monitor - 61 cm (24") (23.8" sichtbar)&lt;br /&gt;24BK550Y-B 60,45cm 23,8Zoll LED LCD AH-IPS TFT &lt;br /&gt;1.920x1.080 Pivot 16:9 1000:1 250cd 5ms analog &lt;br /&gt;DP1.2 HDMI DVI-D USB 2x1 2W schwarz</bme:DESCRIPTION_LONG>
+			</PRODUCT_ID>
+			<!-- Bestellmenge -->
+			<QUANTITY>2.0</QUANTITY>
+			<!-- Mengeneinheit (ISO-Produkteinheit für "Stück") -->
+			<bme:ORDER_UNIT>C62</bme:ORDER_UNIT>
+			<PRODUCT_PRICE_FIX>
+				<!-- Artikeleinzelpreis -->
+				<bme:PRICE_AMOUNT>136.0</bme:PRICE_AMOUNT>
+			</PRODUCT_PRICE_FIX>
+			<!-- Gesamtpreis für diese Position -->
+			<PRICE_LINE_AMOUNT>272.0</PRICE_LINE_AMOUNT>
+			<!-- Positionsfreitext, optional, z.B. zur Ausgabe auf dem Lieferschein; nach 40 Zeichen wird abgeschnitten, Formatierungen bleiben nicht erhalten -->
+			<REMARKS type="general">wie vereinbart...</REMARKS>
+		</ORDER_ITEM>
+		<ORDER_ITEM>
+			<LINE_ITEM_ID>00003</LINE_ITEM_ID>
+			<PRODUCT_ID>
+				<!-- Artikelnummer des Lieferanten -->
+                <bme:SUPPLIER_PID type="supplier_specific">123001</bme:SUPPLIER_PID>
+				<!-- EAN des Produktes -->
+                <bme:INTERNATIONAL_PID type="ean">0888793383537</bme:INTERNATIONAL_PID>
+				<!-- ITscope Produkt-ID - kein Pflichtfeld -->
+                <bme:INTERNATIONAL_PID type="itscope">4012827000</bme:INTERNATIONAL_PID>
+				<!-- kurze Artikelbezeichnung des Lieferanten -->
+                <bme:DESCRIPTION_SHORT>HP Inc HP Color LaserJet Pro MFP M477fdw</bme:DESCRIPTION_SHORT>
+			</PRODUCT_ID>
+			<!-- Bestellmenge -->
+			<QUANTITY>3.0</QUANTITY>
+			<!-- Mengeneinheit (ISO-Produkteinheit für "Stück") -->
+			<bme:ORDER_UNIT>C62</bme:ORDER_UNIT>
+			<PRODUCT_PRICE_FIX>
+				<!-- Artikeleinzelpreis -->
+				<bme:PRICE_AMOUNT>386.0</bme:PRICE_AMOUNT>
+			</PRODUCT_PRICE_FIX>
+			<!-- Gesamtpreis für diese Position -->
+			<PRICE_LINE_AMOUNT>1158.0</PRICE_LINE_AMOUNT>
+		</ORDER_ITEM>
+	</ORDER_ITEM_LIST>
+	<ORDER_SUMMARY>
+		<!-- Gesamtanzahl der Bestellpositionen (Zeilen) -->
+		<TOTAL_ITEM_NUM>3</TOTAL_ITEM_NUM>
+		<!-- Gesamtsumme über alle Positionen -->
+		<TOTAL_AMOUNT>2298.0</TOTAL_AMOUNT>
+	</ORDER_SUMMARY>
+</ORDER>

@@ -13,6 +13,9 @@ class AllowOrChargesFix implements NodeInterface
 {
     use HasSerializableAttributes;
 
+    /**
+     * @var AllowOrCharge[]
+     */
     #[Serializer\Expose]
     #[Serializer\Type('array<'.AllowOrCharge::class.'>')]
     #[Serializer\XmlList(entry: 'ALLOW_OR_CHARGE', inline: true)]
