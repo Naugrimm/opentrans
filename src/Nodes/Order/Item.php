@@ -3,12 +3,19 @@
 namespace Naugrim\OpenTrans\Nodes\Order;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Exception\InvalidSetterException;
+use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\Concerns\HasSourcingInfo;
 use Naugrim\OpenTrans\Nodes\Concerns\HasUdxItems;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\Product\PriceFix;
 use Naugrim\OpenTrans\Nodes\ProductId;
+use Naugrim\OpenTrans\Nodes\Remarks;
+use Naugrim\OpenTrans\Nodes\Udx;
+use Naugrim\OpenTrans\Nodes\UdxInterface;
+use ReflectionException;
 
 /**
  * @implements NodeInterface<Item>
@@ -17,6 +24,7 @@ class Item implements NodeInterface
 {
     use HasSerializableAttributes;
     use HasUdxItems;
+    use HasSourcingInfo;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
@@ -39,6 +47,17 @@ class Item implements NodeInterface
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $orderUnit;
 
+    #[Serializer\Expose]
+    #[Serializer\Type(PriceFix::class)]
+    #[Serializer\SerializedName('PRODUCT_PRICE_FIX')]
+    protected PriceFix $priceFix;
+
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('PRICE_LINE_AMOUNT')]
+    protected float $priceLineAmount;
+
+
     /**
      *
      * @var boolean
@@ -53,15 +72,45 @@ class Item implements NodeInterface
     #[Serializer\SerializedName('DELIVERY_DATE')]
     protected DeliveryDate $deliveryDate;
 
+    /**
+     * @var Remarks[]
+     */
     #[Serializer\Expose]
-    #[Serializer\Type(PriceFix::class)]
-    #[Serializer\SerializedName('PRODUCT_PRICE_FIX')]
-    protected PriceFix $priceFix;
+    #[Serializer\Type('array<'.Remarks::class.'>')]
+    #[Serializer\XmlList(entry: 'REMARKS', inline: true)]
+    protected array $remarks = [];
 
+    /**
+     * @var array<string, UdxInterface>
+     */
     #[Serializer\Expose]
-    #[Serializer\Type('float')]
-    #[Serializer\SerializedName('PRICE_LINE_AMOUNT')]
-    protected float $priceLineAmount;
+    #[Serializer\SerializedName('ITEM_UDX')]
+    #[Serializer\Type('array<string,'.Udx::class.'>')]
+    #[Serializer\SkipWhenEmpty]
+    #[Serializer\XmlKeyValuePairs]
+    protected array $itemUdx = [];
+
+    /**
+     * @param UdxInterface[]|array{vendor: string, name: string, value: string}[] $udxItems
+     * @throws UnknownKeyException
+     * @throws InvalidSetterException
+     * @throws ReflectionException
+     */
+    public function setItemUdx(array $udxItems): self
+    {
+        $this->itemUdx = [];
+
+        foreach ($udxItems as $udxItem) {
+            if (!$udxItem instanceof UdxInterface) {
+                $udxItem = $this->convertToUdx($udxItem);
+            }
+
+            $this->itemUdx[$this->createUdxElementName($udxItem)] = $udxItem;
+        }
+
+        return $this;
+    }
+
 
     public function isPartialShipmentAllowed(): bool
     {

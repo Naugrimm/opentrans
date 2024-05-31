@@ -8,7 +8,6 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
 use Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef;
-use Naugrim\OpenTrans\Nodes\ShipmentPartiesReference;
 
 /**
  * @implements NodeInterface<PartiesReference>
@@ -16,7 +15,7 @@ use Naugrim\OpenTrans\Nodes\ShipmentPartiesReference;
 class PartiesReference implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
     #[Serializer\Type(BuyerIdRef::class)]
     #[Serializer\SerializedName('BUYER_IDREF')]

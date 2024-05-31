@@ -6,6 +6,7 @@ use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\BuyerIdRef;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\BMEcat\Nodes\Language;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
@@ -36,10 +37,10 @@ class Info implements NodeInterface
     protected DeliveryDate $deliveryDate;
 
     /**
-     * @var string[]
+     * @var Language[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<string>')]
+    #[Serializer\Type('array<'.Language::class.'>')]
     #[Serializer\XmlList(entry: 'LANGUAGE', inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected array $language = [];
 
