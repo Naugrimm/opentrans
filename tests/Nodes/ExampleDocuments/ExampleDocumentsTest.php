@@ -7,6 +7,7 @@ namespace Naugrim\OpenTrans\Tests\Nodes\ExampleDocuments;
 use DirectoryIterator;
 use JMS\Serializer\SerializerBuilder;
 use Naugrim\BMEcat\Exception\SchemaValidationException;
+use Naugrim\OpenTrans\Nodes\DispatchNotification;
 use Naugrim\OpenTrans\Nodes\Invoice;
 use Naugrim\OpenTrans\Nodes\Order;
 use Naugrim\OpenTrans\Nodes\OrderResponse;
@@ -18,6 +19,10 @@ class ExampleDocumentsTest extends TestCase
 {
     public static function provideExampleFileData(): \Iterator
     {
+        foreach (FixtureFileFinder::yieldDirectory(__DIR__.'/../../assets/Examples/DispatchNotification', '*.xml') as $file) {
+            yield [DispatchNotification::class, $file[0]];
+        }
+
         foreach (FixtureFileFinder::yieldDirectory(__DIR__.'/../../assets/Examples/Invoice', '*.xml') as $file) {
             yield [Invoice::class, $file[0]];
         }
