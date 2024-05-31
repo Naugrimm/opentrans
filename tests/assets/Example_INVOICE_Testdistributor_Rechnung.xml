@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<INVOICE xmlns="http://www.opentrans.org/XMLSchema/2.1" xmlns:bme="http://www.bmecat.org/bmecat/2005" version="2.1">
+	<INVOICE_HEADER>
+		<CONTROL_INFO>
+			<GENERATOR_INFO>CREATED BY ITSCOPE</GENERATOR_INFO>
+			<GENERATION_DATE>2016-01-31T22:31:00</GENERATION_DATE>
+		</CONTROL_INFO>
+		<INVOICE_INFO>
+			<INVOICE_ID>2468013</INVOICE_ID>
+			<INVOICE_DATE>2016-01-31T22:31:00</INVOICE_DATE>
+			<bme:LANGUAGE>ger</bme:LANGUAGE>
+			<PARTIES>
+				<PARTY>
+					<bme:PARTY_ID type="supplier_specific">123456</bme:PARTY_ID>
+					<PARTY_ROLE>buyer</PARTY_ROLE>
+					<ADDRESS>
+						<bme:NAME>ITscope GmbH</bme:NAME>
+						<CONTACT_DETAILS>
+							<bme:CONTACT_NAME>Support</bme:CONTACT_NAME>
+							<bme:FIRST_NAME>ITscope</bme:FIRST_NAME>
+							<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+							<bme:EMAILS>
+								<bme:EMAIL>support@itscope.com</bme:EMAIL>
+							</bme:EMAILS>
+						</CONTACT_DETAILS>
+						<bme:STREET>Ludwig-Erhard-Allee 20</bme:STREET>
+						<bme:ZIP>76131</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Deutschland</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+						<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+						<bme:FAX type="office">+49 721/66499175</bme:FAX>
+						<bme:URL>www.itscope.com</bme:URL>
+					</ADDRESS>
+				</PARTY>
+				<PARTY>
+					<bme:PARTY_ID type="supplier_specific">123456</bme:PARTY_ID>
+					<PARTY_ROLE>delivery</PARTY_ROLE>
+					<ADDRESS>
+						<bme:NAME>ITscope GmbH</bme:NAME>
+						<CONTACT_DETAILS>
+							<bme:CONTACT_NAME>Support</bme:CONTACT_NAME>
+							<bme:FIRST_NAME>ITscope</bme:FIRST_NAME>
+							<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+							<bme:EMAILS>
+								<bme:EMAIL>support@itscope.com</bme:EMAIL>
+							</bme:EMAILS>
+						</CONTACT_DETAILS>
+						<bme:STREET>Ludwig-Erhard-Allee 20</bme:STREET>
+						<bme:ZIP>76131</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Deutschland</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+						<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+						<bme:FAX type="office">+49 721/66499175</bme:FAX>
+						<bme:URL>www.itscope.com</bme:URL>
+					</ADDRESS>
+				</PARTY>
+				<PARTY>
+					<bme:PARTY_ID type="supplier_specific">123456</bme:PARTY_ID>
+					<PARTY_ROLE>invoice_recipient</PARTY_ROLE>
+					<ADDRESS>
+						<bme:NAME>ITscope GmbH</bme:NAME>
+						<CONTACT_DETAILS>
+							<bme:CONTACT_NAME>Support</bme:CONTACT_NAME>
+							<bme:FIRST_NAME>ITscope</bme:FIRST_NAME>
+							<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+							<bme:EMAILS>
+								<bme:EMAIL>support@itscope.com</bme:EMAIL>
+							</bme:EMAILS>
+						</CONTACT_DETAILS>
+						<bme:STREET>Ludwig-Erhard-Allee 20</bme:STREET>
+						<bme:ZIP>76131</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Deutschland</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+						<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+						<bme:FAX type="office">+49 721/66499175</bme:FAX>
+						<bme:URL>www.itscope.com</bme:URL>
+					</ADDRESS>
+				</PARTY>
+				<PARTY>
+					<bme:PARTY_ID type="supplier_specific">10000735</bme:PARTY_ID>
+					<PARTY_ROLE>supplier</PARTY_ROLE>
+					<ADDRESS>
+						<bme:NAME>ITscope Partner-Test</bme:NAME>
+						<CONTACT_DETAILS>
+							<bme:CONTACT_NAME>Support</bme:CONTACT_NAME>
+							<bme:FIRST_NAME>ITscope</bme:FIRST_NAME>
+							<bme:TITLE>Herr</bme:TITLE>
+						</CONTACT_DETAILS>
+						<bme:STREET>Ludwig-Erhard-Allee 20</bme:STREET>
+						<bme:ZIP>76131</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Germany</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+					</ADDRESS>
+				</PARTY>
+			</PARTIES>
+			<INVOICE_ISSUER_IDREF type="supplier_specific">10000735</INVOICE_ISSUER_IDREF>
+			<INVOICE_RECIPIENT_IDREF>123456</INVOICE_RECIPIENT_IDREF>
+			<bme:BUYER_IDREF type="supplier_specific">123456</bme:BUYER_IDREF>
+			<bme:SUPPLIER_IDREF>10000735</bme:SUPPLIER_IDREF>
+			<bme:CURRENCY>EUR</bme:CURRENCY>
+		</INVOICE_INFO>
+		<ORDER_HISTORY>
+			<ORDER_ID>GWAHJV-160131-1470</ORDER_ID>
+			<SUPPLIER_ORDER_ID>425689442</SUPPLIER_ORDER_ID>
+			<ORDER_DATE>2016-01-31T18:29:37</ORDER_DATE>
+		</ORDER_HISTORY>
+	</INVOICE_HEADER>
+	<INVOICE_ITEM_LIST>
+		<INVOICE_ITEM>
+			<LINE_ITEM_ID>001</LINE_ITEM_ID>
+			<PRODUCT_ID>
+				<bme:SUPPLIER_PID type="supplier_specific">123002</bme:SUPPLIER_PID>
+				<bme:INTERNATIONAL_PID type="ean">0888462006781</bme:INTERNATIONAL_PID>
+				<bme:DESCRIPTION_SHORT>APPLE iPad Air 2 64GB 3G 4G Grau</bme:DESCRIPTION_SHORT>
+				<bme:DESCRIPTION_LONG>APPLE iPad Air 2 64GB 3G 4G Grau&lt;br /&gt;24.63cm/9.7" IPS ( 2048 x 1536 ), Kamera auf Rück- &lt;br /&gt;und
+					Vorderseite, &lt;br /&gt;Bluetooth, Wi-Fi, 4G, Space-grau
+				</bme:DESCRIPTION_LONG>
+			</PRODUCT_ID>
+			<QUANTITY>1.0</QUANTITY>
+			<bme:ORDER_UNIT>C62</bme:ORDER_UNIT>
+			<PRODUCT_PRICE_FIX>
+				<bme:PRICE_AMOUNT>562.0</bme:PRICE_AMOUNT>
+				<TAX_DETAILS_FIX>
+					<bme:TAX>0.19</bme:TAX>
+					<TAX_AMOUNT>106.78</TAX_AMOUNT>
+				</TAX_DETAILS_FIX>
+			</PRODUCT_PRICE_FIX>
+			<PRICE_LINE_AMOUNT>562.0</PRICE_LINE_AMOUNT>
+			<ORDER_REFERENCE>
+				<ORDER_ID>GWAHJV-160131-1470</ORDER_ID>
+				<LINE_ITEM_ID>00001</LINE_ITEM_ID>
+				<ORDER_DATE>2016-01-31T18:29:37</ORDER_DATE>
+			</ORDER_REFERENCE>
+			<SUPPLIER_ORDER_REFERENCE>
+				<SUPPLIER_ORDER_ID>425689442</SUPPLIER_ORDER_ID>
+				<SUPPLIER_ORDER_ITEM_ID>100</SUPPLIER_ORDER_ITEM_ID>
+			</SUPPLIER_ORDER_REFERENCE>
+		</INVOICE_ITEM>
+		<INVOICE_ITEM>
+			<LINE_ITEM_ID>002</LINE_ITEM_ID>
+			<PRODUCT_ID>
+				<bme:SUPPLIER_PID type="supplier_specific">123001</bme:SUPPLIER_PID>
+				<bme:INTERNATIONAL_PID type="ean">0888182569504</bme:INTERNATIONAL_PID>
+				<bme:DESCRIPTION_SHORT>HP Inc HP Officejet 5740 e-All-in-One</bme:DESCRIPTION_SHORT>
+				<bme:DESCRIPTION_LONG>HP Inc HP Officejet 5740 e-All-in-One&lt;br /&gt;Multifunktionsdrucker, Farbe, Tintenstrahl, 125 Blatt, &lt;br /&gt;33.6
+					Kbps, Wi-Fi(n), USB-Host, USB 2.0
+				</bme:DESCRIPTION_LONG>
+			</PRODUCT_ID>
+			<QUANTITY>2.0</QUANTITY>
+			<bme:ORDER_UNIT>C62</bme:ORDER_UNIT>
+			<PRODUCT_PRICE_FIX>
+				<bme:PRICE_AMOUNT>94.0</bme:PRICE_AMOUNT>
+				<TAX_DETAILS_FIX>
+					<bme:TAX>0.19</bme:TAX>
+					<TAX_AMOUNT>17.86</TAX_AMOUNT>
+				</TAX_DETAILS_FIX>
+			</PRODUCT_PRICE_FIX>
+			<PRICE_LINE_AMOUNT>188.0</PRICE_LINE_AMOUNT>
+			<ORDER_REFERENCE>
+				<ORDER_ID>GWAHJV-160131-1470</ORDER_ID>
+				<LINE_ITEM_ID>00003</LINE_ITEM_ID>
+				<ORDER_DATE>2016-01-31T18:29:37</ORDER_DATE>
+			</ORDER_REFERENCE>
+			<SUPPLIER_ORDER_REFERENCE>
+				<SUPPLIER_ORDER_ID>425689442</SUPPLIER_ORDER_ID>
+				<SUPPLIER_ORDER_ITEM_ID>200</SUPPLIER_ORDER_ITEM_ID>
+			</SUPPLIER_ORDER_REFERENCE>
+		</INVOICE_ITEM>
+		<INVOICE_ITEM>
+			<LINE_ITEM_ID>003</LINE_ITEM_ID>
+			<PRODUCT_ID>
+				<bme:SUPPLIER_PID>123003</bme:SUPPLIER_PID>
+				<bme:INTERNATIONAL_PID type="EAN">8806085923805</bme:INTERNATIONAL_PID>
+				<bme:BUYER_PID>8806085923805</bme:BUYER_PID>
+				<bme:DESCRIPTION_SHORT>Samsung SC650 Series S24C650BW - LED-Monitor - 61cm/24"</bme:DESCRIPTION_SHORT>
+			</PRODUCT_ID>
+			<QUANTITY>3.0</QUANTITY>
+			<bme:ORDER_UNIT>C62</bme:ORDER_UNIT>
+			<PRODUCT_PRICE_FIX>
+				<bme:PRICE_AMOUNT>217.0</bme:PRICE_AMOUNT>
+				<TAX_DETAILS_FIX>
+					<bme:TAX>0.19</bme:TAX>
+					<TAX_AMOUNT>41.23</TAX_AMOUNT>
+				</TAX_DETAILS_FIX>
+			</PRODUCT_PRICE_FIX>
+			<PRICE_LINE_AMOUNT>651.0</PRICE_LINE_AMOUNT>
+			<ORDER_REFERENCE>
+				<ORDER_ID>GWAHJV-160131-1470</ORDER_ID>
+				<LINE_ITEM_ID>00003</LINE_ITEM_ID>
+				<ORDER_DATE>2016-01-31T18:29:37</ORDER_DATE>
+			</ORDER_REFERENCE>
+			<SUPPLIER_ORDER_REFERENCE>
+				<SUPPLIER_ORDER_ID>425689442</SUPPLIER_ORDER_ID>
+				<SUPPLIER_ORDER_ITEM_ID>300</SUPPLIER_ORDER_ITEM_ID>
+			</SUPPLIER_ORDER_REFERENCE>
+		</INVOICE_ITEM>
+	</INVOICE_ITEM_LIST>
+	<INVOICE_SUMMARY>
+		<TOTAL_ITEM_NUM>3</TOTAL_ITEM_NUM>
+		<NET_VALUE_GOODS>1401.0</NET_VALUE_GOODS>
+		<TOTAL_AMOUNT>1678.09</TOTAL_AMOUNT>
+		<ALLOW_OR_CHARGES_FIX>
+			<ALLOW_OR_CHARGE type="surcharge">
+				<ALLOW_OR_CHARGE_TYPE>eco</ALLOW_OR_CHARGE_TYPE>
+				<ALLOW_OR_CHARGE_DESCR>Umweltpauschale</ALLOW_OR_CHARGE_DESCR>
+				<ALLOW_OR_CHARGE_VALUE>
+					<AOC_MONETARY_AMOUNT>2.5</AOC_MONETARY_AMOUNT>
+				</ALLOW_OR_CHARGE_VALUE>
+			</ALLOW_OR_CHARGE>
+			<ALLOW_OR_CHARGE type="surcharge">
+				<ALLOW_OR_CHARGE_TYPE>freight</ALLOW_OR_CHARGE_TYPE>
+				<ALLOW_OR_CHARGE_DESCR>Frachtkosten Trans-O-Flex bis 32 KG
+				</ALLOW_OR_CHARGE_DESCR>
+				<ALLOW_OR_CHARGE_VALUE>
+					<AOC_MONETARY_AMOUNT>8.4</AOC_MONETARY_AMOUNT>
+				</ALLOW_OR_CHARGE_VALUE>
+			</ALLOW_OR_CHARGE>
+			<ALLOW_OR_CHARGES_TOTAL_AMOUNT>10.9</ALLOW_OR_CHARGES_TOTAL_AMOUNT>
+		</ALLOW_OR_CHARGES_FIX>
+		<TOTAL_TAX>
+			<TAX_DETAILS_FIX>
+				<bme:TAX_TYPE>vat</bme:TAX_TYPE>
+				<bme:TAX>0.19</bme:TAX>
+				<TAX_AMOUNT>266.19</TAX_AMOUNT>
+			</TAX_DETAILS_FIX>
+		</TOTAL_TAX>
+	</INVOICE_SUMMARY>
+</INVOICE>

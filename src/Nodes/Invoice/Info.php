@@ -3,10 +3,15 @@
 namespace Naugrim\OpenTrans\Nodes\Invoice;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\BuyerIdRef;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\BMEcat\Nodes\SupplierIdRef;
+use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
+use Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef;
 use Naugrim\OpenTrans\Nodes\Party;
+use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<Info>
@@ -14,7 +19,7 @@ use Naugrim\OpenTrans\Nodes\Party;
 class Info implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('INVOICE_ID')]
@@ -31,6 +36,14 @@ class Info implements NodeInterface
     protected DeliveryDate $deliveryDate;
 
     /**
+     * @var string[]
+     */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<string>')]
+    #[Serializer\XmlList(entry: 'LANGUAGE', inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
+    protected array $language = [];
+
+    /**
      *
      *
      * @var Party[]
@@ -42,19 +55,31 @@ class Info implements NodeInterface
     protected array $parties = [];
 
     #[Serializer\Expose]
-    #[Serializer\Type('string')]
+    #[Serializer\Type(IssuerIdRef::class)]
     #[Serializer\SerializedName('INVOICE_ISSUER_IDREF')]
-    protected string $issuerIdRef;
+    protected IssuerIdRef $issuerIdRef;
 
     #[Serializer\Expose]
-    #[Serializer\Type('string')]
+    #[Serializer\Type(InvoiceRcptIdRef::class)]
     #[Serializer\SerializedName('INVOICE_RECIPIENT_IDREF')]
-    protected string $rcptIdRef;
+    protected InvoiceRcptIdRef $rcptIdRef;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(BuyerIdRef::class)]
+    #[Serializer\SerializedName('BUYER_IDREF')]
+    #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
+    protected ?BuyerIdRef $buyerIdRef = null;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(SupplierIdRef::class)]
+    #[Serializer\SerializedName('SUPPLIER_IDREF')]
+    #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
+    protected ?SupplierIdRef $supplierIdRef = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CURRENCY')]
-    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
+    #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected string $currency;
 
     /**

@@ -13,7 +13,7 @@ use Naugrim\BMEcat\Nodes\Crypto\PublicKey;
 class Emails implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('EMAIL')]
@@ -25,10 +25,8 @@ class Emails implements NodeInterface
      * @var PublicKey[]
      */
     #[Serializer\Expose]
-    #[Serializer\SerializedName('PUBLIC_KEY')]
     #[Serializer\Type('array<Naugrim\BMEcat\Nodes\Crypto\PublicKey>')]
-    #[Serializer\XmlList(inline: true)]
-    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
+    #[Serializer\XmlList(entry: 'PUBLIC_KEY', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected array $publicKeys = [];
 
     public function addPublicKey(PublicKey $publicKey): Emails

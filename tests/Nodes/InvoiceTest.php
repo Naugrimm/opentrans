@@ -72,8 +72,14 @@ class InvoiceTest extends TestCase
                                     ],
                                 ],
                             ],
-                            'issuerIdRef' => 'org.de.issuer',
-                            'rcptIdRef' => 'org.de.rcpt',
+                            'issuerIdRef' => [
+                                'type' => 'supplier_specific',
+                                'value' => 'org.de.issuer',
+                            ],
+                            'rcptIdRef' => [
+                                'type' => 'buyer',
+                                'value' => 'org.de.rcpt',
+                            ],
                             'currency' => 'EUR',
                         ],
                     ],
@@ -126,8 +132,14 @@ class InvoiceTest extends TestCase
                                     ],
                                 ],
                             ],
-                            'issuerIdRef' => 'org.de.issuer',
-                            'rcptIdRef' => 'org.de.rcpt',
+                            'issuerIdRef' => [
+                                'type' => 'supplier_specific',
+                                'value' => 'org.de.issuer'
+                            ],
+                            'rcptIdRef' => [
+                                'value' => 'org.de.rcpt',
+                                'type' => 'buyer',
+                            ],
                             'currency' => 'EUR',
                         ],
                     ],

@@ -12,11 +12,11 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 class AllowOrChargesFix implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
-    #[Serializer\Type(AllowOrCharge::class)]
-    #[Serializer\SerializedName('ALLOW_OR_CHARGE')]
-    protected AllowOrCharge $allowOrCharge;
+    #[Serializer\Type('array<'.AllowOrCharge::class.'>')]
+    #[Serializer\XmlList(entry: 'ALLOW_OR_CHARGE', inline: true)]
+    protected array $allowOrCharge = [];
 
     #[Serializer\Expose]
     #[Serializer\Type('float')]
