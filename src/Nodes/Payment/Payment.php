@@ -52,7 +52,7 @@ class Payment implements NodeInterface
     protected ?bool $centralRegulation = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type('Naugrim\BMEcat\Nodes\Payment\PaymentTerms')]
+    #[Serializer\Type(PaymentTerms::class)]
     #[Serializer\SerializedName('PAYMENT_TERMS')]
     protected ?PaymentTerms $paymentTerms = null;
 

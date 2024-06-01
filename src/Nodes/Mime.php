@@ -44,7 +44,7 @@ class Mime implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('MIME_EMBEDDED')]
-    #[Serializer\Type('array<\Naugrim\OpenTrans\Nodes\Mime\Embedded>')]
+    #[Serializer\Type('array<'.Embedded::class.'>')]
     #[Serializer\XmlList(entry: 'MIME_EMBEDDED')]
     protected array $embedded = [];
 

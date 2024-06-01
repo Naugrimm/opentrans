@@ -25,7 +25,7 @@ class CustomerOrderReference implements NodeInterface
     protected ?string $lineItemId = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(DateTimeInterface::class."<'Y-m-d\\TH:i:s'>")]
+    #[Serializer\Type(DateTimeInterface::class."<'Y-m-d\\TH:i:s', '', ['Y-m-d\\TH:i:s', 'Y-m-d\\TH:i:sP']>")]
     #[Serializer\SerializedName('ORDER_DATE')]
     protected ?DateTimeInterface $orderDate = null;
 
