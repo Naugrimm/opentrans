@@ -76,6 +76,11 @@ class Info implements NodeInterface
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected string $currency;
 
+    #[Serializer\Expose]
+    #[Serializer\Type(Payment::class)]
+    #[Serializer\SerializedName('PAYMENT')]
+    protected Payment $payment;
+
     /**
      *
      * @var boolean
@@ -93,10 +98,6 @@ class Info implements NodeInterface
     #[Serializer\XmlList(entry: 'REMARKS', inline: true)]
     protected array $remarks = [];
 
-    #[Serializer\Expose]
-    #[Serializer\Type(Payment::class)]
-    #[Serializer\SerializedName('PAYMENT')]
-    protected Payment $payment;
 
     /**
      * @var array<string, UdxInterface>

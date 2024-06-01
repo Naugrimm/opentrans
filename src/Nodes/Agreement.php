@@ -6,6 +6,7 @@ use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
+use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<Agreement>
@@ -14,11 +15,10 @@ class Agreement implements NodeInterface
 {
     use HasSerializableAttributes;
 
-    #[Serializer\Expose]
-    #[Serializer\SerializedName('type')]
-    #[Serializer\Type('string')]
-    #[Serializer\XmlAttribute]
-    protected string $type;
+    /**
+     * @use HasTypeAttribute<self>
+     */
+    use HasTypeAttribute;
 
     #[Serializer\Expose]
     #[Serializer\SerializedName('default')]
