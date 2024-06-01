@@ -16,7 +16,7 @@ use Naugrim\OpenTrans\Nodes\Contact\Details;
 class Address implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('NAME')]
@@ -41,10 +41,13 @@ class Address implements NodeInterface
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $department;
 
+    /**
+     * @var Details[]
+     */
     #[Serializer\Expose]
-    #[Serializer\Type(Details::class)]
-    #[Serializer\SerializedName('CONTACT_DETAILS')]
-    protected Details $contactDetails;
+    #[Serializer\Type('array<'.Details::class.'>')]
+    #[Serializer\XmlList(entry: 'CONTACT_DETAILS', inline: true)]
+    protected array $contactDetails = [];
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
