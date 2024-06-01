@@ -56,10 +56,13 @@ class Agreement implements NodeInterface
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected SupplierIdRef $supplierIdRef;
 
+    /**
+     * @var AgreementDescr[]
+     */
     #[Serializer\Expose]
-    #[Serializer\Type('string')]
-    #[Serializer\SerializedName('AGREEMENT_DESCR')]
-    protected string $description;
+    #[Serializer\Type('array<'.AgreementDescr::class.'>')]
+    #[Serializer\XmlList(entry: 'AGREEMENT_DESCR', inline: true)]
+    protected array $agreementDescr = [];
 
     /**
      *
