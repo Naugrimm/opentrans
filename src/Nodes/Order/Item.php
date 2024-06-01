@@ -20,6 +20,7 @@ use ReflectionException;
 /**
  * @implements NodeInterface<Item>
  */
+#[Serializer\AccessorOrder(order: 'custom', custom: ['lineItemId', 'productId', 'quantity', 'orderUnit', 'priceFix', 'priceLineAmount', 'deliveryDate', 'partialShipmentAllowed', 'sourcingInfo', 'remarks', 'itemUdx'])]
 class Item implements NodeInterface
 {
     use HasSerializableAttributes;
