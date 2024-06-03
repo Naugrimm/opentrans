@@ -28,7 +28,7 @@ class SchemaValidator
 
         $schemaFile = self::getSchemaForVersion($version, $type);
         $validated = $xmlValidate->schemaValidate($schemaFile);
-        if (!$validated) {
+        if (! $validated) {
             throw SchemaValidationException::withErrors($xml, $schemaFile, libxml_get_errors());
         }
 

@@ -133,7 +133,7 @@ class Info implements NodeInterface
         $this->headerUdx = [];
 
         foreach ($udxItems as $udxItem) {
-            if (!$udxItem instanceof UdxInterface) {
+            if (! $udxItem instanceof UdxInterface) {
                 $udxItem = $this->convertToUdx($udxItem);
             }
 

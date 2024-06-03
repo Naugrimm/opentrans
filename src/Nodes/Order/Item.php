@@ -105,7 +105,7 @@ class Item implements NodeInterface
         $this->itemUdx = [];
 
         foreach ($udxItems as $udxItem) {
-            if (!$udxItem instanceof UdxInterface) {
+            if (! $udxItem instanceof UdxInterface) {
                 $udxItem = $this->convertToUdx($udxItem);
             }
 
