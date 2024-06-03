@@ -4,10 +4,7 @@ namespace Naugrim\OpenTrans\Nodes\Logistic;
 
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
-use Naugrim\BMEcat\Nodes\Concerns\HasStringValue;
-use Naugrim\BMEcat\Nodes\Contact\Details;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
-use Naugrim\BMEcat\Nodes\Crypto\PublicKey;
 use Naugrim\OpenTrans\OpenTrans;
 
 /**
@@ -21,7 +18,7 @@ final class Package implements NodeInterface
      * @var PackageId[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.PackageId::class.'>')]
+    #[Serializer\Type('array<' . PackageId::class . '>')]
     #[Serializer\XmlList(entry: 'PACKAGE_ID', inline: true)]
     protected array $packageId = [];
 
@@ -53,7 +50,6 @@ final class Package implements NodeInterface
     #[Serializer\SerializedName('PACKAGE_QUANTITY')]
     protected ?float $packageQuantity = null;
 
-
     #[Serializer\Expose]
     #[Serializer\Type(PackageDimensions::class)]
     #[Serializer\SerializedName('PACKAGE_DIMENSIONS')]
@@ -69,8 +65,7 @@ final class Package implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('SUB_PACKAGES')]
-    #[Serializer\Type('array<'.Package::class.'>')]
+    #[Serializer\Type('array<' . Package::class . '>')]
     #[Serializer\XmlList(entry: 'PACKAGE')]
     protected array $subPackages = [];
-
 }

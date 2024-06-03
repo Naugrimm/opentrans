@@ -2,7 +2,6 @@
 
 namespace Naugrim\OpenTrans\Nodes;
 
-use DateTimeInterface;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;

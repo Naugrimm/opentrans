@@ -6,7 +6,6 @@ use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\Crypto\PublicKey;
-use Naugrim\BMEcat\Nodes\Email;
 use Naugrim\BMEcat\Nodes\Fax;
 use Naugrim\BMEcat\Nodes\Phone;
 use Naugrim\OpenTrans\Nodes\Contact\Details;
@@ -46,7 +45,7 @@ class Address implements NodeInterface
      * @var Details[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Details::class.'>')]
+    #[Serializer\Type('array<' . Details::class . '>')]
     #[Serializer\XmlList(entry: 'CONTACT_DETAILS', inline: true)]
     protected array $contactDetails = [];
 
@@ -113,7 +112,7 @@ class Address implements NodeInterface
      * @var Phone[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Phone::class.'>')]
+    #[Serializer\Type('array<' . Phone::class . '>')]
     #[Serializer\XmlList(entry: 'PHONE', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected array $phone = [];
 
@@ -121,7 +120,7 @@ class Address implements NodeInterface
      * @var Fax[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Fax::class.'>')]
+    #[Serializer\Type('array<' . Fax::class . '>')]
     #[Serializer\XmlList(entry: 'FAX', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected array $fax = [];
 
@@ -137,8 +136,8 @@ class Address implements NodeInterface
      * @var PublicKey[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.PublicKey::class.'>')]
-    #[Serializer\XmlList(entry: 'PUBLIC_KEY', inline: true, namespace:\Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE )]
+    #[Serializer\Type('array<' . PublicKey::class . '>')]
+    #[Serializer\XmlList(entry: 'PUBLIC_KEY', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected array $publicKey = [];
 
     #[Serializer\Expose]

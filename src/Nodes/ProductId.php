@@ -45,22 +45,22 @@ class ProductId implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\Type('array<string>')]
-    #[Serializer\XmlList(entry: 'SERIAL_NUMBER',inline: true)]
+    #[Serializer\XmlList(entry: 'SERIAL_NUMBER', inline: true)]
     protected array $serialNumber = [];
 
     /**
      * @var InternationalPid[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.InternationalPid::class.'>')]
-    #[Serializer\XmlList(entry: 'INTERNATIONAL_PID',inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
+    #[Serializer\Type('array<' . InternationalPid::class . '>')]
+    #[Serializer\XmlList(entry: 'INTERNATIONAL_PID', inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected array $internationalPid = [];
 
     /**
      * @var BuyerPid[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.BuyerPid::class.'>')]
+    #[Serializer\Type('array<' . BuyerPid::class . '>')]
     #[\JMS\Serializer\Annotation\XmlList(entry: 'BUYER_PID', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected array $buyerPid = [];
 

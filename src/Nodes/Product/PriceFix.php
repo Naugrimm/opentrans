@@ -22,7 +22,6 @@ class PriceFix implements NodeInterface
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected float $amount;
 
-
     #[Serializer\Expose]
     #[Serializer\Type(AllowOrChargesFix::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGES_FIX')]
@@ -33,7 +32,7 @@ class PriceFix implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('TAX_DETAILS_FIX')]
-    #[Serializer\Type('array<'.DetailsFix::class.'>')]
+    #[Serializer\Type('array<' . DetailsFix::class . '>')]
     #[Serializer\XmlList(entry: 'TAX_DETAILS_FIX', inline: true)]
     protected array $tax = [];
 
@@ -42,5 +41,4 @@ class PriceFix implements NodeInterface
     #[Serializer\SerializedName('PRICE_QUANTITY')]
     #[Serializer\XmlElement(cdata: false, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected ?float $priceQuantity = null;
-
 }

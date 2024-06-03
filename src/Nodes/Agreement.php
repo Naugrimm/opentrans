@@ -60,7 +60,7 @@ class Agreement implements NodeInterface
      * @var AgreementDescr[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.AgreementDescr::class.'>')]
+    #[Serializer\Type('array<' . AgreementDescr::class . '>')]
     #[Serializer\XmlList(entry: 'AGREEMENT_DESCR', inline: true)]
     protected array $agreementDescr = [];
 

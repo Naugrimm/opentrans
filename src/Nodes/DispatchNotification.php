@@ -35,7 +35,7 @@ class DispatchNotification implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('DISPATCHNOTIFICATION_ITEM_LIST')]
-    #[Serializer\Type('array<'.Item::class.'>')]
+    #[Serializer\Type('array<' . Item::class . '>')]
     #[Serializer\XmlList(entry: 'DISPATCHNOTIFICATION_ITEM')]
     protected array $items = [];
 

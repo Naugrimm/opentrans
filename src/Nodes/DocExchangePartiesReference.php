@@ -22,7 +22,7 @@ class DocExchangePartiesReference implements NodeInterface
      * @var IdRef[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.IdRef::class.'>')]
+    #[Serializer\Type('array<' . IdRef::class . '>')]
     #[Serializer\XmlList(entry: 'DOCUMENT_RECIPIENT_IDREF', inline: true)]
     protected array $documentRecipientIdRef = [];
 }

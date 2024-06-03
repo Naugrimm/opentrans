@@ -8,8 +8,6 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Agreement;
 use Naugrim\OpenTrans\Nodes\Catalog\Reference;
-use Naugrim\OpenTrans\Nodes\Product\PriceFix;
-use Naugrim\OpenTrans\Nodes\ProductId;
 
 /**
  * @implements NodeInterface<OrderReference>
@@ -29,7 +27,7 @@ class OrderReference implements NodeInterface
     protected string $lineItemId;
 
     #[Serializer\Expose]
-    #[Serializer\Type(DateTimeInterface::class."<'Y-m-d\\TH:i:s', '', ['Y-m-d\\TH:i:s', 'Y-m-d\\TH:i:sP']>")]
+    #[Serializer\Type(DateTimeInterface::class . "<'Y-m-d\\TH:i:s', '', ['Y-m-d\\TH:i:s', 'Y-m-d\\TH:i:sP']>")]
     #[Serializer\SerializedName('ORDER_DATE')]
     protected ?DateTimeInterface $orderDate = null;
 
@@ -42,7 +40,7 @@ class OrderReference implements NodeInterface
      * @var Agreement[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Agreement::class.'>')]
+    #[Serializer\Type('array<' . Agreement::class . '>')]
     #[Serializer\XmlList(entry: 'AGREEMENT', inline: true)]
     protected array $agreement = [];
 
