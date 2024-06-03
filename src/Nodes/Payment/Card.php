@@ -43,7 +43,17 @@ class Card implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CARD_NUM')]
-    protected ?string $number = null;
+    protected string $number;
+
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CARD_AUTH_CODE')]
+    protected ?string $authCode = null;
+
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CARD_REF_NUM')]
+    protected ?string $refNUm = null;
 
     #[Serializer\Expose]
     #[Serializer\Type("DateTimeInterface<'Y-m'>")]

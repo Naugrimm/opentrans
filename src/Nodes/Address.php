@@ -6,6 +6,7 @@ use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\Crypto\PublicKey;
+use Naugrim\BMEcat\Nodes\Email;
 use Naugrim\BMEcat\Nodes\Fax;
 use Naugrim\BMEcat\Nodes\Phone;
 use Naugrim\OpenTrans\Nodes\Contact\Details;
@@ -81,6 +82,12 @@ class Address implements NodeInterface
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
+    #[Serializer\SerializedName('STATE')]
+    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
+    protected string $state;
+
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
     #[Serializer\SerializedName('COUNTRY')]
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $country;
@@ -98,28 +105,41 @@ class Address implements NodeInterface
     protected string $vatId;
 
     #[Serializer\Expose]
-    #[Serializer\Type(Phone::class)]
-    #[Serializer\SerializedName('PHONE')]
-    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected Phone $phone;
-
-    #[Serializer\Expose]
-    #[Serializer\Type(Fax::class)]
-    #[Serializer\SerializedName('FAX')]
-    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected Fax $fax;
-
-    #[Serializer\Expose]
     #[Serializer\Type('string')]
-    #[Serializer\SerializedName('EMAIL')]
-    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected string $email;
+    #[Serializer\SerializedName('TAX_NUMBER')]
+    protected string $taxNumber;
 
+    /**
+     * @var Phone[]
+     */
     #[Serializer\Expose]
-    #[Serializer\Type(PublicKey::class)]
-    #[Serializer\SerializedName('PUBLIC_KEY')]
-    #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected PublicKey $publicKey;
+    #[Serializer\Type('array<'.Phone::class.'>')]
+    #[Serializer\XmlList(entry: 'PHONE', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
+    protected array $phone = [];
+
+    /**
+     * @var Fax[]
+     */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<'.Fax::class.'>')]
+    #[Serializer\XmlList(entry: 'FAX', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
+    protected array $fax = [];
+
+    /**
+     * @var string[]
+     */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<string>')]
+    #[Serializer\XmlList(entry: 'EMAIL', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
+    protected array $emails = [];
+
+    /**
+     * @var PublicKey[]
+     */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<'.PublicKey::class.'>')]
+    #[Serializer\XmlList(entry: 'PUBLIC_KEY', inline: true, namespace:\Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE )]
+    protected array $publicKey = [];
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]

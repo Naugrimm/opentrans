@@ -11,6 +11,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasSourcingInfo;
 use Naugrim\OpenTrans\Nodes\Concerns\HasUdxItems;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\Product\PriceFix;
+use Naugrim\OpenTrans\Nodes\Product\ProductComponent;
 use Naugrim\OpenTrans\Nodes\ProductId;
 use Naugrim\OpenTrans\Nodes\Remarks;
 use Naugrim\OpenTrans\Nodes\Udx;
@@ -20,7 +21,7 @@ use ReflectionException;
 /**
  * @implements NodeInterface<Item>
  */
-#[Serializer\AccessorOrder(order: 'custom', custom: ['lineItemId', 'productId', 'quantity', 'orderUnit', 'priceFix', 'priceLineAmount', 'deliveryDate', 'partialShipmentAllowed', 'sourcingInfo', 'remarks', 'itemUdx'])]
+#[Serializer\AccessorOrder(order: 'custom', custom: ['lineItemId', 'productId', 'productComponents', 'quantity', 'orderUnit', 'priceFix', 'priceLineAmount', 'deliveryDate', 'partialShipmentAllowed', 'sourcingInfo', 'remarks', 'itemUdx'])]
 class Item implements NodeInterface
 {
     use HasSerializableAttributes;
@@ -36,6 +37,15 @@ class Item implements NodeInterface
     #[Serializer\Type(ProductId::class)]
     #[Serializer\SerializedName('PRODUCT_ID')]
     protected ProductId $productId;
+
+    /**
+     * @var ProductComponent[]
+     */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<'.ProductComponent::class.'>')]
+    #[Serializer\SerializedName('PRODUCT_COMPONENTS')]
+    #[Serializer\XmlList(entry: 'PRODUCT_COMPONENT')]
+    protected array $productComponents = [];
 
     #[Serializer\Expose]
     #[Serializer\Type('float')]

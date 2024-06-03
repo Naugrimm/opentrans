@@ -185,9 +185,6 @@ Please note that only dummy-prices and units are used. No price-calculations wer
 				<bme:TRANSPORT_REMARK>a</bme:TRANSPORT_REMARK>
 			</bme:TRANSPORT>
 			<REMARKS type="customType">a</REMARKS>
-			<HEADER_UDX>
-				<UDX.corp.acme>foobar</UDX.corp.acme>
-			</HEADER_UDX>
 		</ORDER_INFO>
 	</ORDER_HEADER>
 	<ORDER_ITEM_LIST>
@@ -296,15 +293,7 @@ Please note that only dummy-prices and units are used. No price-calculations wer
 			<bmecat:SPECIAL_TREATMENT_CLASS type="a">a</bmecat:SPECIAL_TREATMENT_CLASS>
 			-->
 			<REMARKS type="customRemark">a</REMARKS>
-			<ITEM_UDX>
-				<UDX.corp.acme>item level udx</UDX.corp.acme>
-			</ITEM_UDX>
 		</ORDER_ITEM>
-		<!--
-		<ORDER_ITEM>
-			additional order-items
-		</ORDER_ITEM>
-		-->
 	</ORDER_ITEM_LIST>
 	<ORDER_SUMMARY>
 		<TOTAL_ITEM_NUM>1</TOTAL_ITEM_NUM>
