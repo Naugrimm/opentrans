@@ -3,8 +3,6 @@
 namespace Naugrim\OpenTrans\Nodes\Order;
 
 use JMS\Serializer\Annotation as Serializer;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Concerns\HasSourcingInfo;
@@ -16,7 +14,6 @@ use Naugrim\OpenTrans\Nodes\ProductId;
 use Naugrim\OpenTrans\Nodes\Remarks;
 use Naugrim\OpenTrans\Nodes\Udx;
 use Naugrim\OpenTrans\Nodes\UdxInterface;
-use ReflectionException;
 
 /**
  * @implements NodeInterface<Item>
@@ -42,7 +39,7 @@ class Item implements NodeInterface
      * @var ProductComponent[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.ProductComponent::class.'>')]
+    #[Serializer\Type('array<' . ProductComponent::class . '>')]
     #[Serializer\SerializedName('PRODUCT_COMPONENTS')]
     #[Serializer\XmlList(entry: 'PRODUCT_COMPONENT')]
     protected array $productComponents = [];
@@ -68,7 +65,6 @@ class Item implements NodeInterface
     #[Serializer\SerializedName('PRICE_LINE_AMOUNT')]
     protected float $priceLineAmount;
 
-
     /**
      *
      * @var boolean
@@ -87,7 +83,7 @@ class Item implements NodeInterface
      * @var Remarks[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Remarks::class.'>')]
+    #[Serializer\Type('array<' . Remarks::class . '>')]
     #[Serializer\XmlList(entry: 'REMARKS', inline: true)]
     protected array $remarks = [];
 
@@ -96,16 +92,13 @@ class Item implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('ITEM_UDX')]
-    #[Serializer\Type('array<string,'.Udx::class.'>')]
+    #[Serializer\Type('array<string,' . Udx::class . '>')]
     #[Serializer\SkipWhenEmpty]
     #[Serializer\XmlKeyValuePairs]
     protected array $itemUdx = [];
 
     /**
      * @param UdxInterface[]|array{vendor: string, name: string, value: string}[] $udxItems
-     * @throws UnknownKeyException
-     * @throws InvalidSetterException
-     * @throws ReflectionException
      */
     public function setItemUdx(array $udxItems): self
     {
@@ -121,7 +114,6 @@ class Item implements NodeInterface
 
         return $this;
     }
-
 
     public function isPartialShipmentAllowed(): bool
     {

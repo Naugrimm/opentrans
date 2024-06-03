@@ -6,8 +6,6 @@ use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\ProductId;
-use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
-use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<PriceFix>

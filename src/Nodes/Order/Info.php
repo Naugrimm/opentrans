@@ -3,22 +3,19 @@
 namespace Naugrim\OpenTrans\Nodes\Order;
 
 use JMS\Serializer\Annotation as Serializer;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\Language;
-use Naugrim\OpenTrans\Nodes\Logistic\Transport;
 use Naugrim\OpenTrans\Nodes\Concerns\HasUdxItems;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\DocExchangePartiesReference;
+use Naugrim\OpenTrans\Nodes\Logistic\Transport;
 use Naugrim\OpenTrans\Nodes\Party;
 use Naugrim\OpenTrans\Nodes\Payment\Payment;
 use Naugrim\OpenTrans\Nodes\Remarks;
 use Naugrim\OpenTrans\Nodes\Udx;
 use Naugrim\OpenTrans\Nodes\UdxInterface;
 use Naugrim\OpenTrans\OpenTrans;
-use ReflectionException;
 
 /**
  * @implements NodeInterface<Info>
@@ -42,7 +39,7 @@ class Info implements NodeInterface
      * @var Language[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Language::class.'>')]
+    #[Serializer\Type('array<' . Language::class . '>')]
     #[Serializer\XmlList(entry: 'LANGUAGE', inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected array $language = [];
 
@@ -106,7 +103,7 @@ class Info implements NodeInterface
      * @var Transport[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Transport::class.'>')]
+    #[Serializer\Type('array<' . Transport::class . '>')]
     #[Serializer\XmlList(entry: 'TRANSPORT', inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected array $transport = [];
 
@@ -114,26 +111,22 @@ class Info implements NodeInterface
      * @var Remarks[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Remarks::class.'>')]
+    #[Serializer\Type('array<' . Remarks::class . '>')]
     #[Serializer\XmlList(entry: 'REMARKS', inline: true)]
     protected array $remarks = [];
-
 
     /**
      * @var array<string, UdxInterface>
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('HEADER_UDX')]
-    #[Serializer\Type('array<string,'.Udx::class.'>')]
+    #[Serializer\Type('array<string,' . Udx::class . '>')]
     #[Serializer\SkipWhenEmpty]
     #[Serializer\XmlKeyValuePairs]
     protected array $headerUdx = [];
 
     /**
      * @param UdxInterface[]|array{vendor: string, name: string, value: string}[] $udxItems
-     * @throws UnknownKeyException
-     * @throws InvalidSetterException
-     * @throws ReflectionException
      */
     public function setHeaderUdx(array $udxItems): self
     {

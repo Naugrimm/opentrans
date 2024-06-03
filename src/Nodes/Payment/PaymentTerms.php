@@ -19,7 +19,7 @@ class PaymentTerms implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('PAYMENT_TERMS')]
-    #[Serializer\Type('array<'.PaymentTerm::class.'>')]
+    #[Serializer\Type('array<' . PaymentTerm::class . '>')]
     #[Serializer\XmlList(entry: 'PAYMENT_TERM')]
     protected array $terms = [];
 

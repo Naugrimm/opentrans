@@ -52,7 +52,7 @@ class Details implements NodeInterface
      * @var Role[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Role::class.'>')]
+    #[Serializer\Type('array<' . Role::class . '>')]
     #[Serializer\XmlList(entry: 'CONTACT_ROLE', inline: true)]
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected array $role = [];
@@ -67,7 +67,7 @@ class Details implements NodeInterface
      * @var Phone[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Phone::class.'>')]
+    #[Serializer\Type('array<' . Phone::class . '>')]
     #[Serializer\XmlList(entry: 'PHONE', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected array $phone = [];
 

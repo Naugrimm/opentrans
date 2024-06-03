@@ -6,7 +6,6 @@ use DateTimeInterface;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
-use Naugrim\OpenTrans\Nodes\Catalog\Reference;
 
 /**
  * @implements NodeInterface<SourcingInfo>
@@ -16,7 +15,7 @@ class TimeForPayment implements NodeInterface
     use HasSerializableAttributes;
 
     #[Serializer\Expose]
-    #[Serializer\Type(DateTimeInterface::class."<'Y-m-d\\TH:i:s', '', ['Y-m-d\\TH:i:s', 'Y-m-d\\TH:i:sP']>")]
+    #[Serializer\Type(DateTimeInterface::class . "<'Y-m-d\\TH:i:s', '', ['Y-m-d\\TH:i:s', 'Y-m-d\\TH:i:sP']>")]
     #[Serializer\SerializedName('PAYMENT_DATE')]
     protected ?DateTimeInterface $paymentDate = null;
 

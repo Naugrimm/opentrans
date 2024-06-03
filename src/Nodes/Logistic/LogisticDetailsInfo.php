@@ -20,7 +20,7 @@ class LogisticDetailsInfo implements NodeInterface
      * @var Country[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Country::class.'>')]
+    #[Serializer\Type('array<' . Country::class . '>')]
     #[Serializer\XmlList(entry: 'COUNTRY_OF_ORIGIN', inline: true)]
     protected array $countryOfOrigin = [];
 
@@ -28,7 +28,7 @@ class LogisticDetailsInfo implements NodeInterface
      * @var Transport[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Transport::class.'>')]
+    #[Serializer\Type('array<' . Transport::class . '>')]
     #[Serializer\XmlList(entry: 'TRANSPORT', inline: true)]
     protected array $transport = [];
 
@@ -37,7 +37,7 @@ class LogisticDetailsInfo implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('PACKAGE_INFO')]
-    #[Serializer\Type('array<'.Package::class.'>')]
+    #[Serializer\Type('array<' . Package::class . '>')]
     #[Serializer\XmlList(entry: 'PACKAGE', inline: false)]
     protected array $packages = [];
 
@@ -45,8 +45,7 @@ class LogisticDetailsInfo implements NodeInterface
      * @var MeansOfTransport[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.MeansOfTransport::class.'>')]
+    #[Serializer\Type('array<' . MeansOfTransport::class . '>')]
     #[Serializer\XmlList(entry: 'MEANS_OF_TRANSPORT', inline: true)]
     protected array $meansOfTransport = [];
-
 }

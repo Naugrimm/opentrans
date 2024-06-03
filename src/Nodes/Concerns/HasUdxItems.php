@@ -4,20 +4,15 @@ namespace Naugrim\OpenTrans\Nodes\Concerns;
 
 use InvalidArgumentException;
 use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
 use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Udx;
 use Naugrim\OpenTrans\Nodes\UdxInterface;
 use ReflectionClass;
-use ReflectionException;
 
 trait HasUdxItems
 {
     /**
      * @param array{vendor: string, name: string, value: string} $udxItem
-     * @throws UnknownKeyException
-     * @throws InvalidSetterException
-     * @throws ReflectionException
      */
     protected function convertToUdx(array $udxItem): UdxInterface
     {
@@ -50,7 +45,6 @@ trait HasUdxItems
      * @template TData of array<string, mixed>
      * @param TData $udxData
      * @return non-empty-array<'class'|'name'|'value'|'vendor', non-falsy-string>
-     * @throws UnknownKeyException
      */
     private function parseUdxData(array $udxData): array
     {

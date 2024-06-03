@@ -8,7 +8,6 @@ use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\Language;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
-use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
 use Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef;
 use Naugrim\OpenTrans\Nodes\Party;
@@ -40,7 +39,7 @@ class Info implements NodeInterface
      * @var Language[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Language::class.'>')]
+    #[Serializer\Type('array<' . Language::class . '>')]
     #[Serializer\XmlList(entry: 'LANGUAGE', inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected array $language = [];
 

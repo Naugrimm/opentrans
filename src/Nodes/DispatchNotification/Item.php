@@ -10,7 +10,6 @@ use Naugrim\OpenTrans\Nodes\Invoice\OrderReference;
 use Naugrim\OpenTrans\Nodes\Invoice\SupplierOrderReference;
 use Naugrim\OpenTrans\Nodes\Order\CustomerOrderReference;
 use Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference;
-use Naugrim\OpenTrans\Nodes\Product\PriceFix;
 use Naugrim\OpenTrans\Nodes\ProductId;
 
 /**

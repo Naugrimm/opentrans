@@ -40,7 +40,7 @@ class Info implements NodeInterface
      * @var Language[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Language::class.'>')]
+    #[Serializer\Type('array<' . Language::class . '>')]
     #[Serializer\XmlList(entry: 'LANGUAGE', inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected array $language = [];
 
@@ -56,7 +56,7 @@ class Info implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('PARTIES')]
-    #[Serializer\Type('array<'.Party::class.'>')]
+    #[Serializer\Type('array<' . Party::class . '>')]
     #[Serializer\XmlList(entry: 'PARTY')]
     protected array $parties = [];
 
@@ -102,7 +102,7 @@ class Info implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('MIME_INFO')]
-    #[Serializer\Type('array<'.Mime::class.'>')]
+    #[Serializer\Type('array<' . Mime::class . '>')]
     #[Serializer\XmlList(entry: 'MIME')]
     protected array $mimeInfo = [];
 
@@ -110,7 +110,7 @@ class Info implements NodeInterface
      * @var Remarks[]
      */
     #[Serializer\Expose]
-    #[Serializer\Type('array<'.Remarks::class.'>')]
+    #[Serializer\Type('array<' . Remarks::class . '>')]
     #[Serializer\XmlList(entry: 'REMARKS', inline: true)]
     protected array $remarks = [];
 
@@ -119,7 +119,7 @@ class Info implements NodeInterface
      */
     #[Serializer\Expose]
     #[Serializer\SerializedName('HEADER_UDX')]
-    #[Serializer\Type('array<string,'.Udx::class.'>')]
+    #[Serializer\Type('array<string,' . Udx::class . '>')]
     #[Serializer\SkipWhenEmpty]
     #[Serializer\XmlKeyValuePairs]
     protected array $headerUdx = [];
