@@ -4,18 +4,19 @@ namespace Naugrim\OpenTrans\Nodes\Concerns;
 
 use InvalidArgumentException;
 use ReflectionClass;
+use Webmozart\Assert\Assert;
 
 trait CanAssertConstantValue
 {
     protected static function assertValidConstant(string $value, string $constantPrefix = ''): void
     {
-        $constants = static::getClassConstants();
-        if (empty($constants)) {
+        $constants = self::getClassConstants();
+        if ($constants === []) {
             return;
         }
 
         foreach ($constants as $constant => $constantValue) {
-            if ($constantValue === $value && (empty($constantPrefix) || strpos($constant, $constantPrefix) === 0)) {
+            if ($constantValue === $value && ($constantPrefix === '' || $constantPrefix === '0' || str_starts_with($constant, $constantPrefix))) {
                 return;
             }
         }
@@ -34,6 +35,9 @@ trait CanAssertConstantValue
      */
     private static function getClassConstants(): array
     {
-        return (new ReflectionClass(static::class))->getConstants();
+        $constants = (new ReflectionClass(static::class))->getConstants();
+        Assert::allString($constants);
+        
+        return $constants;
     }
 }

@@ -3,54 +3,39 @@
 namespace Naugrim\OpenTrans\Nodes\Payment;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\TimeForPayment;
 
+/**
+ * @implements NodeInterface<PaymentTerms>
+ */
 class PaymentTerms implements NodeInterface
 {
+    use HasSerializableAttributes;
+
     /**
-     * @Serializer\SerializedName("PAYMENT_TERMS")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Payment\PaymentTerm>")
-     * @Serializer\XmlList(entry = "PAYMENT_TERM")
      * @var PaymentTerm[]
      */
-    private $terms;
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('PAYMENT_TERMS')]
+    #[Serializer\Type('array<' . PaymentTerm::class . '>')]
+    #[Serializer\XmlList(entry: 'PAYMENT_TERM')]
+    protected array $terms = [];
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("VALUE_DATE")
-     *
-     * @var string
-     */
-    private $valueDate;
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('VALUE_DATE')]
+    protected ?string $valueDate = null;
 
-    public function getTerms(): array
-    {
-        return $this->terms;
-    }
+    #[Serializer\Expose]
+    #[Serializer\Type(TimeForPayment::class)]
+    #[Serializer\SerializedName('TIME_FOR_PAYMENT')]
+    protected ?TimeForPayment $timeForPayment = null;
 
-    public function setTerms(array $terms): PaymentTerms
-    {
-        foreach ($terms as $term) {
-            $this->addTerm($term);
-        }
-
-        return $this;
-    }
     public function addTerm(PaymentTerm $term): PaymentTerms
     {
         $this->terms[] = $term;
-        return $this;
-    }
-
-    public function getValueDate(): string
-    {
-        return $this->valueDate;
-    }
-
-    public function setValueDate(string $valueDate): PaymentTerms
-    {
-        $this->valueDate = $valueDate;
         return $this;
     }
 }

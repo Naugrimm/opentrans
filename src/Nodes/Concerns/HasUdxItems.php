@@ -3,48 +3,27 @@
 namespace Naugrim\OpenTrans\Nodes\Concerns;
 
 use InvalidArgumentException;
-use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Udx;
-use Naugrim\OpenTrans\Nodes\UdxAggregate;
 use Naugrim\OpenTrans\Nodes\UdxInterface;
 use ReflectionClass;
 
 trait HasUdxItems
 {
     /**
-     * @Serializer\SerializedName("ITEM_UDX")
-     * @Serializer\Type ("Naugrim\OpenTrans\Nodes\UdxAggregate")
-     * @var UdxAggregate
+     * @param array{vendor: string, name: string, value: string} $udxItem
      */
-    protected $udxItem;
-
-    public function setUdxItems(array $udxItems): self
+    protected function convertToUdx(array $udxItem): UdxInterface
     {
-        $this->udxItem = new UdxAggregate();
-
-        foreach ($udxItems as $udxItem) {
-            if (!$udxItem instanceof UdxInterface) {
-                $udxItem = $this->convertToUdx($udxItem);
-            }
-
-            $this->udxItem->addUdx($udxItem);
-        }
-
-        return $this;
-    }
-
-    private function convertToUdx($udxItem): UdxInterface
-    {
-        if (!is_array($udxItem)) {
-            throw new UnknownKeyException('Invalid UDX structure given, Expected array<string,string>.');
-        }
-
         $udxData = $this->parseUdxData($udxItem);
         $udxClass = $udxData['class'];
+        if (! class_exists($udxClass)) {
+            throw new UnknownKeyException(sprintf('"%s" needs to implement UdxInterface', $udxClass));
+        }
+
         $reflection = new ReflectionClass($udxClass);
-        if (!$reflection->implementsInterface(UdxInterface::class)) {
+        if (! $reflection->implementsInterface(UdxInterface::class)) {
             throw new UnknownKeyException(sprintf('"%s" needs to implement UdxInterface', $udxClass));
         }
 
@@ -57,23 +36,28 @@ trait HasUdxItems
         return $udxInstance;
     }
 
+    private function createUdxElementName(UdxInterface $udx): string
+    {
+        return sprintf('UDX.%s.%s', $udx->getVendor(), $udx->getName());
+    }
+
     /**
-     * @param array<string, mixed> $udxData
-     * @return array<string, string>
-     * @throws UnknownKeyException
+     * @template TData of array<string, mixed>
+     * @param TData $udxData
+     * @return non-empty-array<'class'|'name'|'value'|'vendor', non-falsy-string>
      */
     private function parseUdxData(array $udxData): array
     {
         $mandatoryKeys = [
             'vendor',
             'name',
-            'value'
+            'value',
         ];
 
         $data = [];
 
         foreach ($mandatoryKeys as $key) {
-            if (!array_key_exists($key, $udxData)) {
+            if (! array_key_exists($key, $udxData)) {
                 throw new UnknownKeyException(
                     sprintf(
                         'Key "%s" is not available in UDX data. Expected one of [%s]',
@@ -83,12 +67,12 @@ trait HasUdxItems
                 );
             }
 
-            if (!is_scalar($udxData[$key])) {
+            if (! is_scalar($udxData[$key])) {
                 throw new InvalidArgumentException(
                     sprintf(
                         'UDX value of "%s" must be scalar, "%s" given',
                         $key,
-                        is_object($udxData[$key]) ? get_class($udxData[$key]) : gettype($udxData[$key])
+                        get_debug_type($udxData[$key])
                     )
                 );
             }
@@ -96,7 +80,11 @@ trait HasUdxItems
             $data[$key] = sprintf('%s', $udxData[$key]);
         }
 
-        $data['class'] = $udxData['class'] ?? Udx::class;
+        if (isset($udxData['class']) && is_string($udxData['class']) && class_exists($udxData['class'])) {
+            $data['class'] = $udxData['class'];
+        } else {
+            $data['class'] = Udx::class;
+        }
 
         return $data;
     }

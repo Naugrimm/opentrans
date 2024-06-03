@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ORDERRESPONSE version="2.1"
+    xmlns="http://www.opentrans.org/XMLSchema/2.1"
+    xmlns:bme="http://www.bmecat.org/bmecat/2005">
+    <ORDERRESPONSE_HEADER>
+        <CONTROL_INFO>
+            <GENERATOR_INFO>itscope</GENERATOR_INFO>
+            <GENERATION_DATE>2018-06-25T11:31:21</GENERATION_DATE>
+        </CONTROL_INFO>
+        <ORDERRESPONSE_INFO>
+            <ORDER_ID>GWAHJV-160131-1470</ORDER_ID>
+            <ORDERRESPONSE_DATE>2018-06-25T11:31:21</ORDERRESPONSE_DATE>
+            <ORDER_DATE>2016-01-31T18:54:55</ORDER_DATE>
+            <DELIVERY_DATE type="fixed">
+                <DELIVERY_START_DATE>2018-06-27</DELIVERY_START_DATE>
+                <DELIVERY_END_DATE>2018-06-27</DELIVERY_END_DATE>
+            </DELIVERY_DATE>
+            <PARTIES>
+ 				<PARTY>
+					<bme:PARTY_ID type="supplier_specific">123456</bme:PARTY_ID>
+					<PARTY_ROLE>buyer</PARTY_ROLE>
+					<ADDRESS>
+						<bme:NAME>ITscope GmbH</bme:NAME>
+						<CONTACT_DETAILS>
+							<bme:CONTACT_NAME>Support</bme:CONTACT_NAME>
+							<bme:FIRST_NAME>ITscope</bme:FIRST_NAME>
+							<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+							<bme:EMAILS>
+								<bme:EMAIL>support@itscope.com</bme:EMAIL>
+							</bme:EMAILS>
+						</CONTACT_DETAILS>
+						<bme:STREET>Ludwig-Erhard-Allee 20</bme:STREET>
+						<bme:ZIP>76131</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Deutschland</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+						<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+						<bme:FAX type="office">+49 721/66499175</bme:FAX>
+						<bme:URL>www.itscope.com</bme:URL>
+					</ADDRESS>
+				</PARTY>
+				<PARTY>
+					<bme:PARTY_ID type="supplier_specific">123456</bme:PARTY_ID>
+					<PARTY_ROLE>delivery</PARTY_ROLE>
+					<ADDRESS>
+						<bme:NAME>ITscope GmbH</bme:NAME>
+						<CONTACT_DETAILS>
+							<bme:CONTACT_NAME>Support</bme:CONTACT_NAME>
+							<bme:FIRST_NAME>ITscope</bme:FIRST_NAME>
+							<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+							<bme:EMAILS>
+								<bme:EMAIL>support@itscope.com</bme:EMAIL>
+							</bme:EMAILS>
+						</CONTACT_DETAILS>
+						<bme:STREET>Ludwig-Erhard-Allee 20</bme:STREET>
+						<bme:ZIP>76131</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Deutschland</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+						<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+						<bme:FAX type="office">+49 721/66499175</bme:FAX>
+						<bme:URL>www.itscope.com</bme:URL>
+					</ADDRESS>
+				</PARTY>
+				<PARTY>
+					<bme:PARTY_ID type="supplier_specific">123456</bme:PARTY_ID>
+					<PARTY_ROLE>invoice_recipient</PARTY_ROLE>
+					<ADDRESS>
+						<bme:NAME>ITscope GmbH</bme:NAME>
+						<CONTACT_DETAILS>
+							<bme:CONTACT_NAME>Support</bme:CONTACT_NAME>
+							<bme:FIRST_NAME>ITscope</bme:FIRST_NAME>
+							<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+							<bme:EMAILS>
+								<bme:EMAIL>support@itscope.com</bme:EMAIL>
+							</bme:EMAILS>
+						</CONTACT_DETAILS>
+						<bme:STREET>Ludwig-Erhard-Allee 20</bme:STREET>
+						<bme:ZIP>76131</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Deutschland</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+						<bme:PHONE type="office">+49 721/6273760</bme:PHONE>
+						<bme:FAX type="office">+49 721/66499175</bme:FAX>
+						<bme:URL>www.itscope.com</bme:URL>
+					</ADDRESS>
+				</PARTY>
+				<PARTY>
+					<bme:PARTY_ID type="supplier_specific">10000735</bme:PARTY_ID>
+					<PARTY_ROLE>supplier</PARTY_ROLE>
+					<ADDRESS>
+						<bme:NAME>ITscope Partner-Test</bme:NAME>
+						<CONTACT_DETAILS>
+							<bme:CONTACT_NAME>Support</bme:CONTACT_NAME>
+							<bme:FIRST_NAME>ITscope</bme:FIRST_NAME>
+							<bme:TITLE>Herr</bme:TITLE>
+						</CONTACT_DETAILS>
+						<bme:STREET>Ludwig-Erhard-Allee 20</bme:STREET>
+						<bme:ZIP>76131</bme:ZIP>
+						<bme:CITY>Karlsruhe</bme:CITY>
+						<bme:COUNTRY>Germany</bme:COUNTRY>
+						<bme:COUNTRY_CODED>DE</bme:COUNTRY_CODED>
+					</ADDRESS>
+				</PARTY>
+            </PARTIES>
+            <ORDER_PARTIES_REFERENCE>
+                <bme:BUYER_IDREF type="supplier_specific">123456</bme:BUYER_IDREF>
+                <bme:SUPPLIER_IDREF type="buyer_specific">10000735</bme:SUPPLIER_IDREF>
+                <INVOICE_RECIPIENT_IDREF type="supplier_specific">123456</INVOICE_RECIPIENT_IDREF>
+                <SHIPMENT_PARTIES_REFERENCE>
+                    <DELIVERY_IDREF type="supplier_specific">123456</DELIVERY_IDREF>
+                </SHIPMENT_PARTIES_REFERENCE>
+            </ORDER_PARTIES_REFERENCE>
+        </ORDERRESPONSE_INFO>
+    </ORDERRESPONSE_HEADER>
+    <ORDERRESPONSE_ITEM_LIST>
+        <ORDERRESPONSE_ITEM>
+            <LINE_ITEM_ID>00001</LINE_ITEM_ID>
+            <PRODUCT_ID>
+                <bme:SUPPLIER_PID type="supplier_specific">123002</bme:SUPPLIER_PID>
+                <bme:INTERNATIONAL_PID type="ean">0888462006781</bme:INTERNATIONAL_PID>
+                <bme:DESCRIPTION_SHORT>APPLE iPad Air 2 64GB 3G 4G Grau</bme:DESCRIPTION_SHORT>
+                <bme:DESCRIPTION_LONG>APPLE iPad Air 2 64GB 3G 4G Grau&lt;br /&gt;24.63cm/9.7" IPS ( 2048 x 1536 ), Kamera auf Rück- &lt;br /&gt;und Vorderseite, &lt;br /&gt;Bluetooth, Wi-Fi, 4G, Space-grau</bme:DESCRIPTION_LONG>
+            </PRODUCT_ID>
+            <QUANTITY>1.0</QUANTITY>
+            <bme:ORDER_UNIT>C62</bme:ORDER_UNIT>
+            <PRODUCT_PRICE_FIX>
+                <bme:PRICE_AMOUNT>103571.0</bme:PRICE_AMOUNT>
+            </PRODUCT_PRICE_FIX>
+            <PRICE_LINE_AMOUNT>103571.0</PRICE_LINE_AMOUNT>
+        </ORDERRESPONSE_ITEM>
+        <ORDERRESPONSE_ITEM>
+            <LINE_ITEM_ID>00002</LINE_ITEM_ID>
+            <PRODUCT_ID>
+                <bme:SUPPLIER_PID type="supplier_specific">123001</bme:SUPPLIER_PID>
+                <bme:INTERNATIONAL_PID type="ean">0888182569504</bme:INTERNATIONAL_PID>
+                <bme:DESCRIPTION_SHORT>HP Inc HP Officejet 5740 e-All-in-One</bme:DESCRIPTION_SHORT>
+                <bme:DESCRIPTION_LONG>HP Inc HP Officejet 5740 e-All-in-One&lt;br /&gt;Multifunktionsdrucker, Farbe, Tintenstrahl, 125 Blatt, &lt;br /&gt;33.6 Kbps, Wi-Fi(n), USB-Host, USB 2.0</bme:DESCRIPTION_LONG>
+            </PRODUCT_ID>
+            <QUANTITY>2.0</QUANTITY>
+            <bme:ORDER_UNIT>C62</bme:ORDER_UNIT>
+            <PRODUCT_PRICE_FIX>
+                <bme:PRICE_AMOUNT>364413.0</bme:PRICE_AMOUNT>
+            </PRODUCT_PRICE_FIX>
+            <PRICE_LINE_AMOUNT>728826.0</PRICE_LINE_AMOUNT>
+        </ORDERRESPONSE_ITEM>
+        <ORDERRESPONSE_ITEM>
+            <LINE_ITEM_ID>00003</LINE_ITEM_ID>
+            <PRODUCT_ID>
+                <bme:SUPPLIER_PID type="supplier_specific">123003</bme:SUPPLIER_PID>
+                <bme:INTERNATIONAL_PID type="ean">8806085923805</bme:INTERNATIONAL_PID>
+                <bme:DESCRIPTION_SHORT>SAMSUNG SC650 Series S24C650BW LED-Monitor, 61cm/24"</bme:DESCRIPTION_SHORT>
+                <bme:DESCRIPTION_LONG>SAMSUNG SC650 Series S24C650BW LED-Monitor, 61cm/24"&lt;br /&gt;1920 x 1200, AD-PLS, 250 cd/m2, 1000:1, 5 ms, DVI, &lt;br /&gt;VGA, mattschwarz</bme:DESCRIPTION_LONG>
+            </PRODUCT_ID>
+            <QUANTITY>3.0</QUANTITY>
+            <bme:ORDER_UNIT>C62</bme:ORDER_UNIT>
+            <PRODUCT_PRICE_FIX>
+                <bme:PRICE_AMOUNT>574419.0</bme:PRICE_AMOUNT>
+            </PRODUCT_PRICE_FIX>
+            <PRICE_LINE_AMOUNT>1723257.0</PRICE_LINE_AMOUNT>
+        </ORDERRESPONSE_ITEM>
+    </ORDERRESPONSE_ITEM_LIST>
+    <ORDERRESPONSE_SUMMARY>
+        <TOTAL_ITEM_NUM>3</TOTAL_ITEM_NUM>
+        <TOTAL_AMOUNT>2555654.0</TOTAL_AMOUNT>
+    </ORDERRESPONSE_SUMMARY>
+</ORDERRESPONSE>

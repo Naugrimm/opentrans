@@ -3,214 +3,157 @@
 namespace Naugrim\OpenTrans\Nodes\Order;
 
 use JMS\Serializer\Annotation as Serializer;
-use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\BMEcat\Nodes\Language;
 use Naugrim\OpenTrans\Nodes\Concerns\HasUdxItems;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
+use Naugrim\OpenTrans\Nodes\DocExchangePartiesReference;
+use Naugrim\OpenTrans\Nodes\Logistic\Transport;
 use Naugrim\OpenTrans\Nodes\Party;
 use Naugrim\OpenTrans\Nodes\Payment\Payment;
-use Naugrim\OpenTrans\Nodes\UdxAggregate;
+use Naugrim\OpenTrans\Nodes\Remarks;
+use Naugrim\OpenTrans\Nodes\Udx;
+use Naugrim\OpenTrans\Nodes\UdxInterface;
+use Naugrim\OpenTrans\OpenTrans;
 
+/**
+ * @implements NodeInterface<Info>
+ */
 class Info implements NodeInterface
 {
-
+    use HasSerializableAttributes;
     use HasUdxItems;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ORDER_ID")
-     *
-     * @var string
-     */
-    protected $id;
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ORDER_ID')]
+    protected string $id;
+
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ORDER_DATE')]
+    protected string $date;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ORDER_DATE")
-     *
-     * @var string
+     * @var Language[]
      */
-    protected $date;
+    #[Serializer\Expose]
+    #[Serializer\Type('array<' . Language::class . '>')]
+    #[Serializer\XmlList(entry: 'LANGUAGE', inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
+    protected array $language = [];
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\DeliveryDate")
-     * @Serializer\SerializedName("DELIVERY_DATE")
-     *
-     * @var DeliveryDate
-     */
-    protected $deliveryDate;
+    #[Serializer\Expose]
+    #[Serializer\Type(DeliveryDate::class)]
+    #[Serializer\SerializedName('DELIVERY_DATE')]
+    protected DeliveryDate $deliveryDate;
 
     /**
      *
-     * @Serializer\Expose
-     * @Serializer\SerializedName("PARTIES")
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Party>")
-     * @Serializer\XmlList(entry = "PARTY")
      *
      * @var Party[]
      */
-    protected $parties = [];
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('PARTIES')]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Party>')]
+    #[Serializer\XmlList(entry: 'PARTY')]
+    protected array $parties = [];
+
+    #[Serializer\Expose]
+    #[Serializer\Type(CustomerOrderReference::class)]
+    #[Serializer\SerializedName('CUSTOMER_ORDER_REFERENCE')]
+    protected ?CustomerOrderReference $customerOrderReference = null;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(PartiesReference::class)]
+    #[Serializer\SerializedName('ORDER_PARTIES_REFERENCE')]
+    protected PartiesReference $partiesReference;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(DocExchangePartiesReference::class)]
+    #[Serializer\SerializedName('DOCEXCHANGE_PARTIES_REFERENCE')]
+    protected ?DocExchangePartiesReference $docExchangePartiesReference = null;
+
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CURRENCY')]
+    #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
+    protected string $currency;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(Payment::class)]
+    #[Serializer\SerializedName('PAYMENT')]
+    protected Payment $payment;
+
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('TERMS_AND_CONDITIONS')]
+    protected ?string $termsAndConditions = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Order\PartiesReference")
-     * @Serializer\SerializedName("ORDER_PARTIES_REFERENCE")
-     *
-     * @var PartiesReference
-     */
-    protected $partiesReference;
-
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("bool")
-     * @Serializer\SerializedName("PARTIAL_SHIPMENT_ALLOWED")
      *
      * @var boolean
      */
-    protected $partialShipmentAllowed;
+    #[Serializer\Expose]
+    #[Serializer\Type('bool')]
+    #[Serializer\SerializedName('PARTIAL_SHIPMENT_ALLOWED')]
+    protected bool $partialShipmentAllowed;
 
     /**
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Payment\Payment")
-     * @Serializer\SerializedName("PAYMENT")
-     *
-     * @var Payment
+     * @var Transport[]
      */
-    protected $payment;
+    #[Serializer\Expose]
+    #[Serializer\Type('array<' . Transport::class . '>')]
+    #[Serializer\XmlList(entry: 'TRANSPORT', inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
+    protected array $transport = [];
 
     /**
-     * @see HasUdxItems::$udxItem
-     * @Serializer\SerializedName("HEADER_UDX")
-     * @var UdxAggregate
+     * @var Remarks[]
      */
-    protected $udxItem;
+    #[Serializer\Expose]
+    #[Serializer\Type('array<' . Remarks::class . '>')]
+    #[Serializer\XmlList(entry: 'REMARKS', inline: true)]
+    protected array $remarks = [];
 
     /**
-     * @return string
+     * @var array<string, UdxInterface>
      */
-    public function getId(): string
-    {
-        return $this->id;
-    }
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('HEADER_UDX')]
+    #[Serializer\Type('array<string,' . Udx::class . '>')]
+    #[Serializer\SkipWhenEmpty]
+    #[Serializer\XmlKeyValuePairs]
+    protected array $headerUdx = [];
 
     /**
-     * @param string $id
-     * @return Info
+     * @param UdxInterface[]|array{vendor: string, name: string, value: string}[] $udxItems
      */
-    public function setId(string $id): Info
+    public function setHeaderUdx(array $udxItems): self
     {
-        $this->id = $id;
-        return $this;
-    }
+        $this->headerUdx = [];
 
-    /**
-     * @return string
-     */
-    public function getDate(): string
-    {
-        return $this->date;
-    }
-
-    /**
-     * @param string $date
-     * @return Info
-     */
-    public function setDate(string $date): Info
-    {
-        $this->date = $date;
-        return $this;
-    }
-
-    public function getDeliveryDate(): DeliveryDate
-    {
-        return $this->deliveryDate;
-    }
-
-    public function setDeliveryDate(DeliveryDate $deliveryDate): self
-    {
-        $this->deliveryDate = $deliveryDate;
-        return $this;
-    }
-
-    /**
-     * @return Party[]
-     */
-    public function getParties(): array
-    {
-        return $this->parties;
-    }
-
-    /**
-     * @param Party[] $parties
-     * @return Info
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
-     */
-    public function setParties(array $parties): Info
-    {
-        foreach ($parties as $party) {
-            if (!$party instanceof Party) {
-                $party = NodeBuilder::fromArray($party, new Party());
+        foreach ($udxItems as $udxItem) {
+            if (! $udxItem instanceof UdxInterface) {
+                $udxItem = $this->convertToUdx($udxItem);
             }
-            $this->addParty($party);
+
+            $this->headerUdx[$this->createUdxElementName($udxItem)] = $udxItem;
         }
+
         return $this;
     }
 
     /**
-     * @param Party $party
      * @return $this
      */
-    public function addParty(Party $party)
+    public function addParty(Party $party): static
     {
         $this->parties[] = $party;
         return $this;
     }
 
-    /**
-     * @return PartiesReference
-     */
-    public function getPartiesReference(): PartiesReference
-    {
-        return $this->partiesReference;
-    }
-
-    /**
-     * @param PartiesReference $partiesReference
-     * @return Info
-     */
-    public function setPartiesReference(PartiesReference $partiesReference): Info
-    {
-        $this->partiesReference = $partiesReference;
-        return $this;
-    }
-
-    public function setPartialShipmentAllowed(bool $partialShipmentAllowed): self
-    {
-        $this->partialShipmentAllowed = $partialShipmentAllowed;
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
     public function isPartialShipmentAllowed(): bool
     {
         return $this->partialShipmentAllowed;
-    }
-
-    public function getPayment(): Payment
-    {
-        return $this->payment;
-    }
-
-    public function setPayment(Payment $payment): Info
-    {
-        $this->payment = $payment;
-        return $this;
     }
 }

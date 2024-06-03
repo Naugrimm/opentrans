@@ -3,61 +3,26 @@
 namespace Naugrim\OpenTrans\Nodes;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
+/**
+ * @implements NodeInterface<AllowOrChargesFix>
+ */
 class AllowOrChargesFix implements NodeInterface
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\AllowOrCharge")
-     * @Serializer\SerializedName("ALLOW_OR_CHARGE")
-     *
-     * @var AllowOrCharge
-     */
-    protected $allowOrCharge;
+    use HasSerializableAttributes;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("ALLOW_OR_CHARGES_TOTAL_AMOUNT")
-     *
-     * @var float
+     * @var AllowOrCharge[]
      */
-    protected $allowOrChargesTotalAmount;
+    #[Serializer\Expose]
+    #[Serializer\Type('array<' . AllowOrCharge::class . '>')]
+    #[Serializer\XmlList(entry: 'ALLOW_OR_CHARGE', inline: true)]
+    protected array $allowOrCharge = [];
 
-    /**
-     * @return AllowOrCharge
-     */
-    public function getAllowOrCharge(): AllowOrCharge
-    {
-        return $this->allowOrCharge;
-    }
-
-    /**
-     * @param AllowOrCharge $allowOrCharge
-     * @return AllowOrChargesFix
-     */
-    public function setAllowOrCharge(AllowOrCharge $allowOrCharge): AllowOrChargesFix
-    {
-        $this->allowOrCharge = $allowOrCharge;
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getAllowOrChargesTotalAmount(): float
-    {
-        return $this->allowOrChargesTotalAmount;
-    }
-
-    /**
-     * @param float $allowOrChargesTotalAmount
-     * @return AllowOrChargesFix
-     */
-    public function setAllowOrChargesTotalAmount(float $allowOrChargesTotalAmount): AllowOrChargesFix
-    {
-        $this->allowOrChargesTotalAmount = $allowOrChargesTotalAmount;
-        return $this;
-    }
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGES_TOTAL_AMOUNT')]
+    protected float $allowOrChargesTotalAmount;
 }

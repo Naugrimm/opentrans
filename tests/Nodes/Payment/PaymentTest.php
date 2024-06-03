@@ -50,7 +50,7 @@ class PaymentTest extends TestCase
             new DateTime('2025-01-01')
         );
 
-        $this->assertNull($payment->getAccounts());
+        $this->assertEquals([], $payment->getAccounts());
         $this->assertInstanceOf(Card::class, $payment->getCard());
         $this->assertFalse($payment->isCash());
         $this->assertFalse($payment->isCheck());
@@ -61,7 +61,7 @@ class PaymentTest extends TestCase
     {
         $payment = Payment::createCashPayment();
 
-        $this->assertNull($payment->getAccounts());
+        $this->assertEquals([], $payment->getAccounts());
         $this->assertNull($payment->getCard());
         $this->assertTrue($payment->isCash());
         $this->assertFalse($payment->isCheck());
@@ -72,7 +72,7 @@ class PaymentTest extends TestCase
     {
         $payment = Payment::createCheckPayment();
 
-        $this->assertNull($payment->getAccounts());
+        $this->assertEquals([], $payment->getAccounts());
         $this->assertNull($payment->getCard());
         $this->assertFalse($payment->isCash());
         $this->assertTrue($payment->isCheck());
@@ -83,7 +83,7 @@ class PaymentTest extends TestCase
     {
         $payment = Payment::createDebitPayment();
 
-        $this->assertNull($payment->getAccounts());
+        $this->assertEquals([], $payment->getAccounts());
         $this->assertNull($payment->getCard());
         $this->assertFalse($payment->isCash());
         $this->assertFalse($payment->isCheck());

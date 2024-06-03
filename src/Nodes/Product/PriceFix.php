@@ -3,34 +3,42 @@
 namespace Naugrim\OpenTrans\Nodes\Product;
 
 use JMS\Serializer\Annotation as Serializer;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\AllowOrChargesFix;
+use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
+use Naugrim\OpenTrans\OpenTrans;
 
+/**
+ * @implements NodeInterface<PriceFix>
+ */
 class PriceFix implements NodeInterface
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("bme:PRICE_AMOUNT")
-     *
-     * @var float
-     */
-    protected $amount;
+    use HasSerializableAttributes;
+
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('PRICE_AMOUNT')]
+    #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
+    protected float $amount;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(AllowOrChargesFix::class)]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGES_FIX')]
+    protected AllowOrChargesFix $allowOrChargesFix;
 
     /**
-     * @return float
+     * @var DetailsFix[]
      */
-    public function getAmount(): float
-    {
-        return $this->amount;
-    }
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('TAX_DETAILS_FIX')]
+    #[Serializer\Type('array<' . DetailsFix::class . '>')]
+    #[Serializer\XmlList(entry: 'TAX_DETAILS_FIX', inline: true)]
+    protected array $tax = [];
 
-    /**
-     * @param float $amount
-     * @return PriceFix
-     */
-    public function setAmount(float $amount): PriceFix
-    {
-        $this->amount = $amount;
-        return $this;
-    }
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('PRICE_QUANTITY')]
+    #[Serializer\XmlElement(cdata: false, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
+    protected ?float $priceQuantity = null;
 }

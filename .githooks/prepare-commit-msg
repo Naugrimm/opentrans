@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+import fs from "fs";
+import ch from "./js/commit-helper.js";
+
+if (! ch.hookMustRun("prepare-commit-msg")) {
+  console.log("hook prepare-commit-msg must not run");
+  process.exit(0);
+}
+
+const commitMsgFile = process.argv[2];
+let message = fs.readFileSync(commitMsgFile, 'utf8');
+const currentBranchName = ch.getCurrentBranchName();
+
+if (!message.match(ch.validMessagePrefixes)) {
+  // the commit message does not start with a conventional commit prefix. prepend it if possible
+  Object.keys(ch.branchToPrefixMap).forEach((key) => {
+    const regex = new RegExp(key);
+    if (regex.test(currentBranchName)) {
+      message = ch.branchToPrefixMap[key]+': '+message;
+    }
+  });
+}
+
+if (!message.match(ch.validIssueidPrefixes)) {
+  const timeTrackingMatch = message.match(ch.validTimeTrackingEntryRegex);
+  if (timeTrackingMatch) {
+    message = message.replace(timeTrackingMatch[0], `issueid ${ch.issueIdFromBranchName(currentBranchName)} ${timeTrackingMatch[0]}`);
+  } else {
+    message = `${message}\nissueid ${ch.issueIdFromBranchName(currentBranchName)}`
+  }
+}
+
+fs.writeFileSync(commitMsgFile, message);
+
+process.exit(0)

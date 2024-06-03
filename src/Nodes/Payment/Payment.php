@@ -5,91 +5,79 @@ namespace Naugrim\OpenTrans\Nodes\Payment;
 use DateTimeInterface;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Builder\NodeBuilder;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\OpenTrans\Nodes\Account;
 use Naugrim\OpenTrans\Nodes\BankAccount;
 use Naugrim\OpenTrans\Nodes\BankCode;
 
+/**
+ * @implements NodeInterface<Payment>
+ */
 class Payment implements NodeInterface
 {
-    /**
-     * @Serializer\Type("Naugrim\OpenTrans\Nodes\Payment\Card")
-     * @Serializer\SerializedName("CARD")
-     *
-     * @var Card|null
-     */
-    private $card;
+    use HasSerializableAttributes;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(Card::class)]
+    #[Serializer\SerializedName('CARD')]
+    protected ?Card $card = null;
 
     /**
-     * @Serializer\Type("array<Naugrim\OpenTrans\Nodes\Account>")
-     * @Serializer\XmlList(entry = "ACCOUNT", inline = true)
-     * @var Account[]|null
+     * @var Account[]
      */
-    private $accounts;
+    #[Serializer\Expose]
+    #[Serializer\Type('array<Naugrim\OpenTrans\Nodes\Account>')]
+    #[Serializer\XmlList(entry: 'ACCOUNT', inline: true)]
+    protected array $accounts = [];
 
-    /**
-     * @Serializer\Type("boolean")
-     * @Serializer\SerializedName("CASH")
-     *
-     * @var bool|null
-     */
-    private $cash;
+    #[Serializer\Expose]
+    #[Serializer\Type('boolean')]
+    #[Serializer\SerializedName('CASH')]
+    protected ?bool $cash = null;
 
-    /**
-     * @Serializer\Type("boolean")
-     * @Serializer\SerializedName("DEBIT")
-     *
-     * @var bool|null
-     */
-    private $debit;
+    #[Serializer\Expose]
+    #[Serializer\Type('boolean')]
+    #[Serializer\SerializedName('DEBIT')]
+    protected ?bool $debit = null;
 
-    /**
-     * @Serializer\Type("boolean")
-     * @Serializer\SerializedName("CHECK")
-     *
-     * @var bool|null
-     */
-    private $check;
+    #[Serializer\Expose]
+    #[Serializer\Type('boolean')]
+    #[Serializer\SerializedName('CHECK')]
+    protected ?bool $check = null;
 
-    /**
-     * @Serializer\Type("boolean")
-     * @Serializer\SerializedName("CENTRAL_REGULATION")
-     *
-     * @var bool|null
-     */
-    private $centralRegulation;
+    #[Serializer\Expose]
+    #[Serializer\Type('boolean')]
+    #[Serializer\SerializedName('CENTRAL_REGULATION')]
+    protected ?bool $centralRegulation = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("Naugrim\BMEcat\Nodes\Payment\PaymentTerms")
-     * @Serializer\SerializedName("PAYMENT_TERMS")
-     *
-     * @var PaymentTerms
-     */
-    private $paymentTerms;
+    #[Serializer\Expose]
+    #[Serializer\Type(PaymentTerms::class)]
+    #[Serializer\SerializedName('PAYMENT_TERMS')]
+    protected ?PaymentTerms $paymentTerms = null;
 
     public static function createCardPayment(
-        string $cartType,
-        string $cardNumber,
-        string $cardHolder,
+        string            $cartType,
+        string            $cardNumber,
+        string            $cardHolder,
         DateTimeInterface $expDate
     ): Payment {
-        return (new Payment())->setCard(Card::create($cartType, $cardNumber, $cardHolder, $expDate));
+        return NodeBuilder::fromArray([], Payment::class)->setCard(Card::create($cartType, $cardNumber, $cardHolder, $expDate));
     }
 
     public static function createCashPayment(): Payment
     {
-        return (new Payment())->setCash(true);
+        return NodeBuilder::fromArray([], Payment::class)->setCash(true);
     }
 
     public static function createDebitPayment(): Payment
     {
-        return (new Payment())->setDebit(true);
+        return NodeBuilder::fromArray([], Payment::class)->setDebit(true);
     }
 
     public static function createCheckPayment(): Payment
     {
-        return (new Payment())->setCheck(true);
+        return NodeBuilder::fromArray([], Payment::class)->setCheck(true);
     }
 
     public static function createIbanPayment(
@@ -98,18 +86,17 @@ class Payment implements NodeInterface
         string $bankName,
         string $bic,
         string $country
-    ): Payment
-    {
-        $bankAccount = new BankAccount();
+    ): Payment {
+        $bankAccount = NodeBuilder::fromArray([], BankAccount::class);
         $bankAccount->setType(BankAccount::TYPE_IBAN);
         $bankAccount->setValue($iban);
 
-        $bankCode = new BankCode();
+        $bankCode = NodeBuilder::fromArray([], BankCode::class);
         $bankCode->setType(BankCode::TYPE_BIC);
         $bankCode->setValue($bic);
 
-        return (new Payment())->addAccount(
-            (new Account())
+        return NodeBuilder::fromArray([], Payment::class)->addAccount(
+            (NodeBuilder::fromArray([], Account::class))
                 ->setBankAccount($bankAccount)
                 ->setHolder($accountHolder)
                 ->setBankName($bankName)
@@ -118,55 +105,28 @@ class Payment implements NodeInterface
         );
     }
 
-    public function getCard(): ?Card
-    {
-        return $this->card;
-    }
-
-    public function setCard(Card $card): Payment
-    {
-        $this->card = $card;
-        $this->check = $this->debit = $this->cash = $this->accounts = null;
-
-        return $this;
-    }
-
     /**
-     * @return Account[]
+     * @param Card|array<string, mixed> $card
+     * @return $this
      */
-    public function getAccounts(): ?array
+    public function setCard(Card|array $card): Payment
     {
-        return $this->accounts;
-    }
-
-    /**
-     * @param Account[] $accounts
-     * @return Payment
-     */
-    public function setAccounts(array $accounts): Payment
-    {
-        if (empty($accounts)) {
-            return $this;
-        }
-
-        foreach ($accounts as $account) {
-            if (!$account instanceof Account) {
-                $account = NodeBuilder::fromArray($account, new Account());
-            }
-            $this->addAccount($account);
-        }
+        $this->card = is_array($card) ? NodeBuilder::fromArray($card, Card::class) : $card;
+        $this->check = null;
+        $this->debit = null;
+        $this->cash = null;
+        $this->accounts = [];
 
         return $this;
     }
 
     public function addAccount(Account $account): Payment
     {
-        if (null === $this->accounts) {
-            $this->accounts = [];
-        }
-
         $this->accounts[] = $account;
-        $this->cash = $this->debit = $this->check = $this->card = null;
+        $this->cash = null;
+        $this->debit = null;
+        $this->check = null;
+        $this->card = null;
 
         return $this;
     }
@@ -179,7 +139,10 @@ class Payment implements NodeInterface
     public function setCash(bool $cash): Payment
     {
         $this->cash = $cash;
-        $this->debit = $this->check = $this->card = $this->accounts = null;
+        $this->debit = null;
+        $this->check = null;
+        $this->card = null;
+        $this->accounts = [];
 
         return $this;
     }
@@ -192,7 +155,10 @@ class Payment implements NodeInterface
     public function setDebit(bool $debit): Payment
     {
         $this->debit = $debit;
-        $this->cash = $this->check = $this->accounts = $this->card = null;
+        $this->cash = null;
+        $this->check = null;
+        $this->accounts = [];
+        $this->card = null;
 
         return $this;
     }
@@ -205,30 +171,16 @@ class Payment implements NodeInterface
     public function setCheck(bool $check): Payment
     {
         $this->check = $check;
-        $this->cash = $this->debit = $this->accounts = $this->card = null;
+        $this->cash = null;
+        $this->debit = null;
+        $this->accounts = [];
+        $this->card = null;
 
         return $this;
     }
 
     public function isCentralRegulation(): bool
     {
-        return $this->centralRegulation;
-    }
-
-    public function setCentralRegulation(bool $hasCentralRegulation): Payment
-    {
-        $this->centralRegulation = $hasCentralRegulation;
-        return $this;
-    }
-
-    public function getPaymentTerms(): PaymentTerms
-    {
-        return $this->paymentTerms;
-    }
-
-    public function setPaymentTerms(PaymentTerms $paymentTerms): Payment
-    {
-        $this->paymentTerms = $paymentTerms;
-        return $this;
+        return $this->centralRegulation === true;
     }
 }

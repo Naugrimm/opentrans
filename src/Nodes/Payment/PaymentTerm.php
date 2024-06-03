@@ -2,20 +2,25 @@
 
 namespace Naugrim\OpenTrans\Nodes\Payment;
 
-use InvalidArgumentException;
+use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
-use Naugrim\OpenTrans\Nodes\Concerns\CanAssertConstantValue;
 use Naugrim\OpenTrans\Nodes\Concerns\HasStringValue;
 use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
-use ReflectionClass;
 
 /**
  * Payment terms are aligned to UN/EDIFACT 4279 (Payment terms type code qualifier)
  * https://web.archive.org/web/20150418213750/http://www.unece.org/trade/untdid/d00b/tred/tred4279.htm
+ *
+ * @implements NodeInterface<PaymentTerm>
  */
 class PaymentTerm implements NodeInterface
 {
-    use HasTypeAttribute, HasStringValue;
+    use HasSerializableAttributes;
+    /**
+     * @use HasTypeAttribute<self>
+     */
+    use HasTypeAttribute;
+    use HasStringValue;
 
     /** Payment conditions normally applied. */
     public const BASIC = '1';
