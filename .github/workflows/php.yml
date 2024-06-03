@@ -1,36 +1,34 @@
-name: PHP Composer
+name: PHP
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "master", "develop" ]
   pull_request:
-    branches: [ "develop" ]
-
-permissions:
-  contents: read
+    branches: [ "master", "develop" ]
 
 jobs:
-  build:
-
+  tests:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
-
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
-
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
-  
-    - name: Run test suite
-      run: composer run-script test
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - uses: actions/checkout@v4
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: /tmp/composer-cache
+          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - uses: php-actions/composer@v6
+        with:
+          args: --no-scripts
+          php_version: "8.3"
+          php_extensions: dom libxml
+      - name: Run PHPStan
+        run: ./vendor/bin/phpstan
+      - name: Run ECS
+        run: ./vendor/bin/ecs
+      - name: Run PHPUnit
+        run: ./vendor/bin/phpunit
