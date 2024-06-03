@@ -15,11 +15,14 @@ class DocExchangePartiesReference implements NodeInterface
 
     #[Serializer\Expose]
     #[Serializer\Type(IdRef::class)]
-    #[Serializer\SerializedName('DOCUMENT_ISSUER_ IDREF')]
+    #[Serializer\SerializedName('DOCUMENT_ISSUER_IDREF')]
     protected ?IdRef $documentIssuerIdRef = null;
 
+    /**
+     * @var IdRef[]
+     */
     #[Serializer\Expose]
-    #[Serializer\Type(IdRef::class)]
-    #[Serializer\SerializedName('DOCUMENT_RECIPIENT_ IDREF')]
-    protected ?IdRef $documentRecipientIdRef = null;
+    #[Serializer\Type('array<'.IdRef::class.'>')]
+    #[Serializer\XmlList(entry: 'DOCUMENT_RECIPIENT_IDREF', inline: true)]
+    protected array $documentRecipientIdRef = [];
 }

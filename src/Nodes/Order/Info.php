@@ -8,8 +8,10 @@ use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\Language;
+use Naugrim\OpenTrans\Nodes\Logistic\Transport;
 use Naugrim\OpenTrans\Nodes\Concerns\HasUdxItems;
 use Naugrim\OpenTrans\Nodes\DeliveryDate;
+use Naugrim\OpenTrans\Nodes\DocExchangePartiesReference;
 use Naugrim\OpenTrans\Nodes\Party;
 use Naugrim\OpenTrans\Nodes\Payment\Payment;
 use Naugrim\OpenTrans\Nodes\Remarks;
@@ -71,6 +73,11 @@ class Info implements NodeInterface
     protected PartiesReference $partiesReference;
 
     #[Serializer\Expose]
+    #[Serializer\Type(DocExchangePartiesReference::class)]
+    #[Serializer\SerializedName('DOCEXCHANGE_PARTIES_REFERENCE')]
+    protected ?DocExchangePartiesReference $docExchangePartiesReference = null;
+
+    #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CURRENCY')]
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
@@ -81,6 +88,11 @@ class Info implements NodeInterface
     #[Serializer\SerializedName('PAYMENT')]
     protected Payment $payment;
 
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('TERMS_AND_CONDITIONS')]
+    protected ?string $termsAndConditions = null;
+
     /**
      *
      * @var boolean
@@ -89,6 +101,14 @@ class Info implements NodeInterface
     #[Serializer\Type('bool')]
     #[Serializer\SerializedName('PARTIAL_SHIPMENT_ALLOWED')]
     protected bool $partialShipmentAllowed;
+
+    /**
+     * @var Transport[]
+     */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<'.Transport::class.'>')]
+    #[Serializer\XmlList(entry: 'TRANSPORT', inline: true, namespace: OpenTrans::BMECAT_NAMESPACE)]
+    protected array $transport = [];
 
     /**
      * @var Remarks[]

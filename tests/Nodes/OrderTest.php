@@ -6,11 +6,7 @@ use DateTime;
 use DateTimeImmutable;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\SerializerInterface;
 use Naugrim\BMEcat\Builder\NodeBuilder;
-use Naugrim\BMEcat\Exception\InvalidSetterException;
-use Naugrim\BMEcat\Exception\SchemaValidationException;
-use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Order;
 use Naugrim\OpenTrans\Nodes\Udx;
 use Naugrim\OpenTrans\SchemaValidator;
@@ -28,11 +24,7 @@ class OrderTest extends TestCase
 
     /**
      * @dataProvider provideOrderData
-     * @param string $file
      * @param array<string, mixed> $data
-     * @throws InvalidSetterException
-     * @throws SchemaValidationException
-     * @throws UnknownKeyException
      */
     public function testOrder(string $file, array $data): void
     {
@@ -49,8 +41,6 @@ class OrderTest extends TestCase
 
     /**
      * @return array<string, mixed>[]
-     * @throws InvalidSetterException
-     * @throws UnknownKeyException
      */
     public static function provideOrderData(): array
     {
@@ -182,17 +172,23 @@ class OrderTest extends TestCase
                                     'address' => [
                                         'name' => 'Test Example',
                                         'contactDetails' => [
-                                            'name' => 'Example',
-                                            'firstName' => 'Test',
-                                            'emails' => [
-                                                'email' => 'test@example.com',
+                                            [
+                                                'name' => 'Example',
+                                                'firstName' => 'Test',
+                                                'emails' => [
+                                                    'email' => [
+                                                        'test@example.com',
+                                                    ],
+                                                ],
                                             ],
                                         ],
                                         'street' => 'Testweg',
                                         'zip' => '42',
                                         'city' => 'Springfield',
                                         'country' => 'DE',
-                                        'email' => 'test@example.com',
+                                        'emails' => [
+                                            'test@example.com',
+                                        ],
                                     ],
                                 ],
                             ],
@@ -369,18 +365,24 @@ class OrderTest extends TestCase
                                         'country' => 'Germany',
                                         'countryCoded' => 'DE',
                                         'contactDetails' => [
-                                            'id' => '1234-098765',
-                                            'firstName' => 'John',
-                                            'name' => 'Doe',
-                                            'title' => 'Miss',
-                                            'academicTitle' => 'Dr',
-                                            'phone' => [
-                                                'value' => '+49 321 654987',
-                                                'type' => 'mobile',
+                                            [
+                                                'id' => '1234-098765',
+                                                'firstName' => 'John',
+                                                'name' => 'Doe',
+                                                'title' => 'Miss',
+                                                'academicTitle' => 'Dr',
+                                                'phone' => [
+                                                    [
+                                                        'value' => '+49 321 654987',
+                                                        'type' => 'mobile',
+                                                    ],
+                                                ],
                                             ],
                                         ],
                                         'phone' => [
-                                            'value' => '+49 123 456789 - 0',
+                                            [
+                                                'value' => '+49 123 456789 - 0',
+                                            ],
                                         ],
                                     ],
                                 ],

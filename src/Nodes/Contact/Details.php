@@ -6,10 +6,9 @@ use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contact\Role;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
-use Naugrim\BMEcat\Nodes\Crypto\PublicKey;
-use Naugrim\BMEcat\Nodes\Emails;
 use Naugrim\BMEcat\Nodes\Fax;
 use Naugrim\BMEcat\Nodes\Phone;
+use Naugrim\OpenTrans\Nodes\Emails;
 use Naugrim\OpenTrans\OpenTrans;
 
 /**
@@ -64,11 +63,13 @@ class Details implements NodeInterface
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected string $contactDescr;
 
+    /**
+     * @var Phone[]
+     */
     #[Serializer\Expose]
-    #[Serializer\Type(Phone::class)]
-    #[Serializer\SerializedName('PHONE')]
-    #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
-    protected Phone $phone;
+    #[Serializer\Type('array<'.Phone::class.'>')]
+    #[Serializer\XmlList(entry: 'PHONE', inline: true, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
+    protected array $phone = [];
 
     #[Serializer\Expose]
     #[Serializer\Type(Fax::class)]

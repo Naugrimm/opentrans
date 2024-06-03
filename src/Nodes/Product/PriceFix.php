@@ -5,6 +5,7 @@ namespace Naugrim\OpenTrans\Nodes\Product;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\AllowOrChargesFix;
 use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 use Naugrim\OpenTrans\OpenTrans;
 
@@ -21,6 +22,12 @@ class PriceFix implements NodeInterface
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
     protected float $amount;
 
+
+    #[Serializer\Expose]
+    #[Serializer\Type(AllowOrChargesFix::class)]
+    #[Serializer\SerializedName('ALLOW_OR_CHARGES_FIX')]
+    protected AllowOrChargesFix $allowOrChargesFix;
+
     /**
      * @var DetailsFix[]
      */
@@ -29,4 +36,11 @@ class PriceFix implements NodeInterface
     #[Serializer\Type('array<'.DetailsFix::class.'>')]
     #[Serializer\XmlList(entry: 'TAX_DETAILS_FIX', inline: true)]
     protected array $tax = [];
+
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('PRICE_QUANTITY')]
+    #[Serializer\XmlElement(cdata: false, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
+    protected ?float $priceQuantity = null;
+
 }

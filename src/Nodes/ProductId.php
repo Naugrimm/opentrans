@@ -77,6 +77,11 @@ class ProductId implements NodeInterface
     protected string $descriptionLong;
 
     #[Serializer\Expose]
+    #[Serializer\Type(ManufacturerInfo::class)]
+    #[Serializer\SerializedName('MANUFACTURER_INFO')]
+    protected ManufacturerInfo|null $manufacturerInfo = null;
+
+    #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('PRODUCT_TYPE')]
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
