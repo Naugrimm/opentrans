@@ -7,6 +7,7 @@ use PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff;
 use PhpCsFixer\Fixer\ClassNotation\ClassAttributesSeparationFixer;
 use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
 use PhpCsFixer\Fixer\Comment\NoEmptyCommentFixer;
+use PhpCsFixer\Fixer\Operator\UnaryOperatorSpacesFixer;
 use PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer;
 use PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer;
 use Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer;
@@ -28,4 +29,5 @@ return ECSConfig::configure()
         OrderedClassElementsFixer::class,
         MethodChainingNewlineFixer::class,
         LineLengthFixer::class,
+        UnaryOperatorSpacesFixer::class
     ]);

@@ -18,12 +18,12 @@ trait HasUdxItems
     {
         $udxData = $this->parseUdxData($udxItem);
         $udxClass = $udxData['class'];
-        if (!class_exists($udxClass)) {
+        if (! class_exists($udxClass)) {
             throw new UnknownKeyException(sprintf('"%s" needs to implement UdxInterface', $udxClass));
         }
 
         $reflection = new ReflectionClass($udxClass);
-        if (!$reflection->implementsInterface(UdxInterface::class)) {
+        if (! $reflection->implementsInterface(UdxInterface::class)) {
             throw new UnknownKeyException(sprintf('"%s" needs to implement UdxInterface', $udxClass));
         }
 
@@ -57,7 +57,7 @@ trait HasUdxItems
         $data = [];
 
         foreach ($mandatoryKeys as $key) {
-            if (!array_key_exists($key, $udxData)) {
+            if (! array_key_exists($key, $udxData)) {
                 throw new UnknownKeyException(
                     sprintf(
                         'Key "%s" is not available in UDX data. Expected one of [%s]',
@@ -67,7 +67,7 @@ trait HasUdxItems
                 );
             }
 
-            if (!is_scalar($udxData[$key])) {
+            if (! is_scalar($udxData[$key])) {
                 throw new InvalidArgumentException(
                     sprintf(
                         'UDX value of "%s" must be scalar, "%s" given',
