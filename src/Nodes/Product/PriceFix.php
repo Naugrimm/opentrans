@@ -49,4 +49,36 @@ class PriceFix implements NodeInterface
     #[Serializer\SerializedName('PRICE_QUANTITY')]
     #[Serializer\XmlElement(cdata: false, namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected ?float $priceQuantity = null;
+
+    /**
+     * @return DetailsFix[]
+     */
+    private function getTaxSequence(): array
+    {
+        $taxes = $this->getTax();
+        usort($taxes, static fn (DetailsFix $left, DetailsFix $right): int => ($left->getCalculationSequence() ?? 1) - ($right->getCalculationSequence() ?? 1));
+
+        return $taxes;
+    }
+
+    public function finalPriceIncludingTaxes(): float
+    {
+        $finalPrice = $this->amount;
+
+        // @TODO: Handle $allowOrChargesFix
+
+        foreach ($this->getTaxSequence() as $tax) {
+            /**
+             * prefer using the amount over the tax percentage.
+             * both should lead to the same result, but... rounding issues
+             */
+            if ($tax->getAmount() !== null) {
+                $finalPrice += $tax->getAmount();
+            } elseif ($tax->getTax() !== null) {
+                $finalPrice += round($finalPrice * ($tax->getTax() ?? 0), 2);
+            }
+        }
+
+        return $finalPrice;
+    }
 }
