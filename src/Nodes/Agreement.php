@@ -10,6 +10,22 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<Agreement>
+ * @method self setDefault(bool $default)
+ * @method bool getDefault()
+ * @method self setId(string $id)
+ * @method string getId()
+ * @method self setLineId(string $lineId)
+ * @method string getLineId()
+ * @method self setStartDate(string $startDate)
+ * @method string getStartDate()
+ * @method self setEndDate(string $endDate)
+ * @method string getEndDate()
+ * @method self setSupplierIdRef(array|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
+ * @method \Naugrim\BMEcat\Nodes\SupplierIdRef getSupplierIdRef()
+ * @method self setAgreementDescr(\Naugrim\OpenTrans\Nodes\AgreementDescr[]|array $agreementDescr)
+ * @method \Naugrim\OpenTrans\Nodes\AgreementDescr[]|array getAgreementDescr()
+ * @method self setMimeInfo(\Naugrim\OpenTrans\Nodes\Mime[]|array $mimeInfo)
+ * @method \Naugrim\OpenTrans\Nodes\Mime[]|array getMimeInfo()
  */
 class Agreement implements NodeInterface
 {

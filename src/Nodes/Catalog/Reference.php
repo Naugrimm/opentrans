@@ -9,6 +9,12 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<Reference>
+ * @method self setId(string $id)
+ * @method string getId()
+ * @method self setVersion(string $version)
+ * @method string getVersion()
+ * @method self setName(string $name)
+ * @method string getName()
  */
 class Reference implements NodeInterface
 {

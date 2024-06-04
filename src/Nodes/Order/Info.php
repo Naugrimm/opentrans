@@ -19,6 +19,36 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<Info>
+ * @method self setId(string $id)
+ * @method string getId()
+ * @method self setDate(string $date)
+ * @method string getDate()
+ * @method self setLanguage(\Naugrim\BMEcat\Nodes\Language[]|array $language)
+ * @method \Naugrim\BMEcat\Nodes\Language[]|array getLanguage()
+ * @method self setDeliveryDate(array|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
+ * @method \Naugrim\OpenTrans\Nodes\DeliveryDate getDeliveryDate()
+ * @method self setParties(\Naugrim\OpenTrans\Nodes\Party[]|array $parties)
+ * @method \Naugrim\OpenTrans\Nodes\Party[]|array getParties()
+ * @method self setCustomerOrderReference(null|array|\Naugrim\OpenTrans\Nodes\Order\CustomerOrderReference $customerOrderReference)
+ * @method \Naugrim\OpenTrans\Nodes\Order\CustomerOrderReference|null getCustomerOrderReference()
+ * @method self setPartiesReference(array|\Naugrim\OpenTrans\Nodes\Order\PartiesReference $partiesReference)
+ * @method \Naugrim\OpenTrans\Nodes\Order\PartiesReference getPartiesReference()
+ * @method self setDocExchangePartiesReference(null|array|\Naugrim\OpenTrans\Nodes\DocExchangePartiesReference $docExchangePartiesReference)
+ * @method \Naugrim\OpenTrans\Nodes\DocExchangePartiesReference|null getDocExchangePartiesReference()
+ * @method self setCurrency(string $currency)
+ * @method string getCurrency()
+ * @method self setPayment(array|\Naugrim\OpenTrans\Nodes\Payment\Payment $payment)
+ * @method \Naugrim\OpenTrans\Nodes\Payment\Payment getPayment()
+ * @method self setTermsAndConditions(string|null $termsAndConditions)
+ * @method string|null getTermsAndConditions()
+ * @method self setPartialShipmentAllowed(bool $partialShipmentAllowed)
+ * @method bool getPartialShipmentAllowed()
+ * @method self setTransport(\Naugrim\OpenTrans\Nodes\Logistic\Transport[]|array $transport)
+ * @method \Naugrim\OpenTrans\Nodes\Logistic\Transport[]|array getTransport()
+ * @method self setRemarks(\Naugrim\OpenTrans\Nodes\Remarks[]|array $remarks)
+ * @method \Naugrim\OpenTrans\Nodes\Remarks[]|array getRemarks()
+ * @method self setHeaderUdx(array $headerUdx)
+ * @method array getHeaderUdx()
  */
 class Info implements NodeInterface
 {

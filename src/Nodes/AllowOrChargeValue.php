@@ -8,6 +8,14 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<AllowOrChargeValue>
+ * @method self setPercentageFactor(float $percentageFactor)
+ * @method float getPercentageFactor()
+ * @method self setMonetaryAmount(float $monetaryAmount)
+ * @method float getMonetaryAmount()
+ * @method self setOrderUnitsCount(array|\Naugrim\OpenTrans\Nodes\AocOrderUnitsCount $orderUnitsCount)
+ * @method \Naugrim\OpenTrans\Nodes\AocOrderUnitsCount getOrderUnitsCount()
+ * @method self setAdditionalItems(string $additionalItems)
+ * @method string getAdditionalItems()
  */
 class AllowOrChargeValue implements NodeInterface
 {

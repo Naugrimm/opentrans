@@ -10,6 +10,10 @@ use Naugrim\OpenTrans\Nodes\Order\History;
 
 /**
  * @implements NodeInterface<Header>
+ * @method self setInfo(array|\Naugrim\OpenTrans\Nodes\Invoice\Info $info)
+ * @method \Naugrim\OpenTrans\Nodes\Invoice\Info getInfo()
+ * @method self setOrderHistory(array|\Naugrim\OpenTrans\Nodes\Order\History $orderHistory)
+ * @method \Naugrim\OpenTrans\Nodes\Order\History getOrderHistory()
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'info', 'orderHistory'])]
 class Header implements NodeInterface

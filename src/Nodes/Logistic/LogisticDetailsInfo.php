@@ -11,6 +11,14 @@ use Naugrim\BMEcat\Nodes\Logistic\Transport;
 
 /**
  * @implements NodeInterface<self>
+ * @method self setCountryOfOrigin(\Naugrim\BMEcat\Nodes\Logistic\Country[]|array $countryOfOrigin)
+ * @method \Naugrim\BMEcat\Nodes\Logistic\Country[]|array getCountryOfOrigin()
+ * @method self setTransport(\Naugrim\BMEcat\Nodes\Logistic\Transport[]|array $transport)
+ * @method \Naugrim\BMEcat\Nodes\Logistic\Transport[]|array getTransport()
+ * @method self setPackages(\Naugrim\OpenTrans\Nodes\Logistic\Package[]|array $packages)
+ * @method \Naugrim\OpenTrans\Nodes\Logistic\Package[]|array getPackages()
+ * @method self setMeansOfTransport(\Naugrim\BMEcat\Nodes\Logistic\MeansOfTransport[]|array $meansOfTransport)
+ * @method \Naugrim\BMEcat\Nodes\Logistic\MeansOfTransport[]|array getMeansOfTransport()
  */
 class LogisticDetailsInfo implements NodeInterface
 {

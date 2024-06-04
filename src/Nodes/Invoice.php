@@ -13,6 +13,12 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<Invoice>
+ * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\Invoice\Header $header)
+ * @method \Naugrim\OpenTrans\Nodes\Invoice\Header getHeader()
+ * @method self setItems(\Naugrim\OpenTrans\Nodes\Invoice\Item[]|array $items)
+ * @method \Naugrim\OpenTrans\Nodes\Invoice\Item[]|array getItems()
+ * @method self setSummary(array|\Naugrim\OpenTrans\Nodes\Invoice\Summary $summary)
+ * @method \Naugrim\OpenTrans\Nodes\Invoice\Summary getSummary()
  */
 #[Serializer\XmlRoot('INVOICE')]
 #[Serializer\ExclusionPolicy('all')]

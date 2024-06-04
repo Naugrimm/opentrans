@@ -9,6 +9,24 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<self>
+ * @method self setPackageId(\Naugrim\OpenTrans\Nodes\Logistic\PackageId[]|array $packageId)
+ * @method \Naugrim\OpenTrans\Nodes\Logistic\PackageId[]|array getPackageId()
+ * @method self setPackageDescr(string|null $packageDescr)
+ * @method string|null getPackageDescr()
+ * @method self setPackingUnitCode(string|null $packingUnitCode)
+ * @method string|null getPackingUnitCode()
+ * @method self setPackingUnitDescr(string|null $packingUnitDescr)
+ * @method string|null getPackingUnitDescr()
+ * @method self setPackageOrderUnitQuantity(float|null $packageOrderUnitQuantity)
+ * @method float|null getPackageOrderUnitQuantity()
+ * @method self setPackageQuantity(float|null $packageQuantity)
+ * @method float|null getPackageQuantity()
+ * @method self setPackageDimensions(null|array|\Naugrim\OpenTrans\Nodes\Logistic\PackageDimensions $packageDimensions)
+ * @method \Naugrim\OpenTrans\Nodes\Logistic\PackageDimensions|null getPackageDimensions()
+ * @method self setMeansOfTransportIdRef(string|null $meansOfTransportIdRef)
+ * @method string|null getMeansOfTransportIdRef()
+ * @method self setSubPackages(\Naugrim\OpenTrans\Nodes\Logistic\Package[]|array $subPackages)
+ * @method \Naugrim\OpenTrans\Nodes\Logistic\Package[]|array getSubPackages()
  */
 final class Package implements NodeInterface
 {

@@ -9,6 +9,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\CanAssertConstantValue;
 
 /**
  * @implements NodeInterface<PartyRole>
+ * @method self setRole(string $role)
+ * @method string getRole()
  */
 #[Serializer\XmlRoot('PARTY_ROLE')]
 class PartyRole implements NodeInterface

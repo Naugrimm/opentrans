@@ -8,6 +8,16 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<Account>
+ * @method self setHolder(string $holder)
+ * @method string getHolder()
+ * @method self setBankAccount(array|\Naugrim\OpenTrans\Nodes\BankAccount $bankAccount)
+ * @method \Naugrim\OpenTrans\Nodes\BankAccount getBankAccount()
+ * @method self setBankCode(array|\Naugrim\OpenTrans\Nodes\BankCode $bankCode)
+ * @method \Naugrim\OpenTrans\Nodes\BankCode getBankCode()
+ * @method self setBankName(string $bankName)
+ * @method string getBankName()
+ * @method self setBankCountry(string $bankCountry)
+ * @method string getBankCountry()
  */
 class Account implements NodeInterface
 {

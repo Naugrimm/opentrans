@@ -1,8 +1,14 @@
+# 3.x
+
+## BREAKING CHANGES
+
+Upgraded `naugrim/bmecat` to ^5. See the [CHANGELOG.md of naugrim/bmecat](https://github.com/Naugrimm/bmecat/blob/develop/CHANGELOG.md). Everything mentioned there also applies to `naugrim/opentrans`.
+
 # 2.x
 
 ## BREAKING CHANGES
 
-See the [CHANGELOG.md of naugrim/bmecat](https://github.com/Naugrimm/bmecat/blob/develop/CHANGELOG.md). Everything mentioned where also applies to `naugrim/opentrans`.
+See the [CHANGELOG.md of naugrim/bmecat](https://github.com/Naugrimm/bmecat/blob/develop/CHANGELOG.md). Everything mentioned there also applies to `naugrim/opentrans`.
 
 - `UdxAggregate` has been removed. 
 - `\Naugrim\OpenTrans\Nodes\Order\Info::$udxItem` bas been renamed to `\Naugrim\OpenTrans\Nodes\Order\Info::$headerUdx` to be in line with the naming of the other attributes

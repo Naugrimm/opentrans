@@ -8,6 +8,14 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<Party>
+ * @method self setId(array|\Naugrim\OpenTrans\Nodes\PartyId $id)
+ * @method \Naugrim\OpenTrans\Nodes\PartyId getId()
+ * @method self setRole(array|\Naugrim\OpenTrans\Nodes\PartyRole $role)
+ * @method \Naugrim\OpenTrans\Nodes\PartyRole getRole()
+ * @method self setAddress(array|\Naugrim\OpenTrans\Nodes\Address $address)
+ * @method \Naugrim\OpenTrans\Nodes\Address getAddress()
+ * @method self setAccount(array|\Naugrim\OpenTrans\Nodes\Account $account)
+ * @method \Naugrim\OpenTrans\Nodes\Account getAccount()
  */
 #[Serializer\XmlRoot('PARTY')]
 class Party implements NodeInterface

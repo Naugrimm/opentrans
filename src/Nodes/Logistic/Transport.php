@@ -8,6 +8,12 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<Transport>
+ * @method self setIncoterm(string $incoterm)
+ * @method string getIncoterm()
+ * @method self setLocation(string|null $location)
+ * @method string|null getLocation()
+ * @method self setTransportRemark(string|null $transportRemark)
+ * @method string|null getTransportRemark()
  */
 final class Transport implements NodeInterface
 {

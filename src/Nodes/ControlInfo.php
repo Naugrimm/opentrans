@@ -8,6 +8,12 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<ControlInfo>
+ * @method self setStopAutomaticProcessing(string $stopAutomaticProcessing)
+ * @method string getStopAutomaticProcessing()
+ * @method self setGeneratorInfo(string $generatorInfo)
+ * @method string getGeneratorInfo()
+ * @method self setGeneratorDate(string $generatorDate)
+ * @method string getGeneratorDate()
  */
 class ControlInfo implements NodeInterface
 {

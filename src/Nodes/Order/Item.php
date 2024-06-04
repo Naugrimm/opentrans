@@ -17,6 +17,28 @@ use Naugrim\OpenTrans\Nodes\UdxInterface;
 
 /**
  * @implements NodeInterface<Item>
+ * @method self setLineItemId(string $lineItemId)
+ * @method string getLineItemId()
+ * @method self setProductId(array|\Naugrim\OpenTrans\Nodes\ProductId $productId)
+ * @method \Naugrim\OpenTrans\Nodes\ProductId getProductId()
+ * @method self setProductComponents(\Naugrim\OpenTrans\Nodes\Product\ProductComponent[]|array $productComponents)
+ * @method \Naugrim\OpenTrans\Nodes\Product\ProductComponent[]|array getProductComponents()
+ * @method self setQuantity(float $quantity)
+ * @method float getQuantity()
+ * @method self setOrderUnit(string $orderUnit)
+ * @method string getOrderUnit()
+ * @method self setPriceFix(array|\Naugrim\OpenTrans\Nodes\Product\PriceFix $priceFix)
+ * @method \Naugrim\OpenTrans\Nodes\Product\PriceFix getPriceFix()
+ * @method self setPriceLineAmount(float $priceLineAmount)
+ * @method float getPriceLineAmount()
+ * @method self setPartialShipmentAllowed(bool $partialShipmentAllowed)
+ * @method bool getPartialShipmentAllowed()
+ * @method self setDeliveryDate(array|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
+ * @method \Naugrim\OpenTrans\Nodes\DeliveryDate getDeliveryDate()
+ * @method self setRemarks(\Naugrim\OpenTrans\Nodes\Remarks[]|array $remarks)
+ * @method \Naugrim\OpenTrans\Nodes\Remarks[]|array getRemarks()
+ * @method self setItemUdx(array $itemUdx)
+ * @method array getItemUdx()
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['lineItemId', 'productId', 'productComponents', 'quantity', 'orderUnit', 'priceFix', 'priceLineAmount', 'deliveryDate', 'partialShipmentAllowed', 'sourcingInfo', 'remarks', 'itemUdx'])]
 class Item implements NodeInterface

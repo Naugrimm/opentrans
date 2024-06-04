@@ -9,6 +9,8 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<self>
+ * @method self setLang(string $lang)
+ * @method string getLang()
  */
 class AgreementDescr implements NodeInterface
 {

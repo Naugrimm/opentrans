@@ -9,6 +9,12 @@ use Naugrim\OpenTrans\Nodes\ProductId;
 
 /**
  * @implements NodeInterface<PriceFix>
+ * @method self setAmount(array|\Naugrim\OpenTrans\Nodes\ProductId $amount)
+ * @method \Naugrim\OpenTrans\Nodes\ProductId getAmount()
+ * @method self setQuantity(float $quantity)
+ * @method float getQuantity()
+ * @method self setOrderUnit(string $orderUnit)
+ * @method string getOrderUnit()
  */
 class ProductComponent implements NodeInterface
 {

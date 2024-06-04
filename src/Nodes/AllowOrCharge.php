@@ -9,6 +9,18 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<AllowOrCharge>
+ * @method self setSequence(int $sequence)
+ * @method int getSequence()
+ * @method self setName(string $name)
+ * @method string getName()
+ * @method self setAllowOrChargeType(string $allowOrChargeType)
+ * @method string getAllowOrChargeType()
+ * @method self setDescription(string $description)
+ * @method string getDescription()
+ * @method self setValue(array|\Naugrim\OpenTrans\Nodes\AllowOrChargeValue $value)
+ * @method \Naugrim\OpenTrans\Nodes\AllowOrChargeValue getValue()
+ * @method self setBase(float $base)
+ * @method float getBase()
  */
 class AllowOrCharge implements NodeInterface
 {

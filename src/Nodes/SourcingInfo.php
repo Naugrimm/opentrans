@@ -9,6 +9,12 @@ use Naugrim\OpenTrans\Nodes\Catalog\Reference;
 
 /**
  * @implements NodeInterface<SourcingInfo>
+ * @method self setQuotationId(string $quotationId)
+ * @method string getQuotationId()
+ * @method self setAgreement(array|\Naugrim\OpenTrans\Nodes\Agreement $agreement)
+ * @method \Naugrim\OpenTrans\Nodes\Agreement getAgreement()
+ * @method self setCatalogReference(array|\Naugrim\OpenTrans\Nodes\Catalog\Reference $catalogReference)
+ * @method \Naugrim\OpenTrans\Nodes\Catalog\Reference getCatalogReference()
  */
 class SourcingInfo implements NodeInterface
 {

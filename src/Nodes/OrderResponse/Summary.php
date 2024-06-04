@@ -11,6 +11,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 
 /**
  * @implements NodeInterface<Summary>
+ * @method self setAllowOrChargesFix(array|\Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix)
+ * @method \Naugrim\OpenTrans\Nodes\AllowOrChargesFix getAllowOrChargesFix()
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'totalAmount', 'allowOrChargesFix'])]
 class Summary implements NodeInterface

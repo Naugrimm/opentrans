@@ -10,6 +10,24 @@ use Naugrim\OpenTrans\Nodes\ProductId;
 
 /**
  * @implements NodeInterface<Item>
+ * @method self setType(string $type)
+ * @method string getType()
+ * @method self setLineItemId(string $lineItemId)
+ * @method string getLineItemId()
+ * @method self setProductId(array|\Naugrim\OpenTrans\Nodes\ProductId $productId)
+ * @method \Naugrim\OpenTrans\Nodes\ProductId getProductId()
+ * @method self setQuantity(float $quantity)
+ * @method float getQuantity()
+ * @method self setOrderUnit(string $orderUnit)
+ * @method string getOrderUnit()
+ * @method self setPriceFix(array|\Naugrim\OpenTrans\Nodes\Product\PriceFix $priceFix)
+ * @method \Naugrim\OpenTrans\Nodes\Product\PriceFix getPriceFix()
+ * @method self setPriceLineAmount(float $priceLineAmount)
+ * @method float getPriceLineAmount()
+ * @method self setOrderReference(null|array|\Naugrim\OpenTrans\Nodes\Invoice\OrderReference $orderReference)
+ * @method \Naugrim\OpenTrans\Nodes\Invoice\OrderReference|null getOrderReference()
+ * @method self setSupplierOrderReference(null|array|\Naugrim\OpenTrans\Nodes\Invoice\SupplierOrderReference $supplierOrderReference)
+ * @method \Naugrim\OpenTrans\Nodes\Invoice\SupplierOrderReference|null getSupplierOrderReference()
  */
 class Item implements NodeInterface
 {
@@ -55,10 +73,10 @@ class Item implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(OrderReference::class)]
     #[Serializer\SerializedName('ORDER_REFERENCE')]
-    protected ?OrderReference $orderReference;
+    protected ?OrderReference $orderReference = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(SupplierOrderReference::class)]
     #[Serializer\SerializedName('SUPPLIER_ORDER_REFERENCE')]
-    protected ?SupplierOrderReference $supplierOrderReference;
+    protected ?SupplierOrderReference $supplierOrderReference = null;
 }

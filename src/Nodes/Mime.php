@@ -11,6 +11,22 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<Mime>
+ * @method self setType(string $type)
+ * @method string getType()
+ * @method self setSource(string $source)
+ * @method string getSource()
+ * @method self setFileHashValue(\Naugrim\OpenTrans\Nodes\File\HashValue[]|array $fileHashValue)
+ * @method \Naugrim\OpenTrans\Nodes\File\HashValue[]|array getFileHashValue()
+ * @method self setEmbedded(\Naugrim\OpenTrans\Nodes\Mime\Embedded[]|array $embedded)
+ * @method \Naugrim\OpenTrans\Nodes\Mime\Embedded[]|array getEmbedded()
+ * @method self setDescription(string $description)
+ * @method string getDescription()
+ * @method self setAlt(string $alt)
+ * @method string getAlt()
+ * @method self setPurpose(string $purpose)
+ * @method string getPurpose()
+ * @method self setOrder(int $order)
+ * @method int getOrder()
  */
 class Mime implements NodeInterface
 {

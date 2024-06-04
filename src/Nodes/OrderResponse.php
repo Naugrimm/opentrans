@@ -13,6 +13,12 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<OrderResponse>
+ * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\OrderResponse\Header $header)
+ * @method \Naugrim\OpenTrans\Nodes\OrderResponse\Header getHeader()
+ * @method self setItems(\Naugrim\OpenTrans\Nodes\OrderResponse\Item[]|array $items)
+ * @method \Naugrim\OpenTrans\Nodes\OrderResponse\Item[]|array getItems()
+ * @method self setSummary(array|\Naugrim\OpenTrans\Nodes\OrderResponse\Summary $summary)
+ * @method \Naugrim\OpenTrans\Nodes\OrderResponse\Summary getSummary()
  */
 #[Serializer\XmlRoot('ORDERRESPONSE')]
 #[Serializer\ExclusionPolicy('all')]

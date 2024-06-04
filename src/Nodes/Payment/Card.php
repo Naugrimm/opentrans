@@ -13,6 +13,16 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<Card>
+ * @method self setNumber(string $number)
+ * @method string getNumber()
+ * @method self setAuthCode(string|null $authCode)
+ * @method string|null getAuthCode()
+ * @method self setRefNUm(string|null $refNUm)
+ * @method string|null getRefNUm()
+ * @method self setExpDate(null|array|\DateTimeInterface $expDate)
+ * @method \DateTimeInterface|null getExpDate()
+ * @method self setHolder(string|null $holder)
+ * @method string|null getHolder()
  */
 class Card implements NodeInterface
 {

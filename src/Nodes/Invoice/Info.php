@@ -15,6 +15,26 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<Info>
+ * @method self setId(string $id)
+ * @method string getId()
+ * @method self setDate(string $date)
+ * @method string getDate()
+ * @method self setDeliveryDate(array|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
+ * @method \Naugrim\OpenTrans\Nodes\DeliveryDate getDeliveryDate()
+ * @method self setLanguage(\Naugrim\BMEcat\Nodes\Language[]|array $language)
+ * @method \Naugrim\BMEcat\Nodes\Language[]|array getLanguage()
+ * @method self setParties(\Naugrim\OpenTrans\Nodes\Party[]|array $parties)
+ * @method \Naugrim\OpenTrans\Nodes\Party[]|array getParties()
+ * @method self setIssuerIdRef(array|\Naugrim\OpenTrans\Nodes\Invoice\IssuerIdRef $issuerIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\Invoice\IssuerIdRef getIssuerIdRef()
+ * @method self setRcptIdRef(array|\Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef $rcptIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef getRcptIdRef()
+ * @method self setBuyerIdRef(null|array|\Naugrim\BMEcat\Nodes\BuyerIdRef $buyerIdRef)
+ * @method \Naugrim\BMEcat\Nodes\BuyerIdRef|null getBuyerIdRef()
+ * @method self setSupplierIdRef(null|array|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
+ * @method \Naugrim\BMEcat\Nodes\SupplierIdRef|null getSupplierIdRef()
+ * @method self setCurrency(string $currency)
+ * @method string getCurrency()
  */
 class Info implements NodeInterface
 {
