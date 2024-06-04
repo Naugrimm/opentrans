@@ -9,18 +9,18 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<AllowOrCharge>
- * @method self setSequence(int $sequence)
- * @method int getSequence()
- * @method self setName(string $name)
- * @method string getName()
- * @method self setAllowOrChargeType(string $allowOrChargeType)
- * @method string getAllowOrChargeType()
- * @method self setDescription(string $description)
- * @method string getDescription()
- * @method self setValue(array|\Naugrim\OpenTrans\Nodes\AllowOrChargeValue $value)
- * @method \Naugrim\OpenTrans\Nodes\AllowOrChargeValue getValue()
- * @method self setBase(float $base)
- * @method float getBase()
+ * @method self setSequence(int|null $sequence)
+ * @method int|null getSequence()
+ * @method self setName(string|null $name)
+ * @method string|null getName()
+ * @method self setAllowOrChargeType(string|null $allowOrChargeType)
+ * @method string|null getAllowOrChargeType()
+ * @method self setDescription(string|null $description)
+ * @method string|null getDescription()
+ * @method self setValue(null|array|\Naugrim\OpenTrans\Nodes\AllowOrChargeValue $value)
+ * @method \Naugrim\OpenTrans\Nodes\AllowOrChargeValue|null getValue()
+ * @method self setBase(float|null $base)
+ * @method float|null getBase()
  */
 class AllowOrCharge implements NodeInterface
 {
@@ -34,30 +34,30 @@ class AllowOrCharge implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('int')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_SEQUENCE')]
-    protected int $sequence;
+    protected ?int $sequence = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_NAME')]
-    protected string $name;
+    protected ?string $name = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_TYPE')]
-    protected string $allowOrChargeType;
+    protected ?string $allowOrChargeType = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_DESCR')]
-    protected string $description;
+    protected ?string $description = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(AllowOrChargeValue::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_VALUE')]
-    protected AllowOrChargeValue $value;
+    protected ?AllowOrChargeValue $value = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGE_BASE')]
-    protected float $base;
+    protected ?float $base = null;
 }
