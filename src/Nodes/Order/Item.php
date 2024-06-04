@@ -27,14 +27,14 @@ use Naugrim\OpenTrans\Nodes\UdxInterface;
  * @method float getQuantity()
  * @method self setOrderUnit(string $orderUnit)
  * @method string getOrderUnit()
- * @method self setPriceFix(array|\Naugrim\OpenTrans\Nodes\Product\PriceFix $priceFix)
- * @method \Naugrim\OpenTrans\Nodes\Product\PriceFix getPriceFix()
- * @method self setPriceLineAmount(float $priceLineAmount)
- * @method float getPriceLineAmount()
- * @method self setPartialShipmentAllowed(bool $partialShipmentAllowed)
- * @method bool getPartialShipmentAllowed()
- * @method self setDeliveryDate(array|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
- * @method \Naugrim\OpenTrans\Nodes\DeliveryDate getDeliveryDate()
+ * @method self setPriceFix(null|array|\Naugrim\OpenTrans\Nodes\Product\PriceFix $priceFix)
+ * @method \Naugrim\OpenTrans\Nodes\Product\PriceFix|null getPriceFix()
+ * @method self setPriceLineAmount(float|null $priceLineAmount)
+ * @method float|null getPriceLineAmount()
+ * @method self setPartialShipmentAllowed(bool|null $partialShipmentAllowed)
+ * @method bool|null getPartialShipmentAllowed()
+ * @method self setDeliveryDate(null|array|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
+ * @method \Naugrim\OpenTrans\Nodes\DeliveryDate|null getDeliveryDate()
  * @method self setRemarks(\Naugrim\OpenTrans\Nodes\Remarks[]|array $remarks)
  * @method \Naugrim\OpenTrans\Nodes\Remarks[]|array getRemarks()
  * @method self setItemUdx(array $itemUdx)
@@ -80,12 +80,12 @@ class Item implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(PriceFix::class)]
     #[Serializer\SerializedName('PRODUCT_PRICE_FIX')]
-    protected PriceFix $priceFix;
+    protected ?PriceFix $priceFix = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('PRICE_LINE_AMOUNT')]
-    protected float $priceLineAmount;
+    protected ?float $priceLineAmount = null;
 
     /**
      *
@@ -94,12 +94,12 @@ class Item implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('bool')]
     #[Serializer\SerializedName('PARTIAL_SHIPMENT_ALLOWED')]
-    protected bool $partialShipmentAllowed;
+    protected ?bool $partialShipmentAllowed = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(DeliveryDate::class)]
     #[Serializer\SerializedName('DELIVERY_DATE')]
-    protected DeliveryDate $deliveryDate;
+    protected ?DeliveryDate $deliveryDate = null;
 
     /**
      * @var Remarks[]
@@ -139,6 +139,6 @@ class Item implements NodeInterface
 
     public function isPartialShipmentAllowed(): bool
     {
-        return $this->partialShipmentAllowed;
+        return $this->partialShipmentAllowed ?? false;
     }
 }
