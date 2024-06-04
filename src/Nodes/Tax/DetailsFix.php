@@ -9,24 +9,24 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<DetailsFix>
- * @method self setCalculationSequence(int $calculationSequence)
- * @method int getCalculationSequence()
- * @method self setCategory(string $category)
- * @method string getCategory()
- * @method self setType(string $type)
- * @method string getType()
- * @method self setTax(float $tax)
- * @method float getTax()
- * @method self setAmount(float $amount)
- * @method float getAmount()
- * @method self setBase(float $base)
- * @method float getBase()
- * @method self setExemptionReason(string $exemptionReason)
- * @method string getExemptionReason()
- * @method self setJurisdiction(string $jurisdiction)
- * @method string getJurisdiction()
+ * @method self setCalculationSequence(int|null $calculationSequence)
+ * @method int|null getCalculationSequence()
+ * @method self setCategory(string|null $category)
+ * @method string|null getCategory()
+ * @method self setType(string|null $type)
+ * @method string|null getType()
+ * @method self setTax(float|null $tax)
+ * @method float|null getTax()
+ * @method self setAmount(float|null $amount)
+ * @method float|null getAmount()
+ * @method self setBase(float|null $base)
+ * @method float|null getBase()
+ * @method self setExemptionReason(string|null $exemptionReason)
+ * @method string|null getExemptionReason()
+ * @method self setJurisdiction(string|null $jurisdiction)
+ * @method string|null getJurisdiction()
  */
-class DetailsFix implements NodeInterface
+final class DetailsFix implements NodeInterface
 {
     use HasSerializableAttributes;
 
@@ -34,45 +34,45 @@ class DetailsFix implements NodeInterface
     #[Serializer\Type('int')]
     #[Serializer\SerializedName('CALCULATION_SEQUENCE')]
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
-    protected int $calculationSequence;
+    protected ?int $calculationSequence = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('TAX_CATEGORY')]
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
-    protected string $category;
+    protected ?string $category = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('TAX_TYPE')]
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
-    protected string $type;
+    protected ?string $type = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('TAX')]
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
-    protected float $tax;
+    protected ?float $tax = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('TAX_AMOUNT')]
-    protected float $amount;
+    protected ?float $amount = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('TAX_BASE')]
-    protected float $base;
+    protected ?float $base = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('EXEMPTION_REASON')]
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
-    protected string $exemptionReason;
+    protected ?string $exemptionReason = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('JURISDICTION')]
     #[Serializer\XmlElement(namespace: OpenTrans::BMECAT_NAMESPACE)]
-    protected string $jurisdiction;
+    protected ?string $jurisdiction = null;
 }
