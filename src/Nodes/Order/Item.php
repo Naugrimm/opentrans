@@ -33,6 +33,8 @@ use Naugrim\OpenTrans\Nodes\UdxInterface;
  * @method float|null getPriceLineAmount()
  * @method self setPartialShipmentAllowed(bool|null $partialShipmentAllowed)
  * @method bool|null getPartialShipmentAllowed()
+ * @method self setCustomerOrderReference(null|array|\Naugrim\OpenTrans\Nodes\Order\CustomerOrderReference $customerOrderReference)
+ * @method \Naugrim\OpenTrans\Nodes\Order\CustomerOrderReference|null getCustomerOrderReference()
  * @method self setDeliveryDate(null|array|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
  * @method \Naugrim\OpenTrans\Nodes\DeliveryDate|null getDeliveryDate()
  * @method self setRemarks(\Naugrim\OpenTrans\Nodes\Remarks[]|array $remarks)
@@ -40,7 +42,7 @@ use Naugrim\OpenTrans\Nodes\UdxInterface;
  * @method self setItemUdx(array $itemUdx)
  * @method array getItemUdx()
  */
-#[Serializer\AccessorOrder(order: 'custom', custom: ['lineItemId', 'productId', 'productComponents', 'quantity', 'orderUnit', 'priceFix', 'priceLineAmount', 'deliveryDate', 'partialShipmentAllowed', 'sourcingInfo', 'remarks', 'itemUdx'])]
+#[Serializer\AccessorOrder(order: 'custom', custom: ['lineItemId', 'productId', 'productComponents', 'quantity', 'orderUnit', 'priceFix', 'priceLineAmount', 'deliveryDate', 'partialShipmentAllowed', 'customerOrderReference', 'sourcingInfo', 'remarks', 'itemUdx'])]
 class Item implements NodeInterface
 {
     use HasSerializableAttributes;
@@ -95,6 +97,11 @@ class Item implements NodeInterface
     #[Serializer\Type('bool')]
     #[Serializer\SerializedName('PARTIAL_SHIPMENT_ALLOWED')]
     protected ?bool $partialShipmentAllowed = null;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(CustomerOrderReference::class)]
+    #[Serializer\SerializedName('CUSTOMER_ORDER_REFERENCE')]
+    protected ?CustomerOrderReference $customerOrderReference = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(DeliveryDate::class)]
