@@ -15,10 +15,10 @@ use Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef;
  * @method \Naugrim\BMEcat\Nodes\BuyerIdRef getBuyerIdRef()
  * @method self setSupplierIdRef(array|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
  * @method \Naugrim\BMEcat\Nodes\SupplierIdRef getSupplierIdRef()
- * @method self setInvoiceRcptIdRef(array|\Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef $invoiceRcptIdRef)
- * @method \Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef getInvoiceRcptIdRef()
- * @method self setShipmentPartiesReference(array|\Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference $shipmentPartiesReference)
- * @method \Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference getShipmentPartiesReference()
+ * @method self setInvoiceRcptIdRef(null|array|\Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef $invoiceRcptIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef|null getInvoiceRcptIdRef()
+ * @method self setShipmentPartiesReference(null|array|\Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference $shipmentPartiesReference)
+ * @method \Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference|null getShipmentPartiesReference()
  */
 class PartiesReference implements NodeInterface
 {
@@ -39,10 +39,10 @@ class PartiesReference implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(InvoiceRcptIdRef::class)]
     #[Serializer\SerializedName('INVOICE_RECIPIENT_IDREF')]
-    protected InvoiceRcptIdRef $invoiceRcptIdRef;
+    protected ?InvoiceRcptIdRef $invoiceRcptIdRef = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(ShipmentPartiesReference::class)]
     #[Serializer\SerializedName('SHIPMENT_PARTIES_REFERENCE')]
-    protected ShipmentPartiesReference $shipmentPartiesReference;
+    protected ?ShipmentPartiesReference $shipmentPartiesReference = null;
 }
