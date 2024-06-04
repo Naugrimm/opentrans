@@ -9,6 +9,22 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<DetailsFix>
+ * @method self setCalculationSequence(int $calculationSequence)
+ * @method int getCalculationSequence()
+ * @method self setCategory(string $category)
+ * @method string getCategory()
+ * @method self setType(string $type)
+ * @method string getType()
+ * @method self setTax(float $tax)
+ * @method float getTax()
+ * @method self setAmount(float $amount)
+ * @method float getAmount()
+ * @method self setBase(float $base)
+ * @method float getBase()
+ * @method self setExemptionReason(string $exemptionReason)
+ * @method string getExemptionReason()
+ * @method self setJurisdiction(string $jurisdiction)
+ * @method string getJurisdiction()
  */
 class DetailsFix implements NodeInterface
 {

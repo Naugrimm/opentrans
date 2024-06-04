@@ -10,6 +10,18 @@ use Naugrim\OpenTrans\Nodes\ProductId;
 
 /**
  * @implements NodeInterface<Item>
+ * @method self setLineItemId(string $lineItemId)
+ * @method string getLineItemId()
+ * @method self setProductId(array|\Naugrim\OpenTrans\Nodes\ProductId $productId)
+ * @method \Naugrim\OpenTrans\Nodes\ProductId getProductId()
+ * @method self setQuantity(float $quantity)
+ * @method float getQuantity()
+ * @method self setOrderUnit(string $orderUnit)
+ * @method string getOrderUnit()
+ * @method self setPriceFix(array|\Naugrim\OpenTrans\Nodes\Product\PriceFix $priceFix)
+ * @method \Naugrim\OpenTrans\Nodes\Product\PriceFix getPriceFix()
+ * @method self setPriceLineAmount(float $priceLineAmount)
+ * @method float getPriceLineAmount()
  */
 class Item implements NodeInterface
 {

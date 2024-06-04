@@ -9,6 +9,12 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasLangAttribute;
 
 /**
  * @implements NodeInterface<Embedded>
+ * @method self setData(array|\Naugrim\OpenTrans\Nodes\Mime\Data $data)
+ * @method \Naugrim\OpenTrans\Nodes\Mime\Data getData()
+ * @method self setFileName(string $fileName)
+ * @method string getFileName()
+ * @method self setFileSize(int $fileSize)
+ * @method int getFileSize()
  */
 class Embedded implements NodeInterface
 {

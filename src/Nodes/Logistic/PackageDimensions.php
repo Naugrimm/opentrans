@@ -9,6 +9,16 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<self>
+ * @method self setVolume(float|null $volume)
+ * @method float|null getVolume()
+ * @method self setWeight(float|null $weight)
+ * @method float|null getWeight()
+ * @method self setLength(float|null $length)
+ * @method float|null getLength()
+ * @method self setWidth(float|null $width)
+ * @method float|null getWidth()
+ * @method self setDepth(float|null $depth)
+ * @method float|null getDepth()
  */
 final class PackageDimensions implements NodeInterface
 {

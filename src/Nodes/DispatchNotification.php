@@ -13,6 +13,12 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<DispatchNotification>
+ * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\DispatchNotification\Header $header)
+ * @method \Naugrim\OpenTrans\Nodes\DispatchNotification\Header getHeader()
+ * @method self setItems(\Naugrim\OpenTrans\Nodes\DispatchNotification\Item[]|array $items)
+ * @method \Naugrim\OpenTrans\Nodes\DispatchNotification\Item[]|array getItems()
+ * @method self setSummary(array|\Naugrim\OpenTrans\Nodes\DispatchNotification\Summary $summary)
+ * @method \Naugrim\OpenTrans\Nodes\DispatchNotification\Summary getSummary()
  */
 #[Serializer\XmlRoot('DISPATCHNOTIFICATION')]
 #[Serializer\ExclusionPolicy('all')]

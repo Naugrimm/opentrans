@@ -11,6 +11,14 @@ use Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef;
 
 /**
  * @implements NodeInterface<PartiesReference>
+ * @method self setBuyerIdRef(array|\Naugrim\BMEcat\Nodes\BuyerIdRef $buyerIdRef)
+ * @method \Naugrim\BMEcat\Nodes\BuyerIdRef getBuyerIdRef()
+ * @method self setSupplierIdRef(array|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
+ * @method \Naugrim\BMEcat\Nodes\SupplierIdRef getSupplierIdRef()
+ * @method self setInvoiceRcptIdRef(array|\Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef $invoiceRcptIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\InvoiceRcptIdRef getInvoiceRcptIdRef()
+ * @method self setShipmentPartiesReference(array|\Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference $shipmentPartiesReference)
+ * @method \Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference getShipmentPartiesReference()
  */
 class PartiesReference implements NodeInterface
 {

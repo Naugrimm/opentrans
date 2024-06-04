@@ -10,6 +10,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasSourcingInfo;
 
 /**
  * @implements NodeInterface<Header>
+ * @method self setInfo(array|\Naugrim\OpenTrans\Nodes\Order\Info $info)
+ * @method \Naugrim\OpenTrans\Nodes\Order\Info getInfo()
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'sourcingInfo', 'info'])]
 class Header implements NodeInterface

@@ -14,6 +14,24 @@ use Naugrim\OpenTrans\Nodes\ProductId;
 
 /**
  * @implements NodeInterface<Item>
+ * @method self setLineItemId(string $lineItemId)
+ * @method string getLineItemId()
+ * @method self setProductId(array|\Naugrim\OpenTrans\Nodes\ProductId $productId)
+ * @method \Naugrim\OpenTrans\Nodes\ProductId getProductId()
+ * @method self setQuantity(float $quantity)
+ * @method float getQuantity()
+ * @method self setOrderUnit(string $orderUnit)
+ * @method string getOrderUnit()
+ * @method self setSupplierIdRef(array|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
+ * @method \Naugrim\BMEcat\Nodes\SupplierIdRef getSupplierIdRef()
+ * @method self setOrderReference(null|array|\Naugrim\OpenTrans\Nodes\Invoice\OrderReference $orderReference)
+ * @method \Naugrim\OpenTrans\Nodes\Invoice\OrderReference|null getOrderReference()
+ * @method self setSupplierOrderReference(null|array|\Naugrim\OpenTrans\Nodes\Invoice\SupplierOrderReference $supplierOrderReference)
+ * @method \Naugrim\OpenTrans\Nodes\Invoice\SupplierOrderReference|null getSupplierOrderReference()
+ * @method self setCustomerOrderReference(null|array|\Naugrim\OpenTrans\Nodes\Order\CustomerOrderReference $customerOrderReference)
+ * @method \Naugrim\OpenTrans\Nodes\Order\CustomerOrderReference|null getCustomerOrderReference()
+ * @method self setShipmentPartiesReference(array|\Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference $shipmentPartiesReference)
+ * @method \Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference getShipmentPartiesReference()
  */
 class Item implements NodeInterface
 {
@@ -49,12 +67,12 @@ class Item implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(OrderReference::class)]
     #[Serializer\SerializedName('ORDER_REFERENCE')]
-    protected ?OrderReference $orderReference;
+    protected ?OrderReference $orderReference = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(SupplierOrderReference::class)]
     #[Serializer\SerializedName('SUPPLIER_ORDER_REFERENCE')]
-    protected ?SupplierOrderReference $supplierOrderReference;
+    protected ?SupplierOrderReference $supplierOrderReference = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(CustomerOrderReference::class)]

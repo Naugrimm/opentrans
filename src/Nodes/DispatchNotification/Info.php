@@ -21,6 +21,36 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<Info>
+ * @method self setId(string $id)
+ * @method string getId()
+ * @method self setDispatchNotificationDate(string $dispatchNotificationDate)
+ * @method string getDispatchNotificationDate()
+ * @method self setLanguage(\Naugrim\BMEcat\Nodes\Language[]|array $language)
+ * @method \Naugrim\BMEcat\Nodes\Language[]|array getLanguage()
+ * @method self setDeliveryDate(array|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
+ * @method \Naugrim\OpenTrans\Nodes\DeliveryDate getDeliveryDate()
+ * @method self setParties(\Naugrim\OpenTrans\Nodes\Party[]|array $parties)
+ * @method \Naugrim\OpenTrans\Nodes\Party[]|array getParties()
+ * @method self setSupplierIdRef(array|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
+ * @method \Naugrim\BMEcat\Nodes\SupplierIdRef getSupplierIdRef()
+ * @method self setBuyerIdRef(null|array|\Naugrim\BMEcat\Nodes\BuyerIdRef $buyerIdRef)
+ * @method \Naugrim\BMEcat\Nodes\BuyerIdRef|null getBuyerIdRef()
+ * @method self setShipmentPartiesReference(array|\Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference $shipmentPartiesReference)
+ * @method \Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference getShipmentPartiesReference()
+ * @method self setShipmentId(string|null $shipmentId)
+ * @method string|null getShipmentId()
+ * @method self setTrackingTracingUrl(string|null $trackingTracingUrl)
+ * @method string|null getTrackingTracingUrl()
+ * @method self setDocExchangePartiesReference(null|array|\Naugrim\OpenTrans\Nodes\DocExchangePartiesReference $docExchangePartiesReference)
+ * @method \Naugrim\OpenTrans\Nodes\DocExchangePartiesReference|null getDocExchangePartiesReference()
+ * @method self setLogisticDetailsInfo(null|array|\Naugrim\OpenTrans\Nodes\Logistic\LogisticDetailsInfo $logisticDetailsInfo)
+ * @method \Naugrim\OpenTrans\Nodes\Logistic\LogisticDetailsInfo|null getLogisticDetailsInfo()
+ * @method self setMimeInfo(\Naugrim\OpenTrans\Nodes\Mime[]|array $mimeInfo)
+ * @method \Naugrim\OpenTrans\Nodes\Mime[]|array getMimeInfo()
+ * @method self setRemarks(\Naugrim\OpenTrans\Nodes\Remarks[]|array $remarks)
+ * @method \Naugrim\OpenTrans\Nodes\Remarks[]|array getRemarks()
+ * @method self setHeaderUdx(array $headerUdx)
+ * @method array getHeaderUdx()
  */
 class Info implements NodeInterface
 {

@@ -8,6 +8,12 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<ShipmentPartiesReference>
+ * @method self setDeliveryIdRef(array|\Naugrim\OpenTrans\Nodes\DeliveryIdRef $deliveryIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\DeliveryIdRef getDeliveryIdRef()
+ * @method self setFinalDeliveryIdRef(array|\Naugrim\OpenTrans\Nodes\FinalDeliveryIdRef $finalDeliveryIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\FinalDeliveryIdRef getFinalDeliveryIdRef()
+ * @method self setDelivererIdRef(array|\Naugrim\OpenTrans\Nodes\DelivererIdRef $delivererIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\DelivererIdRef getDelivererIdRef()
  */
 class ShipmentPartiesReference implements NodeInterface
 {

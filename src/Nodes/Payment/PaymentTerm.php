@@ -10,7 +10,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 /**
  * Payment terms are aligned to UN/EDIFACT 4279 (Payment terms type code qualifier)
  * https://web.archive.org/web/20150418213750/http://www.unece.org/trade/untdid/d00b/tred/tred4279.htm
- *
+ * -
  * @implements NodeInterface<PaymentTerm>
  */
 class PaymentTerm implements NodeInterface

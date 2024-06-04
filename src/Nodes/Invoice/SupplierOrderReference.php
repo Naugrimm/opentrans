@@ -8,6 +8,10 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<SupplierOrderReference>
+ * @method self setOrderId(string $orderId)
+ * @method string getOrderId()
+ * @method self setItemId(string $itemId)
+ * @method string getItemId()
  */
 class SupplierOrderReference implements NodeInterface
 {

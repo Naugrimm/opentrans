@@ -9,6 +9,12 @@ use Naugrim\OpenTrans\Nodes\TimeForPayment;
 
 /**
  * @implements NodeInterface<PaymentTerms>
+ * @method self setTerms(\Naugrim\OpenTrans\Nodes\Payment\PaymentTerm[]|array $terms)
+ * @method \Naugrim\OpenTrans\Nodes\Payment\PaymentTerm[]|array getTerms()
+ * @method self setValueDate(string|null $valueDate)
+ * @method string|null getValueDate()
+ * @method self setTimeForPayment(null|array|\Naugrim\OpenTrans\Nodes\TimeForPayment $timeForPayment)
+ * @method \Naugrim\OpenTrans\Nodes\TimeForPayment|null getTimeForPayment()
  */
 class PaymentTerms implements NodeInterface
 {

@@ -13,6 +13,26 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<Details>
+ * @method self setName(string $name)
+ * @method string getName()
+ * @method self setFirstName(string $firstName)
+ * @method string getFirstName()
+ * @method self setTitle(string $title)
+ * @method string getTitle()
+ * @method self setAcademicTitle(string $academicTitle)
+ * @method string getAcademicTitle()
+ * @method self setRole(\Naugrim\BMEcat\Nodes\Contact\Role[]|array $role)
+ * @method \Naugrim\BMEcat\Nodes\Contact\Role[]|array getRole()
+ * @method self setContactDescr(string $contactDescr)
+ * @method string getContactDescr()
+ * @method self setPhone(\Naugrim\BMEcat\Nodes\Phone[]|array $phone)
+ * @method \Naugrim\BMEcat\Nodes\Phone[]|array getPhone()
+ * @method self setFax(array|\Naugrim\BMEcat\Nodes\Fax $fax)
+ * @method \Naugrim\BMEcat\Nodes\Fax getFax()
+ * @method self setUrl(string $url)
+ * @method string getUrl()
+ * @method self setEmails(array|\Naugrim\OpenTrans\Nodes\Emails $emails)
+ * @method \Naugrim\OpenTrans\Nodes\Emails getEmails()
  */
 class Details implements NodeInterface
 {

@@ -11,6 +11,12 @@ use Naugrim\OpenTrans\Nodes\FinalDeliveryIdRef;
 
 /**
  * @implements NodeInterface<ShipmentPartiesReference>
+ * @method self setDeliveryIdRef(array|\Naugrim\OpenTrans\Nodes\DeliveryIdRef $deliveryIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\DeliveryIdRef getDeliveryIdRef()
+ * @method self setFinalDeliveryIdRef(null|array|\Naugrim\OpenTrans\Nodes\FinalDeliveryIdRef $finalDeliveryIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\FinalDeliveryIdRef|null getFinalDeliveryIdRef()
+ * @method self setDelivererIdRef(null|array|\Naugrim\OpenTrans\Nodes\DelivererIdRef $delivererIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\DelivererIdRef|null getDelivererIdRef()
  */
 class ShipmentPartiesReference implements NodeInterface
 {

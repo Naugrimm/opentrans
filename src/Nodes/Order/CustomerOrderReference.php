@@ -9,6 +9,16 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<CustomerOrderReference>
+ * @method self setOrderId(string|null $orderId)
+ * @method string|null getOrderId()
+ * @method self setLineItemId(string|null $lineItemId)
+ * @method string|null getLineItemId()
+ * @method self setOrderDate(null|array|\DateTimeInterface $orderDate)
+ * @method \DateTimeInterface|null getOrderDate()
+ * @method self setOrderDescr(string|null $orderDescr)
+ * @method string|null getOrderDescr()
+ * @method self setCustomerIdRef(null|array|\Naugrim\OpenTrans\Nodes\Order\CustomerIdRef $customerIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\Order\CustomerIdRef|null getCustomerIdRef()
  */
 class CustomerOrderReference implements NodeInterface
 {
