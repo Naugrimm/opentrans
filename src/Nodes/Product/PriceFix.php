@@ -13,8 +13,8 @@ use Naugrim\OpenTrans\OpenTrans;
  * @implements NodeInterface<PriceFix>
  * @method self setAmount(float $amount)
  * @method float getAmount()
- * @method self setAllowOrChargesFix(array|\Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix)
- * @method \Naugrim\OpenTrans\Nodes\AllowOrChargesFix getAllowOrChargesFix()
+ * @method self setAllowOrChargesFix(null|array|\Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix)
+ * @method \Naugrim\OpenTrans\Nodes\AllowOrChargesFix|null getAllowOrChargesFix()
  * @method self setTax(\Naugrim\OpenTrans\Nodes\Tax\DetailsFix[]|array $tax)
  * @method \Naugrim\OpenTrans\Nodes\Tax\DetailsFix[]|array getTax()
  * @method self setPriceQuantity(float|null $priceQuantity)
@@ -33,7 +33,7 @@ class PriceFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type(AllowOrChargesFix::class)]
     #[Serializer\SerializedName('ALLOW_OR_CHARGES_FIX')]
-    protected AllowOrChargesFix $allowOrChargesFix;
+    protected ?AllowOrChargesFix $allowOrChargesFix = null;
 
     /**
      * @var DetailsFix[]

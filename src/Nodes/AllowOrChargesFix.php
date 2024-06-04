@@ -10,8 +10,8 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
  * @implements NodeInterface<AllowOrChargesFix>
  * @method self setAllowOrCharge(\Naugrim\OpenTrans\Nodes\AllowOrCharge[]|array $allowOrCharge)
  * @method \Naugrim\OpenTrans\Nodes\AllowOrCharge[]|array getAllowOrCharge()
- * @method self setAllowOrChargesTotalAmount(float $allowOrChargesTotalAmount)
- * @method float getAllowOrChargesTotalAmount()
+ * @method self setAllowOrChargesTotalAmount(float|null $allowOrChargesTotalAmount)
+ * @method float|null getAllowOrChargesTotalAmount()
  */
 class AllowOrChargesFix implements NodeInterface
 {
@@ -28,5 +28,5 @@ class AllowOrChargesFix implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('ALLOW_OR_CHARGES_TOTAL_AMOUNT')]
-    protected float $allowOrChargesTotalAmount;
+    protected ?float $allowOrChargesTotalAmount = null;
 }
