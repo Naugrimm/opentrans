@@ -15,8 +15,8 @@ use Naugrim\OpenTrans\Nodes\BankCode;
  * @implements NodeInterface<Payment>
  * @method self setCard(null|array|\Naugrim\OpenTrans\Nodes\Payment\Card $card)
  * @method \Naugrim\OpenTrans\Nodes\Payment\Card|null getCard()
- * @method self setAccounts(\Naugrim\OpenTrans\Nodes\Account[]|array $accounts)
- * @method \Naugrim\OpenTrans\Nodes\Account[]|array getAccounts()
+ * @method self setAccounts(\Naugrim\OpenTrans\Nodes\Account|array $accounts)
+ * @method Naugrim\OpenTrans\Nodes\Account[] getAccounts()
  * @method self setCash(bool|null $cash)
  * @method bool|null getCash()
  * @method self setDebit(bool|null $debit)
