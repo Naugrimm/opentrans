@@ -15,8 +15,8 @@ use Naugrim\OpenTrans\OpenTrans;
  * @implements NodeInterface<OrderChange>
  * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\OrderChange\Header $header)
  * @method \Naugrim\OpenTrans\Nodes\OrderChange\Header getHeader()
- * @method self setItems(\Naugrim\OpenTrans\Nodes\Order\Item[]|array $items)
- * @method \Naugrim\OpenTrans\Nodes\Order\Item[]|array getItems()
+ * @method self setItems(\Naugrim\OpenTrans\Nodes\Order\Item|array $items)
+ * @method Naugrim\OpenTrans\Nodes\Order\Item[] getItems()
  * @method self setSummary(array|\Naugrim\OpenTrans\Nodes\Order\Summary $summary)
  * @method \Naugrim\OpenTrans\Nodes\Order\Summary getSummary()
  */

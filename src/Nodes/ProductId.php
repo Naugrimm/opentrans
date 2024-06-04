@@ -13,28 +13,28 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<ProductId>
- * @method self setSupplierPid(array|\Naugrim\BMEcat\Nodes\SupplierPid $supplierPid)
- * @method \Naugrim\BMEcat\Nodes\SupplierPid getSupplierPid()
- * @method self setSupplierIdRef(array|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
- * @method \Naugrim\BMEcat\Nodes\SupplierIdRef getSupplierIdRef()
- * @method self setConfigCodeFix(string $configCodeFix)
- * @method string getConfigCodeFix()
- * @method self setLotNumber(string $lotNumber)
- * @method string getLotNumber()
- * @method self setSerialNumber(string $serialNumber)
- * @method string getSerialNumber()
+ * @method self setSupplierPid(null|array|\Naugrim\BMEcat\Nodes\SupplierPid $supplierPid)
+ * @method \Naugrim\BMEcat\Nodes\SupplierPid|null getSupplierPid()
+ * @method self setSupplierIdRef(null|array|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
+ * @method \Naugrim\BMEcat\Nodes\SupplierIdRef|null getSupplierIdRef()
+ * @method self setConfigCodeFix(string|null $configCodeFix)
+ * @method string|null getConfigCodeFix()
+ * @method self setLotNumber(array $lotNumber)
+ * @method string[] getLotNumber()
+ * @method self setSerialNumber(array $serialNumber)
+ * @method string[] getSerialNumber()
  * @method self setInternationalPid(\Naugrim\BMEcat\Nodes\InternationalPid[]|array $internationalPid)
  * @method \Naugrim\BMEcat\Nodes\InternationalPid[]|array getInternationalPid()
  * @method self setBuyerPid(\Naugrim\BMEcat\Nodes\BuyerPid[]|array $buyerPid)
  * @method \Naugrim\BMEcat\Nodes\BuyerPid[]|array getBuyerPid()
- * @method self setDescriptionShort(string $descriptionShort)
- * @method string getDescriptionShort()
- * @method self setDescriptionLong(string $descriptionLong)
- * @method string getDescriptionLong()
+ * @method self setDescriptionShort(string|null $descriptionShort)
+ * @method string|null getDescriptionShort()
+ * @method self setDescriptionLong(string|null $descriptionLong)
+ * @method string|null getDescriptionLong()
  * @method self setManufacturerInfo(null|array|\Naugrim\OpenTrans\Nodes\ManufacturerInfo $manufacturerInfo)
  * @method \Naugrim\OpenTrans\Nodes\ManufacturerInfo|null getManufacturerInfo()
- * @method self setProductType(string $productType)
- * @method string getProductType()
+ * @method self setProductType(string|null $productType)
+ * @method string|null getProductType()
  */
 class ProductId implements NodeInterface
 {
@@ -44,23 +44,26 @@ class ProductId implements NodeInterface
     #[Serializer\Type(SupplierPid::class)]
     #[Serializer\SerializedName('SUPPLIER_PID')]
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected SupplierPid $supplierPid;
+    protected ?SupplierPid $supplierPid = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(SupplierIdRef::class)]
     #[Serializer\SerializedName('SUPPLIER_IDREF')]
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected SupplierIdRef $supplierIdRef;
+    protected ?SupplierIdRef $supplierIdRef = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('CONFIG_CODE_FIX')]
-    protected string $configCodeFix;
+    protected ?string $configCodeFix = null;
 
+    /**
+     * @var string[]
+     */
     #[Serializer\Expose]
-    #[Serializer\Type('string')]
-    #[Serializer\SerializedName('LOT_NUMBER')]
-    protected string $lotNumber;
+    #[Serializer\Type('array<string>')]
+    #[Serializer\XmlList(entry: 'LOT_NUMBER', inline: true)]
+    protected array $lotNumber = [];
 
     /**
      * @var string[]
@@ -90,13 +93,13 @@ class ProductId implements NodeInterface
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('DESCRIPTION_SHORT')]
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected string $descriptionShort;
+    protected ?string $descriptionShort = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('DESCRIPTION_LONG')]
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected string $descriptionLong;
+    protected ?string $descriptionLong = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(ManufacturerInfo::class)]
@@ -107,5 +110,5 @@ class ProductId implements NodeInterface
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('PRODUCT_TYPE')]
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
-    protected string $productType;
+    protected ?string $productType = null;
 }

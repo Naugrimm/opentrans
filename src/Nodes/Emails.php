@@ -10,8 +10,8 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<self>
- * @method self setEmail(string $email)
- * @method string getEmail()
+ * @method self setEmail(array $email)
+ * @method string[] getEmail()
  * @method self setPublicKeys(\Naugrim\BMEcat\Nodes\Crypto\PublicKey[]|array $publicKeys)
  * @method \Naugrim\BMEcat\Nodes\Crypto\PublicKey[]|array getPublicKeys()
  */

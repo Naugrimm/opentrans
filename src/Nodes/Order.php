@@ -17,8 +17,8 @@ use Naugrim\OpenTrans\OpenTrans;
  * @method string getType()
  * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\Order\Header $header)
  * @method \Naugrim\OpenTrans\Nodes\Order\Header getHeader()
- * @method self setItems(\Naugrim\OpenTrans\Nodes\Order\Item[]|array $items)
- * @method \Naugrim\OpenTrans\Nodes\Order\Item[]|array getItems()
+ * @method self setItems(\Naugrim\OpenTrans\Nodes\Order\Item|array $items)
+ * @method Naugrim\OpenTrans\Nodes\Order\Item[] getItems()
  * @method self setSummary(array|\Naugrim\OpenTrans\Nodes\Order\Summary $summary)
  * @method \Naugrim\OpenTrans\Nodes\Order\Summary getSummary()
  */
