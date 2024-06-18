@@ -9,6 +9,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 
 /**
  * @implements NodeInterface<Header>
+ * @method self setControlInfo(array|\Naugrim\OpenTrans\Nodes\ControlInfo $controlInfo)
+ * @method \Naugrim\OpenTrans\Nodes\ControlInfo getControlInfo()
  * @method self setInfo(array|\Naugrim\OpenTrans\Nodes\OrderResponse\Info $info)
  * @method \Naugrim\OpenTrans\Nodes\OrderResponse\Info getInfo()
  */

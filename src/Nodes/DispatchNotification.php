@@ -13,6 +13,8 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<DispatchNotification>
+ * @method self setVersion(string $version)
+ * @method string getVersion()
  * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\DispatchNotification\Header $header)
  * @method \Naugrim\OpenTrans\Nodes\DispatchNotification\Header getHeader()
  * @method self setItems(\Naugrim\OpenTrans\Nodes\DispatchNotification\Item[]|array $items)

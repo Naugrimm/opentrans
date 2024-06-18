@@ -10,6 +10,8 @@ use Naugrim\OpenTrans\Nodes\Order\History;
 
 /**
  * @implements NodeInterface<Header>
+ * @method self setControlInfo(array|\Naugrim\OpenTrans\Nodes\ControlInfo $controlInfo)
+ * @method \Naugrim\OpenTrans\Nodes\ControlInfo getControlInfo()
  * @method self setInfo(array|\Naugrim\OpenTrans\Nodes\Invoice\Info $info)
  * @method \Naugrim\OpenTrans\Nodes\Invoice\Info getInfo()
  * @method self setOrderHistory(array|\Naugrim\OpenTrans\Nodes\Order\History $orderHistory)

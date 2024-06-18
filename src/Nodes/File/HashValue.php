@@ -10,6 +10,12 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<HashValue>
+ * @method self setType(string $type)
+ * @method string getType()
+ * @method self setValue(string $value)
+ * @method string getValue()
+ * @method self setLang(string $lang)
+ * @method string getLang()
  */
 class HashValue implements NodeInterface
 {

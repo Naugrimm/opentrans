@@ -9,6 +9,10 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<CustomerIdRef>
+ * @method self setType(string $type)
+ * @method string getType()
+ * @method self setValue(string $value)
+ * @method string getValue()
  */
 class CustomerIdRef implements NodeInterface
 {

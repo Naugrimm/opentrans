@@ -17,6 +17,8 @@ use Naugrim\OpenTrans\Nodes\UdxInterface;
 
 /**
  * @implements NodeInterface<Item>
+ * @method self setSourcingInfo(array|\Naugrim\OpenTrans\Nodes\SourcingInfo $sourcingInfo)
+ * @method \Naugrim\OpenTrans\Nodes\SourcingInfo getSourcingInfo()
  * @method self setLineItemId(string $lineItemId)
  * @method string getLineItemId()
  * @method self setProductId(array|\Naugrim\OpenTrans\Nodes\ProductId $productId)

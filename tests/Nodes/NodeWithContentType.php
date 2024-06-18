@@ -8,6 +8,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasContentTypeAttribute;
 
 /**
  * @implements \Naugrim\BMEcat\Nodes\Contracts\NodeInterface<NodeWithContentType>
+ * @method self setContentType(string $contentType)
+ * @method string getContentType()
  */
 class NodeWithContentType implements NodeInterface
 {
