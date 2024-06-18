@@ -13,6 +13,8 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<OrderResponse>
+ * @method self setVersion(string $version)
+ * @method string getVersion()
  * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\OrderResponse\Header $header)
  * @method \Naugrim\OpenTrans\Nodes\OrderResponse\Header getHeader()
  * @method self setItems(\Naugrim\OpenTrans\Nodes\OrderResponse\Item|array $items)

@@ -13,6 +13,8 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<OrderChange>
+ * @method self setVersion(string $version)
+ * @method string getVersion()
  * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\OrderChange\Header $header)
  * @method \Naugrim\OpenTrans\Nodes\OrderChange\Header getHeader()
  * @method self setItems(\Naugrim\OpenTrans\Nodes\Order\Item|array $items)

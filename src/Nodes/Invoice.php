@@ -13,6 +13,8 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<Invoice>
+ * @method self setVersion(string $version)
+ * @method string getVersion()
  * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\Invoice\Header $header)
  * @method \Naugrim\OpenTrans\Nodes\Invoice\Header getHeader()
  * @method self setItems(\Naugrim\OpenTrans\Nodes\Invoice\Item|array $items)

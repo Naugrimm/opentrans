@@ -12,6 +12,10 @@ use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
 
 /**
  * @implements NodeInterface<Summary>
+ * @method self setTotalItemNum(int $totalItemNum)
+ * @method int getTotalItemNum()
+ * @method self setTotalAmount(float $totalAmount)
+ * @method float getTotalAmount()
  * @method self setNetValueGoods(float $netValueGoods)
  * @method float getNetValueGoods()
  * @method self setTotalTax(\Naugrim\OpenTrans\Nodes\Tax\DetailsFix|array $totalTax)

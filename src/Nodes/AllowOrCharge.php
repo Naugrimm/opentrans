@@ -9,6 +9,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<AllowOrCharge>
+ * @method self setType(string $type)
+ * @method string getType()
  * @method self setSequence(int|null $sequence)
  * @method int|null getSequence()
  * @method self setName(string|null $name)

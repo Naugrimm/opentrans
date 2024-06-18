@@ -10,6 +10,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<Agreement>
+ * @method self setType(string $type)
+ * @method string getType()
  * @method self setDefault(bool $default)
  * @method bool getDefault()
  * @method self setId(string $id)

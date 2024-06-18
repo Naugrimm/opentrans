@@ -11,6 +11,10 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 
 /**
  * @implements NodeInterface<Summary>
+ * @method self setTotalItemNum(int $totalItemNum)
+ * @method int getTotalItemNum()
+ * @method self setTotalAmount(float $totalAmount)
+ * @method float getTotalAmount()
  * @method self setAllowOrChargesFix(array|\Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix)
  * @method \Naugrim\OpenTrans\Nodes\AllowOrChargesFix getAllowOrChargesFix()
  */

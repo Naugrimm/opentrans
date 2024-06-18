@@ -9,6 +9,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<DeliveryDate>
+ * @method self setType(string $type)
+ * @method string getType()
  * @method self setDeliveryStartDate(string $deliveryStartDate)
  * @method string getDeliveryStartDate()
  * @method self setDeliveryEndDate(string $deliveryEndDate)

@@ -9,6 +9,8 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 
 /**
  * @implements NodeInterface<Summary>
+ * @method self setTotalItemNum(int $totalItemNum)
+ * @method int getTotalItemNum()
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum'])]
 class Summary implements NodeInterface

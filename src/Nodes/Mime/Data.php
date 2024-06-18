@@ -9,6 +9,10 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasStringValue;
 
 /**
  * @implements NodeInterface<Data>
+ * @method self setContentType(string $contentType)
+ * @method string getContentType()
+ * @method self setValue(string $value)
+ * @method string getValue()
  */
 class Data implements NodeInterface
 {

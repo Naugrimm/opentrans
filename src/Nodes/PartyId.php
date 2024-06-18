@@ -10,6 +10,10 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
 
 /**
  * @implements NodeInterface<PartyId>
+ * @method self setType(string $type)
+ * @method string getType()
+ * @method self setValue(string $value)
+ * @method string getValue()
  */
 #[Serializer\XmlRoot('PARTY_ID')]
 class PartyId implements NodeInterface

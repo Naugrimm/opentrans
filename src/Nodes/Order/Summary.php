@@ -10,6 +10,10 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
 
 /**
  * @implements NodeInterface<Summary>
+ * @method self setTotalItemNum(int $totalItemNum)
+ * @method int getTotalItemNum()
+ * @method self setTotalAmount(float $totalAmount)
+ * @method float getTotalAmount()
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'totalAmount'])]
 class Summary implements NodeInterface

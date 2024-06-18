@@ -12,6 +12,10 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
  * https://web.archive.org/web/20150418213750/http://www.unece.org/trade/untdid/d00b/tred/tred4279.htm
  * -
  * @implements NodeInterface<PaymentTerm>
+ * @method self setType(string $type)
+ * @method string getType()
+ * @method self setValue(string $value)
+ * @method string getValue()
  */
 class PaymentTerm implements NodeInterface
 {
