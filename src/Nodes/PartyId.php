@@ -25,23 +25,23 @@ class PartyId implements NodeInterface
     use HasTypeAttribute;
     use HasStringValue;
 
-    public const TYPE_SUPPLIER_SPECIFIC = 'supplier_specific';
+    public const string TYPE_SUPPLIER_SPECIFIC = 'supplier_specific';
 
-    public const TYPE_BUYER_SPECIFIC = 'buyer_specific';
+    public const string TYPE_BUYER_SPECIFIC = 'buyer_specific';
 
-    public const TYPE_CUSTOMER_SPECIFIC = 'customer_specific';
+    public const string TYPE_CUSTOMER_SPECIFIC = 'customer_specific';
 
-    public const TYPE_PARTY_SPECIFIC = 'party_specific';
+    public const string TYPE_PARTY_SPECIFIC = 'party_specific';
 
-    public const TYPE_DUNS = 'duns';
+    public const string TYPE_DUNS = 'duns';
 
-    public const TYPE_ILN = 'iln';
+    public const string TYPE_ILN = 'iln';
 
-    public const TYPE_GLN = 'gln';
+    public const string TYPE_GLN = 'gln';
 
-    public const TYPE_BUYER = 'buyer';
+    public const string TYPE_BUYER = 'buyer';
 
-    public const TYPE_ISSUER = 'issuer';
+    public const string TYPE_ISSUER = 'issuer';
 
-    public const TYPE_SUPPLIER = 'supplier';
+    public const string TYPE_SUPPLIER = 'supplier';
 }
