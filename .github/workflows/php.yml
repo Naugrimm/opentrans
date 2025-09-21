@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: '8.4'
       - uses: actions/checkout@v4
       - name: Cache Composer dependencies
         uses: actions/cache@v4
@@ -22,7 +22,7 @@ jobs:
       - uses: php-actions/composer@v6
         with:
           args: --no-scripts
-          php_version: "8.3"
+          php_version: "8.4"
           php_extensions: dom libxml
       - name: Run Rector
         run: ./vendor/bin/rector --dry-run

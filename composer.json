@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "ext-dom": "*",
         "ext-libxml": "*",
         "jms/serializer": "^3.30.0",
