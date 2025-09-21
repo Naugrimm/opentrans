@@ -15,13 +15,13 @@ use Naugrim\OpenTrans\Nodes\Catalog\Reference;
  * @method string getOrderId()
  * @method self setLineItemId(string $lineItemId)
  * @method string getLineItemId()
- * @method self setOrderDate(null|array|\DateTimeInterface $orderDate)
+ * @method self setOrderDate(null|\DateTimeInterface $orderDate)
  * @method \DateTimeInterface|null getOrderDate()
  * @method self setOrderDescription(string $orderDescription)
  * @method string getOrderDescription()
- * @method self setAgreement(\Naugrim\OpenTrans\Nodes\Agreement[]|array $agreement)
- * @method \Naugrim\OpenTrans\Nodes\Agreement[]|array getAgreement()
- * @method self setCatalogReference(null|array|\Naugrim\OpenTrans\Nodes\Catalog\Reference $catalogReference)
+ * @method self setAgreement(\Naugrim\OpenTrans\Nodes\Agreement[]|array<string, mixed> $agreement)
+ * @method \Naugrim\OpenTrans\Nodes\Agreement[] getAgreement()
+ * @method self setCatalogReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\Catalog\Reference $catalogReference)
  * @method \Naugrim\OpenTrans\Nodes\Catalog\Reference|null getCatalogReference()
  */
 class OrderReference implements NodeInterface

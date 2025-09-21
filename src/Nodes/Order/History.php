@@ -24,9 +24,9 @@ use Naugrim\OpenTrans\Nodes\Catalog\Reference;
  * @method string getDeliverynoteId()
  * @method self setDeliverynoteDate(string $deliverynoteDate)
  * @method string getDeliverynoteDate()
- * @method self setAgreement(array|\Naugrim\OpenTrans\Nodes\Agreement $agreement)
+ * @method self setAgreement(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Agreement $agreement)
  * @method \Naugrim\OpenTrans\Nodes\Agreement getAgreement()
- * @method self setCatalogReference(array|\Naugrim\OpenTrans\Nodes\Catalog\Reference $catalogReference)
+ * @method self setCatalogReference(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Catalog\Reference $catalogReference)
  * @method \Naugrim\OpenTrans\Nodes\Catalog\Reference getCatalogReference()
  */
 class History implements NodeInterface

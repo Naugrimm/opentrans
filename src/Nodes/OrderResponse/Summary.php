@@ -15,7 +15,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTotalItemNum;
  * @method int getTotalItemNum()
  * @method self setTotalAmount(float $totalAmount)
  * @method float getTotalAmount()
- * @method self setAllowOrChargesFix(array|\Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix)
+ * @method self setAllowOrChargesFix(array<string, mixed>|\Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix)
  * @method \Naugrim\OpenTrans\Nodes\AllowOrChargesFix getAllowOrChargesFix()
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'totalAmount', 'allowOrChargesFix'])]

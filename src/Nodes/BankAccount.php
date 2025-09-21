@@ -23,7 +23,7 @@ class BankAccount implements NodeInterface
     use HasTypeAttribute;
     use HasStringValue;
 
-    public const TYPE_IBAN = 'iban';
+    public const string TYPE_IBAN = 'iban';
 
-    public const STANDARD = 'standard';
+    public const string STANDARD = 'standard';
 }

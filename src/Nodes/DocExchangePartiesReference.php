@@ -8,10 +8,10 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<DocExchangePartiesReference>
- * @method self setDocumentIssuerIdRef(null|array|\Naugrim\OpenTrans\Nodes\IdRef $documentIssuerIdRef)
+ * @method self setDocumentIssuerIdRef(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\IdRef $documentIssuerIdRef)
  * @method \Naugrim\OpenTrans\Nodes\IdRef|null getDocumentIssuerIdRef()
- * @method self setDocumentRecipientIdRef(\Naugrim\OpenTrans\Nodes\IdRef[]|array $documentRecipientIdRef)
- * @method \Naugrim\OpenTrans\Nodes\IdRef[]|array getDocumentRecipientIdRef()
+ * @method self setDocumentRecipientIdRef(\Naugrim\OpenTrans\Nodes\IdRef[]|array<string, mixed> $documentRecipientIdRef)
+ * @method \Naugrim\OpenTrans\Nodes\IdRef[] getDocumentRecipientIdRef()
  */
 class DocExchangePartiesReference implements NodeInterface
 {

@@ -22,12 +22,12 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
  * @method string getStartDate()
  * @method self setEndDate(string $endDate)
  * @method string getEndDate()
- * @method self setSupplierIdRef(array|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
+ * @method self setSupplierIdRef(array<string, mixed>|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
  * @method \Naugrim\BMEcat\Nodes\SupplierIdRef getSupplierIdRef()
- * @method self setAgreementDescr(\Naugrim\OpenTrans\Nodes\AgreementDescr[]|array $agreementDescr)
- * @method \Naugrim\OpenTrans\Nodes\AgreementDescr[]|array getAgreementDescr()
- * @method self setMimeInfo(\Naugrim\OpenTrans\Nodes\Mime|array $mimeInfo)
- * @method Naugrim\OpenTrans\Nodes\Mime[] getMimeInfo()
+ * @method self setAgreementDescr(\Naugrim\OpenTrans\Nodes\AgreementDescr[]|array<string, mixed> $agreementDescr)
+ * @method \Naugrim\OpenTrans\Nodes\AgreementDescr[] getAgreementDescr()
+ * @method self setMimeInfo(\Naugrim\OpenTrans\Nodes\Mime[]|array<string, mixed> $mimeInfo)
+ * @method \Naugrim\OpenTrans\Nodes\Mime[] getMimeInfo()
  */
 class Agreement implements NodeInterface
 {

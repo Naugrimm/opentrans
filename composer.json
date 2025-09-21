@@ -14,7 +14,8 @@
         "ext-dom": "*",
         "ext-libxml": "*",
         "jms/serializer": "^3.30.0",
-        "naugrim/bmecat": "^5.0.2"
+        "naugrim/bmecat": "^5.0.2",
+        "webmozart/assert": "^1.11"
     },
     "autoload": {
         "psr-4": {

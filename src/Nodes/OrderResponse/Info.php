@@ -17,13 +17,13 @@ use Naugrim\OpenTrans\Nodes\Party;
  * @method string getOrderResponseDate()
  * @method self setOrderDate(string $orderDate)
  * @method string getOrderDate()
- * @method self setDeliveryDate(array|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
+ * @method self setDeliveryDate(array<string, mixed>|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
  * @method \Naugrim\OpenTrans\Nodes\DeliveryDate getDeliveryDate()
  * @method self setSequenceId(int $sequenceId)
  * @method int getSequenceId()
- * @method self setParties(\Naugrim\OpenTrans\Nodes\Party|array $parties)
- * @method Naugrim\OpenTrans\Nodes\Party[] getParties()
- * @method self setPartiesReference(array|\Naugrim\OpenTrans\Nodes\Order\PartiesReference $partiesReference)
+ * @method self setParties(\Naugrim\OpenTrans\Nodes\Party[]|array<string, mixed> $parties)
+ * @method \Naugrim\OpenTrans\Nodes\Party[] getParties()
+ * @method self setPartiesReference(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Order\PartiesReference $partiesReference)
  * @method \Naugrim\OpenTrans\Nodes\Order\PartiesReference getPartiesReference()
  */
 class Info implements NodeInterface

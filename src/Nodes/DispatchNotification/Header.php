@@ -9,9 +9,9 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasControlInfo;
 
 /**
  * @implements NodeInterface<Header>
- * @method self setControlInfo(array|\Naugrim\OpenTrans\Nodes\ControlInfo $controlInfo)
+ * @method self setControlInfo(array<string, mixed>|\Naugrim\OpenTrans\Nodes\ControlInfo $controlInfo)
  * @method \Naugrim\OpenTrans\Nodes\ControlInfo getControlInfo()
- * @method self setInfo(array|\Naugrim\OpenTrans\Nodes\DispatchNotification\Info $info)
+ * @method self setInfo(array<string, mixed>|\Naugrim\OpenTrans\Nodes\DispatchNotification\Info $info)
  * @method \Naugrim\OpenTrans\Nodes\DispatchNotification\Info getInfo()
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'info'])]

@@ -19,7 +19,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
  * @method string|null getAllowOrChargeType()
  * @method self setDescription(string|null $description)
  * @method string|null getDescription()
- * @method self setValue(null|array|\Naugrim\OpenTrans\Nodes\AllowOrChargeValue $value)
+ * @method self setValue(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\AllowOrChargeValue $value)
  * @method \Naugrim\OpenTrans\Nodes\AllowOrChargeValue|null getValue()
  * @method self setBase(float|null $base)
  * @method float|null getBase()

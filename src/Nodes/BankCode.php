@@ -23,5 +23,5 @@ class BankCode implements NodeInterface
     use HasTypeAttribute;
     use HasStringValue;
 
-    public const TYPE_BIC = 'bic';
+    public const string TYPE_BIC = 'bic';
 }

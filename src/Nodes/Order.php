@@ -17,11 +17,11 @@ use Naugrim\OpenTrans\OpenTrans;
  * @method string getVersion()
  * @method self setType(string $type)
  * @method string getType()
- * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\Order\Header $header)
+ * @method self setHeader(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Order\Header $header)
  * @method \Naugrim\OpenTrans\Nodes\Order\Header getHeader()
- * @method self setItems(\Naugrim\OpenTrans\Nodes\Order\Item|array $items)
- * @method Naugrim\OpenTrans\Nodes\Order\Item[] getItems()
- * @method self setSummary(array|\Naugrim\OpenTrans\Nodes\Order\Summary $summary)
+ * @method self setItems(\Naugrim\OpenTrans\Nodes\Order\Item[]|array<string, mixed> $items)
+ * @method \Naugrim\OpenTrans\Nodes\Order\Item[] getItems()
+ * @method self setSummary(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Order\Summary $summary)
  * @method \Naugrim\OpenTrans\Nodes\Order\Summary getSummary()
  */
 #[Serializer\XmlRoot('ORDER')]

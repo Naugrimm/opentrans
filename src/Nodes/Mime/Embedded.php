@@ -11,7 +11,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasLangAttribute;
  * @implements NodeInterface<Embedded>
  * @method self setLang(string $lang)
  * @method string getLang()
- * @method self setData(array|\Naugrim\OpenTrans\Nodes\Mime\Data $data)
+ * @method self setData(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Mime\Data $data)
  * @method \Naugrim\OpenTrans\Nodes\Mime\Data getData()
  * @method self setFileName(string $fileName)
  * @method string getFileName()

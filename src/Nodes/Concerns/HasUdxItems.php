@@ -44,7 +44,7 @@ trait HasUdxItems
     /**
      * @template TData of array<string, mixed>
      * @param TData $udxData
-     * @return non-empty-array<'class'|'name'|'value'|'vendor', non-falsy-string>
+     * @return non-empty-array<'class'|'name'|'value'|'vendor', non-empty-string>
      */
     private function parseUdxData(array $udxData): array
     {
@@ -77,7 +77,12 @@ trait HasUdxItems
                 );
             }
 
-            $data[$key] = sprintf('%s', $udxData[$key]);
+            $value = sprintf('%s', $udxData[$key]);
+            if ($value === '') {
+                continue;
+            }
+
+            $data[$key] = $value;
         }
 
         if (isset($udxData['class']) && is_string($udxData['class']) && class_exists($udxData['class'])) {
