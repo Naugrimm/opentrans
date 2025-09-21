@@ -57,7 +57,7 @@ class InvoiceTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'invoice-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -113,10 +113,10 @@ class InvoiceTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'invoice-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'deliveryDate' => [
-                                'deliveryStartDate' => (new DateTimeImmutable('2020-02-27'))->format('Y-m-d'),
-                                'deliveryEndDate' => (new DateTimeImmutable('2020-02-27'))->format('Y-m-d'),
+                                'deliveryStartDate' => new DateTimeImmutable('2020-02-27')->format('Y-m-d'),
+                                'deliveryEndDate' => new DateTimeImmutable('2020-02-27')->format('Y-m-d'),
                             ],
                             'parties' => [
                                 [

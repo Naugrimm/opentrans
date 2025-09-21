@@ -35,7 +35,7 @@ trait CanAssertConstantValue
      */
     private static function getClassConstants(): array
     {
-        $constants = (new ReflectionClass(static::class))->getConstants();
+        $constants = new ReflectionClass(static::class)->getConstants();
         Assert::allString($constants);
         
         return $constants;
