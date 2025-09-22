@@ -1,3 +1,30 @@
+# 4.x
+
+### BREAKING CHANGES
+
+- **PHP 8.4 Required**: Minimum PHP version is now 8.4. Projects using older PHP versions must upgrade.
+- **BMEcat Dependency Upgrade**: Upgraded `naugrim/bmecat` from ^5.0 to ^6.0. See the [BMEcat CHANGELOG.md](https://github.com/Naugrimm/bmecat/blob/develop/CHANGELOG.md) for additional breaking changes that may affect your implementation.
+
+### Added
+
+- **Documentation**: OpenTRANS specification documents and examples are now included directly in the repository under `docs/opentrans-docs/`, including:
+  - Complete OpenTRANS 2.1 specification PDFs in German and English
+  - XSD schema files for validation
+  - Sample XML documents
+- **Enhanced Type Safety**: Improved type hints throughout the codebase for better static analysis and IDE support
+
+### Changed
+
+- **Development Dependencies**: Upgraded development tools:
+  - PHPUnit upgraded to version 12
+  - PHPStan upgraded to version 2
+  - Updated Rector configuration for PHP 8.4 standards
+- **Code Quality**: Added constant type hints
+
+### Fixed
+
+- **Type Hints**: Added missing constant type hints in `PartyId`, `PartyRole`, `Card`, `PaymentTerm`, and `OpenTrans` classes
+
 # 3.x
 
 ## BREAKING CHANGES

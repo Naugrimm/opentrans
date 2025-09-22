@@ -15,11 +15,11 @@ use Naugrim\OpenTrans\OpenTrans;
  * @implements NodeInterface<OrderChange>
  * @method self setVersion(string $version)
  * @method string getVersion()
- * @method self setHeader(array|\Naugrim\OpenTrans\Nodes\OrderChange\Header $header)
+ * @method self setHeader(array<string, mixed>|\Naugrim\OpenTrans\Nodes\OrderChange\Header $header)
  * @method \Naugrim\OpenTrans\Nodes\OrderChange\Header getHeader()
- * @method self setItems(\Naugrim\OpenTrans\Nodes\Order\Item|array $items)
- * @method Naugrim\OpenTrans\Nodes\Order\Item[] getItems()
- * @method self setSummary(array|\Naugrim\OpenTrans\Nodes\Order\Summary $summary)
+ * @method self setItems(\Naugrim\OpenTrans\Nodes\Order\Item[]|array<string, mixed> $items)
+ * @method \Naugrim\OpenTrans\Nodes\Order\Item[] getItems()
+ * @method self setSummary(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Order\Summary $summary)
  * @method \Naugrim\OpenTrans\Nodes\Order\Summary getSummary()
  */
 #[Serializer\XmlRoot('ORDERCHANGE')]

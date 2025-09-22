@@ -9,8 +9,8 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<self>
- * @method self setPackageId(\Naugrim\OpenTrans\Nodes\Logistic\PackageId[]|array $packageId)
- * @method \Naugrim\OpenTrans\Nodes\Logistic\PackageId[]|array getPackageId()
+ * @method self setPackageId(\Naugrim\OpenTrans\Nodes\Logistic\PackageId[]|array<string, mixed> $packageId)
+ * @method \Naugrim\OpenTrans\Nodes\Logistic\PackageId[] getPackageId()
  * @method self setPackageDescr(string|null $packageDescr)
  * @method string|null getPackageDescr()
  * @method self setPackingUnitCode(string|null $packingUnitCode)
@@ -21,12 +21,12 @@ use Naugrim\OpenTrans\OpenTrans;
  * @method float|null getPackageOrderUnitQuantity()
  * @method self setPackageQuantity(float|null $packageQuantity)
  * @method float|null getPackageQuantity()
- * @method self setPackageDimensions(null|array|\Naugrim\OpenTrans\Nodes\Logistic\PackageDimensions $packageDimensions)
+ * @method self setPackageDimensions(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\Logistic\PackageDimensions $packageDimensions)
  * @method \Naugrim\OpenTrans\Nodes\Logistic\PackageDimensions|null getPackageDimensions()
  * @method self setMeansOfTransportIdRef(string|null $meansOfTransportIdRef)
  * @method string|null getMeansOfTransportIdRef()
- * @method self setSubPackages(\Naugrim\OpenTrans\Nodes\Logistic\Package[]|array $subPackages)
- * @method \Naugrim\OpenTrans\Nodes\Logistic\Package[]|array getSubPackages()
+ * @method self setSubPackages(\Naugrim\OpenTrans\Nodes\Logistic\Package[]|array<string, mixed> $subPackages)
+ * @method \Naugrim\OpenTrans\Nodes\Logistic\Package[] getSubPackages()
  */
 final class Package implements NodeInterface
 {

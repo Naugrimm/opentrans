@@ -1,10 +1,11 @@
 <?php
 
+/** @noinspection DevelopmentDependenciesUsageInspection */
+
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
-use Rector\Symfony\Set\JMSSetList;
 use Utils\Rector\Rector\AddDocBlockWithMethodHintsToNodeInterfaceClassesRector;
 use Utils\Rector\Rector\NodeInterfaceAddGenericImplementsAttributeRector;
 use Utils\Rector\Rector\NodeInterfaceAddHasSerializableAttributesTraitRector;
@@ -21,7 +22,6 @@ return RectorConfig::configure()
     ])
     // uncomment to reach your current PHP version
     ->withSets([
-        JMSSetList::ANNOTATIONS_TO_ATTRIBUTES,
         SetList::TYPE_DECLARATION,
         SetList::CODE_QUALITY,
         SetList::CODING_STYLE,

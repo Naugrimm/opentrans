@@ -12,6 +12,7 @@ use Naugrim\BMEcat\Exception\SchemaValidationException;
 use Naugrim\BMEcat\Exception\UnknownKeyException;
 use Naugrim\OpenTrans\Nodes\Invoice;
 use Naugrim\OpenTrans\SchemaValidator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Throwable;
 
@@ -25,13 +26,13 @@ class InvoiceTest extends TestCase
     }
 
     /**
-     * @dataProvider provideInvoiceData
      * @param string $file
      * @param array<string, mixed> $data
      * @throws InvalidSetterException
      * @throws SchemaValidationException
      * @throws UnknownKeyException
      */
+    #[DataProvider('provideInvoiceData')]
     public function testInvoice(string $file, array $data): void
     {
         $node = NodeBuilder::fromArray($data, NodeBuilder::fromArray([], Invoice::class));
@@ -57,7 +58,7 @@ class InvoiceTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'invoice-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -113,10 +114,10 @@ class InvoiceTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'invoice-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'deliveryDate' => [
-                                'deliveryStartDate' => (new DateTimeImmutable('2020-02-27'))->format('Y-m-d'),
-                                'deliveryEndDate' => (new DateTimeImmutable('2020-02-27'))->format('Y-m-d'),
+                                'deliveryStartDate' => new DateTimeImmutable('2020-02-27')->format('Y-m-d'),
+                                'deliveryEndDate' => new DateTimeImmutable('2020-02-27')->format('Y-m-d'),
                             ],
                             'parties' => [
                                 [

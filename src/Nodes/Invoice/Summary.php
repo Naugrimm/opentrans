@@ -18,9 +18,9 @@ use Naugrim\OpenTrans\Nodes\Tax\DetailsFix;
  * @method float getTotalAmount()
  * @method self setNetValueGoods(float $netValueGoods)
  * @method float getNetValueGoods()
- * @method self setTotalTax(\Naugrim\OpenTrans\Nodes\Tax\DetailsFix|array $totalTax)
- * @method Naugrim\OpenTrans\Nodes\Tax\DetailsFix[] getTotalTax()
- * @method self setAllowOrChargesFix(array|\Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix)
+ * @method self setTotalTax(\Naugrim\OpenTrans\Nodes\Tax\DetailsFix[]|array<string, mixed> $totalTax)
+ * @method \Naugrim\OpenTrans\Nodes\Tax\DetailsFix[] getTotalTax()
+ * @method self setAllowOrChargesFix(array<string, mixed>|\Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix)
  * @method \Naugrim\OpenTrans\Nodes\AllowOrChargesFix getAllowOrChargesFix()
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['totalItemNum', 'netValueGoods', 'netValueExtra', 'totalAmount', 'allowOrChargesFix', 'totalTax'])]

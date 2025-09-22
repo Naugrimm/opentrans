@@ -11,15 +11,15 @@ use Naugrim\OpenTrans\OpenTrans;
 
 /**
  * @implements NodeInterface<PriceFix>
- * @method self setProductId(array|\Naugrim\OpenTrans\Nodes\ProductId $productId)
+ * @method self setProductId(array<string, mixed>|\Naugrim\OpenTrans\Nodes\ProductId $productId)
  * @method \Naugrim\OpenTrans\Nodes\ProductId getProductId()
- * @method self setProductComponents(\Naugrim\OpenTrans\Nodes\Product\ProductComponent[]|array $productComponents)
- * @method \Naugrim\OpenTrans\Nodes\Product\ProductComponent[]|array getProductComponents()
+ * @method self setProductComponents(\Naugrim\OpenTrans\Nodes\Product\ProductComponent[]|array<string, mixed> $productComponents)
+ * @method \Naugrim\OpenTrans\Nodes\Product\ProductComponent[] getProductComponents()
  * @method self setQuantity(float $quantity)
  * @method float getQuantity()
  * @method self setOrderUnit(string $orderUnit)
  * @method string getOrderUnit()
- * @method self setPriceFix(array|\Naugrim\OpenTrans\Nodes\Product\PriceFix $priceFix)
+ * @method self setPriceFix(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Product\PriceFix $priceFix)
  * @method \Naugrim\OpenTrans\Nodes\Product\PriceFix getPriceFix()
  */
 class ProductComponent implements NodeInterface

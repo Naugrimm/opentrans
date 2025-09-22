@@ -9,13 +9,13 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<SourcingInfo>
- * @method self setPaymentDate(null|array|\DateTimeInterface $paymentDate)
+ * @method self setPaymentDate(null|\DateTimeInterface $paymentDate)
  * @method \DateTimeInterface|null getPaymentDate()
  * @method self setDays(int|null $days)
  * @method int|null getDays()
  * @method self setDiscountFactor(float|null $discountFactor)
  * @method float|null getDiscountFactor()
- * @method self setAllowOrChargesFix(null|array|\Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix)
+ * @method self setAllowOrChargesFix(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\AllowOrChargesFix $allowOrChargesFix)
  * @method \Naugrim\OpenTrans\Nodes\AllowOrChargesFix|null getAllowOrChargesFix()
  */
 class TimeForPayment implements NodeInterface

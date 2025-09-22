@@ -8,7 +8,7 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<SourcingInfo>
- * @method self setManufacturerIdRef(array|\Naugrim\OpenTrans\Nodes\IdRef $manufacturerIdRef)
+ * @method self setManufacturerIdRef(array<string, mixed>|\Naugrim\OpenTrans\Nodes\IdRef $manufacturerIdRef)
  * @method \Naugrim\OpenTrans\Nodes\IdRef getManufacturerIdRef()
  * @method self setManufacturerPid(string $manufacturerPid)
  * @method string getManufacturerPid()

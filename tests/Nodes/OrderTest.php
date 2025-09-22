@@ -10,6 +10,7 @@ use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\OpenTrans\Nodes\Order;
 use Naugrim\OpenTrans\Nodes\Udx;
 use Naugrim\OpenTrans\SchemaValidator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Throwable;
 
@@ -23,9 +24,9 @@ class OrderTest extends TestCase
     }
 
     /**
-     * @dataProvider provideOrderData
      * @param array<string, mixed> $data
      */
+    #[DataProvider('provideOrderData')]
     public function testOrder(string $file, array $data): void
     {
         $node = NodeBuilder::fromArray($data, NodeBuilder::fromArray([], Order::class));
@@ -51,7 +52,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -86,8 +87,8 @@ class OrderTest extends TestCase
                             'quantity' => 10,
                             'orderUnit' => 'C62',
                             'deliveryDate' => [
-                                'deliveryStartDate' => (new DateTimeImmutable('2020-02-27'))->format('Y-m-d'),
-                                'deliveryEndDate' => (new DateTimeImmutable('2020-02-27'))->format('Y-m-d'),
+                                'deliveryStartDate' => new DateTimeImmutable('2020-02-27')->format('Y-m-d'),
+                                'deliveryEndDate' => new DateTimeImmutable('2020-02-27')->format('Y-m-d'),
                             ],
                         ],
                     ],
@@ -102,10 +103,10 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'deliveryDate' => [
-                                'deliveryStartDate' => (new DateTimeImmutable('2020-02-27'))->format('Y-m-d'),
-                                'deliveryEndDate' => (new DateTimeImmutable('2020-02-27'))->format('Y-m-d'),
+                                'deliveryStartDate' => new DateTimeImmutable('2020-02-27')->format('Y-m-d'),
+                                'deliveryEndDate' => new DateTimeImmutable('2020-02-27')->format('Y-m-d'),
                             ],
                             'parties' => [
                                 [
@@ -153,7 +154,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -225,7 +226,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -284,7 +285,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -344,7 +345,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -420,7 +421,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -484,7 +485,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -539,7 +540,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -589,7 +590,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -639,7 +640,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -689,7 +690,7 @@ class OrderTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'order-id-1',
-                            'date' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [

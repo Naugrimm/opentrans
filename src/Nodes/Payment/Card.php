@@ -21,7 +21,7 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasTypeAttribute;
  * @method string|null getAuthCode()
  * @method self setRefNUm(string|null $refNUm)
  * @method string|null getRefNUm()
- * @method self setExpDate(null|array|\DateTimeInterface $expDate)
+ * @method self setExpDate(null|\DateTimeInterface $expDate)
  * @method \DateTimeInterface|null getExpDate()
  * @method self setHolder(string|null $holder)
  * @method string|null getHolder()
@@ -34,23 +34,23 @@ class Card implements NodeInterface
      */
     use HasTypeAttribute;
 
-    public const MASTER_CARD = 'MasterCard';
+    public const string MASTER_CARD = 'MasterCard';
 
-    public const VISA = 'VISA';
+    public const string VISA = 'VISA';
 
-    public const AMERICAN_EXPRESS = 'AmericanExpress';
+    public const string AMERICAN_EXPRESS = 'AmericanExpress';
 
-    public const JCB = 'JCB';
+    public const string JCB = 'JCB';
 
-    public const MAESTRO = 'Maestro';
+    public const string MAESTRO = 'Maestro';
 
-    public const DISCOVER_CARD = 'DiscoverCard';
+    public const string DISCOVER_CARD = 'DiscoverCard';
 
-    public const TRANS_CARD = 'Transcard';
+    public const string TRANS_CARD = 'Transcard';
 
-    public const DINA_CARD = 'DinaCard';
+    public const string DINA_CARD = 'DinaCard';
 
-    public const CHINA_UNION_PAY = 'ChinaUnionPay';
+    public const string CHINA_UNION_PAY = 'ChinaUnionPay';
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]

@@ -9,8 +9,6 @@ use Naugrim\OpenTrans\Nodes\Concerns\CanAssertConstantValue;
 
 /**
  * @implements NodeInterface<PartyRole>
- * @method self setRole(string $role)
- * @method string getRole()
  */
 #[Serializer\XmlRoot('PARTY_ROLE')]
 class PartyRole implements NodeInterface
@@ -18,41 +16,41 @@ class PartyRole implements NodeInterface
     use HasSerializableAttributes;
     use CanAssertConstantValue;
 
-    public const BUYER = 'buyer';
+    public const string BUYER = 'buyer';
 
-    public const CENTRAL_REGULATOR = 'central_regulator';
+    public const string CENTRAL_REGULATOR = 'central_regulator';
 
-    public const CUSTOMER = 'customer';
+    public const string CUSTOMER = 'customer';
 
-    public const DELIVERER = 'deliverer';
+    public const string DELIVERER = 'deliverer';
 
-    public const DELIVERY = 'delivery';
+    public const string DELIVERY = 'delivery';
 
-    public const DOCUMENT_CREATOR = 'document_creator';
+    public const string DOCUMENT_CREATOR = 'document_creator';
 
-    public const FINAL_DELIVERY = 'final_delivery';
+    public const string FINAL_DELIVERY = 'final_delivery';
 
-    public const INTERMEDIARY = 'intermediary';
+    public const string INTERMEDIARY = 'intermediary';
 
-    public const INVOICE_ISSUER = 'invoice_issuer';
+    public const string INVOICE_ISSUER = 'invoice_issuer';
 
-    public const INVOICE_RECIPIENT = 'invoice_recipient';
+    public const string INVOICE_RECIPIENT = 'invoice_recipient';
 
-    public const IPP_OPERATOR = 'ipp_operator';
+    public const string IPP_OPERATOR = 'ipp_operator';
 
-    public const MANUFACTURER = 'manufacturer';
+    public const string MANUFACTURER = 'manufacturer';
 
-    public const MARKETPLACE = 'marketplace';
+    public const string MARKETPLACE = 'marketplace';
 
-    public const PAYER = 'payer';
+    public const string PAYER = 'payer';
 
-    public const STANDARDIZATION_BODY = 'standardization_body';
+    public const string STANDARDIZATION_BODY = 'standardization_body';
 
-    public const SUPPLIER = 'supplier';
+    public const string SUPPLIER = 'supplier';
 
-    public const TRUSTED_THIRDPARTY = 'trustedthirdparty';
+    public const string TRUSTED_THIRDPARTY = 'trustedthirdparty';
 
-    public const OTHER = 'other';
+    public const string OTHER = 'other';
 
     #[Serializer\Type('string')]
     #[Serializer\XmlValue]

@@ -8,8 +8,8 @@ use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 
 /**
  * @implements NodeInterface<AllowOrChargesFix>
- * @method self setAllowOrCharge(\Naugrim\OpenTrans\Nodes\AllowOrCharge[]|array $allowOrCharge)
- * @method \Naugrim\OpenTrans\Nodes\AllowOrCharge[]|array getAllowOrCharge()
+ * @method self setAllowOrCharge(\Naugrim\OpenTrans\Nodes\AllowOrCharge[]|array<string, mixed> $allowOrCharge)
+ * @method \Naugrim\OpenTrans\Nodes\AllowOrCharge[] getAllowOrCharge()
  * @method self setAllowOrChargesTotalAmount(float|null $allowOrChargesTotalAmount)
  * @method float|null getAllowOrChargesTotalAmount()
  */

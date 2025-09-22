@@ -6,6 +6,7 @@ namespace Naugrim\OpenTrans\Tests\Nodes\Payment;
 
 use InvalidArgumentException;
 use Naugrim\OpenTrans\Nodes\Payment\PaymentTerm;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
@@ -26,9 +27,7 @@ class PaymentTermTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider provideValidTypes
-     */
+    #[DataProvider('provideValidTypes')]
     public function testCreate(string $type): void
     {
         $this->assertInstanceOf(PaymentTerm::class, PaymentTerm::create($type, 'test'));

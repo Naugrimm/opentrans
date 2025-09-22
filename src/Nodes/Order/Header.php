@@ -10,11 +10,11 @@ use Naugrim\OpenTrans\Nodes\Concerns\HasSourcingInfo;
 
 /**
  * @implements NodeInterface<Header>
- * @method self setControlInfo(array|\Naugrim\OpenTrans\Nodes\ControlInfo $controlInfo)
+ * @method self setControlInfo(array<string, mixed>|\Naugrim\OpenTrans\Nodes\ControlInfo $controlInfo)
  * @method \Naugrim\OpenTrans\Nodes\ControlInfo getControlInfo()
- * @method self setSourcingInfo(array|\Naugrim\OpenTrans\Nodes\SourcingInfo $sourcingInfo)
+ * @method self setSourcingInfo(array<string, mixed>|\Naugrim\OpenTrans\Nodes\SourcingInfo $sourcingInfo)
  * @method \Naugrim\OpenTrans\Nodes\SourcingInfo getSourcingInfo()
- * @method self setInfo(array|\Naugrim\OpenTrans\Nodes\Order\Info $info)
+ * @method self setInfo(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Order\Info $info)
  * @method \Naugrim\OpenTrans\Nodes\Order\Info getInfo()
  */
 #[Serializer\AccessorOrder(order: 'custom', custom: ['controlInfo', 'sourcingInfo', 'info'])]

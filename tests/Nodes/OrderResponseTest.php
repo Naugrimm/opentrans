@@ -26,7 +26,7 @@ class OrderResponseTest extends TestCase
             'header' => [
                 'info' => [
                     'id' => 'order-id-1',
-                    'orderResponseDate' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                    'orderResponseDate' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                     'sequenceId' => 1,
                     'parties' => [
                         [
