@@ -10,6 +10,7 @@ use Naugrim\BMEcat\Builder\NodeBuilder;
 use Naugrim\OpenTrans\Nodes\Order;
 use Naugrim\OpenTrans\Nodes\Udx;
 use Naugrim\OpenTrans\SchemaValidator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Throwable;
 
@@ -23,9 +24,9 @@ class OrderTest extends TestCase
     }
 
     /**
-     * @dataProvider provideOrderData
      * @param array<string, mixed> $data
      */
+    #[DataProvider('provideOrderData')]
     public function testOrder(string $file, array $data): void
     {
         $node = NodeBuilder::fromArray($data, NodeBuilder::fromArray([], Order::class));

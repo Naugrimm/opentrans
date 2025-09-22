@@ -12,6 +12,7 @@ use Naugrim\OpenTrans\Nodes\Invoice;
 use Naugrim\OpenTrans\Nodes\Order;
 use Naugrim\OpenTrans\Nodes\OrderResponse;
 use Naugrim\OpenTrans\SchemaValidator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Rector\Testing\Fixture\FixtureFileFinder;
 
@@ -36,9 +37,7 @@ class ExampleDocumentsTest extends TestCase
         }
     }
 
-    /**
-     * @dataProvider provideExampleFileData()
-     */
+    #[DataProvider('provideExampleFileData')]
     public function testExampleDocuments(string $rootNodeType, string $fileName): void
     {
         $serializer = SerializerBuilder::create()->build();
