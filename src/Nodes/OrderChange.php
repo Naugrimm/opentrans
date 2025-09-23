@@ -5,6 +5,7 @@ namespace Naugrim\OpenTrans\Nodes;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Contracts\OpentransDocumentNode;
 use Naugrim\OpenTrans\Nodes\Concerns\IsRootNode;
 use Naugrim\OpenTrans\Nodes\Order\Item;
 use Naugrim\OpenTrans\Nodes\Order\Summary;
@@ -26,7 +27,7 @@ use Naugrim\OpenTrans\OpenTrans;
 #[Serializer\ExclusionPolicy('all')]
 #[Serializer\XmlNamespace(uri: OpenTrans::BMECAT_NAMESPACE, prefix: 'bme')]
 #[Serializer\XmlNamespace(uri: OpenTrans::OPENTRANS_NAMESPACE)]
-class OrderChange implements NodeInterface
+class OrderChange implements NodeInterface, OpentransDocumentNode
 {
     use HasSerializableAttributes;
     use IsRootNode;

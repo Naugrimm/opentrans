@@ -35,7 +35,9 @@
         "tomasvotruba/type-coverage": "^2.0"
     },
     "scripts": {
-        "test": "@php -dzend_extension=xdebug.so -dxdebug.mode=coverage vendor/bin/phpunit",
+        "test": "@php -dzend_extension=xdebug.so -dxdebug.mode=coverage vendor/bin/phpunit ",
+        "ecs": "@php vendor/bin/ecs ",
+        "ecs-fix": "@php vendor/bin/ecs --fix ",
         "post-autoload-dump": [
             "git config gitflow.path.hooks .githooks && git config core.hooksPath .githooks"
         ]
