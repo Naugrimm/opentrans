@@ -1,10 +1,24 @@
+# 5.1.0
+
+### Added
+
+- **DELIVERY_REFERENCE Element**: Implemented DELIVERY_REFERENCE functionality:
+    - Added `DeliveryReference` class with support for DELIVERYNOTE_ID, LINE_ITEM_ID, DELIVERY_DATE, and DELIVERY_IDREF
+    - Implemented in `Invoice\Item`
+    - Implemented in `DispatchNotification\Item`
+- **SHIPMENT_PARTIES_REFERENCE Element**: Extended SHIPMENT_PARTIES_REFERENCE implementation:
+    - Added to `OrderResponse\Item` class
+    - Enhanced existing implementation in `Order\Item` and `DispatchNotification\Item`
+    - Support for DELIVERY_IDREF, FINAL_DELIVERY_IDREF, and DELIVERER_IDREF
+
+
 # 5.x
 
 ### BREAKING CHANGES
 
 - **SchemaValidator root node validation**: The SchemaValidator now checks if the XML-root-element matches the expected type for this OpenTRANS document.
 - The optional `$documentType`-Parameter passed to `\Naugrim\OpenTrans\SchemaValidator::isValid`. The parameter was completely unused before und now must be either `NULL` or the class-string of a class implementing `\Naugrim\OpenTrans\Contracts\OpentransDocumentNode`
-- If the `$documentType` is not given or `NULL`, the behaviour did not change. In this case, the SchemaValidator continues to just validate against the OpenTRANS XSD. 
+- If the `$documentType` is not given or `NULL`, the behaviour did not change. In this case, the SchemaValidator continues to just validate against the OpenTRANS XSD.
 
 # 4.x
 
