@@ -18,7 +18,7 @@ use Naugrim\OpenTrans\Contracts\OpentransDocumentNode;
 /**
  * Test class that implements NodeInterface but NOT OpentransDocumentNode
  * Used to test type validation in SchemaValidator
- *
+ * 
  * @implements NodeInterface<TestClassWithoutOpentransInterface>
  */
 class TestClassWithoutOpentransInterface implements NodeInterface
@@ -96,7 +96,7 @@ class SchemaValidatorTest extends TestCase
             $this->addToAssertionCount(1);
         } catch (InvalidRootNodeException $e) {
             $this->fail('Root node validation should have passed but threw: ' . $e->getMessage());
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             // Other exceptions (like schema validation failures) are expected and acceptable for this test
             // We only care that InvalidRootNodeException was NOT thrown
             $this->addToAssertionCount(1);
@@ -123,7 +123,7 @@ class SchemaValidatorTest extends TestCase
             sprintf(
                 'Class "%s" does not implement the required interface "%s"',
                 TestClassWithoutOpentransInterface::class,
-                'Naugrim\OpenTrans\Contracts\OpentransDocumentNode'
+                \Naugrim\OpenTrans\Contracts\OpentransDocumentNode::class
             )
         );
 

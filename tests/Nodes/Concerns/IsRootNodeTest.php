@@ -20,8 +20,10 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  * Test class that uses IsRootNode trait but does NOT have XmlRoot attribute
  * This is used to test the exception handling in getXmlRootElementName()
- *
+ * 
  * @implements NodeInterface<TestClassWithoutXmlRootAttribute>
+ * @method self setVersion(string $version)
+ * @method string getVersion()
  */
 class TestClassWithoutXmlRootAttribute implements NodeInterface, OpentransDocumentNode
 {
@@ -32,8 +34,10 @@ class TestClassWithoutXmlRootAttribute implements NodeInterface, OpentransDocume
 /**
  * Test class that has XmlRoot attribute but with no arguments
  * This is used to test the exception handling in getXmlRootElementName()
- *
+ * 
  * @implements NodeInterface<TestClassWithEmptyXmlRootAttribute>
+ * @method self setVersion(string $version)
+ * @method string getVersion()
  */
 #[Serializer\XmlRoot()]
 class TestClassWithEmptyXmlRootAttribute implements NodeInterface, OpentransDocumentNode

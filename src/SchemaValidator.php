@@ -13,7 +13,7 @@ use ReflectionClass;
 class SchemaValidator
 {
     /**
-     * @var array<string, string>|array<string, array<string, string>>
+     * @var array<string, string>
      */
     protected static array $SCHEMA_MAP = [
         '2.1' => __DIR__ . '/schemas/opentrans_2_1.xsd',
@@ -32,6 +32,9 @@ class SchemaValidator
         $xmlValidate->loadXML($xml);
 
         if ($documentType !== null) {
+            // Validate that the type parameter is a valid class that implements OpentransDocumentNode
+            self::validateTypeParameter($documentType);
+
             self::validateRootNode($xmlValidate, $documentType);
         }
 
@@ -58,14 +61,11 @@ class SchemaValidator
     }
 
     /**
-     * @param class $documentType-string<OpentransDocumentNode>
+     * @param class-string<OpentransDocumentNode> $documentType
      */
     private static function validateRootNode(DOMDocument $xmlValidate, string $documentType): void
     {
-        // Validate that the type parameter is a valid class that implements OpentransDocumentNode
-        self::validateTypeParameter($documentType);
-
-        if ($xmlValidate->documentElement === null) {
+        if (! $xmlValidate->documentElement instanceof \DOMElement) {
             throw new InvalidRootNodeException('XML document has no root element');
         }
 
@@ -84,6 +84,7 @@ class SchemaValidator
      * Validates that the provided type parameter is a valid class that implements OpentransDocumentNode.
      *
      * @param string $type The class name to validate
+     * @phpstan-assert class-string<OpentransDocumentNode> $type
      */
     private static function validateTypeParameter(string $type): void
     {

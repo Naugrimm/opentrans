@@ -38,6 +38,8 @@
         "test": "@php -dzend_extension=xdebug.so -dxdebug.mode=coverage vendor/bin/phpunit ",
         "ecs": "@php vendor/bin/ecs ",
         "ecs-fix": "@php vendor/bin/ecs --fix ",
+        "rector": "@php vendor/bin/rector process ",
+        "stan": "@php vendor/bin/phpstan analyze ",
         "post-autoload-dump": [
             "git config gitflow.path.hooks .githooks && git config core.hooksPath .githooks"
         ]
