@@ -23,6 +23,8 @@ use Naugrim\OpenTrans\Nodes\ProductId;
  * @method float getQuantity()
  * @method self setOrderUnit(string $orderUnit)
  * @method string getOrderUnit()
+ * @method self setDeliveryReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\DeliveryReference $deliveryReference)
+ * @method \Naugrim\OpenTrans\Nodes\DeliveryReference|null getDeliveryReference()
  * @method self setSupplierIdRef(array<string, mixed>|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
  * @method \Naugrim\BMEcat\Nodes\SupplierIdRef getSupplierIdRef()
  * @method self setOrderReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\Invoice\OrderReference $orderReference)
@@ -33,8 +35,6 @@ use Naugrim\OpenTrans\Nodes\ProductId;
  * @method \Naugrim\OpenTrans\Nodes\Order\CustomerOrderReference|null getCustomerOrderReference()
  * @method self setShipmentPartiesReference(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference $shipmentPartiesReference)
  * @method \Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference getShipmentPartiesReference()
- * @method self setDeliveryReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\DeliveryReference $deliveryReference)
- * @method \Naugrim\OpenTrans\Nodes\DeliveryReference|null getDeliveryReference()
  */
 class Item implements NodeInterface
 {

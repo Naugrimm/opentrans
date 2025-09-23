@@ -220,8 +220,8 @@ class InvoiceTest extends TestCase
                                 'deliverynoteId' => 'delivery-note-123',
                                 'lineItemId' => 'delivery-line-item-1',
                                 'deliveryDate' => [
-                                    'deliveryStartDate' => (new DateTimeImmutable('2020-02-15'))->format('Y-m-d'),
-                                    'deliveryEndDate' => (new DateTimeImmutable('2020-02-15'))->format('Y-m-d'),
+                                    'deliveryStartDate' => new DateTimeImmutable('2020-02-15')->format('Y-m-d'),
+                                    'deliveryEndDate' => new DateTimeImmutable('2020-02-15')->format('Y-m-d'),
                                 ],
                                 'deliveryIdRef' => [
                                     'value' => 'delivery-party-123',

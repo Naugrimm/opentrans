@@ -57,7 +57,7 @@ class DispatchNotificationTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'dispatch-id-1',
-                            'dispatchNotificationDate' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'dispatchNotificationDate' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -120,7 +120,7 @@ class DispatchNotificationTest extends TestCase
                     'header' => [
                         'info' => [
                             'id' => 'dispatch-id-2',
-                            'dispatchNotificationDate' => (new DateTimeImmutable('2020-01-27'))->format('Y-m-d'),
+                            'dispatchNotificationDate' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
                             'parties' => [
                                 [
                                     'id' => [
@@ -162,8 +162,8 @@ class DispatchNotificationTest extends TestCase
                                 'deliverynoteId' => 'delivery-note-456',
                                 'lineItemId' => 'delivery-line-item-2',
                                 'deliveryDate' => [
-                                    'deliveryStartDate' => (new DateTimeImmutable('2020-02-15'))->format('Y-m-d'),
-                                    'deliveryEndDate' => (new DateTimeImmutable('2020-02-15'))->format('Y-m-d'),
+                                    'deliveryStartDate' => new DateTimeImmutable('2020-02-15')->format('Y-m-d'),
+                                    'deliveryEndDate' => new DateTimeImmutable('2020-02-15')->format('Y-m-d'),
                                 ],
                                 'deliveryIdRef' => [
                                     'value' => 'delivery-party-456',
