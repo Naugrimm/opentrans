@@ -39,10 +39,12 @@ use Naugrim\OpenTrans\Nodes\UdxInterface;
  * @method \Naugrim\OpenTrans\Nodes\Order\CustomerOrderReference|null getCustomerOrderReference()
  * @method self setDeliveryDate(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
  * @method \Naugrim\OpenTrans\Nodes\DeliveryDate|null getDeliveryDate()
+ * @method self setShipmentPartiesReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference $shipmentPartiesReference)
+ * @method \Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference|null getShipmentPartiesReference()
  * @method self setRemarks(\Naugrim\OpenTrans\Nodes\Remarks[]|array<string, mixed> $remarks)
  * @method \Naugrim\OpenTrans\Nodes\Remarks[] getRemarks()
  */
-#[Serializer\AccessorOrder(order: 'custom', custom: ['lineItemId', 'productId', 'productComponents', 'quantity', 'orderUnit', 'priceFix', 'priceLineAmount', 'deliveryDate', 'partialShipmentAllowed', 'customerOrderReference', 'sourcingInfo', 'remarks', 'itemUdx'])]
+#[Serializer\AccessorOrder(order: 'custom', custom: ['lineItemId', 'productId', 'productComponents', 'quantity', 'orderUnit', 'priceFix', 'priceLineAmount', 'deliveryDate', 'partialShipmentAllowed', 'customerOrderReference', 'shipmentPartiesReference', 'sourcingInfo', 'remarks', 'itemUdx'])]
 class Item implements NodeInterface
 {
     use HasSerializableAttributes;
@@ -107,6 +109,11 @@ class Item implements NodeInterface
     #[Serializer\Type(DeliveryDate::class)]
     #[Serializer\SerializedName('DELIVERY_DATE')]
     protected ?DeliveryDate $deliveryDate = null;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(ShipmentPartiesReference::class)]
+    #[Serializer\SerializedName('SHIPMENT_PARTIES_REFERENCE')]
+    protected ?ShipmentPartiesReference $shipmentPartiesReference = null;
 
     /**
      * @var Remarks[]
