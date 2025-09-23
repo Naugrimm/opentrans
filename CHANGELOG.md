@@ -1,3 +1,11 @@
+# 5.x
+
+### BREAKING CHANGES
+
+- **SchemaValidator root node validation**: The SchemaValidator now checks if the XML-root-element matches the expected type for this OpenTRANS document.
+- The optional `$documentType`-Parameter passed to `\Naugrim\OpenTrans\SchemaValidator::isValid`. The parameter was completely unused before und now must be either `NULL` or the class-string of a class implementing `\Naugrim\OpenTrans\Contracts\OpentransDocumentNode`
+- If the `$documentType` is not given or `NULL`, the behaviour did not change. In this case, the SchemaValidator continues to just validate against the OpenTRANS XSD. 
+
 # 4.x
 
 ### BREAKING CHANGES

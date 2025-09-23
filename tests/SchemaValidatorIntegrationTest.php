@@ -24,7 +24,7 @@ class SchemaValidatorIntegrationTest extends TestCase
             $this->addToAssertionCount(1); // Type validation passed
         } catch (InvalidTypeException $e) {
             $this->fail('Type validation should have passed: ' . $e->getMessage());
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             // Other exceptions (like schema validation) are acceptable for this test
             $this->addToAssertionCount(1);
         }
@@ -33,16 +33,16 @@ class SchemaValidatorIntegrationTest extends TestCase
         try {
             SchemaValidator::isValid($validXml, '2.1', 'NonExistentClass');
             $this->fail('Should have thrown InvalidTypeException for non-existent class');
-        } catch (InvalidTypeException $e) {
-            $this->assertStringContainsString('does not exist', $e->getMessage());
+        } catch (InvalidTypeException $invalidTypeException) {
+            $this->assertStringContainsString('does not exist', $invalidTypeException->getMessage());
         }
 
         // Test 3: Class that doesn't implement interface - should fail with InvalidTypeException
         try {
             SchemaValidator::isValid($validXml, '2.1', \stdClass::class);
             $this->fail('Should have thrown InvalidTypeException for class not implementing interface');
-        } catch (InvalidTypeException $e) {
-            $this->assertStringContainsString('does not implement the required interface', $e->getMessage());
+        } catch (InvalidTypeException $invalidTypeException) {
+            $this->assertStringContainsString('does not implement the required interface', $invalidTypeException->getMessage());
         }
     }
 }
