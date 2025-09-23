@@ -168,6 +168,80 @@ class InvoiceTest extends TestCase
                     ],
                 ],
             ],
+            [
+                'file' => __DIR__ . '/../assets/minimal_valid_invoice_with_delivery_reference.xml',
+                'data' => [
+                    'header' => [
+                        'info' => [
+                            'id' => 'invoice-id-1',
+                            'date' => new DateTimeImmutable('2020-01-27')->format('Y-m-d'),
+                            'parties' => [
+                                [
+                                    'id' => [
+                                        'value' => 'org.de.issuer',
+                                        'type' => 'supplier_specific',
+                                    ],
+                                ],
+                                [
+                                    'id' => [
+                                        'value' => 'org.de.rcpt',
+                                        'type' => 'supplier_specific',
+                                    ],
+                                ],
+                                [
+                                    'id' => [
+                                        'value' => 'delivery-party-123',
+                                        'type' => 'supplier_specific',
+                                    ],
+                                ],
+                            ],
+                            'issuerIdRef' => [
+                                'type' => 'supplier_specific',
+                                'value' => 'org.de.issuer',
+                            ],
+                            'rcptIdRef' => [
+                                'type' => 'buyer_specific',
+                                'value' => 'org.de.rcpt',
+                            ],
+                            'currency' => 'EUR',
+                        ],
+                    ],
+                    'items' => [
+                        [
+                            'lineItemId' => 'line-item-id-1',
+                            'productId' => [],
+                            'quantity' => 10,
+                            'orderUnit' => 'C62',
+                            'priceFix' => [
+                                'amount' => 100,
+                            ],
+                            'priceLineAmount' => 1000,
+                            'deliveryReference' => [
+                                'deliverynoteId' => 'delivery-note-123',
+                                'lineItemId' => 'delivery-line-item-1',
+                                'deliveryDate' => [
+                                    'deliveryStartDate' => (new DateTimeImmutable('2020-02-15'))->format('Y-m-d'),
+                                    'deliveryEndDate' => (new DateTimeImmutable('2020-02-15'))->format('Y-m-d'),
+                                ],
+                                'deliveryIdRef' => [
+                                    'value' => 'delivery-party-123',
+                                    'type' => 'supplier_specific',
+                                ],
+                            ],
+                        ],
+                    ],
+                    'summary' => [
+                        'totalItemNum' => 1,
+                        'netValueGoods' => 1000,
+                        'totalAmount' => 1190,
+                        'totalTax' => [
+                            [
+                                'amount' => 190,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ];
     }
 }

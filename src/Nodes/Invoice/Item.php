@@ -5,6 +5,7 @@ namespace Naugrim\OpenTrans\Nodes\Invoice;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\DeliveryReference;
 use Naugrim\OpenTrans\Nodes\Product\PriceFix;
 use Naugrim\OpenTrans\Nodes\ProductId;
 
@@ -28,6 +29,8 @@ use Naugrim\OpenTrans\Nodes\ProductId;
  * @method \Naugrim\OpenTrans\Nodes\Invoice\OrderReference|null getOrderReference()
  * @method self setSupplierOrderReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\Invoice\SupplierOrderReference $supplierOrderReference)
  * @method \Naugrim\OpenTrans\Nodes\Invoice\SupplierOrderReference|null getSupplierOrderReference()
+ * @method self setDeliveryReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\DeliveryReference $deliveryReference)
+ * @method \Naugrim\OpenTrans\Nodes\DeliveryReference|null getDeliveryReference()
  */
 class Item implements NodeInterface
 {
@@ -79,4 +82,9 @@ class Item implements NodeInterface
     #[Serializer\Type(SupplierOrderReference::class)]
     #[Serializer\SerializedName('SUPPLIER_ORDER_REFERENCE')]
     protected ?SupplierOrderReference $supplierOrderReference = null;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(DeliveryReference::class)]
+    #[Serializer\SerializedName('DELIVERY_REFERENCE')]
+    protected ?DeliveryReference $deliveryReference = null;
 }
