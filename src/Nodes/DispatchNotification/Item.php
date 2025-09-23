@@ -6,6 +6,7 @@ use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
 use Naugrim\BMEcat\Nodes\SupplierIdRef;
+use Naugrim\OpenTrans\Nodes\DeliveryReference;
 use Naugrim\OpenTrans\Nodes\Invoice\OrderReference;
 use Naugrim\OpenTrans\Nodes\Invoice\SupplierOrderReference;
 use Naugrim\OpenTrans\Nodes\Order\CustomerOrderReference;
@@ -22,6 +23,8 @@ use Naugrim\OpenTrans\Nodes\ProductId;
  * @method float getQuantity()
  * @method self setOrderUnit(string $orderUnit)
  * @method string getOrderUnit()
+ * @method self setDeliveryReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\DeliveryReference $deliveryReference)
+ * @method \Naugrim\OpenTrans\Nodes\DeliveryReference|null getDeliveryReference()
  * @method self setSupplierIdRef(array<string, mixed>|\Naugrim\BMEcat\Nodes\SupplierIdRef $supplierIdRef)
  * @method \Naugrim\BMEcat\Nodes\SupplierIdRef getSupplierIdRef()
  * @method self setOrderReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\Invoice\OrderReference $orderReference)
@@ -57,6 +60,11 @@ class Item implements NodeInterface
     #[Serializer\SerializedName('ORDER_UNIT')]
     #[\JMS\Serializer\Annotation\XmlElement(namespace: \Naugrim\OpenTrans\OpenTrans::BMECAT_NAMESPACE)]
     protected string $orderUnit;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(DeliveryReference::class)]
+    #[Serializer\SerializedName('DELIVERY_REFERENCE')]
+    protected ?DeliveryReference $deliveryReference = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(SupplierIdRef::class)]

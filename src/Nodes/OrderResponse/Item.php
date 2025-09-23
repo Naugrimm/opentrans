@@ -5,6 +5,7 @@ namespace Naugrim\OpenTrans\Nodes\OrderResponse;
 use JMS\Serializer\Annotation as Serializer;
 use Naugrim\BMEcat\Nodes\Concerns\HasSerializableAttributes;
 use Naugrim\BMEcat\Nodes\Contracts\NodeInterface;
+use Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference;
 use Naugrim\OpenTrans\Nodes\Product\PriceFix;
 use Naugrim\OpenTrans\Nodes\ProductId;
 
@@ -22,6 +23,8 @@ use Naugrim\OpenTrans\Nodes\ProductId;
  * @method \Naugrim\OpenTrans\Nodes\Product\PriceFix getPriceFix()
  * @method self setPriceLineAmount(float $priceLineAmount)
  * @method float getPriceLineAmount()
+ * @method self setShipmentPartiesReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference $shipmentPartiesReference)
+ * @method \Naugrim\OpenTrans\Nodes\Order\ShipmentPartiesReference|null getShipmentPartiesReference()
  */
 class Item implements NodeInterface
 {
@@ -57,4 +60,9 @@ class Item implements NodeInterface
     #[Serializer\Type('float')]
     #[Serializer\SerializedName('PRICE_LINE_AMOUNT')]
     protected float $priceLineAmount;
+
+    #[Serializer\Expose]
+    #[Serializer\Type(ShipmentPartiesReference::class)]
+    #[Serializer\SerializedName('SHIPMENT_PARTIES_REFERENCE')]
+    protected ?ShipmentPartiesReference $shipmentPartiesReference = null;
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DISPATCHNOTIFICATION xmlns="http://www.opentrans.org/XMLSchema/2.1" xmlns:bme="http://www.bmecat.org/bmecat/2005" version="2.1">
+  <DISPATCHNOTIFICATION_HEADER>
+    <DISPATCHNOTIFICATION_INFO>
+      <DISPATCHNOTIFICATION_ID><![CDATA[dispatch-id-2]]></DISPATCHNOTIFICATION_ID>
+      <DISPATCHNOTIFICATION_DATE><![CDATA[2020-01-27]]></DISPATCHNOTIFICATION_DATE>
+      <PARTIES>
+        <PARTY>
+          <bme:PARTY_ID type="supplier"><![CDATA[org.de.supplier]]></bme:PARTY_ID>
+        </PARTY>
+        <PARTY>
+          <bme:PARTY_ID type="buyer"><![CDATA[org.de.buyer]]></bme:PARTY_ID>
+        </PARTY>
+      </PARTIES>
+      <bme:SUPPLIER_IDREF><![CDATA[org.de.supplier]]></bme:SUPPLIER_IDREF>
+      <bme:BUYER_IDREF><![CDATA[org.de.buyer]]></bme:BUYER_IDREF>
+      <SHIPMENT_PARTIES_REFERENCE>
+        <DELIVERY_IDREF><![CDATA[org.de.buyer]]></DELIVERY_IDREF>
+      </SHIPMENT_PARTIES_REFERENCE>
+    </DISPATCHNOTIFICATION_INFO>
+  </DISPATCHNOTIFICATION_HEADER>
+  <DISPATCHNOTIFICATION_ITEM_LIST>
+    <DISPATCHNOTIFICATION_ITEM>
+      <LINE_ITEM_ID><![CDATA[line-item-id-1]]></LINE_ITEM_ID>
+      <PRODUCT_ID>
+        <bme:SUPPLIER_PID><![CDATA[product-number-1]]></bme:SUPPLIER_PID>
+      </PRODUCT_ID>
+      <QUANTITY>5.0</QUANTITY>
+      <bme:ORDER_UNIT><![CDATA[C62]]></bme:ORDER_UNIT>
+      <DELIVERY_REFERENCE>
+        <DELIVERYNOTE_ID><![CDATA[delivery-note-456]]></DELIVERYNOTE_ID>
+        <LINE_ITEM_ID><![CDATA[delivery-line-item-2]]></LINE_ITEM_ID>
+        <DELIVERY_DATE>
+          <DELIVERY_START_DATE><![CDATA[2020-02-15]]></DELIVERY_START_DATE>
+          <DELIVERY_END_DATE><![CDATA[2020-02-15]]></DELIVERY_END_DATE>
+        </DELIVERY_DATE>
+        <DELIVERY_IDREF type="supplier_specific"><![CDATA[delivery-party-456]]></DELIVERY_IDREF>
+      </DELIVERY_REFERENCE>
+      <bme:SUPPLIER_IDREF><![CDATA[org.de.supplier]]></bme:SUPPLIER_IDREF>
+      <ORDER_REFERENCE>
+        <ORDER_ID><![CDATA[order-id-1]]></ORDER_ID>
+        <LINE_ITEM_ID><![CDATA[line-item-id-1]]></LINE_ITEM_ID>
+      </ORDER_REFERENCE>
+      <SHIPMENT_PARTIES_REFERENCE>
+        <DELIVERY_IDREF><![CDATA[org.de.buyer]]></DELIVERY_IDREF>
+      </SHIPMENT_PARTIES_REFERENCE>
+    </DISPATCHNOTIFICATION_ITEM>
+  </DISPATCHNOTIFICATION_ITEM_LIST>
+  <DISPATCHNOTIFICATION_SUMMARY>
+    <TOTAL_ITEM_NUM>1</TOTAL_ITEM_NUM>
+  </DISPATCHNOTIFICATION_SUMMARY>
+</DISPATCHNOTIFICATION>
