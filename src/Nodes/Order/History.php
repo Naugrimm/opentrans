@@ -12,27 +12,27 @@ use Naugrim\OpenTrans\Nodes\Catalog\Reference;
  * @implements NodeInterface<History>
  * @method self setOrderId(string $orderId)
  * @method string getOrderId()
- * @method self setAltCustomerOrderId(string $altCustomerOrderId)
- * @method string getAltCustomerOrderId()
- * @method self setSupplierOrderId(string $supplierOrderId)
- * @method string getSupplierOrderId()
- * @method self setOrderDate(string $orderDate)
- * @method string getOrderDate()
- * @method self setOrderDescription(string $orderDescription)
- * @method string getOrderDescription()
- * @method self setDeliverynoteId(string $deliverynoteId)
- * @method string getDeliverynoteId()
- * @method self setDeliverynoteDate(string $deliverynoteDate)
- * @method string getDeliverynoteDate()
- * @method self setAgreement(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Agreement $agreement)
- * @method \Naugrim\OpenTrans\Nodes\Agreement getAgreement()
- * @method self setCatalogReference(array<string, mixed>|\Naugrim\OpenTrans\Nodes\Catalog\Reference $catalogReference)
- * @method \Naugrim\OpenTrans\Nodes\Catalog\Reference getCatalogReference()
+ * @method self setAltCustomerOrderId(string|null $altCustomerOrderId)
+ * @method string|null getAltCustomerOrderId()
+ * @method self setSupplierOrderId(string|null $supplierOrderId)
+ * @method string|null getSupplierOrderId()
+ * @method self setOrderDate(string|null $orderDate)
+ * @method string|null getOrderDate()
+ * @method self setOrderDescription(string|null $orderDescription)
+ * @method string|null getOrderDescription()
+ * @method self setDeliverynoteId(string|null $deliverynoteId)
+ * @method string|null getDeliverynoteId()
+ * @method self setDeliverynoteDate(string|null $deliverynoteDate)
+ * @method string|null getDeliverynoteDate()
+ * @method self setAgreement(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\Agreement $agreement)
+ * @method \Naugrim\OpenTrans\Nodes\Agreement|null getAgreement()
+ * @method self setCatalogReference(null|array<string, mixed>|\Naugrim\OpenTrans\Nodes\Catalog\Reference $catalogReference)
+ * @method \Naugrim\OpenTrans\Nodes\Catalog\Reference|null getCatalogReference()
  */
 class History implements NodeInterface
 {
     use HasSerializableAttributes;
-    
+
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_ID')]
@@ -41,40 +41,40 @@ class History implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ALT_CUSTOMER_ORDER_ID')]
-    protected string $altCustomerOrderId;
+    protected ?string $altCustomerOrderId = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('SUPPLIER_ORDER_ID')]
-    protected string $supplierOrderId;
+    protected ?string $supplierOrderId = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_DATE')]
-    protected string $orderDate;
+    protected ?string $orderDate = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('ORDER_DESCR')]
-    protected string $orderDescription;
+    protected ?string $orderDescription = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('DELIVERYNOTE_ID')]
-    protected string $deliverynoteId;
+    protected ?string $deliverynoteId = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('DELIVERYNOTE_DATE')]
-    protected string $deliverynoteDate;
+    protected ?string $deliverynoteDate = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(Agreement::class)]
     #[Serializer\SerializedName('AGREEMENT')]
-    protected Agreement $agreement;
+    protected ?Agreement $agreement = null;
 
     #[Serializer\Expose]
     #[Serializer\Type(Reference::class)]
     #[Serializer\SerializedName('CATALOG_REFERENCE')]
-    protected Reference $catalogReference;
+    protected ?Reference $catalogReference = null;
 }
