@@ -15,8 +15,8 @@ use Naugrim\OpenTrans\Nodes\Party;
  * @method string getId()
  * @method self setOrderResponseDate(string $orderResponseDate)
  * @method string getOrderResponseDate()
- * @method self setSupplierOrderId(string $supplierOrderId)
- * @method string getSupplierOrderId()
+ * @method self setSupplierOrderId(string|null $supplierOrderId)
+ * @method string|null getSupplierOrderId()
  * @method self setOrderDate(string $orderDate)
  * @method string getOrderDate()
  * @method self setDeliveryDate(array<string, mixed>|\Naugrim\OpenTrans\Nodes\DeliveryDate $deliveryDate)
@@ -45,7 +45,7 @@ class Info implements NodeInterface
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('SUPPLIER_ORDER_ID')]
-    protected string $supplierOrderId;
+    protected ?string $supplierOrderId = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
