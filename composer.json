@@ -40,6 +40,12 @@
         "ecs-fix": "@php vendor/bin/ecs --fix ",
         "rector": "@php vendor/bin/rector process ",
         "stan": "@php vendor/bin/phpstan analyze ",
+        "check-all": [
+          "@ecs-fix",
+          "@rector",
+          "@stan",
+          "@test"
+        ],
         "post-autoload-dump": [
             "git config gitflow.path.hooks .githooks && git config core.hooksPath .githooks"
         ]
