@@ -1,0 +1,14 @@
+/.githooks          export-ignore
+/.github            export-ignore
+/.idea              export-ignore
+/.opencode          export-ignore
+/composer.lock      export-ignore
+/docs               export-ignore
+/ecs.php            export-ignore
+/phpcs.xml          export-ignore
+/phpstan.dist.neon  export-ignore
+/phpunit.xml        export-ignore
+/phpunit.xml.dist   export-ignore
+/rector.php         export-ignore
+/tests              export-ignore
+/utils/rector/tests export-ignore
