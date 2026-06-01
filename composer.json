@@ -57,10 +57,7 @@
                 "vendor/naugrim/bmecat/utils/rector/src"
             ],
             "Utils\\Rector\\Tests\\": "utils/rector/tests"
-        },
-        "files": [
-          "vendor/rector/rector/preload.php"
-        ]
+        }
     },
     "config": {
         "allow-plugins": {
