@@ -52,6 +52,7 @@ class PartyRole implements NodeInterface
 
     public const string OTHER = 'other';
 
+    #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\XmlValue]
     protected string $role = '';
